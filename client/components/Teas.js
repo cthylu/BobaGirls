@@ -1,25 +1,29 @@
-import axios from 'axios';
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAllTeas } from '../store/index'
 
 const Teas = ({ teas }) => {
-    return (
-        <div>
-            {teas.length}
-            {
-                teas.map(tea => {
-                    <li key={ tea.id }>
-                        {tea.teaname}
-                    </li>
-                })
-            }
-        </div>
-    )
+  return (
+     <ul>
+        {
+          teas.map(tea => {
+            return (
+               <li key={tea.id}>
+                 { tea.teaname }
+               </li>
+            )
+          })
+        }
+     </ul>
+  )
 }
 
+const mapState = ({ teas }) => {
+  return {
+    teas
+  }
+}
 
-export default connect(state => state)(Teas)
+export default connect(mapState)(Teas);
 
 // class Teas extends Component {
 //     constructor(props) {

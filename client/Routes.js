@@ -5,13 +5,15 @@ import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import {me} from './store'
 import Teas from './components/Teas';
+import { fetchTeas } from './store/teas';
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
-  componentDidMount() {
-    this.props.loadInitialData()
+  componentDidMount () {
+    this.props.loadInitialData();
+    this.props.loadTeas();
   }
 
   render() {
@@ -22,6 +24,7 @@ class Routes extends Component {
         {isLoggedIn ? (
           <Switch>
             <Route path="/home" component={Home} />
+            <Route path='/teas' component={Teas} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -50,9 +53,10 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    loadInitialData() {
+    loadInitialData () {
       dispatch(me())
-    }
+    },
+    loadTeas: () => dispatch(fetchTeas())
   }
 }
 
