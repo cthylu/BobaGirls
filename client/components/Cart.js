@@ -20,7 +20,12 @@ class Cart extends React.Component {
  }
  render() {
     const { cart } = this.state
-    console.log(cart.lineitems)
+    if (!cart.lineitems[0]) {
+        console.log("No teas!");
+    }
+    else {
+        console.log(cart.lineitems[0].cost, "cost");
+    }
     return (
        <div>
           {
