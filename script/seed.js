@@ -31,13 +31,15 @@ async function seed() {
 
   // Creating Orders
   const orders = await Promise.all([
-    Order.create({ totalCost: 2, userId: '1' }),
-    Order.create({ totalCost: 5, userId: '2' })
+    Order.create({ totalCost: 2, userId: '1', isCart: true }),
+    Order.create({ totalCost: 5, userId: '2', isCart: false })
   ])
 
   // Creating LineItems
   const lineitems = await Promise.all([
-    LineItem.create({ quantity: 1, cost: 3, teaId: '1', orderId: '1' })
+    LineItem.create({ quantity: 1, cost: 3, teaId: '1', orderId: '1' }),
+    LineItem.create({ quantity: 3, cost: 6, teaId: '3', orderId: '2' }),
+    LineItem.create({ quantity: 2, cost: 3, teaId: '1', orderId: '1' })
   ])
 
 

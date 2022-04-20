@@ -6,6 +6,7 @@ import Home from './components/Home';
 import {me} from './store'
 import Teas from './components/Teas';
 import { fetchTeas } from './store/teas';
+import Cart from './components/Cart';
 
 /**
  * COMPONENT
@@ -25,6 +26,7 @@ class Routes extends Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path='/teas' component={Teas} />
+            <Route path='/cart' component={Cart} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -33,6 +35,7 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path='/teas' component={Teas} />
+            <Route path='/cart' component={Cart} />
           </Switch>
         )}
       </div>
