@@ -24,6 +24,7 @@ class Cart extends Component {
 
       // let test = (await axios.get('/api/cart', { headers: { authorization: token }})).data
       // this.setState({cart: test})
+      // console.log(test, 'componentdidmount test')
       this.props.fetchCart()
     }
     catch(ex) {
@@ -38,18 +39,18 @@ class Cart extends Component {
     // else {
         // console.log(cart, "cost");
     // }
-    console.log(cart, 'inside render')
+    // console.log(cart, 'render')
     return (
        <div>
           {
-            cart.map(item => {
+            cart.filter(item => item.isCart).map(item => {
               return (
                 <li key={item.id}>
                   {item.lineitems.map(line => line.tea.teaname)}
                 </li>
               )
             })
-          } 
+          }  
        </div>
     )
  }

@@ -4,17 +4,21 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
     try {
-       const user = await User.findByToken(req.headers.authorization)
+        const user = await User.findByToken(req.headers.authorization)
        const cart = await Order.findAll({
+           where: { userId: user.id },
            include: [{model: LineItem, include: {model: Tea}}]
        })
-       res.send(cart)
-    //    res.send(await Order.findOne({
+        
+    //    const currentCart = await Order.findOne({
     //       where: { userId: user.id, isCart: true },
-    //       include: [{ model: LineItem }]
-    //    }))
+    //       include: [{ model: LineItem, include: { model: Tea } }]
+    //    })
+       console.log(cart, 'api route')
+       res.send(cart)
     } catch (ex) {
        next(ex)
+       console.log(ex)
     }
 })
 
