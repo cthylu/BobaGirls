@@ -7,6 +7,7 @@ import {me} from './store'
 import Teas from './components/Teas';
 import { fetchTeas } from './store/teas';
 import Cart from './components/Cart';
+import { fetchCart } from './store/cart'
 
 /**
  * COMPONENT
@@ -15,6 +16,7 @@ class Routes extends Component {
   componentDidMount () {
     this.props.loadInitialData();
     this.props.loadTeas();
+    this.props.loadCart();
   }
 
   render() {
@@ -59,7 +61,8 @@ const mapDispatch = dispatch => {
     loadInitialData () {
       dispatch(me())
     },
-    loadTeas: () => dispatch(fetchTeas())
+    loadTeas: () => dispatch(fetchTeas()),
+    loadCart: () => dispatch(fetchCart())
   }
 }
 

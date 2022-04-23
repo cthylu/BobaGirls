@@ -35,6 +35,9 @@ async function seed() {
     Order.create({ totalCost: 5, userId: '2', isCart: false })
   ])
 
+  console.log(`seeded ${orders.length} orders`)
+  console.log(`seeded orders successfully`)
+
   // Creating LineItems
   const lineitems = await Promise.all([
     LineItem.create({ quantity: 1, cost: 3, teaId: '1', orderId: '1' }),
