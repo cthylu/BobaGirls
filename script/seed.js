@@ -21,9 +21,9 @@ async function seed() {
 
   //Creating Teas
   const teas = await Promise.all([
-    Tea.create({ teaname: 'Green Tea' }),
-    Tea.create({ teaname: 'Jasmine Tea' }),
-    Tea.create({ teaname: 'Oolong Tea' })
+    Tea.create({ teaname: 'Green Tea', price: 7 }),
+    Tea.create({ teaname: 'Jasmine Tea', price: 5 }),
+    Tea.create({ teaname: 'Oolong Tea', price: 6 })
   ])
 
   console.log(`seeded ${teas.length} teas`)
