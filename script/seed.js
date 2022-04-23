@@ -32,7 +32,7 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     Order.create({ totalCost: 2, userId: '1', isCart: true }),
-    Order.create({ totalCost: 5, userId: '2', isCart: false })
+    Order.create({ totalCost: 5, userId: '2', isCart: true })
   ])
 
   // Creating LineItems
