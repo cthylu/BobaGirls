@@ -3,12 +3,16 @@ import { connect } from 'react-redux';
 
 const Teas = ({ teas }) => {
   return (
-     <ul>
+     <ul className='teaproducts'>
         {
           teas.map(tea => {
             return (
-               <li key={tea.id}>
+               <li className='teadiv' key={tea.id}>
                  { tea.teaname }
+                 <div className='teaprice'>
+                  ${tea.price}
+                  </div>
+              <button className='addtocart'>Add To Cart</button>
                </li>
             )
           })

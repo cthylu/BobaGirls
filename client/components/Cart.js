@@ -10,6 +10,7 @@ class Cart extends React.Component {
       cart: []
     }
   }
+  
  async componentDidMount () {
      const token = window.localStorage.getItem('token')
      const cart = (await axios.get('/api/cart', { headers: {
@@ -20,12 +21,12 @@ class Cart extends React.Component {
  }
  render() {
     const { cart } = this.state
-    if (!cart.lineitems[0]) {
-        console.log("No teas!");
-    }
-    else {
-        console.log(cart.lineitems[0].cost, "cost");
-    }
+    // if (!cart.lineitems[0]) {
+    //     console.log("No teas!");
+    // }
+    // else {
+        console.log(cart.lineitems, "cost");
+    // }
     return (
        <div>
           {
@@ -36,8 +37,5 @@ class Cart extends React.Component {
  }
 }
 
-// mapStatetoProps = (state, { match }) => {
-//     const = ()
-// }
 
 export default connect(state => state)(Cart)
