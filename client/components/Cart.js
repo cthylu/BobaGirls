@@ -43,7 +43,7 @@ class Cart extends Component {
     return (
        <div>
           {
-            cart.filter(item => item.isCart).map(item => {
+            cart.map(item => {
               return (
                 <li key={item.id}>
                   {item.lineitems.map(line => line.tea.teaname)}
