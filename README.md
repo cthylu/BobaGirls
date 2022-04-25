@@ -1,6 +1,15 @@
 Our excalidraw!
 https://excalidraw.com/#room=f98f760bcc7f90309c0f,nC6MKpNGTF0p4tqsegaziQ
 
+```
+Get rid of our own changes, so we can pull from the main:
+git reset --hard origin/main
+git pull origin main
+
+Fetching our main:
+git fetch
+git pull main
+```
 # FS-App-Template
 
 ## Setup!

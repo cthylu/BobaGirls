@@ -8,6 +8,7 @@ const Teas = ({ teas }) => {
           teas.map(tea => {
             return (
                <li className='teadiv' key={tea.id}>
+                 <img src={tea.imageUrl} />
                  { tea.teaname }
                  <div className='teaprice'>
                   ${tea.price}

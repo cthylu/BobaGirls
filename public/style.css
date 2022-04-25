@@ -40,16 +40,15 @@ form div {
   display: flex;
   text-decoration: none;
   justify-content: space-around;
-
   list-style: none;
-
+  
 }
 
 .teadiv {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
 }
 
 .shopname {
@@ -61,4 +60,9 @@ form div {
 .teaprice {
   text-align: center;
   padding: 3px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
 }
