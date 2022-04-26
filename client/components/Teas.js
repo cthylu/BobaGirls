@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Teas = ({ teas }) => {
   return (
@@ -9,11 +10,15 @@ const Teas = ({ teas }) => {
             return (
                <li className='teadiv' key={tea.id}>
                  <img src={tea.imageUrl} />
-                 { tea.teaname }
+                 <Link to={`/tea/${ tea.id }`}>
+                   { tea.teaname }
+                 </Link>
+
                  <div className='teaprice'>
                   ${tea.price}
-                  </div>
-              <button className='addtocart'>Add To Cart</button>
+                 </div>
+
+                 <button id='addtocart'>Add To Cart</button>
                </li>
             )
           })
