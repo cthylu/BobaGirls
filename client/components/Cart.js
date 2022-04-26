@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios';
-import { fetchCart } from '../store/cart'
+import { fetchCart, deleteFromCart } from '../store/cart'
 
 class Cart extends Component {
   constructor(props) {
@@ -47,6 +47,7 @@ class Cart extends Component {
               return (
                 <li key={item.id}>
                   {item.lineitems.map(line => line.tea.teaname)}
+                  <button className='delete' type='delete' onClick={() => this.props.deletetea(item.id)} > Delete </button>
                 </li>
               )
             })
@@ -56,10 +57,11 @@ class Cart extends Component {
  }
 }
 
-const mapDispatch = (dispatch) => {
-  return {
-    fetchCart: () => dispatch(fetchCart())
-  }
-}
+const mapState = (state) => state;
 
-export default connect(state => state, mapDispatch)(Cart)
+const mapDispatch = (dispatch) => ({
+    fetchCart: (userId) => dispatch(fetchCart(userId)),
+    deletetea: (tea) => dispatch(deleteFromCart(tea))
+})
+
+export default connect(mapState, mapDispatch)(Cart)
