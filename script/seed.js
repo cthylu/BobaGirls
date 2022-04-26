@@ -1,6 +1,6 @@
 'use strict'
 
-const {db, models: {User, Tea, Order, LineItem } } = require('../server/db')
+const { db, models: { User, Tea, Order, LineItem } } = require('../server/db')
 
 /**
  * seed - this function clears the database, updates tables to
@@ -26,13 +26,13 @@ async function seed() {
 
   //Creating Teas
   const teas = await Promise.all([
-    Tea.create({ teaname: 'Green Tea', price: 7.00, servings: 2, imageUrl: 'https://cdn.shopify.com/s/files/1/0376/6442/4071/products/Jasminecopycopy_1080x_568d6bac-fad6-46a8-a998-3fcbb56a58d5_1080x.jpg?v=1597931484' }),
-    Tea.create({ teaname: 'Jasmine Tea', price: 5.50, servings: 2, imageUrl: 'https://cdn.shopify.com/s/files/1/0376/6442/4071/products/Jasminecopycopy_1080x_568d6bac-fad6-46a8-a998-3fcbb56a58d5_1080x.jpg?v=1597931484' }),
-    Tea.create({ teaname: 'Oolong Tea', price: 6.00, servings: 1, imageUrl: 'https://cdn.shopify.com/s/files/1/0376/6442/4071/products/roastedoolongcopycopy_1080x_f07824e4-28af-4155-8ca9-e2597a7e27a0_1080x.jpg?v=1597931239' }),
-    Tea.create({ teaname: 'Lavender Tea', price: 7.00, servings: 1, imageUrl: 'https://www.teasenz.com/media/catalog/product/cache/9e3b5f40fd15c0ce40198e6feb89fe1a/l/a/lavender_tea_3.jpg' }),
-    Tea.create({ teaname: 'Chamomile Tea', price: 5.00, servings: 2, imageUrl: 'https://i.ebayimg.com/images/g/4asAAOSwBOtY9LtK/s-l300.jpg' }),
-    Tea.create({ teaname: 'Chrysanthemum Tea', price: 6.00, servings: 2, imageUrl: 'https://i.etsystatic.com/9720409/r/il/a1d102/1957718800/il_1588xN.1957718800_fm02.jpg' }),
-    Tea.create({ teaname: 'Rose Tea', price: 6.00, servings: 2, imageUrl: 'https://cdn.shopify.com/s/files/1/1093/4358/products/image_c6062786-2c18-41d5-8016-c3fbf936dc67_2000x.jpg?v=1611689073' })
+    Tea.create({ teaname: 'Green Tea', price: 7.00, servings: 2, quantity: 15, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://cdn.shopify.com/s/files/1/0376/6442/4071/products/Jasminecopycopy_1080x_568d6bac-fad6-46a8-a998-3fcbb56a58d5_1080x.jpg?v=1597931484' }),
+    Tea.create({ teaname: 'Jasmine Tea', price: 5.50, servings: 2, quantity: 15, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://cdn.shopify.com/s/files/1/0376/6442/4071/products/Jasminecopycopy_1080x_568d6bac-fad6-46a8-a998-3fcbb56a58d5_1080x.jpg?v=1597931484' }),
+    Tea.create({ teaname: 'Oolong Tea', price: 6.00, servings: 1, quantity: 14, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://cdn.shopify.com/s/files/1/0376/6442/4071/products/roastedoolongcopycopy_1080x_f07824e4-28af-4155-8ca9-e2597a7e27a0_1080x.jpg?v=1597931239' }),
+    Tea.create({ teaname: 'Lavender Tea', price: 7.00, servings: 1, quantity: 14, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://www.teasenz.com/media/catalog/product/cache/9e3b5f40fd15c0ce40198e6feb89fe1a/l/a/lavender_tea_3.jpg' }),
+    Tea.create({ teaname: 'Chamomile Tea', price: 5.00, servings: 2, quantity: 13, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://i.ebayimg.com/images/g/4asAAOSwBOtY9LtK/s-l300.jpg' }),
+    Tea.create({ teaname: 'Chrysanthemum Tea', price: 6.00, servings: 2, quantity: 14, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://i.etsystatic.com/9720409/r/il/a1d102/1957718800/il_1588xN.1957718800_fm02.jpg' }),
+    Tea.create({ teaname: 'Rose Tea', price: 6.00, servings: 2, quantity: 14, description: 'Has amazing benefits and gives you calm energy throughout the day!', imageUrl: 'https://cdn.shopify.com/s/files/1/1093/4358/products/image_c6062786-2c18-41d5-8016-c3fbf936dc67_2000x.jpg?v=1611689073' })
   ])
 
   console.log(`seeded ${teas.length} teas`)
@@ -65,9 +65,6 @@ async function seed() {
     lineitems
   }
 }
-
-
-
 
 /*
  We've separated the `seed` function from the `runSeed` function.
