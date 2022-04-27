@@ -77,7 +77,6 @@ label {
 
 .addtocart {
   margin: 2px
-  
 }
 
 .content {
@@ -121,4 +120,18 @@ label {
 .teaprice {
   text-align: center;
   padding: 3px;
+}
+
+.teadiv > img {
+  height: 100px;
+  width: 100px;
+}
+
+.teainfo {
+  display: flex;
+}
+
+.teainfo > img {
+  height: 300px;
+  width: 300px;
 }

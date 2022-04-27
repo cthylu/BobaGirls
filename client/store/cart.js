@@ -35,7 +35,7 @@ export const fetchCart = () => {
             authorization: token
           }
         })
-        console.log(data, 'fetchCart data')
+        // console.log(data, 'fetchCart data')
         dispatch(_fetchCart(data))
       }
     } catch (ex) {

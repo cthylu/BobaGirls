@@ -1,13 +1,14 @@
-import React, {Component, Fragment} from 'react'
+import React, { Component, Fragment } from 'react'
 import {connect} from 'react-redux'
-import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import {me} from './store'
+import { me } from './store'
 import Teas from './components/Teas';
 import { fetchTeas } from './store/teas';
 import Cart from './components/Cart';
-import { fetchCart } from './store/cart'
+import { fetchCart } from './store/cart';
+import Tea from './components/Tea';
 
 /**
  * COMPONENT
@@ -28,6 +29,7 @@ class Routes extends Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path='/teas' component={Teas} />
+            <Route path='/tea/:id' component={Tea} />
             <Route path='/cart' component={Cart} />
             <Redirect to="/home" />
           </Switch>
@@ -37,6 +39,7 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path='/teas' component={Teas} />
+            <Route path='/tea/:id' component={Tea} />
             <Route path='/cart' component={Cart} />
           </Switch>
         )}
