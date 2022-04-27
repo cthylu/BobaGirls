@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Teas = ({ teas }) => {
   return (
-     <ul className='teaproducts'>
+    <div className='content'>
+      <ul className='teaproducts'>
         {
           teas.map(tea => {
             return (
@@ -24,6 +25,7 @@ const Teas = ({ teas }) => {
           })
         }
      </ul>
+    </div>
   )
 }
 
