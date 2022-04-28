@@ -2,21 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Teas = ({ teas }) => {
+
+const Products = ({ products }) => {
   return (
     <div className='content'>
       <ul className='teaproducts'>
         {
-          teas.map(tea => {
+          products.map(product => {
             return (
-               <li className='teadiv' key={tea.id}>
-                 <img src={tea.imageUrl} />
-                 <Link to={`/tea/${ tea.id }`}>
-                   { tea.teaname }
+               <li className='teadiv' key={product.id}>
+                 <img src={product.imageUrl} />
+                 <Link to={`/products/${product.id}`}>
+                   { product.name }
                  </Link>
 
                  <div className='teaprice'>
-                  ${tea.price}
+                  ${product.price}
                  </div>
 
                  <button id='addtocart'>Add To Cart</button>
@@ -29,13 +30,13 @@ const Teas = ({ teas }) => {
   )
 }
 
-const mapState = ({ teas }) => {
+const mapState = ({ products }) => {
   return {
-    teas
+    products
   }
 }
 
-export default connect(mapState)(Teas);
+export default connect(mapState)(Products);
 
 // class Teas extends Component {
 //     constructor(props) {

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
 
-const Navbar = ({handleClick, isLoggedIn, teas}) => (
+const Navbar = ({handleClick, isLoggedIn, products}) => (
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
@@ -12,7 +12,7 @@ const Navbar = ({handleClick, isLoggedIn, teas}) => (
           {/* The navbar will show these links after you log in */}
           <div>
             <Link to="/home">Home</Link>
-            <Link to='/teas'>Teas ({teas.length})</Link>
+            <Link to='/products'>Shop ({products.length})</Link>
           </div>
           
           <img src="/images/logo-boba-girl.svg" />
@@ -29,7 +29,7 @@ const Navbar = ({handleClick, isLoggedIn, teas}) => (
           {/* The navbar will show these links before you log in */}
           <div>
             <Link to="/home">Home</Link>
-            <Link to='/teas'>Teas ({teas.length})</Link>
+            <Link to='/products'>Shop </Link>
           </div>
 
           <img src="/images/logo-boba-girl.svg" />
@@ -51,7 +51,7 @@ const Navbar = ({handleClick, isLoggedIn, teas}) => (
 const mapState = state => {
   return {
     isLoggedIn: !!state.auth.id,
-    teas: state.teas
+    products: state.products
   }
 }
 

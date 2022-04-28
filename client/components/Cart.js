@@ -42,11 +42,11 @@ class Cart extends Component {
     // console.log(cart, 'render')
     return (
        <div>
-          {
-            cart.map(item => {
+          { 
+            cart.filter(item => item.isCart).map(item => {
               return (
                 <li key={item.id}>
-                  {item.lineitems.map(line => line.tea.teaname)}
+                  {item.lineitems.map(line => line.product.id)}
                   <button className='delete' type='delete' onClick={() => this.props.deletetea(item.id)} > Delete </button>
                 </li>
               )
@@ -54,7 +54,7 @@ class Cart extends Component {
           }  
        </div>
     )
- }
+  }
 }
 
 const mapState = (state) => state;
