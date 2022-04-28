@@ -1,14 +1,13 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import { me } from './store'
-import Teas from './components/Teas';
-import { fetchTeas } from './store/teas';
+import { fetchSingleProduct, me } from './store'
+import AllProducts from './components/AllProducts';
 import Cart from './components/Cart';
 import { fetchCart } from './store/cart';
-import Tea from './components/Tea';
+import Product from './components/Product';
 
 /**
  * COMPONENT
@@ -16,7 +15,7 @@ import Tea from './components/Tea';
 class Routes extends Component {
   componentDidMount () {
     this.props.loadInitialData();
-    this.props.loadTeas();
+    // this.props.loadSingleProduct();
     this.props.loadCart();
   }
 
@@ -28,8 +27,8 @@ class Routes extends Component {
         {isLoggedIn ? (
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path='/teas' component={Teas} />
-            <Route path='/tea/:id' component={Tea} />
+            <Route path='/products' exact component={AllProducts} />
+            <Route path='/products/:id' component={Product} />
             <Route path='/cart' component={Cart} />
             <Redirect to="/home" />
           </Switch>
@@ -38,8 +37,8 @@ class Routes extends Component {
             <Route path='/' exact component={ Login } />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path='/teas' component={Teas} />
-            <Route path='/tea/:id' component={Tea} />
+            <Route path='/products' exact component={AllProducts} />
+            <Route path='/products/:id' component={Product} />
             <Route path='/cart' component={Cart} />
           </Switch>
         )}
@@ -64,8 +63,8 @@ const mapDispatch = dispatch => {
     loadInitialData () {
       dispatch(me())
     },
-    loadTeas: () => dispatch(fetchTeas()),
-    loadCart: () => dispatch(fetchCart())
+    loadCart: () => dispatch(fetchCart()),
+    // loadSingleProduct: ()=> dispatch(fetchSingleProduct())
   }
 }
 

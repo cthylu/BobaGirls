@@ -1,13 +1,13 @@
 const router = require('express').Router()
-const { models: { Order, User, LineItem, Tea } } = require('../db')
+const { models: { Order, User, LineItem, Product } } = require('../db')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
     try {
         const user = await User.findByToken(req.headers.authorization)
        const cart = await Order.findAll({
-           where: { userId: user.id, isCart: true },
-           include: [{model: LineItem, include: {model: Tea}}]
+           where: { userId: user.id },
+           include: [{ model: LineItem, include: { model: Product } }]
        })
         
     //    const currentCart = await Order.findOne({
@@ -21,6 +21,28 @@ router.get('/', async (req, res, next) => {
        console.log(ex)
     }
 })
+
+// router.delete('/', async (req, res, next) => {
+//     try {
+//         const user = await User.findByToken(req.headers.authorization)
+//         const cart = await Order.findAll({
+//             where: {userId: user.id},
+//             include: [{model: LineItem, include: {model: Tea}}]
+//         })
+//         if(cart) {
+//             const deletedProduct = await LineItem.findAll({
+//                 where: {
+//                     teaId: req.body.teaId,
+//                     orderId: cart.id 
+//                 }
+//             })
+//             await deletedProduct[0].destroy()
+//         }
+//         res.json(cart)
+//     } catch (ex) {
+//         next(ex)
+//     }
+// })
 
 // router.post('/', async (req, res, next) => {
 //     try {

@@ -4,7 +4,7 @@ const db = require('./db')
 
 const User = require('./models/User')
 
-const Tea = require('./models/Tea')
+const Product = require('./models/Product')
 
 const LineItem = require('./models/LineItem')
 
@@ -15,8 +15,8 @@ const Order = require('./models/Order')
 Order.belongsTo(User)
 User.hasMany(Order)
 
-Tea.hasMany(LineItem)
-LineItem.belongsTo(Tea)
+Product.hasMany(LineItem)
+LineItem.belongsTo(Product)
 
 LineItem.belongsTo(Order)
 Order.hasMany(LineItem)
@@ -26,7 +26,7 @@ module.exports = {
   db,
   models: {
     User,
-    Tea,
+    Product,
     LineItem,
     Order
   },

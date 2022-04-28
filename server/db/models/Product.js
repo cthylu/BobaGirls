@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Product = db.define('product', {
-  teaname: {
+  name: {
     type: Sequelize.STRING
   },
   price: {
@@ -16,9 +16,6 @@ const Product = db.define('product', {
     type: Sequelize.TEXT
   },
   quantity: {
-    type: Sequelize.INTEGER
-  },
-  servings: {
     type: Sequelize.INTEGER
   }
 })
