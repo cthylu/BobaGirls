@@ -1,42 +1,95 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchProducts } from '../store';
 
 
-const Products = ({ products }) => {
-  return (
-    <div className='content'>
-      <ul className='teaproducts'>
-        {
+export class AllProducts extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+    }
+  }
+  componentDidMount() { 
+    this.props.fetchProducts()
+  }
+  render() {
+    let { products } = this.props
+    return (
+      <div className='content'>
+       <ul className='teaproducts'>
+         {
           products.map(product => {
             return (
-               <li className='teadiv' key={product.id}>
-                 <img src={product.imageUrl} />
-                 <Link to={`/products/${product.id}`}>
-                   { product.name }
-                 </Link>
+                <li className='teadiv' key={product.id}>
+                  <img src={product.imageUrl} />
+                  <Link to={`/products/${product.id}`}>
+                    { product.name }
+                  </Link>
 
-                 <div className='teaprice'>
+                  <div className='teaprice'>
                   ${product.price}
-                 </div>
+                  </div>
 
-                 <button id='addtocart'>Add To Cart</button>
-               </li>
+                  <button id='addtocart'>Add To Cart</button>
+                </li>
             )
           })
         }
-     </ul>
+      </ul>
     </div>
-  )
-}
-
-const mapState = ({ products }) => {
-  return {
-    products
+    )
   }
 }
 
-export default connect(mapState)(Products);
+const mapState = state => {
+  return {
+    products: state.products
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    fetchProducts: () => dispatch(fetchProducts())
+  }
+}
+
+export default connect(mapState, mapDispatch)(AllProducts)
+
+// const Products = ({ products }) => {
+//   return (
+//     <div className='content'>
+//       <ul className='teaproducts'>
+//         {
+//           products.map(product => {
+//             return (
+//                <li className='teadiv' key={product.id}>
+//                  <img src={product.imageUrl} />
+//                  <Link to={`/products/${product.id}`}>
+//                    { product.name }
+//                  </Link>
+
+//                  <div className='teaprice'>
+//                   ${product.price}
+//                  </div>
+
+//                  <button id='addtocart'>Add To Cart</button>
+//                </li>
+//             )
+//           })
+//         }
+//      </ul>
+//     </div>
+//   )
+// }
+
+// const mapState = ({ products }) => {
+//   return {
+//     products
+//   }
+// }
+
+// export default connect(mapState)(Products);
 
 // class Teas extends Component {
 //     constructor(props) {
