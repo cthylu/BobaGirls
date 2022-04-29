@@ -25,12 +25,14 @@ export const fetchCart = () => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.get('/api/cart', {
+        const { data } = await axios.get('/api/orders', {
           headers: {
             authorization: token
           }
         })
-        dispatch(_fetchCart(data))
+        const cart = data.filter((order) => order.isCart === true)
+        console.log("thunk cart", cart)
+        dispatch(_fetchCart(cart))
       }
     } catch (ex) {
       console.log(ex)
@@ -59,7 +61,7 @@ export const deleteFromCart = (productId, quantity) => {
 export const addToCart = productId => {
   return async dispatch => {
     try {
-      const { data } = await axios.post('/api/cart', { productId: productId })
+      const { data } = await axios.post('/api/orders', { productId: productId })
       dispatch(_addToCart(data))
     } catch(ex) {
       console.log(ex)
