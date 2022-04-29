@@ -38,46 +38,23 @@ export const fetchCart = () => {
   }
 }
 
-// export const deleteFromCart = teaId => {
-//   return async dispatch => {
-//     try {
-//       const token = window.localStorage.getItem('token')
-//       if (token) {
-//         const { data } = await axios.get('/api/cart', {
-//           headers: {
-//             authorization: token
-//           }
-//         })
-//         const { data: _deleteFromCart} = await axios.delete(`api/cart/${teaId}`, {
-//           headers: {
-//             authorization: token
-//           }
-//         })
-//       }
-//       return dispatch(_deleteFromCart(teaId))
-//     } catch (ex) {
-//       console.log(ex)
-//     }
-//   }
-// }
-
-// export const deleteFromCart = productId => {
-//   return async dispatch => {
-//     try {
-//       const token = window.localStorage.getItem('token')
-//       if (token) {
-//         const { data } = await axios.delete('/api/cart', {
-//           headers: {
-//             authorization: token
-//           }
-//         })
-//       // await axios.delete('/api/cart', {data: {teaId: teaId }})
-//       // dispatch(_deleteFromCart(teaId))
-//     } 
-//   }
-
-
-
+export const deleteFromCart = (productId, quantity) => {
+  return async dispatch => {
+    try {
+      const token = window.localStorage.getItem('token')
+      if (token) {
+        const { data } = await axios.delete(`/api/cart/${productId}/${quantity}`, {
+          headers: {
+            authorization: token
+          }
+        })
+        dispatch(_deleteFromCart(data))
+      }
+    } catch (ex) {
+      console.log(ex)
+    }
+  }
+}
 
 export const addToCart = productId => {
   return async dispatch => {
@@ -95,7 +72,7 @@ const cart = (state = [], action) => {
     state = action.cart
   }
   if (action.type === DELETE_FROM_CART) {
-    state = state.filter(tea => tea.id !== action.teaId)
+    state = state.filter(product => product.id !== action.cart)
   }
   if (action.type === ADD_TO_CART) {
     state = [...state, action.cart]

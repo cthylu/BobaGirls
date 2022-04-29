@@ -29,7 +29,7 @@ const Navbar = ({handleClick, isLoggedIn, products}) => (
           {/* The navbar will show these links before you log in */}
           <div>
             <Link to="/home">Home</Link>
-            <Link to='/products'>Shop </Link>
+            <Link to="/products">Products ({products.length})</Link>
           </div>
 
           <img src="/images/logo-boba-girl.svg" />

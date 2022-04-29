@@ -9,50 +9,42 @@ class Cart extends Component {
     this.state = {
       cart: []
     }
+    //this.deleteCartItem = this.bind(this.delete)
   }
   
- async componentDidMount () {
-    //  const token = window.localStorage.getItem('token')
-    //  const cart = (await axios.get('/api/cart', { headers: {
-    //     authorization: token
-    //   }})).data  
-    //  this.setState({cart})
-    try {
-      // const cart = this.props.fetchCart()
-      // console.log(cart, 'fetchCart props')
-      // this.setState( cart )
-
-      // let test = (await axios.get('/api/cart', { headers: { authorization: token }})).data
-      // this.setState({cart: test})
-      // console.log(test, 'componentdidmount test')
-      this.props.fetchCart()
-    }
-    catch(ex) {
-      console.log(ex)
-    }
+  async componentDidMount () {
+    this.props.fetchCart()
   }
- render() {
+
+  deleteCartItem () {
+    console.log("Cart!!!!");
+  }
+
+  render() {
     const { cart } = this.props
-    // if (!cart.lineitems[0]) {
-    //     console.log("No teas!");
-    // }
-    // else {
-        // console.log(cart, "cost");
-    // }
-    // console.log(cart, 'render')
+    console.log('cart', cart);
     return (
-       <div>
-          { 
-            cart.filter(item => item.isCart).map(item => {
+      <div>
+          {
+            cart.map(item => {
+              console.log('order', item);
               return (
-                <li key={item.id}>
-                  {item.lineitems.map(line => line.product.id)}
-                  <button className='delete' type='delete' onClick={() => this.props.deletetea(item.id)} > Delete </button>
-                </li>
+                  <div key={item.id}>
+                    <ul>{
+                      item.lineitems.map(line => {
+                        return (
+                          <li>{line.product.name}({line.quantity})
+                            <button className='delete' type='delete' onClick={() => this.props.deleteProduct(line.id, line.quantity)} > Delete </button>
+                          </li>
+                        )
+                      })
+                    }
+                    </ul>
+                  </div>
               )
             })
           }  
-       </div>
+      </div>
     )
   }
 }
@@ -61,7 +53,7 @@ const mapState = (state) => state;
 
 const mapDispatch = (dispatch) => ({
     fetchCart: (userId) => dispatch(fetchCart(userId)),
-    deletetea: (tea) => dispatch(deleteFromCart(tea))
+    deleteProduct: (tea, quantity) => dispatch(deleteFromCart(tea, quantity))
 })
 
 export default connect(mapState, mapDispatch)(Cart)
