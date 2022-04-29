@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchSingleProduct } from '../store';
+import { addToCart, fetchSingleProduct } from '../store';
 
 export class SingleProduct extends React.Component {
   constructor (props) {
@@ -10,7 +10,7 @@ export class SingleProduct extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchSingleProduct(this.props.match.params.id)
+    this.props.fetchSingleProduct(this.props.match.params.id);
   }
 
   render () {
@@ -25,9 +25,9 @@ export class SingleProduct extends React.Component {
                     <p>
                         { product.description }
                     </p>
-                    <h5>Quantity: { product.quantity } in stock</h5>
+                    {/* <h5>Quantity: { product.quantity } in stock</h5> */}
 
-                    <button className='addtocart'>Add To Cart</button>
+                    <button className='addtocart' onClick={() => addToCart(productId, history)}>Add To Cart</button>
                 </div>
             </div>
         }
@@ -42,9 +42,9 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch, {history}) => {
   return {
-    fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId))
+    fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
   }
 }
 

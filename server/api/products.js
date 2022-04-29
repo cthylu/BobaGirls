@@ -19,6 +19,7 @@ router.get('/:id', async (req, res, next) => {
     next(ex)
   }
 })
+
 const token = async (req, res, next) => {
   try {
     const token = req.headers.authorization;
@@ -42,4 +43,17 @@ try {
 } catch (e) {
   next(e);
 }
+});
+
+router.post('/cart', token, async (req, res, next) => {
+try {
+  const product = await Product.findByPk(req.params.productId);
+  res.status(201).send(await Product.create(req.body));
+  } 
+  // else {
+  //   res.sendStatus(404);
+  // }
+ catch (e) {
+  next(e);
+ }
 });
