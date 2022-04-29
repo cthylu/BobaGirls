@@ -27,13 +27,12 @@ class Cart extends Component {
       <div>
           {
             cart.map(item => {
-              console.log('order', item);
               return (
                   <div key={item.id}>
                     <ul>{
                       item.lineitems.map(line => {
                         return (
-                          <li>{line.product.name}({line.quantity})
+                          <li key={line.id}>{line.product.name}({line.quantity})
                             <button className='delete' type='delete' onClick={() => this.props.deleteProduct(line.id, line.quantity)}> Delete </button>
                           </li>
                         )
@@ -53,7 +52,7 @@ const mapState = (state) => state;
 
 const mapDispatch = (dispatch) => ({
     fetchCart: (userId) => dispatch(fetchCart(userId)),
-    deleteProduct: (productId, quantity) => dispatch(deleteFromCart(productId, quantity))
+    deleteProduct: (lineitemId, quantity) => dispatch(deleteFromCart(lineitemId, quantity))
 })
 
 export default connect(mapState, mapDispatch)(Cart)
