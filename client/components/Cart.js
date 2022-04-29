@@ -25,6 +25,7 @@ class Cart extends Component {
     console.log('cart', cart);
     return (
       <div>
+        <h2>Cart:</h2>
           {
             cart.map(item => {
               return (

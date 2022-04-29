@@ -45,7 +45,7 @@ router.delete('/:lineitemId/:quantity', isLoggedIn, async (req, res, next) => {
     try {
       console.log("delete route!");
       const lineItem = await LineItem.findByPk(req.params.lineitemId);
-      await (lineItem).destroy();
+      await lineItem.destroy();
       res.send(lineItem);
       //res.json(await req.user.deleteFromCart(req.params.productId, req.params.quantity));
     } catch (ex) {
