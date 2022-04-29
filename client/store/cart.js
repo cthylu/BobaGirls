@@ -4,33 +4,34 @@ const FETCH_CART = 'FETCH_CART'
 const DELETE_FROM_CART = 'DELETE_FROM_CART'
 const ADD_TO_CART = 'ADD_TO_CART'
 
-const _fetchCart = cart => {
-  return {
-    type: FETCH_CART,
-    cart
-  }
-}
+const _fetchCart = cart => ({
+  type: FETCH_CART,
+  cart
+})
 
-const _deleteFromCart = productId => ({ type: DELETE_FROM_CART, productId })
+const _deleteFromCart = lineitem => ({ 
+  type: DELETE_FROM_CART, 
+  lineitem 
+})
 
-const _addToCart = cart => {
-  return {
-    type: ADD_TO_CART,
-    cart
-  }
-}
+const _addToCart = cart => ({
+  type: ADD_TO_CART,
+  cart
+})
 
 export const fetchCart = () => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.get('/api/cart', {
+        const { data } = await axios.get('/api/orders', {   // Cart is an array of orders where isCart is true, which should be only 1
           headers: {
             authorization: token
           }
         })
-        dispatch(_fetchCart(data))
+        const cart = data.filter((order) => order.isCart === true)
+        //console.log("thunk cart", cart)
+        dispatch(_fetchCart(cart))
       }
     } catch (ex) {
       console.log(ex)
@@ -38,16 +39,13 @@ export const fetchCart = () => {
   }
 }
 
-export const deleteFromCart = (productId, quantity) => {
+export const deleteFromCart = (lineitemId, quantity) => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.delete(`/api/cart/${productId}/${quantity}`, {
-          headers: {
-            authorization: token
-          }
-        })
+        const { data } = await axios.delete(`/api/cart/${lineitemId}/${quantity}`, 
+        { headers: { authorization: token } })
         dispatch(_deleteFromCart(data))
       }
     } catch (ex) {
@@ -59,7 +57,7 @@ export const deleteFromCart = (productId, quantity) => {
 export const addToCart = productId => {
   return async dispatch => {
     try {
-      const { data } = await axios.post('/api/cart', { productId: productId })
+      const { data } = await axios.post('/api/orders', { productId: productId })
       dispatch(_addToCart(data))
     } catch(ex) {
       console.log(ex)
@@ -72,7 +70,9 @@ const cart = (state = [], action) => {
     state = action.cart
   }
   if (action.type === DELETE_FROM_CART) {
-    state = state.filter(product => product.id !== action.cart)
+    console.log("Action", action)
+    state[0].lineitems = state[0].lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
+    console.log("New State", state[0])
   }
   if (action.type === ADD_TO_CART) {
     state = [...state, action.cart]
