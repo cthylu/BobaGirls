@@ -11,7 +11,7 @@ const _fetchCart = cart => {
   }
 }
 
-const _deleteFromCart = teaId => ({ type: DELETE_FROM_CART, teaId})
+const _deleteFromCart = productId => ({ type: DELETE_FROM_CART, productId})
 
 const _addToCart = cart => {
   return {
@@ -39,23 +39,18 @@ export const fetchCart = () => {
   }
 }
 
-export const deleteFromCart = teaId => {
+export const deleteFromCart = (productId, quantity) => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.get('/api/cart', {
+        const { data } = await axios.delete(`/api/cart/${productId}/${quantity}`, {
           headers: {
             authorization: token
           }
         })
-        const {date: _deleteFromCart} = await axios.delete(`api/teas/${teaId}`, {
-          headers: {
-            authorization: token
-          }
-        })
+        dispatch(_deleteFromCart(data))
       }
-      return dispatch(_deleteFromCart(teaId))
     } catch (ex) {
       console.log(ex)
     }
@@ -78,7 +73,7 @@ const cart = (state = [], action) => {
     state = action.cart
   }
   if (action.type === DELETE_FROM_CART) {
-    state = state.filter(tea => tea.id !== action.tea)
+    state = state.filter(product => product.id !== action.cart)
   }
   if (action.type === ADD_TO_CART) {
     state = [...state, action.cart]

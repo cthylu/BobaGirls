@@ -4,6 +4,8 @@ const db = require('./db')
 
 const User = require('./models/User')
 
+const Product = require('./models/Product')
+
 const Tea = require('./models/Tea')
 
 const LineItem = require('./models/LineItem')
@@ -26,6 +28,7 @@ module.exports = {
   db,
   models: {
     User,
+    Product,
     Tea,
     LineItem,
     Order

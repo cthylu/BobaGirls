@@ -3,6 +3,7 @@ const db = require('../db')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 const axios = require('axios');
+const LineItem = require('./LineItem');
 
 const SALT_ROUNDS = 5;
 
@@ -34,6 +35,12 @@ User.prototype.generateToken = function() {
 /**
  * classMethods
  */
+User.prototype.deleteFromCart = async function(productId, quantity) {
+  console.log(productId, quantity);
+  const product = await LineItem.findByPk(productId);
+  console.log("product", product);
+}
+
 User.authenticate = async function({ username, password }){
     const user = await this.findOne({where: { username }})
     if (!user || !(await user.correctPassword(password))) {
