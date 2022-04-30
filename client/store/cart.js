@@ -5,22 +5,21 @@ const FETCH_CART = 'FETCH_CART'
 const DELETE_FROM_CART = 'DELETE_FROM_CART'
 const ADD_TO_CART = 'ADD_TO_CART'
 
-const _fetchCart = cart => {
-  return {
-    type: FETCH_CART,
-    cart
-  }
-}
+const _fetchCart = cart => ({
+  type: FETCH_CART,
+  cart
+})
 
-const _deleteFromCart = productId => ({ type: DELETE_FROM_CART, productId })
-const _addToCart = productId =>({ type: ADD_TO_CART, productId})
+const _deleteFromCart = lineitem => ({ 
+  type: DELETE_FROM_CART, 
+  lineitem 
+})
 
-// const _addToCart = cart => {
-//   return {
-//     type: ADD_TO_CART,
-//     cart
-//   }
-// }
+const _addToCart = cart => ({
+  type: ADD_TO_CART,
+  cart
+})
+
 
 export const fetchCart = () => {
   return async dispatch => {
@@ -40,18 +39,14 @@ export const fetchCart = () => {
   }
 }
 
-export const deleteFromCart = (productId, quantity, history) => {
+export const deleteFromCart = (lineitemId, quantity) => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.delete(`/api/cart/${productId}/${quantity}`, {
-          headers: {
-            authorization: token
-          }
-        })
+        const { data } = await axios.delete(`/api/cart/${lineitemId}/${quantity}`, 
+        { headers: { authorization: token } })
         dispatch(_deleteFromCart(data))
-        history.push('/products')
       }
     } catch (ex) {
       console.log(ex)
@@ -64,11 +59,9 @@ export const addToCart = product => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.post('/api/cart', product, {
-          headers: {
-            authorization: token
-          }
-        })
+        const { data } = await axios.post('/api/cart', product, 
+          { headers: { authorization: token } }
+        )
         dispatch(_addToCart(data))
       }
     } catch(ex) {
