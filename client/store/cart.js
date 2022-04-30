@@ -51,7 +51,7 @@ export const deleteFromCart = (productId, quantity, history) => {
           }
         })
         dispatch(_deleteFromCart(data))
-        history.push('/cart')
+        history.push('/products')
       }
     } catch (ex) {
       console.log(ex)
