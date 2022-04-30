@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart} from '../store/cart'
+import { addToCart } from '../store/cart'
 
 const Products = ({ products, addProduct }) => {
   return (
@@ -85,11 +85,12 @@ const mapState = ({ products }) => {
   }
 }
 
-const mapDispatch = (dispatch, {history}) => ({
-      addProduct: (productId) => dispatch(addToCart(productId, history))
-    })
-
-
-
+const mapDispatch = dispatch => {
+  return {
+    addProductToCart: (product) => {
+      return dispatch(addToCart(product))
+    }
+  }
+}
 
 export default connect(mapState, mapDispatch)(Products);

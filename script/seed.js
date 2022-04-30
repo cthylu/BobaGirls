@@ -100,6 +100,7 @@ async function seed() {
     //   description: `` }),
   ])
 
+
   console.log(`seeded ${products.length} products`)
   console.log(`seeded products successfully`)
 
@@ -116,6 +117,12 @@ async function seed() {
   // Creating LineItems
   const lineitems = await Promise.all([
     LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[4].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
