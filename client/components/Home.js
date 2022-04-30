@@ -14,12 +14,13 @@ export const Home = (props) => {
     window.socket.send(JSON.stringify(message));
     console.log(message);
   };
+  
   return (
     <div>
       <div className="content">
         <h3>Welcome, {username}</h3>
       </div>
-      <ul>
+      {/* <ul>
         {users.map((user) => {
           return (
             <li key={user.id} onClick={() => sendPing()}>
@@ -27,7 +28,7 @@ export const Home = (props) => {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
       <div className="hero">
         <div className="content">
           <div>
