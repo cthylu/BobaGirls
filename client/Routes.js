@@ -7,6 +7,7 @@ import { me, fetchTeas, fetchCart, fetchProducts } from './store'
 import Cart from './components/Cart';
 import Products from './components/Products';
 import Product from'./components/Product';
+import About from './components/About';
 
 /**
  * COMPONENT
@@ -38,6 +39,7 @@ class Routes extends Component {
             <Route path='/products' component={Products} />
             <Route path='/product/:id' component={Product} />
             <Route path='/cart' component={Cart} />
+            <Route path='/about' exact component={About} />
           </Switch>
         )}
       </main>

@@ -16,9 +16,10 @@ const Navbar = ({handleClick, isLoggedIn, products}) => (
           </div>
           
           <img src="/images/logo-boba-girl.svg" />
-
           <div>
-            <Link to='/cart'>Cart</Link>
+            <Link to='/cart'>
+              Cart
+              </Link>
             <a href="#" onClick={handleClick}>
               Logout
             </a>
@@ -30,6 +31,7 @@ const Navbar = ({handleClick, isLoggedIn, products}) => (
           <div>
             <Link to="/home">Home</Link>
             <Link to="/products">Products ({products.length})</Link>
+            <Link to="/about"> About</Link>
           </div>
 
           <img src="/images/logo-boba-girl.svg" />
