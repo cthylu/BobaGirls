@@ -21,7 +21,7 @@ export class SingleProduct extends React.Component {
             <div className='teainfo'>
                 <img src={product.imageUrl} />
                 <div>
-                    <h2>{ product.teaname }</h2>
+                    <h2>{ product.name }</h2>
                     <p>
                         { product.description }
                     </p>

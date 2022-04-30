@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import { me, fetchTeas, fetchCart, fetchProducts } from './store'
+import { me, fetchCart, fetchProducts } from './store'
 import Cart from './components/Cart';
 import Products from './components/Products';
 import Product from'./components/Product';
@@ -56,7 +56,6 @@ const mapState = state => {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
-    teas: state.teas,
     products: state.productsReducer
   }
 }
