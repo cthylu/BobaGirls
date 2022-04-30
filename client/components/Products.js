@@ -5,7 +5,6 @@ import { addToCart} from '../store/cart'
 
 
 const Products = ({ products, addProduct }) => {
-  //console.log('products', products);
   return (
     <div className='content'>
       <h2>Products</h2>
@@ -19,8 +18,6 @@ const Products = ({ products, addProduct }) => {
                   <img src={product.imageUrl} />
 
                   <Link to={`/products/${ product.id }`}>
-//                    <Link to={`/product/${ product.id }`}>
-      
                   { product.name }
                   </Link>
                   <div className='teaprice'>
