@@ -1,55 +1,51 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { addToCart, fetchSingleProduct } from '../store';
+import React from "react";
+import { connect } from "react-redux";
+import { addToCart, fetchSingleProduct } from "../store";
 
 export class SingleProduct extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.fetchSingleProduct(this.props.match.params.id);
   }
 
-  render () {
-    const { product } = this.props
+  render() {
+    const { product } = this.props;
     return (
-        <div>
-           {
-            <div className='teainfo'>
-                <img src={product.imageUrl} />
-                <div>
-                    <h2>{ product.name }</h2>
-                    <p>
-                        { product.description }
-                    </p>
-                    {/* <h5>Quantity: { product.quantity } in stock</h5> */}
-
-                    <button className='addtocart' onClick={() => addToCart(productId, history)}>Add To Cart</button>
-                </div>
+      <div>
+        {
+          <div className="teainfo">
+            <img src={product.imageUrl} />
+            <div>
+              <h2>{product.name}</h2>
+              <p>{product.description}</p>
+              {/* <h5>Quantity: { product.quantity } in stock</h5> */}
+              <button className="addtocart" nClick={() => addToCart(productId, history)}> Add To Cart </button>
             </div>
+          </div>
         }
-     </div>
-    )
+      </div>
+    );
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
-    product: state.singleProduct
-  }
-}
+    product: state.singleProduct,
+  };
+};
 
-const mapDispatch = (dispatch, {history}) => {
+const mapDispatch = (dispatch, { history }) => {
   return {
-    fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
-  }
-}
+    fetchSingleProduct: (productId) =>
+      dispatch(fetchSingleProduct(productId, history)),
+  };
+};
 
-export default connect(mapState, mapDispatch)(SingleProduct)
-
+export default connect(mapState, mapDispatch)(SingleProduct);
 
 // const Product = ({ product }) => {
 //   return (

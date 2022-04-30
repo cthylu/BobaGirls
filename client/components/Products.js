@@ -11,7 +11,7 @@ const Products = ({ products, addProduct }) => {
       <h2>Products</h2>
       {
         products ? (
-        <ul className='teaproducts'>
+        <ul className='teaproducts' >
           {
             products.map(product => {
               return (
@@ -24,7 +24,7 @@ const Products = ({ products, addProduct }) => {
                     ${product.price}
                   </div>
 
-                  <button id='addtocart' type='add' onClick={() => addProduct((Math.random()*10))}>Add To Cart</button>
+                  <button id='addtocart' type='add' onClick={() => addProduct(console.log('works'))}>Add To Cart</button>
                 </li>
               )
             })
