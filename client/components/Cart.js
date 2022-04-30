@@ -1,43 +1,58 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios';
+import { fetchCart, deleteFromCart } from '../store/cart'
 
-class Cart extends React.Component {
+class Cart extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cart: []
-    }
+    // this.state = {
+    //   cart: []
+    // }
+    this.deleteCartItem = this.deleteCartItem.bind(this);
   }
- async componentDidMount () {
-     const token = window.localStorage.getItem('token')
-     const cart = (await axios.get('/api/cart', { headers: {
-        authorization: token
-      }})).data  
-     this.setState({cart})
-     
- }
- render() {
-    const { cart } = this.state
-    if (!cart.lineitems[0]) {
-        console.log("No teas!");
-    }
-    else {
-        console.log(cart.lineitems[0].cost, "cost");
-    }
+  
+  async componentDidMount () {
+    this.props.fetchCart()
+  }
+
+  deleteCartItem () {
+    console.log("Cart!!!!");
+  }
+
+  render() {
+    const { cart } = this.props
+    console.log('cart', cart);
     return (
-       <div>
+      <div>
           {
-            cart.id
-          } 
-       </div>
+            cart.map(item => {
+              return (
+                  <div key={item.id}>
+                    <ul>{
+                      item.lineitems.map(line => {
+                        return (
+                          <li key={line.id}>{line.product.name}({line.quantity})
+                            <button className='delete' type='delete' onClick={() => this.props.deleteProduct(line.id, line.quantity)}> Delete </button>
+                          </li>
+                        )
+                      })
+                    }
+                    </ul>
+                  </div>
+              )
+            })
+          }  
+      </div>
     )
- }
+  }
 }
 
-// mapStatetoProps = (state, { match }) => {
-//     const = ()
-// }
+const mapState = (state) => state;
 
-export default connect(state => state)(Cart)
+const mapDispatch = (dispatch, {history} ) => ({
+    fetchCart: (userId) => dispatch(fetchCart(userId)),
+    deleteProduct: (lineitemId, quantity) => dispatch(deleteFromCart(lineitemId, quantity, history))
+})
+
+export default connect(mapState, mapDispatch)(Cart)

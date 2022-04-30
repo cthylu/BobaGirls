@@ -16,17 +16,12 @@ const isLoggedIn = async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
-    const cart = await Order.findAll({
+    const orders = await Order.findAll({
       where: { userId: user.id },
       include: [{ model: LineItem, include: { model: Product } }],
     });
-
-    // const cart = await Order.findOne({
-    //   where: { userId: user.id, isCart: true },
-    //   include: [{ model: LineItem, include: { model: Product } }]
-    // })
-    console.log(cart, "api route");
-    res.send(cart);
+    //console.log(orders, 'api route')
+    res.send(orders);
   } catch (ex) {
     next(ex);
     console.log(ex);
@@ -42,26 +37,13 @@ router.get("/", async (req, res, next) => {
 //     }
 // });
 
-router.delete("/:lineitemId/:quantity", isLoggedIn, async (req, res, next) => {
+router.delete("/:productId/:quantity", isLoggedIn, async (req, res, next) => {
   try {
     console.log("delete route!");
-    const lineItem = await LineItem.findByPk(req.params.lineitemId);
-    await lineItem.destroy();
-    res.send(lineItem);
-    //res.json(await req.user.deleteFromCart(req.params.productId, req.params.quantity));
+    res.json(
+      await req.user.deleteFromCart(req.params.productId, req.params.quantity)
+    );
   } catch (ex) {
     next(ex);
-  }
-});
-
-router.post("/", isLoggedIn, async (req, res, next) => {
-  try {
-    const product = await Product.findByPk(req.params.productId);
-    res.status(201).send(await Product.create(req.body));
-  } catch (e) {
-    // else {
-    //   res.sendStatus(404);
-    // }
-    next(e);
   }
 });
