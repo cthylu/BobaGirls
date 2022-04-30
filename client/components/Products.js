@@ -24,7 +24,7 @@ const Products = ({ products, addProduct }) => {
                     ${product.price}
                   </div>
 
-                  <button id='addtocart' type='add' onClick={() => addProduct((Math.random()))}>Add To Cart</button>
+                  <button id='addtocart' type='add' onClick={() => addProduct((Math.random()*10))}>Add To Cart</button>
                 </li>
               )
             })

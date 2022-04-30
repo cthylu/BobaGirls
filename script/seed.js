@@ -58,8 +58,14 @@ async function seed() {
     Product.create({ name: 'Rose Tea', price: 6.00, quantity: 50, imageUrl: 'https://cdn.shopify.com/s/files/1/1093/4358/products/image_c6062786-2c18-41d5-8016-c3fbf936dc67_2000x.jpg?v=1611689073', 
       description: `Rose tea is an herbal tea that can be made from a variety of different parts of the rose plant including rose petals, rose buds, and rosehips. The tea is also often blended with true tea leaves such as green tea and black tea to make floral flavored teas. Rose tea blends are also combined with other herbal teas such as chamomile tea, hibiscus tea, and rooibos. Rose tea is a caffeine-free herbal tea that is a best seller thanks to its sweet, floral flavor. The tea contains vitamins and minerals as well as antioxidants that are beneficial for well-being. Try this herbal tea today and discover the different flavors or rose petal tea, rose hips tea, and rose bud tea.
       <br/>
-      Preparation: Rose tea can be brewed using tea bags, loose tea, or fresh petals from your garden. Bring filtered or spring water to a rolling boil in a large teapot or electric kettle. Add in one teaspoon of rose petals or rose hips for every eight ounces of water. Steep the rose tea in the boiling water using an infuser for 5 to 7 minutes. If you are making an herbal tea blend with black tea or another strong true tea, limit the steeping time to 3 to 5 minutes. Remove the strainer from the hot water and pour the rose water tea into a teacup. Add sweetener if desired and enjoy.`})
+      Preparation: Rose tea can be brewed using tea bags, loose tea, or fresh petals from your garden. Bring filtered or spring water to a rolling boil in a large teapot or electric kettle. Add in one teaspoon of rose petals or rose hips for every eight ounces of water. Steep the rose tea in the boiling water using an infuser for 5 to 7 minutes. If you are making an herbal tea blend with black tea or another strong true tea, limit the steeping time to 3 to 5 minutes. Remove the strainer from the hot water and pour the rose water tea into a teacup. Add sweetener if desired and enjoy.`}),
+      // Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
+      // Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
+      // Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those who cannot have genuine milk'}),
+      // Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
+      // Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those who want something sweeter than oats or with pure milk allergies.'}),
   ])
+
 
   console.log(`seeded ${products.length} products`)
   console.log(`seeded products successfully`)
@@ -82,6 +88,7 @@ async function seed() {
     LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[4].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
