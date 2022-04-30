@@ -42,7 +42,7 @@ router.get("/", async (req, res, next) => {
 //     }
 // });
 
-router.post('/', isLoggedIn, async (req, res, next) => {
+router.post("/", isLoggedIn, async (req, res, next) => {
   try {
     console.log("post route!");
     const lineItem = await LineItem.create(req.body);
@@ -60,18 +60,18 @@ router.post('/', isLoggedIn, async (req, res, next) => {
 //     // else {
 //     //   res.sendStatus(404);
 //     // }
-//     next(e); 
+//     next(e);
 //   }
 // });
 
-router.delete('/:lineitemId/:quantity', isLoggedIn, async (req, res, next) => {
-    try {
-      console.log("delete route!");
-      const lineItem = await LineItem.findByPk(req.params.lineitemId);
-      await (lineItem).destroy();
-      res.send(lineItem);
-      //res.json(await req.user.deleteFromCart(req.params.productId, req.params.quantity));
-    } catch (ex) {
-      next(ex);
-    }
+router.delete("/:lineitemId/:quantity", isLoggedIn, async (req, res, next) => {
+  try {
+    console.log("delete route!");
+    const lineItem = await LineItem.findByPk(req.params.lineitemId);
+    await lineItem.destroy();
+    res.send(lineItem);
+    //res.json(await req.user.deleteFromCart(req.params.productId, req.params.quantity));
+  } catch (ex) {
+    next(ex);
+  }
 });

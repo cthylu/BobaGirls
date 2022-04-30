@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
-import { Login, Signup } from './components/AuthForm';
-import Home from './components/Home';
-import { me, fetchCart, fetchProducts } from './store'
-import Cart from './components/Cart';
-import Products from './components/Products';
-import Product from'./components/Product';
-import About from './components/About';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter, Route, Switch, Redirect } from "react-router-dom";
+import { Login, Signup } from "./components/AuthForm";
+import Home from "./components/Home";
+import { me, fetchCart, fetchProducts } from "./store";
+import Cart from "./components/Cart";
+import Products from "./components/Products";
+import Product from "./components/Product";
+import About from "./components/About";
 
 /**
  * COMPONENT
@@ -55,9 +55,9 @@ const mapState = (state) => {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
-    products: state.productsReducer
-  }
-}
+    products: state.productsReducer,
+  };
+};
 
 const mapDispatch = (dispatch) => {
   return {
