@@ -42,26 +42,36 @@ router.get("/", async (req, res, next) => {
 //     }
 // });
 
-router.delete("/:lineitemId/:quantity", isLoggedIn, async (req, res, next) => {
+router.post('/', isLoggedIn, async (req, res, next) => {
   try {
-    console.log("delete route!");
-    const lineItem = await LineItem.findByPk(req.params.lineitemId);
-    await lineItem.destroy();
-    res.send(lineItem);
-    //res.json(await req.user.deleteFromCart(req.params.productId, req.params.quantity));
+    console.log("post route!");
+    const lineItem = await LineItem.create(req.body);
+    res.status(201).send(lineItem);
   } catch (ex) {
     next(ex);
   }
 });
 
-router.post("/", isLoggedIn, async (req, res, next) => {
-  try {
-    const product = await Product.findByPk(req.params.productId);
-    res.status(201).send(await Product.create(req.body));
-  } catch (e) {
-    // else {
-    //   res.sendStatus(404);
-    // }
-    next(e);
-  }
+// router.post("/", isLoggedIn, async (req, res, next) => {
+//   try {
+//     const product = await Product.findByPk(req.params.productId);
+//     res.status(201).send(await Product.create(req.body));
+//   } catch (e) {
+//     // else {
+//     //   res.sendStatus(404);
+//     // }
+//     next(e); 
+//   }
+// });
+
+router.delete('/:lineitemId/:quantity', isLoggedIn, async (req, res, next) => {
+    try {
+      console.log("delete route!");
+      const lineItem = await LineItem.findByPk(req.params.lineitemId);
+      await (lineItem).destroy();
+      res.send(lineItem);
+      //res.json(await req.user.deleteFromCart(req.params.productId, req.params.quantity));
+    } catch (ex) {
+      next(ex);
+    }
 });

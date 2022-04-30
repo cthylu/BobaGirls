@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart} from '../store/cart'
+import { addToCart } from '../store/cart'
 
 
-const Products = ({ products, addProduct }) => {
+const Products = ({ products, addProductToCart }) => {
   //console.log('products', products);
   return (
     <div className='content'>
@@ -19,14 +19,12 @@ const Products = ({ products, addProduct }) => {
                   <img src={product.imageUrl} />
 
                   <Link to={`/products/${ product.id }`}>
-      
-                  { product.name }
+                    { product.name }
                   </Link>
                   <div className='teaprice'>
                     ${product.price}
                   </div>
-
-                  <button id='addtocart' type='add' onClick={() => addProduct(console.log('works'))}>Add To Cart</button>
+                  <button id='addtocart' onClick={() => addProductToCart(product)}>Add To Cart</button>
                 </li>
               )
             })
@@ -46,11 +44,12 @@ const mapState = ({ products }) => {
   }
 }
 
-const mapDispatch = (dispatch, {history}) => ({
-      addProduct: (productId) => dispatch(addToCart(productId, history))
-    })
-
-
-
+const mapDispatch = dispatch => {
+  return {
+    addProductToCart: (product) => {
+      return dispatch(addToCart(product))
+    }
+  }
+}
 
 export default connect(mapState, mapDispatch)(Products);

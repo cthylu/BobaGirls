@@ -59,31 +59,19 @@ export const deleteFromCart = (productId, quantity, history) => {
   }
 }
 
-// export const addToCart = productId => {
-//   return async dispatch => {
-//     try {
-//       const { data } = await axios.post('/api/cart', { productId: productId })
-//       dispatch(_addToCart(data))
-//     } catch(ex) {
-//       console.log(ex)
-//     }
-//   }
-// }
-
-export const addToCart = productId => {
+export const addToCart = product => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        const { data } = await axios.post('/api/cart', { productId: productId }, {
+        const { data } = await axios.post('/api/cart', product, {
           headers: {
             authorization: token
           }
         })
         dispatch(_addToCart(data))
       }
-    } catch (ex) {
-      console.log({ex})
+    } catch(ex) {
       console.log(ex)
     }
   }
@@ -94,10 +82,16 @@ const cart = (state = [], action) => {
     state = action.cart
   }
   if (action.type === DELETE_FROM_CART) {
-    state = state.filter(product => product.id !== action.cart)
+    console.log("Action", action)
+    const newState = [...state];
+    newState[0].lineitems = state[0].lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
+    console.log("New State", newState[0])
+    return newState;
   }
   if (action.type === ADD_TO_CART) {
+    console.log("Action", action)
     state = [...state, action.cart]
+    console.log("New State", state)
   }
   return state
 }

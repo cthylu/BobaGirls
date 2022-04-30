@@ -16,8 +16,8 @@ class Cart extends Component {
     this.props.fetchCart()
   }
 
-  deleteCartItem () {
-    console.log("Cart!!!!");
+  deleteCartItem (lineId, lineQuantity) {
+    this.props.deleteLineitem(lineId, lineQuantity);
   }
 
   render() {
@@ -29,18 +29,18 @@ class Cart extends Component {
           {
             cart.map(item => {
               return (
-                  <div key={item.id}>
-                    <ul>{
-                      item.lineitems.map(line => {
-                        return (
-                          <li key={line.id}>{line.product.name}({line.quantity})
-                            <button className='delete' type='delete' onClick={() => this.props.deleteProduct(line.id, line.quantity)}> Delete </button>
-                          </li>
-                        )
-                      })
-                    }
-                    </ul>
-                  </div>
+                <div key={item.id}>
+                  <ul>{
+                    item.lineitems.map(line => {
+                      return (
+                        <li key={line.id}>{line.product.name}({line.quantity})
+                          <button className='delete' type='delete' onClick={ () => this.props.deleteLineitem(line.id, line.quantity) }> Delete </button>
+                        </li>
+                      )
+                    })
+                  }
+                  </ul>
+                </div>
               )
             })
           }  
@@ -53,7 +53,7 @@ const mapState = (state) => state;
 
 const mapDispatch = (dispatch, {history} ) => ({
     fetchCart: (userId) => dispatch(fetchCart(userId)),
-    deleteProduct: (lineitemId, quantity) => dispatch(deleteFromCart(lineitemId, quantity, history))
+    deleteLineitem: (lineId, lineQuantity) => dispatch(deleteFromCart(lineId, lineQuantity))
 })
 
 export default connect(mapState, mapDispatch)(Cart)
