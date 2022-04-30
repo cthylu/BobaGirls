@@ -1,4 +1,5 @@
 import axios from 'axios'
+import history from 'history'
 
 const FETCH_CART = 'FETCH_CART'
 const DELETE_FROM_CART = 'DELETE_FROM_CART'
@@ -50,6 +51,7 @@ export const deleteFromCart = (productId, quantity, history) => {
           }
         })
         dispatch(_deleteFromCart(data))
+        history.push('/products')
       }
     } catch (ex) {
       console.log(ex)

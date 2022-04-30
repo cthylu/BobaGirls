@@ -14,7 +14,7 @@ const Teas = ({ teas }) => {
                <li className='teadiv' key={tea.id}>
                  <img src={tea.imageUrl} />
                  <Link to={`/tea/${ tea.id }`}>
-                   { tea.teaname }
+                   { tea.name }
                  </Link>
 
                  <div className='teaprice'>

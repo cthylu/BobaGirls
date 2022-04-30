@@ -52,3 +52,16 @@ router.delete('/:lineitemId/:quantity', isLoggedIn, async (req, res, next) => {
       next(ex);
     }
 });
+
+router.post('/', isLoggedIn, async (req, res, next) => {
+  try {
+    const product = await Product.findByPk(req.params.productId);
+    res.status(201).send(await Product.create(req.body));
+    } 
+    // else {
+    //   res.sendStatus(404);
+    // }
+   catch (e) {
+    next(e);
+   }
+  });
