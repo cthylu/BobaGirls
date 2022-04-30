@@ -41,6 +41,16 @@ router.get('/', async (req, res, next) => {
 //     }
 // });
 
+router.post('/', isLoggedIn, async (req, res, next) => {
+  try {
+    console.log("post route!");
+    const lineItem = await LineItem.create(req.body);
+    res.status(201).send(lineItem);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 router.delete('/:lineitemId/:quantity', isLoggedIn, async (req, res, next) => {
     try {
       console.log("delete route!");

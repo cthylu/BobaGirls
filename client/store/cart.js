@@ -54,11 +54,14 @@ export const deleteFromCart = (lineitemId, quantity) => {
   }
 }
 
-export const addToCart = productId => {
+export const addToCart = product => {
   return async dispatch => {
     try {
-      const { data } = await axios.post('/api/orders', { productId: productId })
-      dispatch(_addToCart(data))
+      const token = window.localStorage.getItem('token')
+      if (token) {
+        const { data } = await axios.post('/api/cart', product)
+        dispatch(_addToCart(data))
+      }
     } catch(ex) {
       console.log(ex)
     }
@@ -71,11 +74,15 @@ const cart = (state = [], action) => {
   }
   if (action.type === DELETE_FROM_CART) {
     console.log("Action", action)
-    state[0].lineitems = state[0].lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
-    console.log("New State", state[0])
+    const newState = [...state];
+    newState[0].lineitems = state[0].lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
+    console.log("New State", newState[0])
+    return newState;
   }
   if (action.type === ADD_TO_CART) {
+    console.log("Action", action)
     state = [...state, action.cart]
+    console.log("New State", state)
   }
   return state
 }
