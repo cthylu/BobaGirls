@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { addToCart, fetchSingleProduct, } from '../store';
 
 export class SingleProduct extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.fetchSingleProduct(this.props.match.params.id);
   }
 
@@ -42,22 +41,21 @@ export class SingleProduct extends React.Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     product: state.singleProduct,
     user: state.user
   }
 }
 
-const mapDispatch = (dispatch, {history}) => {
+const mapDispatch = (dispatch, { history }) => {
   return {
     fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
     deleteProduct: productId => dispatch(deleteProduct(productId))
   }
 }
 
-export default connect(mapState, mapDispatch)(SingleProduct)
-
+export default connect(mapState, mapDispatch)(SingleProduct);
 
 // const Product = ({ product }) => {
 //   return (

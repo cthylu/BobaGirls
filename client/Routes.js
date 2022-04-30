@@ -13,44 +13,43 @@ import About from './components/About';
  * COMPONENT
  */
 class Routes extends Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.loadInitialData();
     this.props.loadProducts();
-    this.props.loadCart()
+    this.props.loadCart();
   }
 
   render() {
-    const {isLoggedIn} = this.props
+    const { isLoggedIn } = this.props;
     return (
       <main>
         {isLoggedIn ? (
           <Switch>
-            <Route path='/home' component={Home} />
-            <Route path='/cart' component={Cart} />
-            <Route path='/products' exact component={Products} />
-            <Route path='/products/:id' component={Product} />
-            <Redirect to='/home' />
+            <Route path="/home" component={Home} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/products" component={Products} />
+            <Route path="/product/:id" component={Product} />
+            <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
-            <Route path='/' exact component={ Login } />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/products' exact component={Products} />
-            <Route path='/products/:id' component={Product} />
-            <Route path='/cart' component={Cart} />
-            <Route path='/about' exact component={About} />
+            <Route path="/" exact component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/products" component={Products} />
+            <Route path="/product/:id" component={Product} />
+            <Route path="/cart" component={Cart} />
           </Switch>
         )}
       </main>
-    )
+    );
   }
 }
 
 /**
  * CONTAINER
  */
-const mapState = state => {
+const mapState = (state) => {
   //console.log('state', state);
   return {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
@@ -60,16 +59,16 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
-    loadInitialData () {
-      dispatch(me())
+    loadInitialData() {
+      dispatch(me());
     },
     loadCart: () => dispatch(fetchCart()),
-    loadProducts: () => dispatch(fetchProducts())
-  }
-}
+    loadProducts: () => dispatch(fetchProducts()),
+  };
+};
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Routes))
+export default withRouter(connect(mapState, mapDispatch)(Routes));

@@ -51,9 +51,9 @@ class Cart extends Component {
 
 const mapState = (state) => state;
 
-const mapDispatch = (dispatch) => ({
+const mapDispatch = (dispatch, {history} ) => ({
     fetchCart: (userId) => dispatch(fetchCart(userId)),
-    deleteProduct: (lineitemId, quantity) => dispatch(deleteFromCart(lineitemId, quantity))
+    deleteProduct: (lineitemId, quantity) => dispatch(deleteFromCart(lineitemId, quantity, history))
 })
 
 export default connect(mapState, mapDispatch)(Cart)
