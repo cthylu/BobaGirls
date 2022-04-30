@@ -51,7 +51,7 @@ class Cart extends Component {
 
 const mapState = (state) => state;
 
-const mapDispatch = (dispatch, {history} ) => ({
+const mapDispatch = (dispatch) => ({
     fetchCart: (userId) => dispatch(fetchCart(userId)),
     deleteLineitem: (lineId, lineQuantity) => dispatch(deleteFromCart(lineId, lineQuantity))
 })
