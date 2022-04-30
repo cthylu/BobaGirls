@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  models: { Product },
+  models: { Product, User },
 } = require("../db");
 module.exports = router;
 
@@ -38,7 +38,6 @@ router.delete("/:id", token, async (req, res, next) => {
     const product = await Product.findByPk(req.params.id);
     if (product) {
       await product.destroy();
-      res.send(product).sendStatus(204);
     } else {
       res.sendStatus(404);
     }
