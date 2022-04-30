@@ -14,7 +14,8 @@ export const Home = props => {
       </div>
       
       <div className='hero'>
-        <div className='content'>
+        <div className='content'>        
+      
           <div>
            <h1>TRY  OUR  TEAS  TODAY</h1>
             <p>You know you want to!</p>
