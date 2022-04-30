@@ -29,9 +29,7 @@ const Navbar = ({ handleClick, isLoggedIn, products }) => (
             <Link to="/products">Products ({products.length})</Link>
             <Link to="/about"> About</Link>
           </div>
-
           <img src="/images/logo-boba-girl.svg" />
-
           <div>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>

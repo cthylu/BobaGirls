@@ -6,27 +6,32 @@ import { authenticate } from "../store";
  * COMPONENT
  */
 const AuthForm = (props) => {
-  const { name, displayName, handleSubmit, error } = props;
+  const { name, displayName, handleSubmit, error, intro} = props;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
+    <div className='signup'>
+      <form onSubmit={handleSubmit} name={name}>  
+        <div>     
+          <h3 className='signup'> {intro} </h3>
+          <br/>
           <label htmlFor="username">
             <small>Username</small>
           </label>
-          <input name="username" type="text" />
+          <input name="username" type="text" required placeholder="username"/>
         </div>
+        <br />
         <div>
           <label htmlFor="password">
             <small>Password</small>
           </label>
-          <input name="password" type="password" />
+          <input name="password" type="password" required placeholder="password" />
         </div>
+        <br />
         <div>
           <button type="submit">{displayName}</button>
         </div>
-        {error && error.response && <div> {error.response.data} </div>}
+        <br/>
+        {error && error.response && <div > {error.response.data} </div>}
       </form>
     </div>
   );
@@ -43,6 +48,7 @@ const mapLogin = (state) => {
   return {
     name: "login",
     displayName: "Login",
+    intro: 'Log In',
     error: state.auth.error,
   };
 };
@@ -51,6 +57,7 @@ const mapSignup = (state) => {
   return {
     name: "signup",
     displayName: "Sign Up",
+    intro: 'Sign Up',
     error: state.auth.error,
   };
 };

@@ -18,7 +18,7 @@ const Products = ({ products, addProduct }) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <Link to={`/product/${product.id}`}>{product.name}</Link>
                     <div className="teaprice">${product.price}</div>
 
                     <button

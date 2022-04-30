@@ -41,17 +41,20 @@ class Routes extends Component {
             <Route path="/home" component={Home} />
             <Route path="/cart" component={Cart} />
             <Route path="/products" component={Products} />
-            <Route path="/product/:id" component={Product} />
+            <Route path="/product/:id" component={Product} />     
+            <Route path="/about" component={About} />
             <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
+            <Route path="/home" component={Home} />
             <Route path="/" exact component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/products" component={Products} />
             <Route path="/product/:id" component={Product} />
             <Route path="/cart" component={Cart} />
+            <Route path="/about" component={About} />
           </Switch>
         )}
       </main>
