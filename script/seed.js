@@ -60,6 +60,11 @@ async function seed() {
       <br/>
       Preparation: Rose tea can be brewed using tea bags, loose tea, or fresh petals from your garden. Bring filtered or spring water to a rolling boil in a large teapot or electric kettle. Add in one teaspoon of rose petals or rose hips for every eight ounces of water. Steep the rose tea in the boiling water using an infuser for 5 to 7 minutes. If you are making an herbal tea blend with black tea or another strong true tea, limit the steeping time to 3 to 5 minutes. Remove the strainer from the hot water and pour the rose water tea into a teacup. Add sweetener if desired and enjoy.`}),
     Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
+      // Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
+      // Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
+      // Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those who cannot have genuine milk'}),
+      // Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
+      // Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those who want something sweeter than oats or with pure milk allergies.'}),
       description: `Tapioca pearls are edible translucent spheres produced from tapioca, a starch extracted from the cassava root. Tapioca pearls make the unique ingredient of a bubble tea or boba tea drinks. They are about the size of pearls or small marbles, with the soft and chewy consistency of gummy candies. The pearls are opaque when raw and turned translucent after cooking. They need to be soaked for a considerable length of time before use in different food preparations. 
       <br/>
       1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
@@ -100,6 +105,7 @@ async function seed() {
     //   description: `` }),
   ])
 
+
   console.log(`seeded ${products.length} products`)
   console.log(`seeded products successfully`)
 
@@ -116,6 +122,12 @@ async function seed() {
   // Creating LineItems
   const lineitems = await Promise.all([
     LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[4].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
