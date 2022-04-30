@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart, fetchSingleProduct } from '../store';
+import { addToCart, fetchSingleProduct, } from '../store';
 
 export class SingleProduct extends React.Component {
   constructor (props) {
@@ -14,7 +14,7 @@ export class SingleProduct extends React.Component {
   }
 
   render () {
-    const { product } = this.props
+    const { product, user } = this.props
     return (
         <div>
            {
@@ -29,22 +29,30 @@ export class SingleProduct extends React.Component {
 
                     <button className='addtocart' onClick={() => addToCart(productId, history)}>Add To Cart</button>
                 </div>
+                {/* { user.isAdmin && (
+              <Button onClick={() => this.props.deleteProduct(product.id)}>Remove Plant</Button>
+            )} */}
             </div>
-        }
-     </div>
+          }
+           
+       </div>
+       
+       
     )
   }
 }
 
 const mapState = state => {
   return {
-    product: state.singleProduct
+    product: state.singleProduct,
+    user: state.user
   }
 }
 
 const mapDispatch = (dispatch, {history}) => {
   return {
     fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
+    deleteProduct: productId => dispatch(deleteProduct(productId))
   }
 }
 
