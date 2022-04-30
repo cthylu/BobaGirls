@@ -14,7 +14,7 @@ async function seed() {
 
   // Creating Users
   const users = await Promise.all([
-    User.create({ username: 'cody', password: '123' }),
+    User.create({ username: 'cody', password: '123', isAdmin: true }),
     User.create({ username: 'murphy', password: '123' }),
     User.create({ username: 'ice', password: '123' }),
     User.create({ username: 'yingying', password: '123' }),
@@ -64,6 +64,45 @@ async function seed() {
       // Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those who cannot have genuine milk'}),
       // Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
       // Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 4 , imageUrl: 'N/A', description: 'Perfect for those who want something sweeter than oats or with pure milk allergies.'}),
+    Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
+      description: `Tapioca pearls are edible translucent spheres produced from tapioca, a starch extracted from the cassava root. Tapioca pearls make the unique ingredient of a bubble tea or boba tea drinks. They are about the size of pearls or small marbles, with the soft and chewy consistency of gummy candies. The pearls are opaque when raw and turned translucent after cooking. They need to be soaked for a considerable length of time before use in different food preparations. 
+      <br/>
+      1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
+      2) Wait until tapioca floats to water surface. Cover pot. Cook in medium heat for 2-3 minutes. Turn off head and simmer for another 2-3 minutes (adjust time to soften tapioca to personal tastes). 
+      3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` }),
+    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, imageUrl: 'https://image.made-in-china.com/202f0j00NItYwGjFEPqc/China-Popping-Boba-Production-Line.jpg', 
+      description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
+      <br/>
+      Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
+    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, imageUrl: 'https://tealiciouscafe.com/wp-content/uploads/2018/10/lychee-gelatin.jpg', 
+      description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
+      <br/>
+      Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
+    Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
+      description: `This Stainless Steel Straws Set is a reusable straw solution to replace disposable plastic straws. These steel straws are made from high quality 18/8 stainless steel with a safe, food grade, removable silicone flex tip. No more plastic - just your favorite drinks on the go.
+      <br/>
+      BPA Free
+      Food-grade silicone and stainless steel construction
+      Dishwasher safe
+      Silicone straw tip for safe, comfortable sipping
+      <br/>
+      Parts: 3 2-piece 10mm straw (1 extender)
+      Weight: .55 ounces (15.6 g)
+      Size: 8.9" H x .39" W (226.1 mm H x 10 mm W)` }),
+    Product.create({ name: 'Boba Girls 24oz Reusable Tumbler', price: 25.00, quantity: 300, imageUrl: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRUWMP9Xavmlk3UQnVZcDQIwj4hcko5NKzHOTju0xfB8KWCGc8SqPUFgca8WqGw299k0QYZsLI&usqp=CAE', 
+      description: `A reusable tumbler cup equipped with a plastic boba straw so you can slurp 24oz of boba goodness. Designed from durable plastic with a double-wall design for a clean look, this 24-ounce plastic tumbler with straw is as stylish as it is useful. The lidded design helps prevent leaks and spills, while the included straw lets you take easy and refreshing sips of your favorite beverage. Whether used to sip your favorite cold beverage or looking for a standout gift, this tumbler makes the perfect pick.
+      <br/>
+      Size: 24 oz. 
+      Material: 100% BPA free, plastic
+      Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
+    Product.create({ name: 'Boba Girls 24oz Mason Jar', price: 15.00, quantity: 300, imageUrl: 'https://m.media-amazon.com/images/S/aplus-media/sc/8c460412-d464-47fb-a392-613699fd4d2b.__CR0,0,970,600_PT0_SX970_V1___.jpg', 
+      description: `A reusable mason jar equipped with a metal boba straw so you can slurp 24oz of boba goodness. Designed from durable plastic with a double-wall design for a clean look, this 24-ounce plastic tumbler with straw is as stylish as it is useful. The lidded design helps prevent leaks and spills, while the included straw lets you take easy and refreshing sips of your favorite beverage. Whether used to sip your favorite cold beverage or looking for a standout gift, this tumbler makes the perfect pick.
+      <br/>
+      Size: 24 oz. 
+      Material: 100% BPA free, plastic
+      Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
+    // Product.create({ name: '', price: 6.00, quantity: 50, imageUrl: '', 
+    //   description: `` }),
   ])
 
 
