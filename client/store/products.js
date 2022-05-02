@@ -28,6 +28,15 @@ export const deleteProduct = (productId) => {
     try {
       await axios.delete(`/api/products/${productId}`);
       dispatch(_removeProduct(productId));
+      const token = window.localStorage.getItem("token");
+      if (token) {
+        const { data } = await axios.delete(`/api/products/${productId}`, {
+          headers: {
+            authorization: token,
+          },
+        });
+        dispatch(_removeProduct(data));
+      }
     } catch (ex) {
       console.log(ex);
     }

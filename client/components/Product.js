@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart, fetchSingleProduct } from "../store";
+import { addToCart, fetchSingleProduct, deleteProduct } from "../store";
+
 
 export class SingleProduct extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export class SingleProduct extends React.Component {
 
   render() {
     const { product, user } = this.props;
+    console.log(user)
     return (
       <div>
         {
@@ -22,7 +24,7 @@ export class SingleProduct extends React.Component {
             <div>
               <h2>{product.name}</h2>
               <p>{product.description}</p>
-              {/* <h5>Quantity: { product.quantity } in stock</h5> */}
+              <h5>Quantity: { product.quantity } in stock</h5>
 
               <button
                 className="addtocart"
@@ -31,9 +33,9 @@ export class SingleProduct extends React.Component {
                 Add To Cart
               </button>
             </div>
-            {/* { user.isAdmin && (
-              <Button onClick={() => this.props.deleteProduct(product.id)}>Remove Plant</Button>
-            )} */}
+            { user.isAdmin ? (
+              <button onClick={() => this.props.deleteProduct(product.id)}>Remove Plant</button>
+            ) : null }
           </div>
         }
       </div>
@@ -44,7 +46,7 @@ export class SingleProduct extends React.Component {
 const mapState = (state) => {
   return {
     product: state.singleProduct,
-    user: state.user,
+    user: state.auth,
   };
 };
 
