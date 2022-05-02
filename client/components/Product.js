@@ -26,10 +26,7 @@ export class SingleProduct extends React.Component {
               <p>{product.description}</p>
               <h5>Quantity: { product.quantity } in stock</h5>
 
-              <button
-                className="addtocart"
-                onClick={() => addToCart(productId, history)}
-              >
+              <button className="addtocart" onClick={() => addToCart(product)}>
                 Add To Cart
               </button>
             </div>
@@ -52,9 +49,8 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    fetchSingleProduct: (productId) =>
-      dispatch(fetchSingleProduct(productId, history)),
-    deleteProduct: (productId) => dispatch(deleteProduct(productId)),
+    fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
+    deleteProduct: (product) => dispatch(deleteProduct(product)),
   };
 };
 

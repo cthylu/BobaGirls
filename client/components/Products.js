@@ -23,8 +23,7 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(Math.random())}
-                    >
+                      onClick={() => addProduct(Math.random())}>
                       Add To Cart
                     </button>
                   </li>
@@ -46,8 +45,7 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(Math.random())}
-                    >
+                      onClick={() => addProduct(product)}>
                       Add To Cart
                     </button>
                   </li>
@@ -70,8 +68,7 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(Math.random())}
-                    >
+                      onClick={() => addProduct(product, 1)}>
                       Add To Cart
                     </button>
                   </li>
@@ -84,17 +81,11 @@ const Products = ({ products, addProduct }) => {
   );
 };
 
-const mapState = ({ products }) => {
-  return {
-    products,
-  };
-};
+const mapState = (state) => state;
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, {history}) => {
   return {
-    addProductToCart: (product) => {
-      return dispatch(addToCart(product));
-    },
+    addProduct: (product) => dispatch(addToCart(product, history)),
   };
 };
 

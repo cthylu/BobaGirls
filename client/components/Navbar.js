@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
 
-const Navbar = ({ handleClick, isLoggedIn, products }) => (
+const Navbar = ({ handleClick, isLoggedIn, products, lineitems,cart }) => (
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
@@ -15,7 +15,7 @@ const Navbar = ({ handleClick, isLoggedIn, products }) => (
           </div>
           <img src="/images/logo-boba-girl.svg" />
           <div>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart"> Cart</Link>
             <a href="#" onClick={handleClick}>
               Logout
             </a>
@@ -33,7 +33,7 @@ const Navbar = ({ handleClick, isLoggedIn, products }) => (
           <div>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">  Cart</Link>
           </div>
         </div>
       )}
