@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart, fetchSingleProduct } from "../store";
 
-export class SingleProduct extends React.Component {
+export class SingleProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,7 +13,7 @@ export class SingleProduct extends React.Component {
   }
 
   render() {
-    const { product, user } = this.props;
+    const { product } = this.props;
     return (
       <div>
         {
@@ -44,7 +44,6 @@ export class SingleProduct extends React.Component {
 const mapState = (state) => {
   return {
     product: state.singleProduct,
-    user: state.user,
   };
 };
 

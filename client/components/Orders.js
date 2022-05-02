@@ -19,15 +19,16 @@ class Orders extends Component {
 
   render() {
     const { order, auth } = this.props
-    console.log(order)
     return (
       <div>
         <h2>Orders for { auth.username.slice(0, 1).toUpperCase() }{ auth.username.slice(1) }:</h2>
         {
-          order.map(item => {
+          order.map(orders => {
             return (
-              <div key={ item.id }>
-                Order #{order.length} {item.createdAt.slice(0, 9)}
+              <div key={ orders.id }>
+                <Link to={`/order/${ orders.id }`}>
+                  Order #{order.length}: {orders.createdAt.slice(0, 9)}
+                </Link>
               </div>
             )
           })

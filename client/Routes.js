@@ -9,6 +9,7 @@ import Products from "./components/Products";
 import Product from "./components/Product";
 import About from "./components/About";
 import Orders from './components/Orders';
+import Order from './components/Order';
 
 /**
  * COMPONENT
@@ -32,6 +33,7 @@ class Routes extends Component {
             <Route path="/products" component={Products} />
             <Route path="/product/:id" component={Product} />
             <Route path='/orders' component={Orders} />
+            <Route path='/order/:id' component={Order} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -59,6 +61,7 @@ const mapState = (state) => {
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
     products: state.productsReducer,
+    orders: state.ordersReducer
   };
 };
 

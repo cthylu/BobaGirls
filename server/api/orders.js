@@ -4,15 +4,6 @@ const {
 } = require("../db");
 module.exports = router;
 
-const isLoggedIn = async (req, res, next) => {
-  try {
-    req.user = await User.findByToken(req.headers.authorization);
-    next();
-  } catch (ex) {
-    next(ex);
-  }
-};
-
 router.get("/", async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
