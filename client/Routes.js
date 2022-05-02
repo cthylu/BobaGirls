@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import Products from "./components/Products";
 import Product from "./components/Product";
 import About from "./components/About";
+import Orders from './components/Orders';
 
 /**
  * COMPONENT
@@ -16,6 +17,7 @@ class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData();
     this.props.loadProducts();
+    //below should be in componentDidUpdate 
     this.props.loadCart();
   }
 
@@ -29,6 +31,7 @@ class Routes extends Component {
             <Route path="/cart" component={Cart} />
             <Route path="/products" component={Products} />
             <Route path="/product/:id" component={Product} />
+            <Route path='/orders' component={Orders} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -65,7 +68,7 @@ const mapDispatch = (dispatch) => {
       dispatch(me());
     },
     loadCart: () => dispatch(fetchCart()),
-    loadProducts: () => dispatch(fetchProducts()),
+    loadProducts: () => dispatch(fetchProducts())
   };
 };
 

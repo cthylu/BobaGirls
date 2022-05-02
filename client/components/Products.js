@@ -17,7 +17,7 @@ const Products = ({ products, addProduct }) => {
                     <li className='teadiv' key={ product.id }>
                       <img src={product.imageUrl} />
 
-                      <Link to={`/products/${ product.id }`}>
+                      <Link to={`/product/${ product.id }`}>
                         { product.name }
                       </Link>
                       <div className='teaprice'>
@@ -38,7 +38,7 @@ const Products = ({ products, addProduct }) => {
                     <li className='teadiv' key={ product.id }>
                       <img src={product.imageUrl} />
 
-                      <Link to={`/products/${ product.id }`}>
+                      <Link to={`/product/${ product.id }`}>
                         { product.name }
                       </Link>
                       <div className='teaprice'>
@@ -60,7 +60,7 @@ const Products = ({ products, addProduct }) => {
                     <li className='teadiv' key={ product.id }>
                       <img src={product.imageUrl} />
 
-                      <Link to={`/products/${ product.id }`}>
+                      <Link to={`/product/${ product.id }`}>
                         { product.name }
                       </Link>
                       <div className='teaprice'>

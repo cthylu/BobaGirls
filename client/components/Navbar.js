@@ -15,6 +15,7 @@ const Navbar = ({ handleClick, isLoggedIn, products }) => (
           </div>
           <img src="/images/logo-boba-girl.svg" />
           <div>
+            <Link to='/orders'>Orders</Link>
             <Link to="/cart">Cart</Link>
             <a href="#" onClick={handleClick}>
               Logout
