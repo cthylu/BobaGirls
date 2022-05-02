@@ -108,7 +108,8 @@ async function seed() {
   const orders = await Promise.all([
     Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
     Order.create({ totalCost: 6, userId: users[2].id, isCart: true }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false })
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 10, userId: users[1].id, isCart: false })
   ])
 
   console.log(`seeded ${orders.length} orders`)
@@ -127,6 +128,8 @@ async function seed() {
     LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
     LineItem.create({ quantity: 3, cost: 6, productId: products[2].id, orderId: orders[2].id }),
+    LineItem.create({ quantity: 3, cost: 6, productId: products[4].id, orderId: orders[3].id }),
+    LineItem.create({ quantity: 3, cost: 6, productId: products[6].id, orderId: orders[3].id }),
   ])
 
   console.log(`seeded ${lineitems.length} lineitems`)

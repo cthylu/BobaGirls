@@ -27,7 +27,7 @@ class Orders extends Component {
             return (
               <div key={ orders.id }>
                 <Link to={`/order/${ orders.id }`}>
-                  Order #{order.length}: {orders.createdAt.slice(0, 9)}
+                  Ordered on: {orders.createdAt.slice(0, 10)}
                 </Link>
               </div>
             )

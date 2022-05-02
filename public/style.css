@@ -135,3 +135,13 @@ label {
   height: 300px;
   width: 300px;
 }
+
+.orderproducts img {
+  height: 100px;
+  width: 100px;
+}
+
+.orderdiv {
+  display: flex;
+  flex-direction: column;
+}

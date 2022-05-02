@@ -5,19 +5,36 @@ import { fetchSingleOrder } from "../store";
 export class SingleOrder extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   componentDidMount() {
-    this.props.fetchSingleOrder(this.props.match.params.id);
+      this.props.fetchSingleOrder(this.props.match.params.id);
   }
 
   render() {
     const { order } = this.props;
     return (
-      <div>
+      <div className='orderdiv'>
+          <h2>Order Information: </h2>
         {
-           order
+          order.map(line => {
+            return (
+              <div key={ line.id }>
+                <ul>
+                  {
+                    line.lineitems.map(item => {
+                      return (
+                        <li className='orderproducts' key={ item.id }>
+                          <img src={ item.product.imageUrl } />
+                          { item.product.name } ({ item.quantity })
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              </div>
+            )
+          })
         }
       </div>
     );
