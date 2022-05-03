@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
 
-const Navbar = ({ handleClick, isLoggedIn, products }) => (
+const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
         <div className="nav-flex">
           {/* The navbar will show these links after you log in */}
           <div>
-            <Link to="/home">Home</Link>
-            <Link to="/products">Shop ({products.length})</Link>
-          </div>
-          <img src="/images/logo-boba-girl.svg" />
+            <Link to="/home"> Home </Link>
+            <Link to="/products"> Shop ({products.length}) </Link>
+          </div >
+          <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>        
           <div>
             <Link to='/orders'>Orders</Link>
             <Link to="/cart">Cart</Link>
@@ -30,13 +30,11 @@ const Navbar = ({ handleClick, isLoggedIn, products }) => (
             <Link to="/products">Products ({products.length})</Link>
             <Link to="/about"> About</Link>
           </div>
-
-          <img src="/images/logo-boba-girl.svg" />
-
+          <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>
           <div>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">  Cart</Link>
           </div>
         </div>
       )}

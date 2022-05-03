@@ -1,18 +1,35 @@
 import React from "react";
 import { connect } from "react-redux";
+import auth from "../store/auth";
 
 /**
  * COMPONENT
  */
 export const Home = (props) => {
-  const { username } = props;
+  const { username, users } = props;
 
+  const sendPing = (user) => {
+    console.log(user);
+    const message = { from: auth.id, to: user.id };
+    window.socket.send(JSON.stringify(message));
+    console.log(message);
+  };
+  
   return (
     <div>
       <div className="content">
-        <h3>Welcome, {username}</h3>
+        <h3>Welcome {username}!</h3>
+        {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
       </div>
-
+      {/* <ul>
+        {users.map((user) => {
+          return (
+            <li key={user.id} onClick={() => sendPing()}>
+              {user.username}
+            </li>
+          );
+        })}
+      </ul> */}
       <div className="hero">
         <div className="content">
           <div>
@@ -31,6 +48,8 @@ export const Home = (props) => {
 const mapState = (state) => {
   return {
     username: state.auth.username,
+    users: state.users,
+    auth: state.auth,
   };
 };
 

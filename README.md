@@ -27,6 +27,11 @@ Get rid of our own changes, so we can pull from the main:
 git reset --hard origin/main
 git pull origin main
 
+pushing to branch error:
+'error: failed to push some refs to 'github.com:cthylu/BobaGirls.git'
+git pull --rebase 
+git push
+
 Fetching our main:
 git fetch
 git pull main

@@ -150,6 +150,11 @@ label {
   width: auto;
 }
 
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 .orderdiv {
   display: flex;
   flex-direction: column;
