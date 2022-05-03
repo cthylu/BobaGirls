@@ -23,7 +23,7 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(Math.random())}>
+                      onClick={() => addProduct(product)}>
                       Add To Cart
                     </button>
                   </li>
