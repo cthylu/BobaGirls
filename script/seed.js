@@ -111,9 +111,15 @@ async function seed() {
 
   // Creating Orders
   const orders = await Promise.all([
+    // cody
     Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
+    
+    // ice
     Order.create({ totalCost: 6, userId: users[2].id, isCart: true }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false })
+
+    //murphy
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: true })
   ])
 
   console.log(`seeded ${orders.length} orders`)
@@ -121,6 +127,7 @@ async function seed() {
 
   // Creating LineItems
   const lineitems = await Promise.all([
+    // cody
     LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }),
@@ -129,9 +136,14 @@ async function seed() {
     LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
+
+    // ice
     LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }),
     LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
-    LineItem.create({ quantity: 3, cost: 6, productId: products[2].id, orderId: orders[2].id }),
+
+    // murphy
+    LineItem.create({ quantity: 3, cost: 6, productId: products[2].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[3].id }), // This should show up
   ])
 
   console.log(`seeded ${lineitems.length} lineitems`)

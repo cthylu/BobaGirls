@@ -17,7 +17,7 @@ router.get("/", async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
     const cart = await Order.findAll({
-      where: { userId: user.id },
+      where: { userId: user.id, isCart: true },
       include: [{ model: LineItem, include: { model: Product } }],
     });
 
@@ -45,6 +45,7 @@ router.get("/", async (req, res, next) => {
 router.post('/', isLoggedIn, async (req, res, next) => {
   try {
     console.log("post route!");
+    console.log(req.body);
     const lineItem = await LineItem.create(req.body);
     res.status(201).send(lineItem);
   } catch (ex) {
