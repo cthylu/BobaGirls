@@ -6,19 +6,22 @@ import { fetchCart, deleteFromCart } from "../store/cart";
 class Cart extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   cart: []
-    // }
-    this.deleteCartItem = this.deleteCartItem.bind(this);
+    //this.deleteCartItem = this.deleteCartItem.bind(this);
   }
 
   async componentDidMount() {
     this.props.fetchCart();
   }
 
-  deleteCartItem(lineId, lineQuantity) {
-    this.props.deleteLineitem(lineId, lineQuantity);
+  componentDidUpdate(prevProps) {
+    if (this.props.products !== prevProps.products) {
+      this.props.fetchCart();
+    }
   }
+
+  // deleteCartItem(lineId, lineQuantity) {
+  //   this.props.deleteLineitem(lineId, lineQuantity);
+  // }
 
   render() {
     const { cart } = this.props;

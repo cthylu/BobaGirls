@@ -54,12 +54,19 @@ export const deleteFromCart = (lineitemId, quantity) => {
   }
 }
 
-export const addToCart = lineitem => {
+export const addToCart = product => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
       if (token) {
-        console.log("lineitem", lineitem);
+        console.log("product", product);
+        const lineitem = {
+          quantity: 1,
+          cost: product.price,
+          //product: {...product},
+          productId: product.id,
+          orderId: 1
+        }
         const { data } = await axios.post('/api/cart', lineitem, 
           { headers: { authorization: token } }
         )
