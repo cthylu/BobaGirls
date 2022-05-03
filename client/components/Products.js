@@ -5,8 +5,8 @@ import { addToCart } from "../store/cart";
 
 const Products = ({ products, addProduct }) => {
   return (
-    <div className="content">
-      <h2>Products</h2>
+    <div className='content'>
+      <h1>Boba Girls Products</h1>
       {
         <div>
           <h2>Teas:</h2>
@@ -17,8 +17,15 @@ const Products = ({ products, addProduct }) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-                    <Link to={`/product/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+
+//                     <Link to={`/product/${product.id}`}>{product.name}</Link>
+//                     <div className="teaprice">${product.price}</div>
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
 
                     <button
                       id="addtocart"
@@ -38,9 +45,12 @@ const Products = ({ products, addProduct }) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
 
                     <button
                       id="addtocart"
@@ -62,8 +72,12 @@ const Products = ({ products, addProduct }) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
 
                     <button
                       id="addtocart"

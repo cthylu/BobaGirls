@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
@@ -8,6 +9,8 @@ import Cart from './components/Cart';
 import Products from './components/Products';
 import Product from'./components/Product';
 import About from './components/About';
+import Orders from './components/Orders';
+import Order from './components/Order';
 
 /**
  * COMPONENT
@@ -42,7 +45,9 @@ class Routes extends Component {
             <Route path="/cart" component={Cart} />
             <Route path="/products" component={Products} />
             <Route path="/product/:id" component={Product} />     
-            <Route path="/about" component={About} />
+            <Route path="/about" component={About} />            
+            <Route path='/orders' component={Orders} />
+            <Route path='/order/:id' component={Order} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -72,9 +77,8 @@ const mapState = (state) => {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
-    products: state.productsReducer
-  }
-}
+    products: state.productsReducer,
+    orders: state.ordersReducer
 
 const mapDispatch = (dispatch) => {
   return {
