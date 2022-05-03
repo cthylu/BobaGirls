@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { addToCart } from '../store/cart'
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { addToCart } from "../store/cart";
 
 const Products = ({ products, addProduct }) => {
   return (
@@ -10,13 +10,13 @@ const Products = ({ products, addProduct }) => {
       {
         <div>
           <h2>Teas:</h2>
-            <ul className='teaproducts'>
-              {
-                products.filter(product => product.key === 'tea').map(product => {
-                  return (
-                    <li className='teadiv' key={ product.id }>
-                      <img src={product.imageUrl} />
-
+          <ul className="teaproducts">
+            {products
+              .filter((product) => product.key === "tea")
+              .map((product) => {
+                return (
+                  <li className="teadiv" key={product.id}>
+                    <img src={product.imageUrl} />
                       <Link to={`/product/${ product.id }`}>
                         { product.name }
                       </Link>
@@ -24,19 +24,52 @@ const Products = ({ products, addProduct }) => {
                         ${ product.price }
                       </div>
 
-                      <button id='addtocart' type='add' onClick={() => addProduct((Math.random()))}>Add To Cart</button>
-                    </li>
-                  )
-                })
-              }
+                    <button
+                      id="addtocart"
+                      type="add"
+                      onClick={() => addProduct(Math.random())}
+                    >
+                      Add To Cart
+                    </button>
+                  </li>
+                );
+              })}
           </ul>
           <h2>Toppings:</h2>
-            <ul className='teaproducts'>
-              {
-                products.filter(product => product.key === 'topping').map(product => {
-                  return (
-                    <li className='teadiv' key={ product.id }>
-                      <img src={product.imageUrl} />
+          <ul className="teaproducts">
+            {products
+              .filter((product) => product.key === "topping")
+              .map((product) => {
+                return (
+                  <li className="teadiv" key={product.id}>
+                    <img src={product.imageUrl} />
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
+
+                    <button
+                      id="addtocart"
+                      type="add"
+                      onClick={() => addProduct(Math.random())}
+                    >
+                      Add To Cart
+                    </button>
+                  </li>
+                );
+              })}
+          </ul>
+
+          <h2>Merchandise:</h2>
+          <ul className="teaproducts">
+            {products
+              .filter((product) => product.key === "merchandise")
+              .map((product) => {
+                return (
+                  <li className="teadiv" key={product.id}>
+                    <img src={product.imageUrl} />
 
                       <Link to={`/product/${ product.id }`}>
                         { product.name }
@@ -45,52 +78,35 @@ const Products = ({ products, addProduct }) => {
                         ${ product.price }
                       </div>
 
-                      <button id='addtocart' type='add' onClick={() => addProduct((Math.random()))}>Add To Cart</button>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-
-            <h2>Merchandise:</h2>
-            <ul className='teaproducts'>
-              {
-                products.filter(product => product.key === 'merchandise').map(product => {
-                  return (
-                    <li className='teadiv' key={ product.id }>
-                      <img src={product.imageUrl} />
-
-                      <Link to={`/product/${ product.id }`}>
-                        { product.name }
-                      </Link>
-                      <div className='teaprice'>
-                        ${ product.price }
-                      </div>
-
-                      <button id='addtocart' type='add' onClick={() => addProduct((Math.random()))}>Add To Cart</button>
-                    </li>
-                  )
-                })
-              }
-            </ul>
+                    <button
+                      id="addtocart"
+                      type="add"
+                      onClick={() => addProduct(Math.random())}
+                    >
+                      Add To Cart
+                    </button>
+                  </li>
+                );
+              })}
+          </ul>
         </div>
       }
     </div>
-  )
-}
+  );
+};
 
 const mapState = ({ products }) => {
   return {
-    products
-  }
-}
+    products,
+  };
+};
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     addProductToCart: (product) => {
-      return dispatch(addToCart(product))
-    }
-  }
-}
+      return dispatch(addToCart(product));
+    },
+  };
+};
 
 export default connect(mapState, mapDispatch)(Products);
