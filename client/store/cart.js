@@ -96,14 +96,14 @@ export const addToCart = (product, quantity, history) => {
       const token = window.localStorage.getItem("token");
       if (token) {
         const { data } = await axios.post(
-          `/api/cart`, { product, quantity },
+          `/cart`, { product, quantity },
           { headers: { authorization: token } }
         );
         dispatch(_addToCart(data));
       }
     } catch (ex) {
       console.log(ex);
-    }ç
+    }
   };
 };
 
