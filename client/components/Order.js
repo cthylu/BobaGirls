@@ -24,10 +24,30 @@ export class SingleOrder extends Component {
                   {
                     line.lineitems.map(item => {
                       return (
-                        <li className='orderproducts' key={ item.id }>
-                          <img src={ item.product.imageUrl } />
-                          { item.product.name } ({ item.quantity })
-                        </li>
+                        <div className='orderproducts' key={ item.id }>
+                          <li key={ item.imageUrl }>
+                            <img src={ item.product.imageUrl } />
+                          </li>
+                          <div className='ordername'>
+                            <li>Name:</li>
+                            <li>Quantity:</li>
+                            <li>Price:</li>
+                          </div>
+                          <div className='orderinfo'>
+                            <li key={ item.name }>
+                              { item.product.name }
+                            </li>
+                            <li key={ item.quantity }>
+                              { item.quantity }
+                            </li>
+                            <li key={ item.price }>
+                              ${item.product.price}
+                            </li>
+                          </div>
+                            <li key={ item.total }>
+                                Total: ${item.product.price * item.quantity}.00
+                            </li>
+                        </div>
                       )
                     })
                   }

@@ -20,7 +20,7 @@ class Orders extends Component {
   render() {
     const { order, auth } = this.props
     return (
-      <div>
+      <div className='ordersinfo'>
         <h2>Orders for { auth.username.slice(0, 1).toUpperCase() }{ auth.username.slice(1) }:</h2>
         {
           order.map(orders => {

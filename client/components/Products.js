@@ -6,7 +6,7 @@ import { addToCart } from '../store/cart'
 const Products = ({ products, addProduct }) => {
   return (
     <div className='content'>
-      <h2>Products</h2>
+      <h1>Boba Girls Products</h1>
       {
         <div>
           <h2>Teas:</h2>
