@@ -29,7 +29,7 @@ export const fetchProducts = () => {
   };
 };
 
-export const deleteProduct = (productId) => {
+export const deleteProduct = (productId, history) => {
   return async (dispatch) => {
     try {
       const token = window.localStorage.getItem("token");
@@ -40,6 +40,7 @@ export const deleteProduct = (productId) => {
           },
         });
         dispatch(_removeProduct(data));
+        history.push('/products')
       }
     } catch (ex) {
       console.log(ex);
