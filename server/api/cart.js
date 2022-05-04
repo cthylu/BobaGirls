@@ -58,18 +58,18 @@ router.post("/", isLoggedIn, async (req, res, next) => {
 //   }
 // });
 
-router.post("/cart", isLoggedIn, async (req, res, next) => {
-  try {
-    res.json(await req.user.addToCart(req.body.productId, req.bodyquantity));
-    // const product = await Product.findByPk(req.params.productId);
-    // res.status(201).send(await Product.create(req.body));
-  } catch (e) {
-    // else {
-    //   res.sendStatus(404);
-    // }
-    next(e);
-  }
-});
+// router.post("/cart", isLoggedIn, async (req, res, next) => {
+//   try {
+//     res.json(await req.user.addToCart(req.body.productId, req.bodyquantity));
+//     // const product = await Product.findByPk(req.params.productId);
+//     // res.status(201).send(await Product.create(req.body));
+//   } catch (e) {
+//     // else {
+//     //   res.sendStatus(404);
+//     // }
+//     next(e);
+//   }
+// });
 
 router.delete("/:lineitemId/:quantity", isLoggedIn, async (req, res, next) => {
   try {
