@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../store/cart";
 
-const Products = ({ products, addProduct }) => {
+const Products = (props) => {
+  const { products, addProductToCart } = props;
+  console.log("props", props);
   return (
     <div className='content'>
       <h1>Boba Girls Products</h1>
@@ -30,7 +32,8 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(product)}>
+                      onClick={() => addProductToCart(product)}
+                    >
                       Add To Cart
                     </button>
                   </li>
@@ -55,7 +58,8 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(product)}>
+                      onClick={() => addProductToCart(Math.random())}
+                    >
                       Add To Cart
                     </button>
                   </li>
@@ -82,7 +86,8 @@ const Products = ({ products, addProduct }) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProduct(product, 1)}>
+                      onClick={() => addProductToCart(Math.random())}
+                    >
                       Add To Cart
                     </button>
                   </li>
@@ -95,7 +100,11 @@ const Products = ({ products, addProduct }) => {
   );
 };
 
-const mapState = (state) => state;
+const mapState = ({products}) => {
+  return {
+    products
+  };
+};
 
 const mapDispatch = (dispatch, {history}) => {
   return {

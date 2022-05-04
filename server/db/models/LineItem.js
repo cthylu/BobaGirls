@@ -6,7 +6,7 @@ const LineItem = db.define("lineitem", {
     type: Sequelize.INTEGER,
   },
   cost: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.DECIMAL(10, 2),
   },
 });
 
