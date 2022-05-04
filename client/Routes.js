@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
@@ -26,11 +25,14 @@ class Routes extends Component {
     const url = window.location.origin;
     console.log(url);
     window.socket = new WebSocket(url.replace('http', 'ws'));
-    window.socket.addEventListener('message', (event) => {
-      const message = JSON.parse(event.data);
-      console.log(message);
-      if (message.to === this.props.auth.id ){
-        return ('hi')
+    window.socket.addEventListener('message', () => { 
+      window.socket.send(JSON.stringify(window.localStorage.getItem('token')));
+    });
+    window.socket.addEventListener('message', ()=> {
+      const message = JSON.parge(e.data);
+      if (message.to){
+        const action = {type: 'NEW_MESSAGE', message};
+        this.props.dispatchAction(action);
       }
     })
   }
@@ -89,7 +91,8 @@ const mapDispatch = (dispatch) => {
     },
     loadCart: () => dispatch(fetchCart()),
     loadProducts: () => dispatch(fetchProducts()),
-    loadUsers: () => dispatch(fetchUsers())
+    loadUsers: () => dispatch(fetchUsers()),
+    dispatchAction: (action) => dispatch(action),
   };
 };
 
