@@ -14,7 +14,7 @@ export class SingleProduct extends Component {
   }
 
   render() {
-    const { product } = this.props;
+    const { product, user } = this.props;
     return (
       <div>
         {
@@ -41,7 +41,8 @@ export class SingleProduct extends Component {
 
 const mapState = (state) => {
   return {
-    product: state.singleProduct
+    product: state.singleProduct,
+    user: state.auth
   };
 };
 

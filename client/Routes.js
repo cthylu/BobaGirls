@@ -43,8 +43,8 @@ class Routes extends Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/cart" component={Cart} />
-            <Route path="/products" component={Products} />
-            <Route path="/product/:id" component={Product} />     
+            <Route path="/products" exact component={Products} />
+            <Route path="/products/:id" component={Product} />     
             <Route path="/about" component={About} />            
             <Route path='/orders' component={Orders} />
             <Route path='/order/:id' component={Order} />
@@ -79,6 +79,8 @@ const mapState = (state) => {
     isLoggedIn: !!state.auth.id,
     products: state.productsReducer,
     orders: state.ordersReducer
+  }
+}
 
 const mapDispatch = (dispatch) => {
   return {
