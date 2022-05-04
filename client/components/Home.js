@@ -21,7 +21,8 @@ export const Home = (props) => {
         <h3>Welcome {username}!</h3>
         {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
       </div>
-      {/* <ul>
+      <ul>
+      {console.log(users)}
         {users.map((user) => {
           return (
             <li key={user.id} onClick={() => sendPing()}>
@@ -29,7 +30,7 @@ export const Home = (props) => {
             </li>
           );
         })}
-      </ul> */}
+      </ul>
       <div className="hero">
         <div className="content">
           <div>
