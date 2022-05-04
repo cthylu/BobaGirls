@@ -32,8 +32,6 @@ export const fetchProducts = () => {
 export const deleteProduct = (productId) => {
   return async (dispatch) => {
     try {
-      await axios.delete(`/api/products/${productId}`);
-      dispatch(_removeProduct(productId));
       const token = window.localStorage.getItem("token");
       if (token) {
         const { data } = await axios.delete(`/api/products/${productId}`, {
