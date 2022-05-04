@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ADD8E6;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+ 
+/*** Navbar ***/
+nav {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+}
+nav a {
+  color: #4d4d4d;
+  display: inline-block;
+  margin: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navbar {
+  background: #FFFFFF;
+  padding: 1em 0;
+}
+.navbar img {
+  display: block;
+  width: 120px;
+  margin: auto;
+}
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/*** Content ***/
+main {
+  margin: auto;
+  padding: 0;
+}
+.hero {
+  background: url('/images/hero-bubble-tea.jpg');
+  background-size: cover;
+  height: 80vh;
+  margin-bottom: 60px;
+  display: flex;
+}
+.hero h1 {
+  color: #FFFFFF;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 2px black;
+}
+.hero p {
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px black;
+  margin-top: 1em;
+}
+
+form div {
+  margin: 1em;
+  display: inline-block;
+}
+
+label {
+  display: block;
+}
+
+.addtocart {
+  margin: 2px
+}
+
+.content {
+  width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.content h2 {
+  padding: 1rem 0 1rem 0;
+}
+
+.hero .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0 2rem 0;
+}
+
+.teaproducts {
+  display: flex;
+  text-decoration: none;
+  justify-content: space-around;
+  list-style: none;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.teaproducts img {
+  height: 200px;
+  width: auto;
+}
+
+.teadiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.shopname {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #ADD8E6
+}
+
+.teaprice {
+  text-align: center;
+  padding: 3px;
+}
+
+.teadiv > img {
+  height: 200px;
+  width: auto;
+}
+
+.teainfo {
+  display: flex;
+  padding: 1rem;
+}
+
+.teainfo > img {
+  height: 400px;
+  width: auto;
+  padding: 1rem;
+}
+
+.orderproducts img {
+  height: 150px;
+  width: auto;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.orderdiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderproducts {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  gap: 2rem;
+  list-style: none
+}
+
+.ordersinfo {
+  padding: 1rem;
+}
