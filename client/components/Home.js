@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import auth from "../store/auth";
+import users from "../store/users";
 
 /**
  * COMPONENT
  */
 export const Home = (props) => {
-  const { username, users, auth, ping,  } = props;
+  const { username, users, auth, ping } = props;
 
   const sendPing = (user) => {
     console.log(user);
@@ -25,7 +26,7 @@ export const Home = (props) => {
       {console.log(users)}
         {users.map((user) => {
           return (
-            <li key={user.id} onClick={() => sendPing()}>
+            <li key={user.id} onClick={() => sendPing(user)}>
               {user.username}
             </li>
           );
