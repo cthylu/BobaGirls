@@ -7,8 +7,8 @@ const Products = (props) => {
   const { products, addProductToCart } = props;
   console.log("props", props);
   return (
-    <div className="content">
-      <h2>Products</h2>
+    <div className='content'>
+      <h1>Boba Girls Products</h1>
       {
         <div>
           <h2>Teas:</h2>
@@ -20,8 +20,14 @@ const Products = (props) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+//                     <Link to={`/product/${product.id}`}>{product.name}</Link>
+//                     <div className="teaprice">${product.price}</div>
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
 
                     <button
                       id="addtocart"
@@ -42,9 +48,12 @@ const Products = (props) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
 
                     <button
                       id="addtocart"
@@ -67,8 +76,12 @@ const Products = (props) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+                      <Link to={`/product/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
 
                     <button
                       id="addtocart"
@@ -93,11 +106,9 @@ const mapState = ({products}) => {
   };
 };
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, {history}) => {
   return {
-    addProductToCart: (product) => {
-      return dispatch(addToCart(product));
-    },
+    addProduct: (product) => dispatch(addToCart(console.log(product, history))),
   };
 };
 

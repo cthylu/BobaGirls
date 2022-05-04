@@ -65,7 +65,6 @@ main {
   margin-top: 1em;
 }
 
-
 form div {
   margin: 1em;
   display: inline-block;
@@ -82,12 +81,19 @@ label {
 .content {
   width: 1200px;
   margin: 60px auto;
+  text-align: center;
 }
+
+.content h2 {
+  padding: 1rem 0 1rem 0;
+}
+
 .hero .content {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 0 2rem 0;
 }
 
 .teaproducts {
@@ -100,8 +106,8 @@ label {
 }
 
 .teaproducts img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: auto;
 }
 
 .teadiv {
@@ -109,6 +115,7 @@ label {
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .shopname {
@@ -123,15 +130,45 @@ label {
 }
 
 .teadiv > img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: auto;
 }
 
 .teainfo {
   display: flex;
+  padding: 1rem;
 }
 
 .teainfo > img {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: auto;
+  padding: 1rem;
+}
+
+.orderproducts img {
+  height: 150px;
+  width: auto;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+.orderdiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderproducts {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  gap: 2rem;
+  list-style: none
+}
+
+.ordersinfo {
+  padding: 1rem;
 }

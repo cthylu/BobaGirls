@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart, fetchSingleProduct, deleteProduct } from "../store";
 
 
-export class SingleProduct extends React.Component {
+export class SingleProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -14,8 +14,7 @@ export class SingleProduct extends React.Component {
   }
 
   render() {
-    const { product, user } = this.props;
-    console.log(user)
+    const { product } = this.props;
     return (
       <div>
         {
@@ -26,10 +25,7 @@ export class SingleProduct extends React.Component {
               <p>{product.description}</p>
               <h5>Quantity: { product.quantity } in stock</h5>
 
-              <button
-                className="addtocart"
-                onClick={() => addToCart(productId, history)}
-              >
+              <button className="addtocart" onClick={() => addToCart(product)}>
                 Add To Cart
               </button>
             </div>
@@ -45,16 +41,14 @@ export class SingleProduct extends React.Component {
 
 const mapState = (state) => {
   return {
-    product: state.singleProduct,
-    user: state.auth,
+    product: state.singleProduct
   };
 };
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    fetchSingleProduct: (productId) =>
-      dispatch(fetchSingleProduct(productId, history)),
-    deleteProduct: (productId) => dispatch(deleteProduct(productId)),
+    fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
+    deleteProduct: (product) => dispatch(deleteProduct(product)),
   };
 };
 
