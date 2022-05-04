@@ -55,7 +55,7 @@ const Products = (props) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProductToCart(Math.random())}
+                      onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
                     </button>
@@ -83,7 +83,7 @@ const Products = (props) => {
                     <button
                       id="addtocart"
                       type="add"
-                      onClick={() => addProductToCart(Math.random())}
+                      onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
                     </button>
@@ -105,7 +105,7 @@ const mapState = ({products}) => {
 
 const mapDispatch = (dispatch, {history}) => {
   return {
-    addProduct: (product) => dispatch(addToCart(console.log(product, history))),
+    addProductToCart: (product) => dispatch(addToCart(product, history)),
   };
 };
 
