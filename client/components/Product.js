@@ -30,7 +30,7 @@ export class SingleProduct extends Component {
               </button>
             </div>
             { user.isAdmin ? (
-              <button onClick={() => this.props.deleteProduct(product.id)}>Remove Plant</button>
+              <button onClick={() => this.props.deleteProduct(product.id)}>Remove Product</button>
             ) : null }
           </div>
         }
