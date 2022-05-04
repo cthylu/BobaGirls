@@ -37,7 +37,7 @@ class Cart extends Component {
                 item.lineitems.map((line) => {
                   return (
                     <li key={line.id}>
-                      {line.product.name}({line.quantity})
+                      {line.product?.name}({line.quantity})
                       <button
                         className="delete"
                         type="delete"
