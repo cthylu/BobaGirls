@@ -17,7 +17,17 @@ const token = async (req, res, next) => {
 
 router.post("/", token, async (req, res, next) => {
   try {
-      res.send(await req.user.CheckOut({ firstname: req.body.firstname, lastname: req.body.lastname, address: req.body.address, state: req.body.state, city: req.body.city, zipcode: req.body.zipcode }) )
+    res.send(
+      await req.user.CheckOut({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        address: req.body.address,
+        state: req.body.state,
+        city: req.body.city,
+        zipcode: req.body.zipcode,
+      })
+    );
   } catch (e) {
     next(e);
   }
