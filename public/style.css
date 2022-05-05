@@ -4,17 +4,17 @@
 }
 
 body {
-  background: #ADD8E6;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: #add8e6;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
- 
+
 /*** Navbar ***/
 nav {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-decoration: none;
 }
 nav a {
@@ -25,7 +25,7 @@ nav a {
   text-transform: uppercase;
 }
 .navbar {
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 1em 0;
 }
 .navbar img {
@@ -47,14 +47,14 @@ main {
   padding: 0;
 }
 .hero {
-  background: url('/images/hero-bubble-tea.jpg');
+  background: url("/images/hero-bubble-tea.jpg");
   background-size: cover;
   height: 80vh;
   margin-bottom: 60px;
   display: flex;
 }
 .hero h1 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 2.5em;
   text-shadow: 1px 1px 2px black;
 }
@@ -75,7 +75,7 @@ label {
 }
 
 .addtocart {
-  margin: 2px
+  margin: 2px;
 }
 
 .content {
@@ -120,8 +120,8 @@ label {
 
 .shopname {
   text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #ADD8E6
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #add8e6;
 }
 
 .teaprice {
@@ -155,7 +155,7 @@ label {
   align-items: center;
   justify-content: center;
 }
-  
+
 .orderdiv {
   display: flex;
   flex-direction: column;
@@ -167,11 +167,20 @@ label {
   padding: 1rem;
   align-items: center;
   gap: 2rem;
-  list-style: none
+  list-style: none;
 }
 
 .ordersinfo {
   padding: 1rem;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  right: 40%;
+  width: 250px;
 }
 
 .welcome {
@@ -197,3 +206,4 @@ label {
   padding: 1rem;
   text-transform: uppercase;
 }
+
