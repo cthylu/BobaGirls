@@ -29,7 +29,7 @@ export const fetchProducts = () => {
   };
 };
 
-export const deleteProduct = (productId) => {
+export const deleteProduct = (productId, history) => {
   return async (dispatch) => {
     try {
       const token = window.localStorage.getItem("token");
@@ -39,7 +39,8 @@ export const deleteProduct = (productId) => {
             authorization: token,
           },
         });
-        dispatch(_removeProduct(data));
+        dispatch(_removeProduct(productId, history));
+        history.push('/products')
       }
     } catch (ex) {
       console.log(ex);
@@ -71,7 +72,7 @@ const products = (state = [], action) => {
     return action.products;
   }
   if (action.type === REMOVE_PRODUCT) {
-    return state.filter((product) => product.id !== action.product.id);
+    return state.filter((product) => product.id !== action.productId);
   }
   //   if (action.type === ADD_TO_CART) {
   //   console.log("Action", action);

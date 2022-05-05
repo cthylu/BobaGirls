@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart, fetchSingleProduct, deleteProduct } from "../store";
+import { Link } from "react-router-dom";
+
+
 
 
 export class SingleProduct extends Component {
@@ -14,7 +17,7 @@ export class SingleProduct extends Component {
   }
 
   render() {
-    const { product, user } = this.props;
+    const { product, user} = this.props;
     return (
       <div>
         {
@@ -49,7 +52,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch, { history }) => {
   return {
     fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
-    deleteProduct: (product) => dispatch(deleteProduct(product)),
+    deleteProduct: (productId) => dispatch(deleteProduct(productId, history))
   };
 };
 
