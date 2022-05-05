@@ -36,6 +36,34 @@ const Products = (props) => {
                 );
               })}
           </ul>
+
+          <h2>Syrups:</h2>
+          <ul className="teaproducts">
+            {products
+              .filter((product) => product.key === "syrup")
+              .map((product) => {
+                return (
+                  <li className="teadiv" key={product.id}>
+                    <img src={product.imageUrl} />
+                      <Link to={`/products/${ product.id }`}>
+                        { product.name }
+                      </Link>
+                      <div className='teaprice'>
+                        ${ product.price }
+                      </div>
+
+                    <button
+                      id="addtocart"
+                      type="add"
+                      onClick={() => addProductToCart(product)}
+                    >
+                      Add To Cart
+                    </button>
+                  </li>
+                );
+              })}
+          </ul>
+
           <h2>Toppings:</h2>
           <ul className="teaproducts">
             {products

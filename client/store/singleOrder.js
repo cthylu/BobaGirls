@@ -27,7 +27,9 @@ export const fetchSingleOrder = id => {
   }
 }
 
-export default (state = [], action) => {
+const initialState = {};
+
+export default (state = initialState, action) => {
   if (action.type === FETCH_SINGLE_ORDER) {
     state = action.order
   }

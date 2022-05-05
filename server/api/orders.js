@@ -8,7 +8,8 @@ router.get("/", async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
     const orders = await Order.findAll({
-      where: { userId: user.id, isCart: false }
+      where: { userId: user.id, isCart: false },
+      include: [{ model: LineItem, include: { model: Product } }]
     });
     res.send(orders);
   } catch (ex) {
@@ -20,10 +21,10 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
-    const orders = await Order.findAll({
+    const orders = await Order.findByPk(req.params.id, {
       where: { userId: user.id, isCart: false },
-      include: [{ model: LineItem, include: { model: Product } }],
-    });
+      include: [{ model: LineItem, include: { model: Product } }]
+    })
     res.send(orders)
   } catch (ex) {
     next(ex);
