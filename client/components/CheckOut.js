@@ -11,9 +11,10 @@ class CheckOut extends React.Component {
     }
     handleSubmit(){
 
-    }
+    } 
     render(){
         <div>
+            {/* this part would contain everything on cart page with price */}
         <form id="checkout" onSubmit={handleSubmit}>
           
         <label htmlFor="name"> Name*: </label>
