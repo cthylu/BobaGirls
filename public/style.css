@@ -43,8 +43,9 @@ nav a {
 
 /*** Content ***/
 main {
+  max-width: 1200px;
   margin: auto;
-  padding: 0;
+  padding: 60px 0;
 }
 .hero {
   background: url('/images/hero-bubble-tea.jpg');
@@ -96,6 +97,7 @@ label {
   padding: 0 0 2rem 0;
 }
 
+/*** Products ***/
 .teaproducts {
   display: flex;
   text-decoration: none;
@@ -145,6 +147,8 @@ label {
   padding: 1rem;
 }
 
+/*** Orders ***/
+
 .orderproducts img {
   height: 150px;
   width: auto;
@@ -172,4 +176,9 @@ label {
 
 .ordersinfo {
   padding: 1rem;
+}
+
+/*** Cart ***/
+.cart-container li {
+  list-style-type: none;
 }

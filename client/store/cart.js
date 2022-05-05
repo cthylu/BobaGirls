@@ -55,41 +55,6 @@ export const deleteFromCart = (lineitemId, quantity) => {
   };
 };
 
-// export const addToCart = (productId ) => {
-//   return async (dispatch) => {
-//     try {
-//       const token = window.localStorage.getItem(TOKEN);
-
-//       const { data: productToAdd } = await axios.get(
-//         `/api/products/${productId}`
-//       );
-
-//       let { id } = productToAdd;
-
-//       if (token) {
-//         const res = await axios.get("/auth/me", {
-//           headers: {
-//             authorization: token,
-//           },
-//         });
-
-//         const { data: order } = await axios.post(
-//           `/api/cart`,
-//           { quantity: newQuantity },
-//           {
-//             headers: {
-//               authorization: token,
-//             },
-//           }
-//         );
-//       }
-//       return dispatch(_addProduct(order));
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
-// };
-
 export const addToCart = (product, quantity, history) => {
   return async (dispatch) => {
     try {
@@ -113,22 +78,6 @@ export const addToCart = (product, quantity, history) => {
     }
   };
 };
-
-// export const addToCart = (product, quantity, history) => {
-//   return async (dispatch) => {
-//     try {
-//       const token = window.localStorage.getItem("token");
-//       if (token) {
-//         const { data } = await axios.post("/api/cart", product, {
-//           headers: { authorization: token },
-//         });
-//         dispatch(_addToCart(data));
-//       }
-//     } catch (ex) {
-//       console.log(ex);
-//     }
-//   };
-// };
 
 const cart = (state = [], action) => {
   if (action.type === FETCH_CART) {
