@@ -20,7 +20,6 @@ export const Home = (props) => {
     <div>
       <div className="content">
         <h3>Welcome {username}!</h3>
-        {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
       </div>
       <ul>
       {console.log(users)}
