@@ -21,6 +21,8 @@ export const Home = (props) => {
       <div className="content">
         <h3 className='welcome'>Welcome {username}!</h3>
         {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
+
+
       </div>
       <ul>
       {console.log(users)}

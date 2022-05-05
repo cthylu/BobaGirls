@@ -27,3 +27,13 @@ export * from './singleProduct'
 export * from './order'
 export * from './singleOrder'
 
+// STANNIE: why need singleProduct and singleOrder?
+// you have all of your products in the products state, and you have the id of the product that you need in the url
+// instead of doing having a singleOrder state, you can simply just do this in your ProductDetail view
+
+// const mapState = (state, otherProps) => {
+//   const theIdOfTheProductThatYouNeed = otherProps.match.params.productId;
+//   return {
+//     singleProduct: state.products.find(product => product.id === +theIdOfTheProductThatYouNeed),
+//   };
+// };

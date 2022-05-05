@@ -10,13 +10,13 @@ class Orders extends Component {
   
   async componentDidMount () {
     try {
+      // forgot to pass in user id
       await this.props.fetchOrder(this.props.auth.id)
     }
     catch(ex) {
       next(ex)
     }
   }
-
   render() {
     const { order, auth } = this.props
     return (
@@ -24,6 +24,7 @@ class Orders extends Component {
         <h2>Orders for { auth.username.slice(0, 1).toUpperCase() }{ auth.username.slice(1) }:</h2>
         {
           order.map(orders => {
+            // STANNIE:: i hope the user's cart isnt being displayed here- because i think in our setup, carts and orders are the same database model
             return (
               <div key={ orders.id }>
                 <Link to={`/order/${ orders.id }`}>

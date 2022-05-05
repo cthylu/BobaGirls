@@ -28,7 +28,6 @@ const Products = (props) => {
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -54,7 +53,6 @@ const Products = (props) => {
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -82,7 +80,6 @@ const Products = (props) => {
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
