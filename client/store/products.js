@@ -39,12 +39,12 @@ export const deleteProduct = (productId, history) => {
     try {
       const token = window.localStorage.getItem("token");
       if (token) {
-        const { data } = await axios.delete(`/api/products/${productId}`, {
+        await axios.delete(`/api/products/${productId}`, {
           headers: {
             authorization: token,
           },
         });
-        dispatch(_removeProduct(data));
+        dispatch(_removeProduct(productId, history));
         history.push('/products')
       }
     } catch (ex) {
@@ -78,7 +78,7 @@ const products = (state = [], action) => {
     return action.products;
   }
   if (action.type === REMOVE_PRODUCT) {
-    return state.filter((product) => product.id !== action.product.id);
+    return state.filter((product) => product.id !== action.productId);
   }
   if (action.type === ADD_PRODUCT) {
     return [...state, action.product]

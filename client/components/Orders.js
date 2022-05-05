@@ -10,7 +10,7 @@ class Orders extends Component {
   
   async componentDidMount () {
     try {
-      await this.props.fetchOrder()
+      await this.props.fetchOrder(this.props.auth.id)
     }
     catch(ex) {
       next(ex)
