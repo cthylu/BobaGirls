@@ -24,7 +24,7 @@ class Routes extends Component {
     this.props.loadCart();    
   }
   componentDidUpdate(){
-    // stannie suggest switch to socketio
+    // STANNIE:: switch to socketio, its easier
     this.props.loadUsers();
     const url = window.location.origin;
     console.log(url);

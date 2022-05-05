@@ -12,6 +12,7 @@ const isLoggedIn = async (req, res, next) => {
     next(ex);
   }
 };
+// STANNIE: likewise, you can create an isAdmin middleware to check whether the user is an admin
 
 router.get("/", async (req, res, next) => {
   try {
