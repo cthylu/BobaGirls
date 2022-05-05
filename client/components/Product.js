@@ -29,9 +29,9 @@ export class SingleProduct extends Component {
                 Add To Cart
               </button>
             </div>
-            { user.isAdmin ? (
+            { user.isAdmin && (
               <button onClick={() => this.props.deleteProduct(product.id)}>Remove Product</button>
-            ) : null }
+            )}
           </div>
         }
       </div>
