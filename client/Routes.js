@@ -11,6 +11,8 @@ import Product from'./components/Product';
 import About from './components/About';
 import Orders from './components/Orders';
 import Order from './components/Order';
+import CheckOut from './components/CheckOut';
+
 // store
 import { me, fetchCart, fetchProducts, fetchUsers } from './store'
 
@@ -54,6 +56,7 @@ class Routes extends Component {
             <Route path="/about" component={About} />            
             <Route path='/orders' component={Orders} />
             <Route path='/order/:id' component={Order} />
+            <Route path='/checkout' component={CheckOut} />
             <Redirect to="/home" />
           </Switch>
         ) : (

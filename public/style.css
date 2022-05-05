@@ -173,3 +173,12 @@ label {
 .ordersinfo {
   padding: 1rem;
 }
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  right: 40%;
+  width: 250px;
+}
