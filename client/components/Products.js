@@ -28,7 +28,6 @@ const Products = (props) => {
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -73,7 +72,7 @@ const Products = (props) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-                      <Link to={`/product/${ product.id }`}>
+                      <Link to={`/products/${ product.id }`}>
                         { product.name }
                       </Link>
                       <div className='teaprice'>
@@ -82,7 +81,6 @@ const Products = (props) => {
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -101,7 +99,7 @@ const Products = (props) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                      <Link to={`/product/${ product.id }`}>
+                      <Link to={`/products/${ product.id }`}>
                         { product.name }
                       </Link>
                       <div className='teaprice'>
@@ -110,7 +108,6 @@ const Products = (props) => {
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart

@@ -7,7 +7,6 @@ class Orders extends Component {
   componentDidMount () {
     this.props.fetchOrder()
   }
-
   render() {
     const { order, auth } = this.props
     return (

@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import auth from "../store/auth";
+import users from "../store/users";
 
 /**
  * COMPONENT
  */
 export const Home = (props) => {
-  const { username, users } = props;
+  const { username, users, auth, ping } = props;
 
   const sendPing = (user) => {
     console.log(user);
@@ -18,18 +19,21 @@ export const Home = (props) => {
   return (
     <div>
       <div className="content">
-        <h3>Welcome {username}!</h3>
+        <h3 className='welcome'>Welcome {username}!</h3>
         {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
+
+
       </div>
-      {/* <ul>
+      <ul>
+      {console.log(users)}
         {users.map((user) => {
           return (
-            <li key={user.id} onClick={() => sendPing()}>
+            <li key={user.id} onClick={() => sendPing(user)}>
               {user.username}
             </li>
           );
         })}
-      </ul> */}
+        </ul>
       <div className="hero">
         <div className="content">
           <div>

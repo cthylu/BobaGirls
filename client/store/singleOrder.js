@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+// STANNIE: you dont need this (check my comment in store/index.js
+
 const FETCH_SINGLE_ORDER = 'FETCH_SINGLE_ORDER'
 
 const _fetchSingleOrder = order => ({

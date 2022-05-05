@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addToCart, deleteProduct } from "../store";
+import { Link } from "react-router-dom";
 
 const Product = ({ product, user }) => {
   return (
@@ -37,7 +38,7 @@ const mapState = (state, otherProps) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    deleteProduct: (product) => dispatch(deleteProduct(product)),
+    deleteProduct: (productId) => dispatch(deleteProduct(productId, history))
   };
 };
 

@@ -6,7 +6,7 @@ This allows them to have ingredients delivered straight to their home and mix up
 Boba Girl Team!
 
 Ice Tam: https://www.linkedin.com/in/ice-tam/ 
-         https://github.com/IceTam1
+         https://github.com/IceTam1g
 Cathy Lu: https://www.linkedin.com/in/cathy-lu/
           https://github.com/cthylu
 YingYing Feng: https://www.linkedin.com/in/yingyingfeng1/
