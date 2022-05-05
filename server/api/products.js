@@ -59,3 +59,19 @@ router.delete("/:id", token, async (req, res, next) => {
     next(e);
   }
 });
+
+router.post("/", token, async (req ,res, next) => {
+  try {
+    const { name, price, description, imageUrl } = req.body
+    const product = await Product.create({
+       name,
+       imageUrl,
+       description,
+       price
+    })
+    return res.json(product)
+  } catch (e) {
+    next (e)
+  }
+})
+

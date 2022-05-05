@@ -33,7 +33,9 @@ export class SingleProduct extends Component {
               </button>
             </div>
             { user.isAdmin && (
+              <Link to={`/products`}>
               <button onClick={() => this.props.deleteProduct(product.id)}>Remove Product</button>
+              </Link>
             )}
           </div>
         }
