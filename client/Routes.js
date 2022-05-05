@@ -1,15 +1,18 @@
+// library
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
+// component
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import { me, fetchCart, fetchProducts, fetchUsers } from './store'
 import Cart from './components/Cart';
 import Products from './components/Products';
 import Product from'./components/Product';
 import About from './components/About';
 import Orders from './components/Orders';
 import Order from './components/Order';
+// store
+import { me, fetchCart, fetchProducts, fetchUsers } from './store'
 
 /**
  * COMPONENT
@@ -21,6 +24,7 @@ class Routes extends Component {
     this.props.loadCart();    
   }
   componentDidUpdate(){
+    // STANNIE:: switch to socketio, its easier
     this.props.loadUsers();
     const url = window.location.origin;
     console.log(url);

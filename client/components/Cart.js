@@ -4,10 +4,11 @@ import axios from "axios";
 import { fetchCart, deleteFromCart } from "../store/cart";
 
 class Cart extends Component {
-  constructor(props) {
-    super(props);
-    //this.deleteCartItem = this.deleteCartItem.bind(this);
-  }
+  // > if we do not have state, we can omit the entire constructor
+  // constructor(props) {
+  //   super(props);
+  //   //this.deleteCartItem = this.deleteCartItem.bind(this);
+  // }
 
   async componentDidMount() {
     this.props.fetchCart();

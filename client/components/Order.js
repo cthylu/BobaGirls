@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSingleOrder } from "../store";
+// STANNIE: you dont need this (check my comment in store/index.js
 
 export class SingleOrder extends Component {
   constructor(props) {

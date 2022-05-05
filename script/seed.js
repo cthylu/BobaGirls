@@ -26,6 +26,7 @@ async function seed() {
 
   // Creating Products
   const products = await Promise.all([
+    //teas
     Product.create({ name: 'Green Tea', price: 7.00, quantity: 50, key: 'tea', imageUrl: 'https://i.imgur.com/nDYzIbw.png', 
       description: `In the West, green tea is nowhere near as popular as black tea. Green tea is the most popular type of tea in Japan and in parts of China, and it is gaining popularity in the West. Depending on where they were grown, how they were processed, when they were harvested, etc., good green teas can have a range of tastes. Common descriptors for good quality green tea include: sweet, bittersweet, nutty, vegetal, buttery, floral, swampy, fruity, and oceanic. Steamed green teas tend to taste bittersweet (especially in the aftertaste), while other green teas tend to taste sweet.
       <br/> 
@@ -58,6 +59,7 @@ async function seed() {
       description: `Rose tea is an herbal tea that can be made from a variety of different parts of the rose plant including rose petals, rose buds, and rosehips. The tea is also often blended with true tea leaves such as green tea and black tea to make floral flavored teas. Rose tea blends are also combined with other herbal teas such as chamomile tea, hibiscus tea, and rooibos. Rose tea is a caffeine-free herbal tea that is a best seller thanks to its sweet, floral flavor. The tea contains vitamins and minerals as well as antioxidants that are beneficial for well-being. Try this herbal tea today and discover the different flavors or rose petal tea, rose hips tea, and rose bud tea.
       <br/>
       Preparation: Rose tea can be brewed using tea bags, loose tea, or fresh petals from your garden. Bring filtered or spring water to a rolling boil in a large teapot or electric kettle. Add in one teaspoon of rose petals or rose hips for every eight ounces of water. Steep the rose tea in the boiling water using an infuser for 5 to 7 minutes. If you are making an herbal tea blend with black tea or another strong true tea, limit the steeping time to 3 to 5 minutes. Remove the strainer from the hot water and pour the rose water tea into a teacup. Add sweetener if desired and enjoy.`}),
+      // toppings
     Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
       description: `Tapioca pearls are edible translucent spheres produced from tapioca, a starch extracted from the cassava root. Tapioca pearls make the unique ingredient of a bubble tea or boba tea drinks. They are about the size of pearls or small marbles, with the soft and chewy consistency of gummy candies. The pearls are opaque when raw and turned translucent after cooking. They need to be soaked for a considerable length of time before use in different food preparations. 
       <br/>
@@ -72,6 +74,12 @@ async function seed() {
       description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
+      Product.create({ name: 'Mini Mochi' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Sago' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Mango Pudding' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Cheese Foam' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
+
+      // merch
     Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, key: 'merchandise', imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
       description: `This Stainless Steel Straws Set is a reusable straw solution to replace disposable plastic straws. These steel straws are made from high quality 18/8 stainless steel with a safe, food grade, removable silicone flex tip. No more plastic - just your favorite drinks on the go.
       <br/>
@@ -97,6 +105,22 @@ async function seed() {
       Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
     // Product.create({ name: '', price: 6.00, quantity: 50, imageUrl: '', 
     //   description: `` }),
+    //milk powders
+      Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
+      Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 200 , ikey: 'milk',imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
+      Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who cannot have genuine milk'}),
+      Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
+      Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who want something sweeter than oats or with pure milk allergies.'}),
+      // syrups
+      Product.create({ name: 'Dragon Fruit Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Peach Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Taro Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Lychee Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Honeydew Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Lavendar Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Grapefruit Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Lemon Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
+      Product.create({ name: 'Passion Fruit Syrup' , price: 4.00, quantity: 200 , key: 'syrup', imageUrl: 'N/A',description: ''}),
   ])
 
 
