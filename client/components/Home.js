@@ -18,7 +18,7 @@ export const Home = (props) => {
   return (
     <div>
       <div className="content">
-        <h3>Welcome {username}!</h3>
+        <h3 className='welcome'>Welcome {username}!</h3>
         {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
       </div>
       {/* <ul>

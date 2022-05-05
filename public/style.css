@@ -173,3 +173,12 @@ label {
 .ordersinfo {
   padding: 1rem;
 }
+
+.welcome {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: aliceblue;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  
+}
