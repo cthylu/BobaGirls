@@ -32,11 +32,14 @@ export class SingleProduct extends Component {
                 Add To Cart
               </button>
             </div>
+            <div className='admindelete'>
+            <div className='admin'> Admin Only: </div>
             { user.isAdmin && (
               <Link to={`/products`}>
               <button onClick={() => this.props.deleteProduct(product.id)}>Remove Product</button>
               </Link>
             )}
+            </div>
           </div>
         }
       </div>
