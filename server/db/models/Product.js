@@ -6,7 +6,7 @@ const Product = db.define("product", {
     type: Sequelize.STRING,
   },
   key: {
-    type: Sequelize.STRING,
+    type: Sequelize.ENUM('tea', 'topping', 'merchandise', 'syrup'),
   },
   price: {
     type: Sequelize.DECIMAL(10, 2),

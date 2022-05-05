@@ -26,6 +26,7 @@ async function seed() {
 
   // Creating Products
   const products = await Promise.all([
+    //Teas:
     Product.create({ name: 'Green Tea', price: 7.00, quantity: 50, key: 'tea', imageUrl: 'https://i.imgur.com/nDYzIbw.png', 
       description: `In the West, green tea is nowhere near as popular as black tea. Green tea is the most popular type of tea in Japan and in parts of China, and it is gaining popularity in the West. Depending on where they were grown, how they were processed, when they were harvested, etc., good green teas can have a range of tastes. Common descriptors for good quality green tea include: sweet, bittersweet, nutty, vegetal, buttery, floral, swampy, fruity, and oceanic. Steamed green teas tend to taste bittersweet (especially in the aftertaste), while other green teas tend to taste sweet.
       <br/> 
@@ -58,7 +59,9 @@ async function seed() {
       description: `Rose tea is an herbal tea that can be made from a variety of different parts of the rose plant including rose petals, rose buds, and rosehips. The tea is also often blended with true tea leaves such as green tea and black tea to make floral flavored teas. Rose tea blends are also combined with other herbal teas such as chamomile tea, hibiscus tea, and rooibos. Rose tea is a caffeine-free herbal tea that is a best seller thanks to its sweet, floral flavor. The tea contains vitamins and minerals as well as antioxidants that are beneficial for well-being. Try this herbal tea today and discover the different flavors or rose petal tea, rose hips tea, and rose bud tea.
       <br/>
       Preparation: Rose tea can be brewed using tea bags, loose tea, or fresh petals from your garden. Bring filtered or spring water to a rolling boil in a large teapot or electric kettle. Add in one teaspoon of rose petals or rose hips for every eight ounces of water. Steep the rose tea in the boiling water using an infuser for 5 to 7 minutes. If you are making an herbal tea blend with black tea or another strong true tea, limit the steeping time to 3 to 5 minutes. Remove the strainer from the hot water and pour the rose water tea into a teacup. Add sweetener if desired and enjoy.`}),
-    Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
+    
+    //Toppings:
+      Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
       description: `Tapioca pearls are edible translucent spheres produced from tapioca, a starch extracted from the cassava root. Tapioca pearls make the unique ingredient of a bubble tea or boba tea drinks. They are about the size of pearls or small marbles, with the soft and chewy consistency of gummy candies. The pearls are opaque when raw and turned translucent after cooking. They need to be soaked for a considerable length of time before use in different food preparations. 
       <br/>
       1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
@@ -72,6 +75,8 @@ async function seed() {
       description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
+
+    //Merchandise
     Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, key: 'merchandise', imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
       description: `This Stainless Steel Straws Set is a reusable straw solution to replace disposable plastic straws. These steel straws are made from high quality 18/8 stainless steel with a safe, food grade, removable silicone flex tip. No more plastic - just your favorite drinks on the go.
       <br/>
@@ -95,6 +100,68 @@ async function seed() {
       Size: 24 oz. 
       Material: 100% BPA free, plastic
       Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
+    
+      // Syrup info: https://www.bossenstore.com/collections/bubble-tea-concentrated-syrup
+    Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_blacksugar_DS0242_b72985dd-9fac-44b9-9f44-2d154db4297f_large.jpg?v=1620691665', 
+      description: `One of the most popular sweeteners used in bubble tea, our Bossen Black Sugar syrup (aka Brown Sugar) is a dark, thick, crystalline form of sugar that has a delicious caramel flavor and aroma. Best for making classic milk teas, also wonderfully enhances smoothies, fruit juices, yogurt, and shaved ice desserts. Historically, more than just a distinctive sweetener, Black Sugar is also used by traditional Chinese medical practitioners who recommend it to provide an energy boost and enhance blood circulation, among other things.
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Dragon Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_dragon_fruit_large.jpg?v=1615917379', 
+      description: `Dragon fruit is native to Central American and is now consumed all around the world. It is also known as "Pitaya" and comes in various forms and colors. Boba Girls' Fruit syrup has a beautiful signature magenta color and it will add a refreshing taste to any summertime tea. 
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Lychee Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0501_lychee_large.jpg?v=1594080304', 
+      description: `
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Peach Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_peach_cb224eb7-ad18-4d50-a4d8-07bbe823173e_large.jpg?v=1590710606', 
+      description: `Peach syrup is a classic flavor, adding great taste to any drink of your choice. Best paired with black tea.
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Honeydew Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0701_honeydew_large.jpg?v=1591818510', 
+      description: `Honeydew syrup accentuates the real honeydew fruit flavor and is rich in melony sweetness. Use it to make a perfect summer pick-me-up refresher. A melon bubble iced tea, boba smoothie, or ice-blended fruit juice will alight on the tongue like sunshine.
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Strawberry Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0111_strawberry_somepulp_large.jpg?v=1590694756', 
+      description: `Everyone loves strawberries!  Its combination of sweet and tart is divine and addictive. Boba Girls' syrup is extracted from natural strawberries with little seeds and pieces of pulp inside, the syrup has a robust fruity aroma and authentic taste for juicy strawberry.
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Mango Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0201_mango_large.jpg?v=1594171537', 
+      description: `Whatever season it is, in our heart we long for that summer beach vacation sometimes. Let our mango syrup recreate tropical refreshers for you. 
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Passion Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF1301_passion_fruit_large.jpg?v=1594338387', 
+      description: `Boba Girls' passion fruit syrup is rich in flavor and contains an authentic passion fruit aroma. Infuse it with your favorite drinks like iced tea, slush, smoothie, or top it on frosty desserts like ice cream, shaved ice, and frozen yogurt.
+      <br/>
+      * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+      * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Grapefruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF1501_grapefruit_grande.jpg?v=1594231934', 
+    description: `Boba Girls' grapefruit syrup is a classic. It is balanced perfectly with a nice mix of sweet and bitterness flavors. Paired best with cold drinks, served with black tea.
+    <br/>
+    * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+    * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Wintermelon Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_wintermelon_large.jpg?v=1594250318', 
+    description: `Wintermelon is a large fruit that belongs to the honeydew family. It adds a nice sweetness into your drink! Good either in a cold or hot drink, served with black or green tea.
+    <br/>
+    * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+    * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Green Apple Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0601_green_apple_grande.jpg?v=15942550487', 
+    description: `Green apple is classic twist on your drink. Delicious, tart, and sweet flavors to add into your tea! Best when cold mixed with green tea.
+    <br/>
+    * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+    * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    Product.create({ name: 'Kiwi Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_kiwi_e3546c69-a3ca-4834-819d-a2a795e9e046_grande.jpg?v=1608771953', 
+    description: `Boba Girls' pride ourselves in providing traditional flavors as well as hard-to-find tropical flavors. We recommend adding 8 oz. of kiwi syrup to every one gallon of plain frozen yogurt.
+    <br/>
+    * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
+    * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
     // Product.create({ name: '', price: 6.00, quantity: 50, imageUrl: '', 
     //   description: `` }),
   ])
@@ -106,64 +173,141 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     // cody
-    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }), //orderid: 1
-    Order.create({ totalCost: 6, userId: users[0].id, isCart: false }), //orderid: 2, but the index id = 1...
+    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
+    Order.create({ totalCost: 6, userId: users[0].id, isCart: false }),
     
     //murphy
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }), //orderid: 3
-    Order.create({ totalCost: 3, userId: users[1].id, isCart: true }), //orderid: 4
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }), //orderid: 5
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: true }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+
+    //ice
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
+
+    //yingying
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
+
+    //cathy
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
+    
+    //kim
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
   ])
 
   console.log(`seeded ${orders.length} orders`)
   console.log(`seeded orders successfully`)
   /*
     Products:
-      0 - Green Tea
-      1 - Jasmine Tea
-      2 - Oolong Tea
-      3 - Lavender Tea
-      4 - Chamomile Tea
-      5 - Chrysanthemum Tea
-      6 - Rose Tea
-      7 - Tapioca Pearls
-      8 - Strawberry Popping Boba
-      9 - Lychee Jelly
-      10 - Metal Straws
-      11 - Reusable Tumblr
-      12 - Mason Jar
+      0 - Green Tea                     13 - black sugar
+      1 - Jasmine Tea                   14 - dragon fruit
+      2 - Oolong Tea                    15 - lychee
+      3 - Lavender Tea                  16 - peach
+      4 - Chamomile Tea                 17 - honeydew
+      5 - Chrysanthemum Tea             18 - strawberry
+      6 - Rose Tea                      19 - mango
+      7 - Tapioca Pearls                20 - passionfruit
+      8 - Strawberry Popping Boba       21 - grapefruit
+      9 - Lychee Jelly                  22 - wintermleon
+      10 - Metal Straws                 23 - green apple
+      11 - Reusable Tumblr              24 - kiwi
+      12 - Mason Jar                    25
   */
 
   // Creating LineItems
   const lineitems = await Promise.all([
     // cody
     LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[4].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }), // This should show up in cart
-    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }), 
+    LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[13].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[15].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[16].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[17].id, orderId: orders[0].id }),
 
-    LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }), // This should notshow up in cart
-    LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }), // This should notshow up in cart
+    LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
 
     // murphy
     LineItem.create({ quantity: 1, cost: 6, productId: products[2].id, orderId: orders[2].id }), // This should not show up in cart
-    LineItem.create({ quantity: 1, cost: 6, productId: products[3].id, orderId: orders[2].id }), // This should not show up in cart
-    LineItem.create({ quantity: 1, cost: 6, productId: products[4].id, orderId: orders[2].id }), // This should not show up in cart
-    LineItem.create({ quantity: 1, cost: 6, productId: products[7].id, orderId: orders[2].id }), // This should not show up in cart
-    LineItem.create({ quantity: 1, cost: 6, productId: products[9].id, orderId: orders[2].id }), // This should not show up in cart
-    LineItem.create({ quantity: 1, cost: 6, productId: products[10].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[3].id, orderId: orders[2].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[4].id, orderId: orders[2].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[7].id, orderId: orders[2].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[9].id, orderId: orders[2].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[10].id, orderId: orders[2].id }),
 
     LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[3].id }), // This should show up in cart
-    LineItem.create({ quantity: 3, cost: 3, productId: products[2].id, orderId: orders[3].id }), // This should show up in cart
-    LineItem.create({ quantity: 4, cost: 3, productId: products[4].id, orderId: orders[3].id }), // This should show up in cart
+    LineItem.create({ quantity: 3, cost: 3, productId: products[2].id, orderId: orders[3].id }),
+    LineItem.create({ quantity: 4, cost: 3, productId: products[4].id, orderId: orders[3].id }),
 
     LineItem.create({ quantity: 1, cost: 6, productId: products[1].id, orderId: orders[4].id }), // This should not show up in cart
-    LineItem.create({ quantity: 2, cost: 6, productId: products[12].id, orderId: orders[4].id }), // This should not show up in cart
+    LineItem.create({ quantity: 2, cost: 6, productId: products[12].id, orderId: orders[4].id }),
 
+    LineItem.create({ quantity: 2, cost: 6, productId: products[1].id, orderId: orders[5].id }), // This should not show up in cart
+    LineItem.create({ quantity: 2, cost: 6, productId: products[17].id, orderId: orders[5].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[6].id, orderId: orders[5].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[8].id, orderId: orders[5].id }),
+
+    LineItem.create({ quantity: 10, cost: 6, productId: products[11].id, orderId: orders[6].id }), // This should not show up in cart
+    LineItem.create({ quantity: 10, cost: 6, productId: products[12].id, orderId: orders[6].id }),
+
+    //ice
+    LineItem.create({ quantity: 1, cost: 6, productId: products[0].id, orderId: orders[7].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[2].id, orderId: orders[7].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[7].id, orderId: orders[7].id }),
+
+    LineItem.create({ quantity: 4, cost: 6, productId: products[10].id, orderId: orders[8].id }), // This should not show up in cart
+    LineItem.create({ quantity: 4, cost: 6, productId: products[11].id, orderId: orders[8].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[16].id, orderId: orders[8].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[17].id, orderId: orders[8].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[18].id, orderId: orders[8].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[19].id, orderId: orders[8].id }),
+
+    //yingying
+    LineItem.create({ quantity: 1, cost: 6, productId: products[0].id, orderId: orders[9].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[7].id, orderId: orders[9].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[17].id, orderId: orders[9].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[9].id, orderId: orders[9].id }),
+
+    LineItem.create({ quantity: 1, cost: 6, productId: products[1].id, orderId: orders[10].id }), // This should not show up in cart
+    LineItem.create({ quantity: 5, cost: 6, productId: products[0].id, orderId: orders[10].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[2].id, orderId: orders[10].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[13].id, orderId: orders[10].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[14].id, orderId: orders[10].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[15].id, orderId: orders[10].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[16].id, orderId: orders[10].id }),
+
+    //cathy
+    LineItem.create({ quantity: 1, cost: 6, productId: products[5].id, orderId: orders[11].id }), // This should not show up in cart
+    LineItem.create({ quantity: 5, cost: 6, productId: products[6].id, orderId: orders[11].id }),
+    LineItem.create({ quantity: 2, cost: 6, productId: products[7].id, orderId: orders[11].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[8].id, orderId: orders[11].id }),
+    LineItem.create({ quantity: 3, cost: 6, productId: products[2].id, orderId: orders[11].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[21].id, orderId: orders[11].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[13].id, orderId: orders[11].id }),
+
+    LineItem.create({ quantity: 1, cost: 6, productId: products[10].id, orderId: orders[12].id }), // This should not show up in cart
+    
+    //kim
+    LineItem.create({ quantity: 10, cost: 6, productId: products[6].id, orderId: orders[13].id }), // This should not show up in cart
+    LineItem.create({ quantity: 13, cost: 6, productId: products[2].id, orderId: orders[13].id }),
+    LineItem.create({ quantity: 13, cost: 6, productId: products[5].id, orderId: orders[13].id }),
+    LineItem.create({ quantity: 16, cost: 6, productId: products[1].id, orderId: orders[13].id }),
+    LineItem.create({ quantity: 18, cost: 6, productId: products[6].id, orderId: orders[13].id }),
+
+    LineItem.create({ quantity: 25, cost: 6, productId: products[7].id, orderId: orders[14].id }),// This should not show up in cart
+    LineItem.create({ quantity: 13, cost: 6, productId: products[8].id, orderId: orders[14].id }),
+    LineItem.create({ quantity: 27, cost: 6, productId: products[9].id, orderId: orders[14].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[21].id, orderId: orders[14].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[22].id, orderId: orders[14].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[23].id, orderId: orders[14].id }),
+    LineItem.create({ quantity: 1, cost: 6, productId: products[24].id, orderId: orders[14].id }),
   ])
 
   console.log(`seeded ${lineitems.length} lineitems`)
