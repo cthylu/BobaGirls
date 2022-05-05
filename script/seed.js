@@ -106,38 +106,64 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     // cody
-    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
-    
-    // ice
-    Order.create({ totalCost: 6, userId: users[2].id, isCart: true }),
+    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }), //orderid: 1
+    Order.create({ totalCost: 6, userId: users[0].id, isCart: false }), //orderid: 2, but the index id = 1...
     
     //murphy
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 3, userId: users[1].id, isCart: true })
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }), //orderid: 3
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: true }), //orderid: 4
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }), //orderid: 5
   ])
 
   console.log(`seeded ${orders.length} orders`)
   console.log(`seeded orders successfully`)
+  /*
+    Products:
+      0 - Green Tea
+      1 - Jasmine Tea
+      2 - Oolong Tea
+      3 - Lavender Tea
+      4 - Chamomile Tea
+      5 - Chrysanthemum Tea
+      6 - Rose Tea
+      7 - Tapioca Pearls
+      8 - Strawberry Popping Boba
+      9 - Lychee Jelly
+      10 - Metal Straws
+      11 - Reusable Tumblr
+      12 - Mason Jar
+  */
 
   // Creating LineItems
   const lineitems = await Promise.all([
     // cody
-    LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[4].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[4].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[5].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[6].id, orderId: orders[0].id }), // This should show up in cart
+    LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }), // This should show up in cart
 
-    // ice
-    LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }),
-    LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }),
+    LineItem.create({ quantity: 1, cost: 3, productId: products[2].id, orderId: orders[1].id }), // This should notshow up in cart
+    LineItem.create({ quantity: 1, cost: 3, productId: products[3].id, orderId: orders[1].id }), // This should notshow up in cart
 
     // murphy
-    LineItem.create({ quantity: 3, cost: 6, productId: products[2].id, orderId: orders[2].id }), // This should not show up in cart
-    LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[3].id }), // This should show up
+    LineItem.create({ quantity: 1, cost: 6, productId: products[2].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[3].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[4].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[7].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[9].id, orderId: orders[2].id }), // This should not show up in cart
+    LineItem.create({ quantity: 1, cost: 6, productId: products[10].id, orderId: orders[2].id }), // This should not show up in cart
+
+    LineItem.create({ quantity: 1, cost: 3, productId: products[0].id, orderId: orders[3].id }), // This should show up in cart
+    LineItem.create({ quantity: 3, cost: 3, productId: products[2].id, orderId: orders[3].id }), // This should show up in cart
+    LineItem.create({ quantity: 4, cost: 3, productId: products[4].id, orderId: orders[3].id }), // This should show up in cart
+
+    LineItem.create({ quantity: 1, cost: 6, productId: products[1].id, orderId: orders[4].id }), // This should not show up in cart
+    LineItem.create({ quantity: 2, cost: 6, productId: products[12].id, orderId: orders[4].id }), // This should not show up in cart
+
   ])
 
   console.log(`seeded ${lineitems.length} lineitems`)
@@ -146,7 +172,11 @@ async function seed() {
   return {
     users: {
       cody: users[0],
-      murphy: users[1]
+      murphy: users[1],
+      ice: users[2],
+      yingying: users[3],
+      cathy: users[4],
+      kim: users[5]
     },
     products,
     orders,

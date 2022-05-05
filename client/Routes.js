@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import { me, fetchCart, fetchProducts, fetchUsers } from './store'
+import { me, fetchCart, fetchProducts, fetchUsers, fetchOrder } from './store'
 import Cart from './components/Cart';
 import Products from './components/Products';
 import Product from'./components/Product';
@@ -19,7 +19,8 @@ class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData();
     this.props.loadProducts();
-    this.props.loadCart();    
+    this.props.loadCart();
+    this.props.loadOrder();
   }
   componentDidUpdate(){
     this.props.loadUsers();
@@ -89,7 +90,8 @@ const mapDispatch = (dispatch) => {
     },
     loadCart: () => dispatch(fetchCart()),
     loadProducts: () => dispatch(fetchProducts()),
-    loadUsers: () => dispatch(fetchUsers())
+    loadUsers: () => dispatch(fetchUsers()),
+    loadOrder: () => dispatch(fetchOrder())
   };
 };
 

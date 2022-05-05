@@ -4,17 +4,8 @@ import { Link } from 'react-router-dom';
 import { fetchOrder } from '../store'
 
 class Orders extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  async componentDidMount () {
-    try {
-      await this.props.fetchOrder()
-    }
-    catch(ex) {
-      next(ex)
-    }
+  componentDidMount () {
+    this.props.fetchOrder()
   }
 
   render() {
@@ -27,7 +18,7 @@ class Orders extends Component {
             return (
               <div key={ orders.id }>
                 <Link to={`/order/${ orders.id }`}>
-                  Ordered on: {orders.createdAt.slice(0, 10)}
+                  Ordered on: {orders.id}
                 </Link>
               </div>
             )
@@ -38,10 +29,14 @@ class Orders extends Component {
   }
 }
 
-const mapState = (state) => state;
+const mapState = ({ order, auth }) => {
+  return {
+    order, auth
+  }
+}
 
 const mapDispatch = (dispatch) => ({
-    fetchOrder: (userId) => dispatch(fetchOrder(userId)),
+    fetchOrder: (orderId) => dispatch(fetchOrder(orderId)),
 })
 
 export default connect(mapState, mapDispatch)(Orders)

@@ -155,11 +155,6 @@ label {
   align-items: center;
   justify-content: center;
 }
-  
-.orderdiv {
-  display: flex;
-  flex-direction: column;
-}
 
 .orderproducts {
   display: flex;
@@ -172,4 +167,21 @@ label {
 
 .ordersinfo {
   padding: 1rem;
+}
+
+.orderdiv {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.orderdiv img {
+  height: 150px;
+  width: auto;
+}
+
+.orderinfo {
+  list-style: none;
 }
