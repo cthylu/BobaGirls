@@ -7,11 +7,11 @@ import auth from './auth'
 import products from './products'
 import cart from './cart'
 import singleProduct from './singleProduct'
-import order from './order'
+import orders from './orders'
 import singleOrder from './singleOrder'
 import users from "./users";
 
-const reducer = combineReducers({ auth, products, singleProduct, cart, order, singleOrder,users })
+const reducer = combineReducers({ auth, products, singleProduct, cart, orders, singleOrder,users })
 
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
@@ -24,7 +24,7 @@ export * from './products'
 export * from "./users";
 export * from './cart'
 export * from './singleProduct'
-export * from './order'
+export * from './orders'
 export * from './singleOrder'
 
 // STANNIE: why need singleProduct and singleOrder?

@@ -64,9 +64,7 @@ export const addToCart = (product, quantity, history) => {
         const lineitem = {
           quantity: 1,
           cost: product.price,
-          //product: {...product},
           productId: product.id,
-          orderId: 1
         }
         const { data } = await axios.post('/api/cart', lineitem, 
           { headers: { authorization: token } }
@@ -91,9 +89,15 @@ const cart = (state = [], action) => {
   if (action.type === ADD_TO_CART) {
     console.log("Action", action)
     const newState = [...state];
-    newState[0].lineitems = [...state[0].lineitems, action.lineitem];
-    console.log("New State", state)
-
+    console.log("State", state);
+    if (newState[0]) {
+      newState[0].lineitems = [...state[0].lineitems, action.lineitem];
+    } else {
+      newState.push({lineitems: [action.lineitem]});
+    }
+    //newState[0].lineitems = [...state[0].lineitems, action.lineitem];
+    //console.log("New State", newState);
+    return newState;
   }
   return state;
 };

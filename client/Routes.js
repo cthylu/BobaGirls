@@ -14,7 +14,7 @@ import Order from './components/Order';
 import CheckOut from './components/CheckOut';
 
 // store
-import { me, fetchCart, fetchProducts, fetchUsers, fetchOrder } from './store'
+import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders } from './store'
 
 /**
  * COMPONENT
@@ -24,7 +24,7 @@ class Routes extends Component {
     this.props.loadInitialData();
     this.props.loadProducts();
     this.props.loadCart();
-    this.props.loadOrder();
+    this.props.loadOrders();
   }
   componentDidUpdate(){
     // STANNIE:: switch to socketio, its easier
@@ -100,7 +100,7 @@ const mapDispatch = (dispatch) => {
     loadCart: () => dispatch(fetchCart()),
     loadProducts: () => dispatch(fetchProducts()),
     loadUsers: () => dispatch(fetchUsers()),
-    loadOrder: () => dispatch(fetchOrder()),
+    loadOrders: () => dispatch(fetchOrders()),
     dispatchAction: (action) => dispatch(action),
   };
 };
