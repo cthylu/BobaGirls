@@ -7,8 +7,13 @@ const CheckOut = db.define("checkout", {
   email: Sequelize.TEXT,
   address: Sequelize.STRING(50),
   city: Sequelize.STRING(50),
-  state: Sequelize.STRING(2),
-  zipcode: Sequelize.INTEGER(5),
+  state: Sequelize.STRING(20),
+  zipcode: Sequelize.INTEGER,
+  // {
+  //   type: 
+  //   max: 5,
+  //   min: 5
+  // }
 });
 
 module.exports = CheckOut;
