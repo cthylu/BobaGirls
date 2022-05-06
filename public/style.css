@@ -1,4 +1,4 @@
-@media (max-width: 1500px){
+/* @media (max-width: 1500px) */
 * {
   margin: 0;
   padding: 0;
@@ -236,6 +236,61 @@ label {
   width: 250px;
 }
 
+/*** HamBurger ***/
 
+.navbar2 a, .dropdown {
+  float: center;
+  font-size: 16px;
+  color: Green;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
+.dropdown {
+  float: right;
+  overflow: hidden;
+  padding: 14px 16px;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: pink;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: pink;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: deepskyblue;
+}
+
+.show {
+  display: block;
 }
