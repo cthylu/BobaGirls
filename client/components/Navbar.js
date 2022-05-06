@@ -2,8 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
+import { TiThMenu } from "react-icons/ti"
 
-const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
+const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => {
+  return(
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
@@ -42,7 +44,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
       )}
     </nav>
   </div>
-);
+)};
 
 /**
  * CONTAINER
