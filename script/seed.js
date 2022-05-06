@@ -179,7 +179,6 @@ async function seed() {
       Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: ''}),
   ])
 
-
   console.log(`seeded ${products.length} products`)
   console.log(`seeded products successfully`)
 
