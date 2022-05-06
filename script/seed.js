@@ -13,7 +13,20 @@ async function seed() {
 
   // Creating Users
   const users = await Promise.all([
-    User.create({ username: 'cody', firstName: 'cody', password: '123', isAdmin: true }),
+    User.create({ 
+      profilePicture: 'https://media-be.chewy.com/wp-content/uploads/2021/06/02102132/Pomeranian_Featured-Image-1024x615.jpg',
+      username: 'cody',  
+      password: '123', 
+      isAdmin: true, 
+      firstName: 'cody', 
+      lastName: 'moldy',
+      email: 'moldycody@outlook.com',
+      creditCard: 939393939393,
+      address: '92 Molding Lane',
+      city: 'Cheese Touch',
+      state: 'NY',
+      zipCode: 11221,
+    }),
     User.create({ username: 'murphy', password: '123' }),
     User.create({ username: 'ice', password: '123' }),
     User.create({ username: 'yingying', password: '123' }),
