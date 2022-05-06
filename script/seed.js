@@ -170,12 +170,13 @@ async function seed() {
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
     // Product.create({ name: '', price: 6.00, quantity: 50, imageUrl: '', 
     //   description: `` }),
+    
     //milk powders
       Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
       Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 200 , ikey: 'milk',imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
       Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who cannot have genuine milk'}),
       Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
-      Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description
+      Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: ''}),
   ])
 
 
