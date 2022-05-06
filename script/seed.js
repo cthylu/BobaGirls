@@ -130,6 +130,38 @@ async function seed() {
       Size: 24 oz. 
       Material: 100% BPA free, plastic
       Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
+    Product.create({
+      name:'Boba Mini Backpack',
+      price: 40.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-mini-backpack-bubble-tea-boba-tea-14709426618404_800x.jpg?v=1600345348',
+      description: 'Calling Boba tea (Bubble tea) lovers from around the world, this cute Mini Backpack will be your new best companion for travelling or for everyday life. It\’s compact yet spacious, perfect for fitting all your essentials whilst going about your everyday life.Don’t let the cuteness fool you, it’s as cute as it is functional. Designed to be configured three different ways—as a backpack, crossbody or a shoulder bag—this Boba Mini Backpack will have you ready for anything. Specifications: 1 main compartment, 1 interior pocket, 1 back zipper pocket, 2 small side pockets. Materials: Premium Faux leather. Dimensions: 19.5 x 11.5 x 24 cm (7.6 x 4.5 x 9.4 in)',
+    }),
+    Product.create({
+      name:'Boba is Life Tote',
+      price: 25.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-is-life-tote-bag-bubble-tea-boba-tea-14729087746084_800x.jpg?v=1594046122',
+      description: 'Introducing our limited edition Boba is Life Tote bag, designed to be the cutest representation of how much Love & Happiness Boba tea brings into our lives and everyone around us. The Boba is Life Tote bag is the cutest way to showcase your love for Boba and is the perfect company for your everyday life. Specifications: Bag dimensions: 38.1cm x 38.1cm (15 x 15 in). Handle dimensions: Handle Length 30 cm (11.8 in), width 2.5cm (1 in). 100% Polyester',
+    }),
+    Product.create({
+      name:'Boba Milk Tea AirPods Case',
+      price: 20.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-milk-tea-airpods-case-bubble-tea-boba-tea-14728192458788_x686@2x.jpg?v=1592523275',
+      description: 'If you\’re living life on the edge and leaving your AirPods naked and without a case, you’re almost guaranteed to damage it or even worse, lose it. Don\’t worry, we\’ve got your back on this and designed this cute little Boba Milk Tea AirPods case to help keep your precious AirPods safe and sound in its loving embrace. We\’ve made each of our Boba Milk tea AirPods case promise to keep your AirPods safe no matter how much wear and tear they experience with your everyday life.',
+    }),
+    Product.create({
+      name:'Boba Tea AirTag Keyring Case',
+      price: 10.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/ProductImage2.jpg?v=1623127033',
+      description: 'This cute Boba tea AirTag Keyring Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
+    }),
     
       // Syrup info: https://www.bossenstore.com/collections/bubble-tea-concentrated-syrup
     Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_blacksugar_DS0242_b72985dd-9fac-44b9-9f44-2d154db4297f_large.jpg?v=1620691665', 
@@ -283,7 +315,7 @@ async function seed() {
       9 - Lychee Jelly                  22 - wintermleon
       10 - Metal Straws                 23 - green apple
       11 - Reusable Tumblr              24 - kiwi
-      12 - Mason Jar                    25
+      12 - Mason Jar                    25 
   */
 
   // Creating LineItems
