@@ -61,7 +61,7 @@ class CheckOut extends React.Component {
               ) : (
                 <div>
                   No items in your cart! Try some of our
-                  <Link to={"/prodcuts"}> Products! </Link>
+                  <Link to={"/products"}> Products! </Link>
                 </div>
               )}
             </div>
