@@ -1,23 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToCart, fetchSingleProduct, deleteProduct } from "../store";
+import { addToCart, deleteProduct } from "../store";
 import { Link } from "react-router-dom";
 
 
 
-
-export class SingleProduct extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {
-    this.props.fetchSingleProduct(this.props.match.params.id);
-  }
-
-  render() {
-    const { product, user} = this.props;
+const SingleProduct = ({product, user}) => {
     return (
       <div>
         {
@@ -36,7 +24,7 @@ export class SingleProduct extends Component {
             <div className='admin'> Admin Only: </div>
             { user.isAdmin && (
               <Link to={`/products`}>
-              <button onClick={() => this.props.deleteProduct(product.id)}>Remove Product</button>
+              <button onClick={() => deleteProduct(product.id)}>Remove Product</button>
               </Link>
             )}
             </div>
@@ -44,22 +32,21 @@ export class SingleProduct extends Component {
         }
       </div>
     );
-  }
 }
 
-const mapState = (state) => {
-  return {
-    product: state.singleProduct,
-    user: state.auth
-  };
-};
+const mapState = (state, otherProps) => {
+  const product = state.products.find(product => product.id === otherProps.match.params.id*1) || {};
+  const user = state.auth
+    return {
+      product,
+      user
+    }
+}
 
-const mapDispatch = (dispatch, { history }) => {
-  return {
-    fetchSingleProduct: (productId) => dispatch(fetchSingleProduct(productId, history)),
+const mapDispatch = (dispatch, { history }) => ({
     deleteProduct: (productId) => dispatch(deleteProduct(productId, history))
-  };
-};
+  });
+;
 
 export default connect(mapState, mapDispatch)(SingleProduct);
 
