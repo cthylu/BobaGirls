@@ -42,8 +42,7 @@ class Cart extends Component {
                             this.props.deleteLineitem(line.id, line.quantity)
                           }
                         >
-                          {" "}
-                          Remove{" "}
+                          Remove
                         </button></td>
                       </tr>
                     );
@@ -63,7 +62,7 @@ const mapState = (state) => state;
 const mapDispatch = (dispatch) => ({
   fetchCart: () => dispatch(fetchCart()),
   deleteLineitem: (lineId, lineQuantity) =>
-    dispatch(deleteFromCart(lineId, lineQuantity)),
+  dispatch(deleteFromCart(lineId, lineQuantity)),
 });
 
 export default connect(mapState, mapDispatch)(Cart);

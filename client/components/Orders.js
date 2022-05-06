@@ -28,7 +28,7 @@ class Orders extends Component {
             return (
               <div key={ orders.id }>
                 <Link to={`/order/${ orders.id }`}>
-                  Ordered on: {orders.createdAt.slice(0, 10)}
+                  Ordered on: {orders.id}
                 </Link>
               </div>
             )
@@ -39,7 +39,11 @@ class Orders extends Component {
   }
 }
 
-const mapState = (state) => state;
+const mapState = ({ orders, auth }) => {
+  return {
+    orders, auth
+  }
+}
 
 const mapDispatch = (dispatch) => ({
     fetchOrders: (userId) => dispatch(fetchOrders(userId)),

@@ -100,6 +100,7 @@ label {
 /*** Products ***/
 .teaproducts {
   display: flex;
+  flex-wrap: wrap;
   text-decoration: none;
   justify-content: space-around;
   list-style: none;
@@ -215,3 +216,4 @@ label {
 .cart-container li {
   list-style-type: none;
 }
+
