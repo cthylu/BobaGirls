@@ -107,7 +107,7 @@ async function seed() {
       Material: 100% BPA free, plastic
       Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
     
-      // Syrup info: https://www.bossenstore.com/collections/bubble-tea-concentrated-syrup
+    //Syrups:
     Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Sd3KrLt.png', 
       description: `One of the most popular sweeteners used in bubble tea, our Bossen Black Sugar syrup (aka Brown Sugar) is a dark, thick, crystalline form of sugar that has a delicious caramel flavor and aroma. Best for making classic milk teas, also wonderfully enhances smoothies, fruit juices, yogurt, and shaved ice desserts. Historically, more than just a distinctive sweetener, Black Sugar is also used by traditional Chinese medical practitioners who recommend it to provide an energy boost and enhance blood circulation, among other things.
       <br/>
@@ -172,11 +172,11 @@ async function seed() {
     //   description: `` }),
     
     //milk powders
-      Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
-      Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
-      Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who cannot have genuine milk'}),
-      Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
-      Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: ''}),
+    Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
+    Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
+    Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who cannot have genuine milk'}),
+    Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
+    Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: ''}),
   ])
 
   console.log(`seeded ${products.length} products`)
