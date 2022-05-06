@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-const FETCH_ORDER = 'FETCH_ORDER'
+const FETCH_ORDERS = 'FETCH_ORDERS'
 
-const _fetchOrder = orders => ({
-  type: FETCH_ORDER,
+const _fetchOrders = orders => ({
+  type: FETCH_ORDERS,
   orders
 })
 
-export const fetchOrder = () => {
+export const fetchOrders = () => {
   return async dispatch => {
     try {
       const token = window.localStorage.getItem('token')
@@ -17,7 +17,7 @@ export const fetchOrder = () => {
             authorization: token
           }
         })
-        dispatch(_fetchOrder(data))
+        dispatch(_fetchOrders(data))
       }
     } catch (ex) {
       console.log(ex)
@@ -25,11 +25,11 @@ export const fetchOrder = () => {
   }
 }
 
-const order = (state = [], action) => {
-  if (action.type === FETCH_ORDER) {
+const orders = (state = [], action) => {
+  if (action.type === FETCH_ORDERS) {
     return action.orders
   }
   return state
 }
 
-export default order
+export default orders
