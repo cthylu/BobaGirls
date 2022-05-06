@@ -20,6 +20,30 @@ const User = db.define("user", {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
+  firstName: {
+    type: Sequelize.STRING(50),
+  },
+  lastName: {
+    type: Sequelize.STRING(50),
+  },
+  email: {
+    type: Sequelize.TEXT,
+  },
+  creditCard: {
+    type: Sequelize.INTEGER,
+  },
+  address: {
+    type: Sequelize.STRING(50),
+  },
+  city: {
+    type: Sequelize.STRING(50),
+  },
+  state: { 
+    type:Sequelize.STRING(20),
+  },
+  zipCode:{ 
+    type: Sequelize.INTEGER,
+  },
 });
 
 module.exports = User;
