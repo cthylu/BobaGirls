@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchCart } from "../store/cart";
-import users from "../store/users";
 import { createShipping } from "../store/checkout";
 import { Link } from "react-router-dom";
 
@@ -54,87 +53,90 @@ class CheckOut extends React.Component {
               {item.isCart === true && item.lineitems.length > 0 ? (
                 <div>
                   You have {item.lineitems.length} items in your
-                  <Link to={"cart"}> Cart </Link>
+                  <Link to={"/cart"}> Cart </Link>
                   <div> Your total is $</div>
                   <div> To continue checking out, fill out the below. </div>
+                  <form
+                    id="checkout"
+                    className="checkout"
+                    onSubmit={handleSubmit}
+                  >
+                    <label htmlFor="firstname"> First Name*: </label>
+                    <input
+                      name="firstname"
+                      onChange={checkout}
+                      value={firstname}
+                      placeholder="First Name"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="lastname"> Last Name*: </label>
+                    <input
+                      name="lastname"
+                      onChange={checkout}
+                      value={lastname}
+                      placeholder="Last Name"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="email"> Email*: </label>
+                    <input
+                      type="email"
+                      name="email"
+                      onChange={checkout}
+                      value={email}
+                      placeholder="E-mail"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="address"> Address*: </label>
+                    <input
+                      name="address"
+                      onChange={checkout}
+                      value={address}
+                      placeholder="Address"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="city"> City*: </label>
+                    <input
+                      name="city"
+                      onChange={checkout}
+                      value={city}
+                      placeholder="City"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="state"> State*: </label>
+                    <input
+                      name="state"
+                      onChange={checkout}
+                      value={state}
+                      placeholder="State"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="zipcode"> Zip-code*: </label>
+                    <input
+                      name="zipcode"
+                      onChange={checkout}
+                      value={zipcode}
+                      placeholder="Zip-code"
+                      required
+                    />
+                    <br />
+                    <button type="submit"> Complete Purchase </button>
+                  </form>
                 </div>
               ) : (
                 <div>
-                  No items in your cart! Try some of our
-                  <Link to={"/prodcuts"}> Products! </Link>
+                  No items in your <Link to={"/cart"}> Cart </Link>! Try some of our
+                  <Link to={"/products"}> Products! </Link>
                 </div>
               )}
             </div>
           );
         })}
-
-        <form id="checkout" className="checkout" onSubmit={handleSubmit}>
-          <label htmlFor="firstname"> First Name*: </label>
-          <input
-            name="firstname"
-            onChange={checkout}
-            value={firstname}
-            placeholder="First Name"
-            required
-          />
-          <br />
-          <label htmlFor="lastname"> Last Name*: </label>
-          <input
-            name="lastname"
-            onChange={checkout}
-            value={lastname}
-            placeholder="Last Name"
-            required
-          />
-          <br />
-          <label htmlFor="email"> Email*: </label>
-          <input
-            type="email"
-            name="email"
-            onChange={checkout}
-            value={email}
-            placeholder="E-mail"
-            required
-          />
-          <br />
-          <label htmlFor="address"> Address*: </label>
-          <input
-            name="address"
-            onChange={checkout}
-            value={address}
-            placeholder="Address"
-            required
-          />
-          <br />
-          <label htmlFor="city"> City*: </label>
-          <input
-            name="city"
-            onChange={checkout}
-            value={city}
-            placeholder="City"
-            required
-          />
-          <br />
-          <label htmlFor="state"> State*: </label>
-          <input
-            name="state"
-            onChange={checkout}
-            value={state}
-            placeholder="State"
-            required
-          />
-          <br />
-          <label htmlFor="zipcode"> Zip-code*: </label>
-          <input
-            name="zipcode"
-            onChange={checkout}
-            value={zipcode}
-            placeholder="Zip-code"
-            required
-          />
-          <br />
-          <button type="submit"> Complete Purchase </button>
-        </form>
       </div>
     );
   }
