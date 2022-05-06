@@ -13,13 +13,14 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             <p>{product.description}</p>
             <h5>Quantity: { product.quantity } in stock</h5>
 
-            <button id="addtocart" className="addtocart" onClick={() => addProductToCart(product)}>
+            <button className="addtocart" onClick={() => addProductToCart(product)}>
               Add To Cart
             </button>
           </div>
-          { user.isAdmin && (
+          { user.isAdmin ? (
             <button onClick={() => deleteProduct(product.id)}>Remove Product</button>
-          )}
+          ) : null }
+
         </div>
       }
     </div>
@@ -37,8 +38,8 @@ const mapState = (state, otherProps) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
-    deleteProduct: (productId) => dispatch(deleteProduct(productId, history))
+    deleteProduct: (productId) => dispatch(deleteProduct(productId, history)),
+    addProductToCart: (product) => dispatch(addToCart(product, history))
   };
 };
 
