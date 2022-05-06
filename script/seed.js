@@ -77,10 +77,34 @@ async function seed() {
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
     
-//     Product.create({ name: 'Mini Mochi' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
-//     Product.create({ name: 'Sago' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
-//     Product.create({ name: 'Mango Pudding' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
-//     Product.create({ name: 'Cheese Foam' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
+    Product.create({ 
+    name: 'Mini Mochi' , 
+    price: 4.00, 
+    quantity: 200 , 
+    key: 'topping', 
+    imageUrl: 'https://nuts.com/images/rackcdn/ed910ae2d60f0d25bcb8-80550f96b5feb12604f4f720bfefb46d.ssl.cf1.rackcdn.com/5728_Mochi+Rice+Cake-ntd7h-Sk-large.jpg',
+    description: 'Mini Mochi is one of the most popular flavors you can think of to top off your favorite dessert. Imagine a spoonful of matcha green tea snow ice or frozen yogurt, sided with these little rice cake balls, and a bit of red bean. Delicious!'}),
+    Product.create({ 
+    name: 'Red Bean', 
+    price: 4.00, 
+    quantity: 200, 
+    key: 'topping', 
+    imageUrl: 'https://www.babyment.com/food/red-bean.jpg',
+    description: 'Red bean soaked and mixed with sugar is a popular topping in bubble tea.  It is not only delicious but healthy and provides nutrients and health benefits. Red bean is rich in potassium which can help to regulate blood pressure and is therefore beneficial to the heart. Red bean is also rich in antioxidants which can protect organs from attack by free radicals.  Red bean contains vitamins A, B6 and minerals like magnesium and iron. '}),
+    Product.create({ 
+    name: 'Black Jelly' , 
+    price: 4.00, 
+    quantity: 200 , 
+    key: 'topping', 
+    imageUrl: 'https://chatime.com/wp-content/uploads/2019/04/toppings-grass-jelly.png',
+    description: 'Grass jelly, also known as leaf jelly or herb jelly, is a jelly-like dessert eaten in East and Southeast Asia. It is created by using the Platostoma palustre plant (a member of the mint family) and has a mild, slightly bitter taste. It is served chilled, with other toppings such as fruit, or in bubble tea or other drinks. It has a soft silky texture, easy to mix and delicious to eat.  Mix it with some sugar if you like things extra sweetened!'}),
+    Product.create({ 
+    name: 'Aloe Vera' , 
+    price: 4.00, 
+    quantity: 200 , 
+    key: 'topping', 
+    imageUrl: 'https://www.bubbletea.com.au/site/images/source/aloe_vera_1.jpg',
+    description: 'A delicious and fun to chewy topping for those who love jelly! Aloe Vera small chunks syrup. Suitable for desserts. An easy and fun addition to your drink. Simply scoop and serve in your delicious boba and enjoy.  Refrigerate After Opening, Use within 1 week. Vegeterian.'}),
 
       // merch
     Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, key: 'merchandise', imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
@@ -172,11 +196,41 @@ async function seed() {
     //   description: `` }),
     
     //milk powders
-      Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
-      Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
-      Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who cannot have genuine milk'}),
-      Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
-      Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: ''}),
+      Product.create({ 
+      name: 'Whole Milk Powder' ,
+      price: 6.00, 
+      quantity: 200 , 
+      key: 'milk',
+      imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 
+      description: 'Whole milk in its most unadulterated form — and in addition to the fat found in milk, the main component (about 87 percent) is water. You\'ll also find vitamins, minerals, sugars like lactose and proteins like caseins and whey proteins. Perfect for the daily dairy lovers who want it as it\'s made' }),
+      Product.create({ 
+      name: 'Skim Milk 2% Powder' , 
+      price: 6.00, 
+      quantity: 200 , 
+      key: 'milk',
+      imageUrl: 'https://m.media-amazon.com/images/I/61ISN+q8VIS._SY445_.jpg', 
+      description: 'Skim Milk is made when all the milkfat is removed from whole milk. It tends to contain around very little fat. Perfect for when you want less milk fat in your boba, but still want the nutrients and consistency from real dairy.'}),
+      Product.create({ 
+      name: 'Almond Milk Powder' , 
+      price: 8.00, 
+      quantity: 200 , 
+      key: 'milk', 
+      imageUrl: 'http://www.nutricentreng.com/wp-content/uploads/2016/05/Almond-Milk-Powder.jpg',
+      description: 'Almond milk is a plant milk with a creamy texture and nutty flavor manufactured from almonds, although some types or brands are flavored in imitation of cow\'s milk. It does not contain cholesterol or lactose and is low in saturated fat. Perfect for those who cannot have genuine dairy products.'}),
+      Product.create({ 
+      name: 'Oat Milk Powder' , 
+      price: 9.00, 
+      quantity: 200 , 
+      key: 'milk',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0493/0558/3773/products/OatMilkPowderBagFront.jpg?v=1622850159', 
+      description: 'Oat milk is a plant milk derived from whole oat grains by extracting the plant material with water. Oat milk has a creamy texture and mild oatmeal-like flavor, and is manufactured in various flavors, such as sweetened, unsweetened, vanilla, and chocolate. Flavors can also be made at home such as chocolate, with cocoa powder, it makes the perfect chocolate oat milk.  Perfect for those with dairy and almond allegies'}),
+      Product.create({ 
+      name: 'Soy Milk Powder' , 
+      price: 9.00, 
+      quantity: 200 , 
+      key: 'milk', 
+      imageUrl: 'https://i5.walmartimages.com/asr/a05fee3f-4211-475f-8319-7f71a2cc522f_1.197f902fc8a7883551b5d430265a0978.jpeg',
+      description: 'Soymilk, is a plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates. It is a stable emulsion of oil, water, and protein. Its original form is an intermediate product of the manufacture of tofu. Perfect for those with dairy and almond allergies that enjoy tofu and something with nutrients. '}),
   ])
 
 

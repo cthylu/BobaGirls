@@ -108,9 +108,25 @@ label {
   margin: auto;
 }
 
-.teaproducts img {
+/* .teaproducts img {
   height: 200px;
   width: auto;
+} */
+
+.teaproducts img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  /* box-shadow: 3px 3px 10px rgb(205 205 205); */
+  margin: 1rem;
+  border-radius: 5px;
+  /* background-color: white; */
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .teadiv {
@@ -179,18 +195,9 @@ label {
   padding: 1rem;
 }
 
-.checkout {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  position: absolute;
-  right: 40%;
-  width: 250px;
-}
-
 .welcome {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: aliceblue;
+  color: black;
   text-transform: uppercase;
   display: flex;
   justify-content: flex-start;
@@ -217,3 +224,13 @@ label {
   list-style-type: none;
 }
 
+/*** Check Out ***/
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  right: 40%;
+  width: 250px;
+}

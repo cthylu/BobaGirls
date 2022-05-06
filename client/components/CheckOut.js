@@ -19,7 +19,7 @@ class CheckOut extends React.Component {
     this.checkout = this.checkout.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  async componentDidMount() {
+  componentDidMount() {
     this.props.fetchCart();
   }
   checkout(e) {
@@ -40,8 +40,7 @@ class CheckOut extends React.Component {
     );
   }
   render() {
-    const { firstname, lastname, email, address, city, state, zipcode } =
-      this.state;
+    const { firstname, lastname, email, address, city, state, zipcode } = this.state;
     const { cart } = this.props;
     const { checkout, handleSubmit } = this;
     return (
