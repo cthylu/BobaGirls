@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addToCart, deleteProduct } from "../store";
-import { Link } from "react-router-dom";
 
-const Product = ({ product, user }) => {
+const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
     <div>
       {
@@ -14,13 +13,13 @@ const Product = ({ product, user }) => {
             <p>{product.description}</p>
             <h5>Quantity: { product.quantity } in stock</h5>
 
-            <button className="addtocart" onClick={() => addToCart(product)}>
+            <button id="addtocart" className="addtocart" onClick={() => addProductToCart(product)}>
               Add To Cart
             </button>
           </div>
-          { user.isAdmin ? (
-            <button onClick={() => this.props.deleteProduct(product.id)}>Remove Product</button>
-          ) : null }
+          { user.isAdmin && (
+            <button onClick={() => deleteProduct(product.id)}>Remove Product</button>
+          )}
         </div>
       }
     </div>
@@ -38,6 +37,7 @@ const mapState = (state, otherProps) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
+    addProductToCart: (product) => dispatch(addToCart(product, history)),
     deleteProduct: (productId) => dispatch(deleteProduct(productId, history))
   };
 };
