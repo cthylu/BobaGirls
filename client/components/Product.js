@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { addToCart, deleteProduct } from "../store";
 
-
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
     <div>

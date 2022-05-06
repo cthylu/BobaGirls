@@ -7,7 +7,7 @@ const Products = (props) => {
   const { products, addProductToCart } = props;
   console.log("props", props);
   return (
-    <div className='content'>
+    <div className="content">
       <h1>Boba Girls Products</h1>
       {
         <div>
@@ -19,12 +19,8 @@ const Products = (props) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-                      <Link to={`/products/${ product.id }`}>
-                        { product.name }
-                      </Link>
-                      <div className='teaprice'>
-                        ${ product.price }
-                      </div>
+                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <div className="teaprice">${product.price}</div>
 
                     <button
                       id="addtocart"
@@ -45,16 +41,11 @@ const Products = (props) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-                      <Link to={`/products/${ product.id }`}>
-                        { product.name }
-                      </Link>
-                      <div className='teaprice'>
-                        ${ product.price }
-                      </div>
+                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <div className="teaprice">${product.price}</div>
 
                     <button
                       id="addtocart"
-                      type="add"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -72,12 +63,8 @@ const Products = (props) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-                      <Link to={`/products/${ product.id }`}>
-                        { product.name }
-                      </Link>
-                      <div className='teaprice'>
-                        ${ product.price }
-                      </div>
+                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <div className="teaprice">${product.price}</div>
 
                     <button
                       id="addtocart"
@@ -99,12 +86,8 @@ const Products = (props) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                      <Link to={`/products/${ product.id }`}>
-                        { product.name }
-                      </Link>
-                      <div className='teaprice'>
-                        ${ product.price }
-                      </div>
+                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <div className="teaprice">${product.price}</div>
 
                     <button
                       id="addtocart"
@@ -122,13 +105,13 @@ const Products = (props) => {
   );
 };
 
-const mapState = ({products}) => {
+const mapState = ({ products }) => {
   return {
-    products
+    products,
   };
 };
 
-const mapDispatch = (dispatch, {history}) => {
+const mapDispatch = (dispatch, { history }) => {
   return {
     addProductToCart: (product) => dispatch(addToCart(product, history)),
   };
