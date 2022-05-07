@@ -1,8 +1,10 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import { fetchOrders } from "../store";
 import { addToCart, fetchCart } from "../store/cart";
+import { NewProduct } from "./NewProduct";
+
 
 class Products extends Component {
   async componentDidMount() {
@@ -85,7 +87,7 @@ class Products extends Component {
                   );
                 })}
             </ul>
-            <h2>Toppings:</h2>
+            {/* <h2>Toppings:</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "topping")
@@ -105,7 +107,7 @@ class Products extends Component {
                     </li>
                   );
                 })}
-            </ul>
+            </ul> */}
 
             <h2>Merchandise:</h2>
             <ul className="teaproducts">
@@ -129,6 +131,7 @@ class Products extends Component {
                   );
                 })}
             </ul>
+            {/* <Route component={NewProduct} /> */}
           </div>
         }
       </div>

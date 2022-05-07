@@ -17,12 +17,12 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
               Add To Cart
             </button>
           </div>
-          <div className='admindelete'>
-           <h5 className='admin'> Admin Only: </h5>
           { user.isAdmin ? (
+            <div className='admindelete'>
+            <h5 className='admin'> Admin Only: </h5>
             <button onClick={() => deleteProduct(product.id)}>Remove Product</button>
+            </div>
           ) : null }
-          </div>
         </div>
       }
     </div>

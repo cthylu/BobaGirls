@@ -59,7 +59,7 @@ export const addNewProduct = product => {
     try {
       const token = window.localStorage.getItem("token");
       if(token) {
-        const { data } = await axios.post('/api/products', product , {
+        const { data } = await axios.post('/api/products', product, {
           headers: {
             authorization: token,
           },
