@@ -20,11 +20,8 @@ export const Home = (props) => {
     <div>
       <div className="content">
         <h3 className='welcome'>Welcome {username}!</h3>
-        {/* <h3> {username} ? <div>Welcome {username} </div> : <div>{''}</div></h3> */}
-
-
       </div>
-      <ul>
+      {/* <ul>
       {console.log(users)}
         {users.map((user) => {
           return (
@@ -33,7 +30,7 @@ export const Home = (props) => {
             </li>
           );
         })}
-        </ul>
+        </ul> */}
       <div className="hero">
         <div className="content">
           <div>

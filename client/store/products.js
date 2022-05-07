@@ -34,16 +34,16 @@ export const fetchProducts = () => {
   };
 };
 
-export const deleteProduct = (productId, history) => {
+export const deleteProduct = (productId, lineitem, history) => {
   return async (dispatch) => {
     try {
       const token = window.localStorage.getItem("token");
       if (token) {
-        await axios.delete(`/api/products/${productId}`, {
+        await axios.delete(`/api/products/${productId}`,  {
           headers: {
             authorization: token,
           },
-        });
+        })
         dispatch(_removeProduct(productId, history));
         history.push('/products')
       }
@@ -78,7 +78,7 @@ const products = (state = [], action) => {
     return action.products;
   }
   if (action.type === REMOVE_PRODUCT) {
-    return state.filter((product) => product.id !== action.productId);
+    return [...state.filter((product) => product.id !== action.productId)];
   }
   if (action.type === ADD_PRODUCT) {
     return [...state, action.product]
