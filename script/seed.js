@@ -77,10 +77,34 @@ async function seed() {
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
     
-//     Product.create({ name: 'Mini Mochi' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
-//     Product.create({ name: 'Sago' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
-//     Product.create({ name: 'Mango Pudding' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
-//     Product.create({ name: 'Cheese Foam' , price: 4.00, quantity: 200 , key: 'topping', imageUrl: 'N/A',description: ''}),
+    Product.create({ 
+    name: 'Mini Mochi' , 
+    price: 4.00, 
+    quantity: 200 , 
+    key: 'topping', 
+    imageUrl: 'https://nuts.com/images/rackcdn/ed910ae2d60f0d25bcb8-80550f96b5feb12604f4f720bfefb46d.ssl.cf1.rackcdn.com/5728_Mochi+Rice+Cake-ntd7h-Sk-large.jpg',
+    description: 'Mini Mochi is one of the most popular flavors you can think of to top off your favorite dessert. Imagine a spoonful of matcha green tea snow ice or frozen yogurt, sided with these little rice cake balls, and a bit of red bean. Delicious!'}),
+    Product.create({ 
+    name: 'Red Bean', 
+    price: 4.00, 
+    quantity: 200, 
+    key: 'topping', 
+    imageUrl: 'https://www.babyment.com/food/red-bean.jpg',
+    description: 'Red bean soaked and mixed with sugar is a popular topping in bubble tea.  It is not only delicious but healthy and provides nutrients and health benefits. Red bean is rich in potassium which can help to regulate blood pressure and is therefore beneficial to the heart. Red bean is also rich in antioxidants which can protect organs from attack by free radicals.  Red bean contains vitamins A, B6 and minerals like magnesium and iron. '}),
+    Product.create({ 
+    name: 'Black Jelly' , 
+    price: 4.00, 
+    quantity: 200 , 
+    key: 'topping', 
+    imageUrl: 'https://chatime.com/wp-content/uploads/2019/04/toppings-grass-jelly.png',
+    description: 'Grass jelly, also known as leaf jelly or herb jelly, is a jelly-like dessert eaten in East and Southeast Asia. It is created by using the Platostoma palustre plant (a member of the mint family) and has a mild, slightly bitter taste. It is served chilled, with other toppings such as fruit, or in bubble tea or other drinks. It has a soft silky texture, easy to mix and delicious to eat.  Mix it with some sugar if you like things extra sweetened!'}),
+    Product.create({ 
+    name: 'Aloe Vera' , 
+    price: 4.00, 
+    quantity: 200 , 
+    key: 'topping', 
+    imageUrl: 'https://www.bubbletea.com.au/site/images/source/aloe_vera_1.jpg',
+    description: 'A delicious and fun to chewy topping for those who love jelly! Aloe Vera small chunks syrup. Suitable for desserts. An easy and fun addition to your drink. Simply scoop and serve in your delicious boba and enjoy.  Refrigerate After Opening, Use within 1 week. Vegeterian.'}),
 
       // merch
     Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, key: 'merchandise', imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
@@ -106,6 +130,38 @@ async function seed() {
       Size: 24 oz. 
       Material: 100% BPA free, plastic
       Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` }),
+    Product.create({
+      name:'Boba Mini Backpack',
+      price: 40.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-mini-backpack-bubble-tea-boba-tea-14709426618404_800x.jpg?v=1600345348',
+      description: 'Calling Boba tea (Bubble tea) lovers from around the world, this cute Mini Backpack will be your new best companion for travelling or for everyday life. It\’s compact yet spacious, perfect for fitting all your essentials whilst going about your everyday life.Don’t let the cuteness fool you, it’s as cute as it is functional. Designed to be configured three different ways—as a backpack, crossbody or a shoulder bag—this Boba Mini Backpack will have you ready for anything. Specifications: 1 main compartment, 1 interior pocket, 1 back zipper pocket, 2 small side pockets. Materials: Premium Faux leather. Dimensions: 19.5 x 11.5 x 24 cm (7.6 x 4.5 x 9.4 in)',
+    }),
+    Product.create({
+      name:'Boba is Life Tote',
+      price: 25.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-is-life-tote-bag-bubble-tea-boba-tea-14729087746084_800x.jpg?v=1594046122',
+      description: 'Introducing our limited edition Boba is Life Tote bag, designed to be the cutest representation of how much Love & Happiness Boba tea brings into our lives and everyone around us. The Boba is Life Tote bag is the cutest way to showcase your love for Boba and is the perfect company for your everyday life. Specifications: Bag dimensions: 38.1cm x 38.1cm (15 x 15 in). Handle dimensions: Handle Length 30 cm (11.8 in), width 2.5cm (1 in). 100% Polyester',
+    }),
+    Product.create({
+      name:'Boba Milk Tea AirPods Case',
+      price: 20.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-milk-tea-airpods-case-bubble-tea-boba-tea-14728192458788_x686@2x.jpg?v=1592523275',
+      description: 'If you\’re living life on the edge and leaving your AirPods naked and without a case, you’re almost guaranteed to damage it or even worse, lose it. Don\’t worry, we\’ve got your back on this and designed this cute little Boba Milk Tea AirPods case to help keep your precious AirPods safe and sound in its loving embrace. We\’ve made each of our Boba Milk tea AirPods case promise to keep your AirPods safe no matter how much wear and tear they experience with your everyday life.',
+    }),
+    Product.create({
+      name:'Boba Tea AirTag Keyring Case',
+      price: 10.00,
+      quantity: 200,
+      key: 'merchandise',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/ProductImage2.jpg?v=1623127033',
+      description: 'This cute Boba tea AirTag Keyring Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
+    }),
     
       // Syrup info: https://www.bossenstore.com/collections/bubble-tea-concentrated-syrup
     Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_blacksugar_DS0242_b72985dd-9fac-44b9-9f44-2d154db4297f_large.jpg?v=1620691665', 
@@ -172,11 +228,41 @@ async function seed() {
     //   description: `` }),
     
     //milk powders
-      Product.create({ name: 'Whole Milk Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for the milk lovers who want it as it\'s made' }),
-      Product.create({ name: 'Skim Milk 2% Powder' , price: 6.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for when you want less fat in your milk.'}),
-      Product.create({ name: 'Almond Milk Powder' , price: 8.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: 'Perfect for those who cannot have genuine milk'}),
-      Product.create({ name: 'Oat Milk Powder' , price: 9.00, quantity: 200 , key: 'milk',imageUrl: 'N/A', description: 'Perfect for those with milk and almond allegies'}),
-      Product.create({ name: 'Soy Milk Powder' , price: 9.00, quantity: 200 , key: 'milk', imageUrl: 'N/A',description: ''}),
+      Product.create({ 
+      name: 'Whole Milk Powder' ,
+      price: 6.00, 
+      quantity: 200 , 
+      key: 'milk',
+      imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 
+      description: 'Whole milk in its most unadulterated form — and in addition to the fat found in milk, the main component (about 87 percent) is water. You\'ll also find vitamins, minerals, sugars like lactose and proteins like caseins and whey proteins. Perfect for the daily dairy lovers who want it as it\'s made' }),
+      Product.create({ 
+      name: 'Skim Milk 2% Powder' , 
+      price: 6.00, 
+      quantity: 200 , 
+      key: 'milk',
+      imageUrl: 'https://m.media-amazon.com/images/I/61ISN+q8VIS._SY445_.jpg', 
+      description: 'Skim Milk is made when all the milkfat is removed from whole milk. It tends to contain around very little fat. Perfect for when you want less milk fat in your boba, but still want the nutrients and consistency from real dairy.'}),
+      Product.create({ 
+      name: 'Almond Milk Powder' , 
+      price: 8.00, 
+      quantity: 200 , 
+      key: 'milk', 
+      imageUrl: 'http://www.nutricentreng.com/wp-content/uploads/2016/05/Almond-Milk-Powder.jpg',
+      description: 'Almond milk is a plant milk with a creamy texture and nutty flavor manufactured from almonds, although some types or brands are flavored in imitation of cow\'s milk. It does not contain cholesterol or lactose and is low in saturated fat. Perfect for those who cannot have genuine dairy products.'}),
+      Product.create({ 
+      name: 'Oat Milk Powder' , 
+      price: 9.00, 
+      quantity: 200 , 
+      key: 'milk',
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0493/0558/3773/products/OatMilkPowderBagFront.jpg?v=1622850159', 
+      description: 'Oat milk is a plant milk derived from whole oat grains by extracting the plant material with water. Oat milk has a creamy texture and mild oatmeal-like flavor, and is manufactured in various flavors, such as sweetened, unsweetened, vanilla, and chocolate. Flavors can also be made at home such as chocolate, with cocoa powder, it makes the perfect chocolate oat milk.  Perfect for those with dairy and almond allegies'}),
+      Product.create({ 
+      name: 'Soy Milk Powder' , 
+      price: 9.00, 
+      quantity: 200 , 
+      key: 'milk', 
+      imageUrl: 'https://i5.walmartimages.com/asr/a05fee3f-4211-475f-8319-7f71a2cc522f_1.197f902fc8a7883551b5d430265a0978.jpeg',
+      description: 'Soymilk, is a plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates. It is a stable emulsion of oil, water, and protein. Its original form is an intermediate product of the manufacture of tofu. Perfect for those with dairy and almond allergies that enjoy tofu and something with nutrients. '}),
   ])
 
 
@@ -229,7 +315,7 @@ async function seed() {
       9 - Lychee Jelly                  22 - wintermleon
       10 - Metal Straws                 23 - green apple
       11 - Reusable Tumblr              24 - kiwi
-      12 - Mason Jar                    25
+      12 - Mason Jar                    25 
   */
 
   // Creating LineItems

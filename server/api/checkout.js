@@ -17,8 +17,8 @@ const token = async (req, res, next) => {
 
 router.get("/:id", token, async (req, res, next) => {
   try {
-    const CheckOut = await CheckOut.findByPk(req.body);
-    res.send(CheckOut);
+    const checkOut = await CheckOut.findByPk(req.body);
+    res.send(checkOut).status(204);
   } catch (e) {
     next(e);
   }
