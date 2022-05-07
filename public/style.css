@@ -272,6 +272,7 @@ td {
   position: absolute;
   right: 40%;
   width: 250px;
+}
 
 /**Admin Buttons**/
 .admindeleteb {
@@ -366,9 +367,16 @@ td {
   font-size: 20px;
 }
 
-.boba {
+.boba, .profile {
   border: white 2px solid;
   padding: 2rem;
+  color: white ;
+  margin: 1rem;
+} 
+
+.profile2 {
+  border: white 2px solid;
+  padding: .3rem;
   color: white ;
   margin: 1rem;
 }
