@@ -9,7 +9,8 @@ export class NewProduct extends Component {
           name: '',
           price: '',
           description: '',
-          imageUrl: ''
+          imageUrl: '',
+          key: ''
       }
      this.initialState = this.state
      this.handleChange = this.handleChange.bind(this)
@@ -31,6 +32,7 @@ export class NewProduct extends Component {
        const { name, price, description, imageUrl } = this.state
        const {handleSubmit, handleChange} = this
        const { user } = this.props
+       console.log(user, 'user')
        return (
           <div>
             { user.isAdmin ? (
@@ -70,6 +72,7 @@ export class NewProduct extends Component {
                        onChange={handleChange}
                       />
                   </form>
+                  <button onClick={handleSubmit}> Submit </button>
               </div>
             ) : null }  
           </div>

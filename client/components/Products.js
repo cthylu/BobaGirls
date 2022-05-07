@@ -134,7 +134,9 @@ class Products extends Component {
                   );
                 })}
             </ul>
-            {/* <Route component={NewProduct} /> */}
+            <Link to='/newproducts'>
+              <button>Add New Product</button>
+            </Link>
           </div>
           }
       </div>
