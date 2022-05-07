@@ -1,8 +1,10 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import { fetchOrders } from "../store";
 import { addToCart, fetchCart } from "../store/cart";
+
+
 
 class Products extends Component {
   async componentDidMount() {
@@ -11,7 +13,7 @@ class Products extends Component {
   }
 
   render() {
-    const { products, addProductToCart } = this.props;
+    const { products, addProductToCart, user } = this.props;
     return (
       <div className="content">
         <h1>Boba Girls Products</h1>
@@ -29,7 +31,7 @@ class Products extends Component {
                     <div className="teaprice">${product.price}</div>
 
                     <button
-                      id="addtocart"
+                      className="addtocart"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -52,7 +54,7 @@ class Products extends Component {
                     <div className="teaprice">${product.price}</div>
 
                     <button
-                      id="addtocart"
+                      className="addtocart"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -74,8 +76,10 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
-                        onClick={() => addProductToCart(product)}
+                        className="addtocart"
+                        onClick={() => {
+                          addProductToCart(product);
+                        }}
                       >
                         Add To Cart
                       </button>
@@ -83,7 +87,7 @@ class Products extends Component {
                   );
                 })}
             </ul>
-
+            
             <h2>Milk Powder:</h2>
             <ul className="teaproducts">
               {products
@@ -97,7 +101,7 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
+                        className="addtocart"
                         onClick={() => addProductToCart(product)}
                       >
                         Add To Cart
@@ -105,7 +109,7 @@ class Products extends Component {
                     </li>
                   );
                 })}
-            </ul>
+              </ul> 
 
             <h2>Merchandise:</h2>
             <ul className="teaproducts">
@@ -120,7 +124,7 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
+                        className="addtocart"
                         onClick={() => addProductToCart(product)}
                       >
                         Add To Cart
@@ -130,16 +134,26 @@ class Products extends Component {
                 })}
             </ul>
 
+            <Link to='/newproducts'>
+              { user.isAdmin ? (
+              <div className='admindelete'>
+              <h5 className='admin'> Admin Only: </h5>
+              <button className='admindeleteb'>Add New Product</button>
+              </div>
+              ) : null }
+            </Link>
           </div>
-        }
+          }
       </div>
     );
   }
 }
 
-const mapState = ({ products }) => {
+const mapState = ({ products, auth }) => {
+  const user = auth
   return {
     products,
+    user
   };
 };
 
