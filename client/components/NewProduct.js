@@ -9,8 +9,9 @@ export class NewProduct extends Component {
           name: '',
           price: '',
           description: '',
-          imageUrl: '',
-          key: ''
+          imageUrl: 'https://www.honestfoodtalks.com/wp-content/uploads/2021/09/Boba-tea-recipe-using-fresh-tapioca-pearls-1024x1024.jpeg',
+          key: 'toppings',
+          quantity: 0
       }
      this.initialState = this.state
      this.handleChange = this.handleChange.bind(this)
@@ -29,7 +30,7 @@ export class NewProduct extends Component {
     }
 
    render() {
-       const { name, price, description, imageUrl } = this.state
+       const { name, price, description, imageUrl, key } = this.state
        const {handleSubmit, handleChange} = this
        const { user } = this.props
        console.log(user, 'user')
@@ -71,6 +72,13 @@ export class NewProduct extends Component {
                        placeholder='Product ImageUrl'
                        onChange={handleChange}
                       />
+                      <input
+                       name='key'
+                       type='text'
+                       value={key}
+                       placeholder='Product Category'
+                       onChange={handleChange}
+                       />
                   </form>
                   <button onClick={handleSubmit}> Submit </button>
               </div>

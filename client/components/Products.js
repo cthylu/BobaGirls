@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link, Route } from "react-router-dom";
 import { fetchOrders } from "../store";
 import { addToCart, fetchCart } from "../store/cart";
-import { NewProduct } from "./NewProduct";
+
 
 
 class Products extends Component {
@@ -13,7 +13,7 @@ class Products extends Component {
   }
 
   render() {
-    const { products, addProductToCart } = this.props;
+    const { products, addProductToCart, user } = this.props;
     return (
       <div className="content">
         <h1>Boba Girls Products</h1>
@@ -134,8 +134,14 @@ class Products extends Component {
                   );
                 })}
             </ul>
+            
             <Link to='/newproducts'>
-              <button>Add New Product</button>
+              { user.isAdmin ? (
+              <div className='admindelete'>
+              <h5 className='admin'> Admin Only: </h5>
+              <button className='admindeleteb'>Add New Product</button>
+              </div>
+              ) : null }
             </Link>
           </div>
           }
@@ -144,9 +150,11 @@ class Products extends Component {
   }
 }
 
-const mapState = ({ products }) => {
+const mapState = ({ products, auth }) => {
+  const user = auth
   return {
     products,
+    user
   };
 };
 
