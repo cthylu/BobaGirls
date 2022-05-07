@@ -87,7 +87,9 @@ class Products extends Component {
                   );
                 })}
             </ul>
-            {/* <h2>Toppings:</h2>
+            
+            <h2>Merchandise:</h2>
+
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "merchandise")
@@ -109,6 +111,7 @@ class Products extends Component {
                   );
                 })}
               </ul> */}
+
             <h2>Milk Powder:</h2>
             <ul className="teaproducts">
               {products
