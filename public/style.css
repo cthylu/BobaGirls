@@ -229,6 +229,9 @@ label {
   align-items: center;
   color: white;
   border: 2px solid white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  margin: 1rem;
 }
 
 .admin {
@@ -286,7 +289,7 @@ td {
   display: inline-block;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 200;
   line-height: 16px;
   min-height: 40px;
   outline: 0;
