@@ -93,7 +93,6 @@ const cart = (state = [], action) => {
     const newState = [...state];
     newState[0].lineitems = [...state[0].lineitems, action.lineitem];
     console.log("New State", state)
-
   }
   return state;
 };
