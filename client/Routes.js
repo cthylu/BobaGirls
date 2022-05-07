@@ -12,9 +12,11 @@ import About from './components/About';
 import Orders from './components/Orders';
 import Order from './components/Order';
 import CheckOut from './components/CheckOut';
+import Profile from './components/Profile';
 
 // store
 import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders } from './store'
+
 
 /**
  * COMPONENT
@@ -58,6 +60,7 @@ class Routes extends Component {
             <Route path='/orders' component={Orders} />
             <Route path='/order/:id' component={Order} />
             <Route path='/checkout' component={CheckOut} />
+            <Route path='/profile' component={Profile} />
             <Redirect to="/home" />
           </Switch>
         ) : (
