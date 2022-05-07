@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 import { fetchCart, deleteFromCart } from "../store/cart";
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
   async componentDidMount() {
@@ -17,13 +19,14 @@ class Cart extends Component {
     const { cart } = this.props;
     return (
       <div className="cart-container">
-        <h2>Cart:</h2>
         {cart.map((item) => {
           return (
             <div key={item.id}>
+              <h2>Cart:</h2>
               <table>
                 <tbody>
                   <tr>
+                    <th></th>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Cost</th>
@@ -31,7 +34,8 @@ class Cart extends Component {
                   {
                   item.lineitems.map((line) => {
                     return (
-                      <tr key={line.id}>
+                      <tr key={line.id} className='cart-table'>
+                        <img src={line.product?.imageUrl} />
                         <td>{line.product?.name}</td>
                         <td>{line.quantity}</td>
                         <td>{line.cost}</td>
@@ -52,6 +56,16 @@ class Cart extends Component {
             </div>
           );
         })}
+        <div className='cartcheckout'>
+          <h2>Cart Total</h2>
+          <ul>
+            <li>Quantity:</li>
+            <li>Total:</li>
+          </ul>
+          <button>
+            <Link to="/checkout">Checkout</Link>
+          </button>
+        </div>
       </div>
     );
   }
