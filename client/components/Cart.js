@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCart, deleteFromCart } from "../store/cart";
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
   async componentDidMount() {
@@ -52,6 +53,7 @@ class Cart extends Component {
             </div>
           );
         })}
+         <Link to='/checkout'> CHECK OUT </Link>
       </div>
     );
   }

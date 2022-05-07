@@ -8,13 +8,13 @@ class CheckOut extends React.Component {
   constructor() {
     super();
     this.state = {
-      firstname: "",
-      lastname: "",
-      checkout: "",
+      firstName: "",
+      lastName: "",
+      email: "",
       address: "",
       city: "",
       state: "",
-      zipcode: "",
+      zipCode: "",
     };
     this.checkout = this.checkout.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,18 +29,18 @@ class CheckOut extends React.Component {
     this.props.createShipping({ ...this.state });
     this.setState(
       (this.state = {
-        firstname: "",
-        lastname: "",
-        checkout: "",
+        firstName: "",
+        lastName: "",
+        email: "",
         address: "",
         city: "",
         state: "",
-        zipcode: "",
+        zipCode: "",
       })
     );
   }
   render() {
-    const { firstname, lastname, email, address, city, state, zipcode } = this.state;
+    const { firstName, lastName, email, address, city, state, zipCode } = this.state;
     const { cart } = this.props;
     const { checkout, handleSubmit } = this;
     return (
@@ -55,25 +55,27 @@ class CheckOut extends React.Component {
                   <Link to={"/cart"}> Cart </Link>
                   <div> Your total is $</div>
                   <div> To continue checking out, fill out the below. </div>
+                  <br/>
+                  <div> SHIPPING INFORMATION </div>
                   <form
                     id="checkout"
                     className="checkout"
                     onSubmit={handleSubmit}
                   >
-                    <label htmlFor="firstname"> First Name*: </label>
+                    <label htmlFor="firstName"> First Name*: </label>
                     <input
-                      name="firstname"
+                      name="firstName"
                       onChange={checkout}
-                      value={firstname}
+                      value={firstName}
                       placeholder="First Name"
                       required
                     />
                     <br />
-                    <label htmlFor="lastname"> Last Name*: </label>
+                    <label htmlFor="lastName"> Last Name*: </label>
                     <input
-                      name="lastname"
+                      name="lastName"
                       onChange={checkout}
-                      value={lastname}
+                      value={lastName}
                       placeholder="Last Name"
                       required
                     />
@@ -115,11 +117,11 @@ class CheckOut extends React.Component {
                       required
                     />
                     <br />
-                    <label htmlFor="zipcode"> Zip-code*: </label>
+                    <label htmlFor="zipCode"> Zip-code*: </label>
                     <input
-                      name="zipcode"
+                      name="zipCode"
                       onChange={checkout}
-                      value={zipcode}
+                      value={zipCode}
                       placeholder="Zip-code"
                       required
                     />
