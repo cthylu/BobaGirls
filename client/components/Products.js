@@ -102,7 +102,7 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
+                        className="addtocart"
                         onClick={() => addProductToCart(product)}
                       >
                         Add To Cart
@@ -110,7 +110,7 @@ class Products extends Component {
                     </li>
                   );
                 })}
-              </ul> */}
+              </ul> 
 
             <h2>Milk Powder:</h2>
             <ul className="teaproducts">
