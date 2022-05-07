@@ -31,7 +31,7 @@ class Products extends Component {
                     <div className="teaprice">${product.price}</div>
 
                     <button
-                      id="addtocart"
+                      className="addtocart"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -54,7 +54,7 @@ class Products extends Component {
                     <div className="teaprice">${product.price}</div>
 
                     <button
-                      id="addtocart"
+                      className="addtocart"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart
@@ -76,8 +76,10 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
-                        onClick={() => addProductToCart(product)}
+                        className="addtocart"
+                        onClick={() => {
+                          addProductToCart(product);
+                        }}
                       >
                         Add To Cart
                       </button>
@@ -123,7 +125,7 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
+                        className="addtocart"
                         onClick={() => addProductToCart(product)}
                       >
                         Add To Cart
