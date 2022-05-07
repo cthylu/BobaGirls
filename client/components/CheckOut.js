@@ -45,7 +45,7 @@ class CheckOut extends React.Component {
     const { checkout, handleSubmit } = this;
     return (
       <div>
-        {cart.length !== 0 ? cart.map((item) => {
+        {cart.length !== 0 ? cart.lineitem?.map((item) => {
           return (
             <div key={item.id}>
               {console.log(item)}
