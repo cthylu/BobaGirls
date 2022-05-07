@@ -10,8 +10,6 @@ const LineItem = require("./models/LineItem");
 
 const Order = require("./models/Order");
 
-const CheckOut = require("./models/CheckOut")
-
 
 //associations could go here!
 
@@ -31,6 +29,5 @@ module.exports = {
     Product,
     LineItem,
     Order,
-    CheckOut
   },
 };

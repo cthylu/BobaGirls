@@ -8,6 +8,10 @@ const LineItem = require("./LineItem");
 const SALT_ROUNDS = 5;
 
 const User = db.define("user", {
+  profilePicture: {
+    type: Sequelize.TEXT,
+    defaultValue: "https://www.organicauthority.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU5MzI5NzQ1OTk2MDMxNTg0/shutterstock_239013112.jpg",
+  },
   username: {
     type: Sequelize.STRING,
     unique: true,
@@ -19,6 +23,38 @@ const User = db.define("user", {
   isAdmin: {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
+  },
+  firstName: {
+    type: Sequelize.STRING(50),
+    defaultValue: 'N/A',
+  },
+  lastName: {
+    type: Sequelize.STRING(50),
+    defaultValue: 'N/A',
+  },
+  email: {
+    type: Sequelize.TEXT,
+    defaultValue: 'N/A',
+  },
+  creditCard: {
+    type: Sequelize.STRING,
+    defaultValue: 'N/A',
+  },
+  address: {
+    type: Sequelize.STRING(50),
+    defaultValue: 'N/A',
+  },
+  city: {
+    type: Sequelize.STRING(50),
+    defaultValue: 'N/A',
+  },
+  state: { 
+    type:Sequelize.STRING(20),
+    defaultValue: 'N/A',
+  },
+  zipCode:{ 
+    type: Sequelize.STRING,
+    defaultValue: 'N/A',
   },
 });
 

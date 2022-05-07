@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart, deleteProduct } from "../store";
+import { addToCart, deleteFromCart, deleteProduct } from "../store";
 
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
@@ -11,9 +11,12 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
           <div>
             <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <h5>Quantity: { product.quantity } in stock</h5>
+            <h5>Quantity: {product.quantity} in stock</h5>
 
-            <button className="addtocart" onClick={() => addProductToCart(product)}>
+            <button
+              className="addtocart"
+              onClick={() => addProductToCart(product)}
+            >
               Add To Cart
             </button>
           </div>
@@ -26,27 +29,29 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
         </div>
       }
     </div>
-  )
-}
+  );
+};
 
 const mapState = (state, otherProps) => {
-  const product = state.products.find(product => product.id === otherProps.match.params.id*1) || {};
-  const user = state.auth
-    return {
-      product,
-      user
-    }
-}
+  const product =
+    state.products.find(
+      (product) => product.id === otherProps.match.params.id * 1
+    ) || {};
+  const user = state.auth;
+  return {
+    product,
+    user,
+  };
+};
 
 const mapDispatch = (dispatch, { history }) => {
   return {
     deleteProduct: (productId) => dispatch(deleteProduct(productId, history)),
-    addProductToCart: (product) => dispatch(addToCart(product, history))
+    addProductToCart: (product) => dispatch(addToCart(console.log(product), product, history)),
   };
 };
 
-
-export default connect(mapState, mapDispatch)(Product)
+export default connect(mapState, mapDispatch)(Product);
 
 // export class SingleProduct extends Component {
 //   constructor(props) {
@@ -99,4 +104,3 @@ export default connect(mapState, mapDispatch)(Product)
 // };
 
 // export default connect(mapState, mapDispatch)(SingleProduct);
-

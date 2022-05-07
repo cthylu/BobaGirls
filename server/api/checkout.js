@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  models: { Order, CheckOut, User },
+  models: { User },
 } = require("../db");
 module.exports = router;
 
@@ -17,8 +17,8 @@ const token = async (req, res, next) => {
 
 router.get("/:id", token, async (req, res, next) => {
   try {
-    const CheckOut = await CheckOut.findByPk(req.body);
-    res.send(CheckOut);
+    const checkOut = await CheckOut.findByPk(req.body);
+    res.send(checkOut).status(204);
   } catch (e) {
     next(e);
   }
@@ -29,15 +29,16 @@ router.get("/:id", token, async (req, res, next) => {
 router.post("/", token, async (req, res, next) => {
   try {
     res.send(
-      await req.user.CheckOut(
+      await req.user.User(
         {
-          firstname: req.body.firstname,
-          lastname: req.body.lastname,
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
           email: req.body.email,
+          creditCard: req.body.creditCard,
           address: req.body.address,
           state: req.body.state,
           city: req.body.city,
-          zipcode: req.body.zipcode,
+          zipCode: req.body.zipCode,
         }.status(204)
       )
     );
