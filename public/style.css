@@ -286,4 +286,72 @@ label {
 .addtocart:hover {
   box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
 }
+
+.about {
+  border: white 2px solid;
+  padding: 2rem;
+  color: white;
+  margin: 1rem;
+}
   
+.abouttitle {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  color: #88aed0;
+  padding: 1rem;
+  font-size: 50px;
+}
+
+.aboutbody {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-style: oblique;
+  font-size: 20px;
+}
+
+.boba {
+  border: white 2px solid;
+  padding: 2rem;
+  color: white ;
+  margin: 1rem;
+}
+
+.bobatitle {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  color: #F6DAE4;
+  padding: 1rem;
+  font-size: 50px;
+}
+
+.aboutboba {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-style: oblique;
+  font-size: 20px;
+}
+
+.drink {
+  border: white 2px solid;
+  padding: 2rem;
+  color: white ;
+  margin: 1rem;
+}
+
+.drinktitle {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  color: #c1e7e3;
+  padding: 1rem;
+  font-size: 50px;
+}
+
+.aboutdrink {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-style: oblique;
+  font-size: 20px;
+}
