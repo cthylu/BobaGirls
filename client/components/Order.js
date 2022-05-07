@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Order = ({ order }) => {
-  console.log(order)
   return (
     <div>
       <h2>Order Information:</h2>
@@ -15,7 +14,7 @@ const Order = ({ order }) => {
                   return (
                     <div className='orderdiv' key={ line.id }>
                       <img src={line.product.imageUrl} />
-                      <ul className='orderinfo'>
+                      <ul className='orderinfoname'>
                         <li>Name:</li>
                         <li>Quantity:</li>
                         <li>Cost:</li>
@@ -41,7 +40,8 @@ const Order = ({ order }) => {
 }
 
 const mapState = (state, otherProps) => {
-  const order = state.order.filter(order => order.id === otherProps.match.params.id*1)
+  console.log(state.orders)
+  const order = state.orders.filter(order => order.id === otherProps.match.params.id*1)
   return {
     order
   }

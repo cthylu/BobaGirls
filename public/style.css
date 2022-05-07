@@ -45,7 +45,7 @@ nav a {
 main {
   max-width: 1200px;
   margin: auto;
-  padding: 60px 0;
+  margin: 1rem 0;
 }
 .hero {
   background: url("/images/hero-bubble-tea.jpg");
@@ -162,21 +162,38 @@ label {
 }
 
 .orderdiv {
+  list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.orderdiv > img {
+  height: auto;
+  width: 120px;
 }
 
 .orderproducts {
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  margin: 1rem;
   align-items: center;
   gap: 2rem;
+}
+
+.orderinfoname {
+  list-style: none;
+}
+
+.orderinfo {
   list-style: none;
 }
 
 .ordersinfo {
   padding: 1rem;
+  list-style: none;
 }
 
 .checkout {
@@ -213,7 +230,32 @@ label {
 }
 
 /*** Cart ***/
-.cart-container li {
-  list-style-type: none;
+.cart-container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 15rem;
 }
 
+table {
+  width: 150%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+/* tr:hover {
+  background-color: white;
+} */
+
+td {
+  border-bottom: 1px solid gray;
+}
+
+.cart-table img {
+  height: 100px;
+  width: auto;
+}
+
+.cartcheckout {
+  list-style: none;
+}
