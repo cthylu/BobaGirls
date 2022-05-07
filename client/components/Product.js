@@ -20,7 +20,7 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
           { user.isAdmin ? (
             <div className='admindelete'>
             <h5 className='admin'> Admin Only: </h5>
-            <button onClick={() => deleteProduct(product.id)}>Remove Product</button>
+            <button className='admindeleteb' onClick={() => deleteProduct(product.id)}>Remove Product</button>
             </div>
           ) : null }
         </div>
