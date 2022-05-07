@@ -12,9 +12,11 @@ import About from './components/About';
 import Orders from './components/Orders';
 import Order from './components/Order';
 import CheckOut from './components/CheckOut';
+import Profile from './components/Profile';
 
 // store
-import { me, fetchCart, fetchProducts, fetchUsers, fetchOrder } from './store'
+import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders } from './store'
+
 
 /**
  * COMPONENT
@@ -24,7 +26,7 @@ class Routes extends Component {
     this.props.loadInitialData();
     this.props.loadProducts();
     this.props.loadCart();
-    this.props.loadOrder();
+    this.props.loadOrders();
   }
   componentDidUpdate(){
     // STANNIE:: switch to socketio, its easier
@@ -58,6 +60,7 @@ class Routes extends Component {
             <Route path='/orders' component={Orders} />
             <Route path='/order/:id' component={Order} />
             <Route path='/checkout' component={CheckOut} />
+            <Route path='/profile' component={Profile} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -100,7 +103,7 @@ const mapDispatch = (dispatch) => {
     loadCart: () => dispatch(fetchCart()),
     loadProducts: () => dispatch(fetchProducts()),
     loadUsers: () => dispatch(fetchUsers()),
-    loadOrder: () => dispatch(fetchOrder()),
+    loadOrders: () => dispatch(fetchOrders()),
     dispatchAction: (action) => dispatch(action),
   };
 };

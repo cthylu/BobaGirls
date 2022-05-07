@@ -1,15 +1,21 @@
-import React from "react";
+import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../store/cart";
+import { fetchOrders } from "../store";
+import { addToCart, fetchCart } from "../store/cart";
 
-const Products = (props) => {
-  const { products, addProductToCart } = props;
-  console.log("props", props);
-  return (
-    <div className="content">
-      <h1>Boba Girls Products</h1>
-      {
+class Products extends Component {
+  async componentDidMount() {
+    this.props.loadCart();
+    this.props.loadOrders();
+  }
+
+  render() {
+    const { products, addProductToCart } = this.props;
+    return (
+      <div className="content">
+        <h1>Boba Girls Products</h1>
+        {
         <div>
           <h2>Teas:</h2>
           <ul className="teaproducts">
@@ -30,7 +36,8 @@ const Products = (props) => {
                     </button>
                   </li>
                 );
-              })}
+              })
+            }
           </ul>
 
           <h2>Syrups:</h2>
@@ -53,57 +60,81 @@ const Products = (props) => {
                   </li>
                 );
               })}
+
           </ul>
+            <h2>Toppings:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "topping")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
 
-          <h2>Toppings:</h2>
-          <ul className="teaproducts">
-            {products
-              .filter((product) => product.key === "topping")
-              .map((product) => {
-                return (
-                  <li className="teadiv" key={product.id}>
-                    <img src={product.imageUrl} />
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+                      <button
+                        id="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
 
-                    <button
-                      id="addtocart"
-                      onClick={() => addProductToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  </li>
-                );
-              })}
-          </ul>
+            <h2>Merchandise:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "merchandise")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
 
-          <h2>Merchandise:</h2>
-          <ul className="teaproducts">
-            {products
-              .filter((product) => product.key === "merchandise")
-              .map((product) => {
-                return (
-                  <li className="teadiv" key={product.id}>
-                    <img src={product.imageUrl} />
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
 
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+                      <button
+                        id="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
 
-                    <button
-                      id="addtocart"
-                      onClick={() => addProductToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
-      }
-    </div>
-  );
-};
+            <h2>Milk Powder:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "milk")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
+
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
+
+                      <button
+                        id="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        }
+      </div>
+    );
+  }
+}
 
 const mapState = ({ products }) => {
   return {
@@ -113,6 +144,8 @@ const mapState = ({ products }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
+    loadCart: () => dispatch(fetchCart()),
+    loadOrders: () => dispatch(fetchOrders()),
     addProductToCart: (product) => dispatch(addToCart(product, history)),
   };
 };

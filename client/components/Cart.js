@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCart, deleteFromCart } from "../store/cart";
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
-  // > if we do not have state, we can omit the entire constructor
-  // constructor(props) {
-  //   super(props);
-  //   //this.deleteCartItem = this.deleteCartItem.bind(this);
-  // }
-
   async componentDidMount() {
     this.props.fetchCart();
   }
@@ -58,6 +53,7 @@ class Cart extends Component {
             </div>
           );
         })}
+         <Link to='/checkout'> CHECK OUT </Link>
       </div>
     );
   }
@@ -66,7 +62,7 @@ class Cart extends Component {
 const mapState = (state) => state;
 
 const mapDispatch = (dispatch) => ({
-  fetchCart: (userId) => dispatch(fetchCart(userId)),
+  fetchCart: () => dispatch(fetchCart()),
   deleteLineitem: (lineId, lineQuantity) =>
   dispatch(deleteFromCart(lineId, lineQuantity)),
 });

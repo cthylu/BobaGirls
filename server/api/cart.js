@@ -32,8 +32,22 @@ router.post("/", isLoggedIn, async (req, res, next) => {
   try {
     console.log("post route!");
     console.log(req.body);
-    const lineItem = await LineItem.create(req.body);
-    console.log("lineItem", lineItem);
+    const user = await User.findByToken(req.headers.authorization);
+    const order = await Order.findOne({
+      where: { userId: user.id, isCart: true }
+    })
+    console.log("Order", order);
+    if (!order) {
+      const newOrder = await Order.create({
+        isCart: true,
+        userId: user.id
+      })
+      console.log("New Order", newOrder)
+      const lineItem = await LineItem.create({...req.body, orderId: newOrder.id});
+      res.status(201).send(lineItem);
+      return;
+    }
+    const lineItem = await LineItem.create({...req.body, orderId: order.id});
     res.status(201).send(lineItem);
   } catch (ex) {
     next(ex);
