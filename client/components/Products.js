@@ -110,7 +110,7 @@ class Products extends Component {
                     </li>
                   );
                 })}
-            </ul> */}
+              </ul> */}
 
             <h2>Milk Powder:</h2>
             <ul className="teaproducts">
@@ -136,7 +136,7 @@ class Products extends Component {
             </ul>
             {/* <Route component={NewProduct} /> */}
           </div>
-        }
+          }
       </div>
     );
   }

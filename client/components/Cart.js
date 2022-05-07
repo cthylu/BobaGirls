@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchCart, deleteFromCart } from "../store/cart";
 import { Link } from "react-router-dom";
 
+
 class Cart extends Component {
   async componentDidMount() {
     this.props.fetchCart();

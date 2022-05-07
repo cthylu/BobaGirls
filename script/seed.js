@@ -242,7 +242,7 @@ async function seed() {
     
     //milk powders
       Product.create({ 
-      name: 'Whole Milk Powder'price: 6.00, 
+      name: 'Whole Milk Powder', price: 6.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 

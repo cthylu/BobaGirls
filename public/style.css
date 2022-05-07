@@ -250,6 +250,29 @@ table {
   border-collapse: collapse;
 }
 
+td {
+  border-bottom: 1px solid gray;
+}
+
+.cart-table img {
+  height: 100px;
+  width: auto;
+}
+
+.cartcheckout {
+  list-style: none;
+}
+
+/*** Check Out ***/
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  right: 40%;
+  width: 250px;
+
 /**Admin Buttons**/
 .admindeleteb {
   background: #FF4742;
@@ -260,7 +283,7 @@ table {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 16px;
