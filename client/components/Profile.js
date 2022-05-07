@@ -11,16 +11,16 @@ export const Profile = (props) => {
   return (
     <div>
       <div className="profile">
-        <div> Profile Picture: <img className='profilepic' src={auth.profilePicture} /> </div>
-        <div> Username: {auth.username} </div>
-        <div> First Name: {auth.firstName} </div>
-        <div> Last Name: {auth.lastName} </div>
-        <div> E-mail Address: {auth.email} </div>
-        <div> Credit Card: {auth.creditCard} </div>
-        <div> Address: {auth.address} </div>
-        <div> City: {auth.city} </div>
-        <div> State: {auth.state} </div>
-        <div> Zip Code: {auth.zipCode} </div>
+        <div className="profile2"> Profile Picture: <img className='profilepic' src={auth.profilePicture} /> </div>
+        <div className="profile2"> Username: {auth.username} </div>
+        <div className="profile2"> First Name: {auth.firstName} </div>
+        <div className="profile2"> Last Name: {auth.lastName} </div>
+        <div className="profile2"> E-mail Address: {auth.email} </div>
+        <div className="profile2"> Credit Card: {auth.creditCard} </div>
+        <div className="profile2"> Address: {auth.address} </div>
+        <div className="profile2"> City: {auth.city} </div>
+        <div className="profile2"> State: {auth.state} </div>
+        <div className="profile2"> Zip Code: {auth.zipCode} </div>
       </div>
     </div>
   );
