@@ -9,19 +9,30 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
       {isLoggedIn ? (
         <div className="nav-flex">
           {/* The navbar will show these links after you log in */}
-          <div>
-            <Link to="/home"> Home </Link>
-            <Link to="/products"> Shop ({products.length}) </Link>
-          </div >
+          <div className='nav-first'>
+            <ul className='nav-top-level'>
+              <li><Link to="/home"> Home </Link></li>
+              <li>Shop
+                <ul className='nav-dropdown'>
+                  <li>
+                    <Link to='/products'> All Products </Link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
           <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>        
           <div>
-            <Link to='/profile'> Profile </Link>
-            <Link to='/orders'>Orders</Link>
-            <Link to="/cart">Cart</Link>
-            <Link to='/checkout'> Check Out </Link>
-            <a href="#" onClick={handleClick}>
-              Logout
-            </a>
+            <ul className='nav-top-level'>
+              <li><Link to='/profile'> Profile </Link></li>
+              <li><Link to='/orders'>Orders</Link></li>
+              <li><Link to="/cart">Cart</Link></li>
+              <li><Link to='/checkout'> Check Out </Link></li>
+              <li><a href="#" onClick={handleClick}>
+                Logout
+              </a>
+              </li>
+            </ul>
           </div>
         </div>
       ) : (

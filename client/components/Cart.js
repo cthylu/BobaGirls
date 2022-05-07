@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { fetchCart, deleteFromCart } from "../store/cart";
-import { Link } from "react-router-dom";
 
 class Cart extends Component {
   async componentDidMount() {
@@ -35,7 +34,7 @@ class Cart extends Component {
                   item.lineitems.map((line) => {
                     return (
                       <tr key={line.id} className='cart-table'>
-                        <img src={line.product?.imageUrl} />
+                        <td><img src={line.product?.imageUrl} /></td>
                         <td>{line.product?.name}</td>
                         <td>{line.quantity}</td>
                         <td>{line.cost}</td>
