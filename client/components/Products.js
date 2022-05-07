@@ -5,65 +5,73 @@ import { fetchOrders } from "../store";
 import { addToCart, fetchCart } from "../store/cart";
 import { NewProduct } from "./NewProduct";
 
-
 class Products extends Component {
+  constructor() {
+    super();
+    this.addProductToCart = this.addProductToCart.bind(this);
+  }
+
   async componentDidMount() {
     this.props.loadCart();
     this.props.loadOrders();
   }
 
+  addProductToCart(product) {
+    const quantity = 1;
+    this.props.addToCart(product, quantity);
+  }
+
   render() {
-    const { products, addProductToCart } = this.props;
+    const { products } = this.props;
+    const { addProductToCart } = this;
     return (
       <div className="content">
         <h1>Boba Girls Products</h1>
         {
-        <div>
-          <h2>Teas:</h2>
-          <ul className="teaproducts">
-            {products
-              .filter((product) => product.key === "tea")
-              .map((product) => {
-                return (
-                  <li className="teadiv" key={product.id}>
-                    <img src={product.imageUrl} />
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+          <div>
+            <h2>Teas:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "tea")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
 
-                    <button
-                      id="addtocart"
-                      onClick={() => addProductToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  </li>
-                );
-              })
-            }
-          </ul>
+                      <button
+                        id="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
 
-          <h2>Syrups:</h2>
-          <ul className="teaproducts">
-            {products
-              .filter((product) => product.key === "syrup")
-              .map((product) => {
-                return (
-                  <li className="teadiv" key={product.id}>
-                    <img src={product.imageUrl} />
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+            <h2>Syrups:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "syrup")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
 
-                    <button
-                      id="addtocart"
-                      onClick={() => addProductToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  </li>
-                );
-              })}
-
-          </ul>
+                      <button
+                        id="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
             <h2>Toppings:</h2>
             <ul className="teaproducts">
               {products
@@ -85,7 +93,7 @@ class Products extends Component {
                   );
                 })}
             </ul>
-            
+
             <h2>Merchandise:</h2>
 
             <ul className="teaproducts">
@@ -108,7 +116,7 @@ class Products extends Component {
                     </li>
                   );
                 })}
-            </ul> */}
+            </ul>
 
             <h2>Milk Powder:</h2>
             <ul className="teaproducts">
@@ -140,9 +148,10 @@ class Products extends Component {
   }
 }
 
-const mapState = ({ products }) => {
+const mapState = (state) => {
+  console.log("state", state);
   return {
-    products,
+    products: state.products,
   };
 };
 
@@ -150,7 +159,8 @@ const mapDispatch = (dispatch, { history }) => {
   return {
     loadCart: () => dispatch(fetchCart()),
     loadOrders: () => dispatch(fetchOrders()),
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
+    addToCart: (product, quantity) =>
+      dispatch(addToCart(product, quantity, history)),
   };
 };
 

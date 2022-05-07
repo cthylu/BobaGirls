@@ -17,7 +17,7 @@ const isLoggedIn = async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
-    const cart = await Order.findAll({
+    const cart = await Order.findOne({
       where: { userId: user.id, isCart: true },
       include: [{ model: LineItem, include: { model: Product } }],
     });
@@ -30,24 +30,43 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", isLoggedIn, async (req, res, next) => {
   try {
-    console.log("post route!");
-    console.log(req.body);
+    //console.log(req.body);
     const user = await User.findByToken(req.headers.authorization);
     const order = await Order.findOne({
-      where: { userId: user.id, isCart: true }
-    })
-    console.log("Order", order);
+      where: { userId: user.id, isCart: true },
+    });
+    // Create new order if cart is empty
     if (!order) {
       const newOrder = await Order.create({
         isCart: true,
-        userId: user.id
-      })
-      console.log("New Order", newOrder)
-      const lineItem = await LineItem.create({...req.body, orderId: newOrder.id});
+        userId: user.id,
+      });
+      console.log("New Order", newOrder);
+      const lineItem = await LineItem.create({
+        ...req.body,
+        orderId: newOrder.id,
+      });
       res.status(201).send(lineItem);
       return;
     }
-    const lineItem = await LineItem.create({...req.body, orderId: order.id});
+    // Check if order already has lineitem
+    const existingLineItem = await LineItem.findOne({
+      where: { orderId: order.id, productId: req.body.productId }
+    });
+    console.log("Existing line", existingLineItem);
+    if (existingLineItem) {
+      await LineItem.update({
+        quantity: existingLineItem.quantity + req.body.quantity,
+        cost: Number(existingLineItem.cost) + Number(req.body.quantity * req.body.cost)
+      },
+      {
+        where: { id: existingLineItem.id }
+      })
+      res.status(201).send(existingLineItem);
+      return;
+    }
+    // Create new LineItem if cart already exists and cart doesn't have product already
+    const lineItem = await LineItem.create({ ...req.body, orderId: order.id });
     res.status(201).send(lineItem);
   } catch (ex) {
     next(ex);
