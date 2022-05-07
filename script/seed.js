@@ -176,63 +176,63 @@ async function seed() {
       description: 'This cute Boba tea AirTag Keyring Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
     }),
     
-      // Syrup info: https://www.bossenstore.com/collections/bubble-tea-concentrated-syrup
-    Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_blacksugar_DS0242_b72985dd-9fac-44b9-9f44-2d154db4297f_large.jpg?v=1620691665', 
+    //Syrups:
+    Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Sd3KrLt.png', 
       description: `One of the most popular sweeteners used in bubble tea, our Bossen Black Sugar syrup (aka Brown Sugar) is a dark, thick, crystalline form of sugar that has a delicious caramel flavor and aroma. Best for making classic milk teas, also wonderfully enhances smoothies, fruit juices, yogurt, and shaved ice desserts. Historically, more than just a distinctive sweetener, Black Sugar is also used by traditional Chinese medical practitioners who recommend it to provide an energy boost and enhance blood circulation, among other things.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Dragon Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_dragon_fruit_large.jpg?v=1615917379', 
+    Product.create({ name: 'Dragon Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/pZruon5.png', 
       description: `Dragon fruit is native to Central American and is now consumed all around the world. It is also known as "Pitaya" and comes in various forms and colors. Boba Girls' Fruit syrup has a beautiful signature magenta color and it will add a refreshing taste to any summertime tea. 
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Lychee Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0501_lychee_large.jpg?v=1594080304', 
-      description: `
+    Product.create({ name: 'Lychee Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/kBCpW2z.png', 
+      description: `Boba Girls' Lychee syrup is a classic Asian fruit with a nice subtle sweetness. This adds a great flavor to your drink without losing the taste of the tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Peach Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_peach_cb224eb7-ad18-4d50-a4d8-07bbe823173e_large.jpg?v=1590710606', 
+    Product.create({ name: 'Peach Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/glUbQll.png', 
       description: `Peach syrup is a classic flavor, adding great taste to any drink of your choice. Best paired with black tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Honeydew Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0701_honeydew_large.jpg?v=1591818510', 
+    Product.create({ name: 'Honeydew Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Yiu4DwV.png', 
       description: `Honeydew syrup accentuates the real honeydew fruit flavor and is rich in melony sweetness. Use it to make a perfect summer pick-me-up refresher. A melon bubble iced tea, boba smoothie, or ice-blended fruit juice will alight on the tongue like sunshine.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Strawberry Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0111_strawberry_somepulp_large.jpg?v=1590694756', 
+    Product.create({ name: 'Strawberry Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/0cOLxKG.png', 
       description: `Everyone loves strawberries!  Its combination of sweet and tart is divine and addictive. Boba Girls' syrup is extracted from natural strawberries with little seeds and pieces of pulp inside, the syrup has a robust fruity aroma and authentic taste for juicy strawberry.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Mango Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0201_mango_large.jpg?v=1594171537', 
+    Product.create({ name: 'Mango Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/nmQRJmz.png', 
       description: `Whatever season it is, in our heart we long for that summer beach vacation sometimes. Let our mango syrup recreate tropical refreshers for you. 
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Passion Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF1301_passion_fruit_large.jpg?v=1594338387', 
+    Product.create({ name: 'Passion Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Owplh23.png', 
       description: `Boba Girls' passion fruit syrup is rich in flavor and contains an authentic passion fruit aroma. Infuse it with your favorite drinks like iced tea, slush, smoothie, or top it on frosty desserts like ice cream, shaved ice, and frozen yogurt.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Grapefruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF1501_grapefruit_grande.jpg?v=1594231934', 
+    Product.create({ name: 'Grapefruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/ufjyBET.png', 
       description: `Boba Girls' grapefruit syrup is a classic. It is balanced perfectly with a nice mix of sweet and bitterness flavors. Paired best with cold drinks, served with black tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Wintermelon Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_wintermelon_large.jpg?v=1594250318', 
+    Product.create({ name: 'Wintermelon Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/UoozmSi.png', 
       description: `Wintermelon is a large fruit that belongs to the honeydew family. It adds a nice sweetness into your drink! Good either in a cold or hot drink, served with black or green tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
     * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Green Apple Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle__DSF0601_green_apple_grande.jpg?v=15942550487', 
+    Product.create({ name: 'Green Apple Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/jqSaG45.png', 
       description: `Green apple is classic twist on your drink. Delicious, tart, and sweet flavors to add into your tea! Best when cold mixed with green tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Kiwi Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://cdn.shopify.com/s/files/1/0189/8074/products/syrup_bottle_kiwi_e3546c69-a3ca-4834-819d-a2a795e9e046_grande.jpg?v=1608771953', 
+    Product.create({ name: 'Kiwi Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/QuncyZD.png', 
       description: `Boba Girls' pride ourselves in providing traditional flavors as well as hard-to-find tropical flavors. We recommend adding 8 oz. of kiwi syrup to every one gallon of plain frozen yogurt.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
@@ -242,8 +242,7 @@ async function seed() {
     
     //milk powders
       Product.create({ 
-      name: 'Whole Milk Powder' ,
-      price: 6.00, 
+      name: 'Whole Milk Powder'price: 6.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 
@@ -277,7 +276,6 @@ async function seed() {
       imageUrl: 'https://i5.walmartimages.com/asr/a05fee3f-4211-475f-8319-7f71a2cc522f_1.197f902fc8a7883551b5d430265a0978.jpeg',
       description: 'Soymilk, is a plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates. It is a stable emulsion of oil, water, and protein. Its original form is an intermediate product of the manufacture of tofu. Perfect for those with dairy and almond allergies that enjoy tofu and something with nutrients. '}),
   ])
-
 
   console.log(`seeded ${products.length} products`)
   console.log(`seeded products successfully`)
