@@ -238,8 +238,8 @@ label {
 
 /*** HamBurger ***/
 
-.navbar2 a, .dropdown {
-  float: center;
+.dropdown {
+  float: right;
   font-size: 16px;
   color: Green;
   text-align: center;

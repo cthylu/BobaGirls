@@ -6,46 +6,47 @@ import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 
 const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => {
-  const [open, setOpen] = useState(false);
-  const toggleBurg = () => {
-    setOpen(!open);
-  };
-  function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function (e) {
-    if (!e.target.matches(".dropbtn")) {
-      var myDropdown = document.getElementById("myDropdown");
-      if (myDropdown.classList.contains("show")) {
-        myDropdown.classList.remove("show");
-      }
-    }
-  };
+  // const [open, setOpen] = useState(false);
+  // const toggleBurg = () => {
+  //   setOpen(!open);
+  // };
+  // ---- DROP DOWN ----
+  // function myFunction() {
+  //   document.getElementById("myDropdown").classList.toggle("show");
+  // }
+  // // Close the dropdown if the user clicks outside of it
+  // window.onclick = function (e) {
+  //   if (!e.target.matches(".dropbtn")) {
+  //     let myDropdown = document.getElementById("myDropdown");
+  //     if (myDropdown.classList.contains("show")) {
+  //       myDropdown.classList.remove("show");
+  //     }
+  //   }
+  // };
   return (
     <div className="navbar">
-
-      {/* <div className="navbar2">
-        <a><Link to="/home">
-              <img src="/images/logo-boba-girl.svg" />
-            </Link></a>
-        <a href="#news">News</a>
-        <div className="dropdown">
-          <button className="dropbtn" onClick={() =>myFunction()}>
-            Dropdown
-            <i className="fa fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content" id="myDropdown">
-            <a><Link to="/cart">Cart</Link></a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      </div> */}
-
       <nav>
-        {isLoggedIn ? (
+        {isLoggedIn ? (  
+          // ---- DROP DOWN ----
+      // <div className="navbar2">
+      //   <Link to="/home"> <img src="/images/logo-boba-girl.svg"/></Link>
+      //   <Link to="home">Home</Link>
+      //   <Link to="products"> Shop ({products.length}) </Link>
+      //   {/* <Link to="">Home</Link> */}
+      //   <div className="dropdown">
+      //     <button className="dropbtn" onClick={() =>myFunction()}>
+      //       <TiThMenu/>
+      //     </button>
+      //     <div className="dropdown-content" id="myDropdown">
+      //       <Link to="/profile"> Profile </Link>
+      //       <Link to="/orders">Order</Link>
+      //       <Link to="/cart">Cart</Link>
+      //       <Link to="/checkout">Check Out</Link>
+      //     <a href="#" onClick={handleClick}>  Logout </a>
+      //     </div>
+      //   </div>
+      // </div>
+      // --- NO DROP DOWN ---
           <div className="nav-flex">
             {/* The navbar will show these links after you log in */}
             <div>
@@ -59,9 +60,6 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => {
             <Link to="/profile"> Profile </Link>
             <Link to="/orders">Orders</Link>
             <Link to="/checkout"> Check Out </Link>
-            <a href="#" onClick={handleClick}>   
-              Logout
-            </a>
           </div>
         ) : (
           <div className="nav-flex">
