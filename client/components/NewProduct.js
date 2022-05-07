@@ -28,27 +28,66 @@ export class NewProduct extends Component {
     }
 
    render() {
-       const {user} = this.props
+       const { name, price, description, imageUrl } = this.state
+       const {handleSubmit, handleChange} = this
+       const { user } = this.props
        return (
           <div>
-            {user.isAdmin ? (
-              <h1>hello</h1>  
+            { user.isAdmin ? (
+               <div>
+                  <form 
+                  onSubmit={handleSubmit}
+                  >
+                  <div> 
+                     Create New Product 
+                 </div>
+                     <input 
+                       name='name'
+                       type= 'text'
+                       value={name}
+                       placeholder='Product Name'
+                       onChange={handleChange}
+                     />
+                     <input
+                       name='price'
+                       type='number'
+                       value={price}
+                       placeholder='Product Price'
+                       onChange={handleChange}
+                     />
+                     <input 
+                       name='description'
+                       type='text'
+                       value={description}
+                       placeholder='Product Description'
+                       onChange={handleChange}
+                     />
+                     <input
+                       name='imageUrl'
+                       type='text'
+                       value={imageUrl}
+                       placeholder='Product ImageUrl'
+                       onChange={handleChange}
+                      />
+                  </form>
+              </div>
             ) : null }  
-          </div> 
+          </div>
        )
    } 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+   const user = state.auth
    return {
       products: state.products,
-      user: state.auth 
+      user
    } 
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-     addNewProduct: product => dispatch(addNewProduct(product)) 
+     addNewProduct: product => dispatch(addNewProduct(product, history)) 
   }  
 }
 
