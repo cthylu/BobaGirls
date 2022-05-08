@@ -37,7 +37,7 @@ class Products extends Component {
                   return (
                     <li className="teadiv" key={product.id}>
                       <img src={product.imageUrl} />
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button
@@ -59,7 +59,7 @@ class Products extends Component {
                   return (
                     <li className="teadiv" key={product.id}>
                       <img src={product.imageUrl} />
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button
@@ -80,7 +80,7 @@ class Products extends Component {
                   return (
                     <li className="teadiv" key={product.id}>
                       <img src={product.imageUrl} />
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button
@@ -106,7 +106,7 @@ class Products extends Component {
                     <li className="teadiv" key={product.id}>
                       <img src={product.imageUrl} />
 
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button
@@ -129,7 +129,7 @@ class Products extends Component {
                     <li className="teadiv" key={product.id}>
                       <img src={product.imageUrl} />
 
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button

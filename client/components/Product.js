@@ -12,6 +12,7 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
           <div>
             <h2>{product.name}</h2>
             <p>{product.description}</p>
+            <p>${product.price}</p>
             <h5>Quantity: {product.quantity} in stock</h5>
 
             <button
