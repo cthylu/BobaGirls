@@ -1,15 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchOrders } from "../store";
-import { addToCart, fetchCart } from "../store/cart";
+import { addToCart } from "../store";
 
 class Products extends Component {
-  async componentDidMount() {
-    this.props.loadCart();
-    this.props.loadOrders();
-  }
-
   render() {
     const { products, addProductToCart } = this.props;
     return (
@@ -145,8 +139,6 @@ const mapState = ({ products }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    loadCart: () => dispatch(fetchCart()),
-    loadOrders: () => dispatch(fetchOrders()),
     addProductToCart: (product) => dispatch(addToCart(product, history)),
   };
 };

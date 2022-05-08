@@ -47,34 +47,37 @@ nav a, nav li {
 
 .nav-top-level li {
   padding: 1em;
-  position: relative;
 }
 /** navbar container **/
 .nav-dropdown {
   display: inline-block;
-  transition-duration: .5s;
+  transition-duration: 1s;
+  position: absolute;
+  margin: 0 0 0 .25rem;
 }
 
 /** navbar dropdown hidden by default **/
 .nav-dropdown li {
-  list-style: none;
-  box-shadow: 0px 8px 16px 0px lightgray;
-  transition: all 0.5s ease;
-  position: absolute;
-  left: 1rem;
-  top: 2.5rem;
   display: none;
-  padding: .5rem;
+  list-style: none;
+  transition: all 1s ease;
+  top: 0rem;
+  left: 1rem;
+  padding: 0;
+  border: lightgray solid 1px;
+  background-color: hsl(0, 0%, 100%, .75);
 }
 
 /** navbar links **/
 .nav-dropdown a {
   display: block;
+  padding: 10px 16px;
 }
 
 /** navbar can change color of dropdown links **/
 .nav-dropdown a:hover {
   color: #4b9eba;
+  background-color: white;
 }
 
 /** navbar show dropdown menu on hover **/
@@ -143,7 +146,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   text-decoration: none;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
   max-width: 1200px;
   margin: auto;
@@ -196,12 +199,11 @@ label {
 
 .teainfo {
   display: flex;
-  padding: 1rem;
 }
 
 .teainfo > img {
-  height: 400px;
-  width: auto;
+  width: 225px;
+  height: auto;
   padding: 1rem;
 }
 

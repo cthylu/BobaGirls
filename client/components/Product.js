@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart, deleteFromCart, deleteProduct } from "../store";
+import { addToCart, deleteProduct } from "../store";
 
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
@@ -24,7 +24,6 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             <h5 className="admin"> Admin Only: </h5>
             {user.isAdmin ? (
               <button onClick={() => deleteProduct((product.id))}>
-                {console.log(product)}Remove Product
               </button>
             ) : null}
           </div>

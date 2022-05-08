@@ -14,9 +14,12 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
               <li><Link to="/home"> Home </Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
-                  <li>
-                    <Link to='/products'> All Products </Link>
-                  </li>
+                  <li><Link to='/teas'> Teas </Link></li>
+                  <li><Link to='/toppings'> Toppings </Link></li>
+                  <li><Link to='/syrups'> Syrups </Link></li>
+                  <li><Link to='/milkpowder'> Milk Powder</Link></li>
+                  <li><Link to='/merchandise'> Merchandise </Link></li>
+                  <li><Link to='/products'> All Products </Link></li>
                 </ul>
               </li>
             </ul>
@@ -38,10 +41,21 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
       ) : (
         <div className="nav-flex">
           {/* The navbar will show these links before you log in */}
-          <div>
-            <Link to="/home">Home</Link>
-            <Link to="/products">Products ({products.length})</Link>
-            <Link to="/about"> About</Link>
+          <div className='nav-first'>
+            <ul className='nav-top-level'>
+              <li><Link to="/home"> Home </Link></li>
+              <li>Shop
+                <ul className='nav-dropdown'>
+                  <li><Link to='/teas'> Teas </Link></li>
+                  <li><Link to='/toppings'> Toppings </Link></li>
+                  <li><Link to='/syrups'> Syrups </Link></li>
+                  <li><Link to='/milkpowder'> Milk Powder</Link></li>
+                  <li><Link to='/merchandise'> Merchandise </Link></li>
+                  <li><Link to='/products'> All Products </Link></li>
+                </ul>
+              </li>
+              <li><Link to='/about'>About</Link></li>
+            </ul>
           </div>
           <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>
           <div>
