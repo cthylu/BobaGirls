@@ -62,11 +62,9 @@ export const addToCart = (product, quantity, history) => {
       if (token) {
         console.log("product", product);
         const lineitem = {
-          quantity: 1,
+          quantity,
           cost: product.price,
-          //product: {...product},
-          productId: product.id,
-          orderId: 1
+          productId: product.id
         }
         const { data } = await axios.post('/api/cart', lineitem, 
           { headers: { authorization: token } }
@@ -79,21 +77,21 @@ export const addToCart = (product, quantity, history) => {
   };
 };
 
-const cart = (state = [], action) => {
+const cart = (state = {lineitems: []}, action) => {
   if (action.type === FETCH_CART) {
     return action.cart;
   }
   if (action.type === DELETE_FROM_CART) {
-    const newState = [...state];
-    newState[0].lineitems = state[0].lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
-    return newState;
+    return {
+      ...state,
+      lineitems: state.lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
+    };
   }
   if (action.type === ADD_TO_CART) {
-    console.log("Action", action)
-    const newState = [...state];
-    newState[0].lineitems = [...state[0].lineitems, action.lineitem];
-    console.log("New State", state)
-
+    return {
+      ...state,
+      lineitems: [...state.lineitems, action.lineitem]
+    };
   }
   return state;
 };

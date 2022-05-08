@@ -21,7 +21,7 @@ const MilkPowders = ({ products, addProductToCart }) => {
                     <div className="teaprice">${product.price}</div>
 
                     <button
-                      id="addtocart"
+                      className="addtocart"
                       onClick={() => addProductToCart(product)}
                     >
                       Add To Cart

@@ -19,6 +19,8 @@ import MilkPowders from './components/allProducts/MilkPowders';
 import Syrups from './components/allProducts/Syrups';
 import Teas from './components/allProducts/Teas';
 import Toppings from './components/allProducts/Toppings';
+import NewProduct from './components/NewProduct';
+
 // store
 import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders } from './store'
 
@@ -72,6 +74,7 @@ class Routes extends Component {
             <Route path='/order/:id' component={Order} />
             <Route path='/checkout' component={CheckOut} />
             <Route path='/profile' component={Profile} />
+            <Route path='/newproducts' component={NewProduct} />
             <Redirect to="/home" />
           </Switch>
         ) : (

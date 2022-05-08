@@ -30,7 +30,6 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
               <li><Link to='/profile'> Profile </Link></li>
               <li><Link to='/orders'>Orders</Link></li>
               <li><Link to="/cart">Cart</Link></li>
-              <li><Link to='/checkout'> Check Out </Link></li>
               <li><a href="#" onClick={handleClick}>
                 Logout
               </a>

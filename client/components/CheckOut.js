@@ -45,10 +45,11 @@ class CheckOut extends React.Component {
     const { checkout, handleSubmit } = this;
     return (
       <div>
-        {cart.map((item) => {
+        {cart.length !== 0 ? cart.lineitem?.map((item) => {
           return (
             <div key={item.id}>
               {console.log(item)}
+              {console.log(cart)}
               {item.isCart === true && item.lineitems.length > 0 ? (
                 <div>
                   You have {item.lineitems.length} items in your
@@ -131,15 +132,18 @@ class CheckOut extends React.Component {
                 </div>
               ) : (
                 <div>
-
-                  No items in your <Link to={"/cart"}> Cart </Link>! Try some of our
-
-                  <Link to={"/products"}> Products! </Link>
+                  No items in your <Link to={"/cart"}> Cart </Link>! 
+                  Try some of our <Link to={"/products"}> Products! </Link>
                 </div>
               )}
             </div>
           );
-        })}
+        }): (
+          <div>
+          No items in your <Link to={"/cart"}> Cart </Link>! 
+          Try some of our <Link to={"/products"}> Products! </Link>
+        </div>
+        )} 
       </div>
     );
   }

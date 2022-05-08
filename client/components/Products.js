@@ -3,59 +3,70 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../store";
 
+
 class Products extends Component {
+  constructor() {
+    super();
+    this.addProductToCart = this.addProductToCart.bind(this);
+  }
+
+  addProductToCart(product) {
+    const quantity = 1;
+    this.props.addToCart(product, quantity);
+  }
+
   render() {
-    const { products, addProductToCart } = this.props;
+    const { products, user } = this.props;
+    const { addProductToCart } = this;
     return (
       <div className="content">
         <h1>Boba Girls Products</h1>
         {
-        <div>
-          <h2>Teas:</h2>
-          <ul className="teaproducts">
-            {products
-              .filter((product) => product.key === "tea")
-              .map((product) => {
-                return (
-                  <li className="teadiv" key={product.id}>
-                    <img src={product.imageUrl} />
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+          <div>
+            <h2>Teas:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "tea")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
 
-                    <button
-                      id="addtocart"
-                      onClick={() => addProductToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  </li>
-                );
-              })
-            }
-          </ul>
+                      <button
+                        className="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
 
-          <h2>Syrups:</h2>
-          <ul className="teaproducts">
-            {products
-              .filter((product) => product.key === "syrup")
-              .map((product) => {
-                return (
-                  <li className="teadiv" key={product.id}>
-                    <img src={product.imageUrl} />
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
-                    <div className="teaprice">${product.price}</div>
+            <h2>Syrups:</h2>
+            <ul className="teaproducts">
+              {products
+                .filter((product) => product.key === "syrup")
+                .map((product) => {
+                  return (
+                    <li className="teadiv" key={product.id}>
+                      <img src={product.imageUrl} />
+                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <div className="teaprice">${product.price}</div>
 
-                    <button
-                      id="addtocart"
-                      onClick={() => addProductToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  </li>
-                );
-              })}
+                      <button
+                        className="addtocart"
+                        onClick={() => addProductToCart(product)}
+                      >
+                        Add To Cart
+                      </button>
+                    </li>
+                  );
+                })}
+            </ul>
 
-          </ul>
             <h2>Toppings:</h2>
             <ul className="teaproducts">
               {products
@@ -68,8 +79,10 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
-                        onClick={() => addProductToCart(product)}
+                        className="addtocart"
+                        onClick={() => {
+                          addProductToCart(product);
+                        }}
                       >
                         Add To Cart
                       </button>
@@ -78,7 +91,7 @@ class Products extends Component {
                 })}
             </ul>
 
-            <h2>Milk Powder:</h2>
+            <h2>Milk Powders:</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "milk")
@@ -91,7 +104,7 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
+                        className="addtocart"
                         onClick={() => addProductToCart(product)}
                       >
                         Add To Cart
@@ -114,7 +127,7 @@ class Products extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        id="addtocart"
+                        className="addtocart"
                         onClick={() => addProductToCart(product)}
                       >
                         Add To Cart
@@ -123,23 +136,34 @@ class Products extends Component {
                   );
                 })}
             </ul>
-
+            
+            <Link to='/newproducts'>
+              { user.isAdmin ? (
+              <div className='admindelete'>
+              <h5 className='admin'> Admin Only: </h5>
+              <button className='admindeleteb'>Add New Product</button>
+              </div>
+              ) : null }
+            </Link>
           </div>
-        }
+          }
       </div>
     );
   }
 }
 
-const mapState = ({ products }) => {
+const mapState = ({ products, auth }) => {
+  const user = auth
   return {
     products,
+    user
   };
 };
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
+    addToCart: (product, quantity) =>
+      dispatch(addToCart(product, quantity, history)),
   };
 };
 

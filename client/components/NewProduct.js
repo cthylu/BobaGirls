@@ -9,7 +9,9 @@ export class NewProduct extends Component {
           name: '',
           price: '',
           description: '',
-          imageUrl: ''
+          imageUrl: 'https://www.honestfoodtalks.com/wp-content/uploads/2021/09/Boba-tea-recipe-using-fresh-tapioca-pearls-1024x1024.jpeg',
+          key: 'toppings',
+          quantity: 0
       }
      this.initialState = this.state
      this.handleChange = this.handleChange.bind(this)
@@ -28,27 +30,75 @@ export class NewProduct extends Component {
     }
 
    render() {
-       const {user} = this.props
+       const { name, price, description, imageUrl, key } = this.state
+       const {handleSubmit, handleChange} = this
+       const { user } = this.props
+       console.log(user, 'user')
        return (
           <div>
-            {user.isAdmin ? (
-              <h1>hello</h1>  
+            { user.isAdmin ? (
+               <div>
+                  <form 
+                  onSubmit={handleSubmit}
+                  >
+                  <div> 
+                     Create New Product 
+                 </div>
+                     <input 
+                       name='name'
+                       type= 'text'
+                       value={name}
+                       placeholder='Product Name'
+                       onChange={handleChange}
+                     />
+                     <input
+                       name='price'
+                       type='number'
+                       value={price}
+                       placeholder='Product Price'
+                       onChange={handleChange}
+                     />
+                     <input 
+                       name='description'
+                       type='text'
+                       value={description}
+                       placeholder='Product Description'
+                       onChange={handleChange}
+                     />
+                     <input
+                       name='imageUrl'
+                       type='text'
+                       value={imageUrl}
+                       placeholder='Product ImageUrl'
+                       onChange={handleChange}
+                      />
+                      <input
+                       name='key'
+                       type='text'
+                       value={key}
+                       placeholder='Product Category'
+                       onChange={handleChange}
+                       />
+                  </form>
+                  <button onClick={handleSubmit}> Submit </button>
+              </div>
             ) : null }  
-          </div> 
+          </div>
        )
    } 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+   const user = state.auth
    return {
       products: state.products,
-      user: state.auth 
+      user
    } 
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-     addNewProduct: product => dispatch(addNewProduct(product)) 
+     addNewProduct: product => dispatch(addNewProduct(product, history)) 
   }  
 }
 

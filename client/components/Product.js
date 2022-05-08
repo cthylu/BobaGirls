@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addToCart, deleteProduct } from "../store";
+import { Link } from "react-router-dom";
 
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
@@ -19,16 +20,19 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             >
               Add To Cart
             </button>
+          
           </div>
-          <div className="admindelete">
-            <h5 className="admin"> Admin Only: </h5>
-            {user.isAdmin ? (
-              <button onClick={() => deleteProduct((product.id))}>
-              </button>
-            ) : null}
-          </div>
+          <Link to='/products'>
+          { user.isAdmin ? (
+            <div className='admindelete'>
+            <h5 className='admin'> Admin Only: </h5>
+            <button className='admindeleteb' onClick={() => deleteProduct(product.id)}>Remove Product</button>
+            </div>
+          ) : null }
+          </Link>
         </div>
       }
+     
     </div>
   );
 };
