@@ -42,17 +42,18 @@ class CheckOut extends React.Component {
   render() {
     const { firstName, lastName, email, address, city, state, zipCode } = this.state;
     const { cart } = this.props;
-    const { checkout, handleSubmit } = this;
+     const { checkout, handleSubmit } = this;
     return (
       <div>
-        {cart.length !== 0 ? cart.lineitem?.map((item) => {
+        {cart.length !== 0 ? cart.lineitems?.map((item) => {
           return (
             <div key={item.id}>
-              {console.log(item)}
-              {console.log(cart)}
-              {item.isCart === true && item.lineitems.length > 0 ? (
+              {/* {console.log('item here', item)}
+              {console.log('cart here', cart)} */}
+              {cart.isCart === true && cart.lineitems.length > 0 ? (
                 <div>
-                  You have {item.lineitems.length} items in your
+                   {/* {console.log('inside in here')} */}
+                  You have {cart.lineitems.length} items in your
                   <Link to={"/cart"}> Cart </Link>
                   <div> Your total is $</div>
                   <div> To continue checking out, fill out the below. </div>
@@ -132,14 +133,16 @@ class CheckOut extends React.Component {
                 </div>
               ) : (
                 <div>
+                  {/* {console.log('in here')} */}
                   No items in your <Link to={"/cart"}> Cart </Link>! 
                   Try some of our <Link to={"/products"}> Products! </Link>
                 </div>
               )}
             </div>
           );
-        }): (
+        }) : (
           <div>
+              {/* {console.log('no out here')} */}
           No items in your <Link to={"/cart"}> Cart </Link>! 
           Try some of our <Link to={"/products"}> Products! </Link>
         </div>
