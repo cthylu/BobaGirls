@@ -75,3 +75,18 @@ router.post("/", token, async (req ,res, next) => {
   }
 })
 
+router.put('/:id', token, async (req, res, next) => {
+  try {
+    const { name, price, description, imageUrl } = req.body
+    const product = await Product.findByPk(req.params.id)
+    const updatedProduct = await product.update({
+       name,
+       imageUrl,
+       price,
+       description,
+    })
+    return res.json(updatedProduct)
+  } catch (e) {
+    next(e)
+  }
+})
