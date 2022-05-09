@@ -46,7 +46,39 @@ export class UpdateProduct extends React.Component {
        <div> 
          { user.isAdmin ? (
             <div> 
-              hello 
+              <form onSubmit={handleSubmit}
+              >
+              <div>
+                <input
+                  name='name'
+                  type='text'
+                  value={name || ''}
+                  placeholder='Product Name'
+                  onChange={handleChange}
+                />  
+                <input
+                  name='price'
+                  type='number'
+                  value={price || ''}
+                  placeholder='Product Price'
+                  onChange={handleChange}
+                />
+                <input
+                  name='description'
+                  type='text'
+                  value={imageUrl || ''}
+                  placeholder='Product ImageUrl'
+                  onChange={handleChange}
+                />
+                <input
+                  name='key'
+                  type='text'
+                  value={key || ''}
+                  placeholder='Product Category'
+                  onChange={handleChange}
+                />
+              </div>    
+             </form> 
             </div> 
          ) : null}  
        </div>
