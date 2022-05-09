@@ -1,6 +1,6 @@
 // library
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 // component
 import { Login, Signup } from './components/AuthForm';
@@ -13,11 +13,16 @@ import Orders from './components/Orders';
 import Order from './components/Order';
 import CheckOut from './components/CheckOut';
 import Profile from './components/Profile';
+//products
+import Merchandise from './components/allProducts/Merchandise';
+import MilkPowders from './components/allProducts/MilkPowders';
+import Syrups from './components/allProducts/Syrups';
+import Teas from './components/allProducts/Teas';
+import Toppings from './components/allProducts/Toppings';
 import NewProduct from './components/NewProduct';
 
 // store
 import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders } from './store'
-
 
 /**
  * COMPONENT
@@ -56,7 +61,14 @@ class Routes extends Component {
             <Route path="/home" component={Home} />
             <Route path="/cart" component={Cart} />
             <Route path="/products" exact component={Products} />
-            <Route path="/products/:id" component={Product} />     
+            <Route path="/products/:id" component={Product} />
+
+            <Route path="/merchandise" component={Merchandise} />
+            <Route path="/milkpowder" component={MilkPowders} />
+            <Route path="/syrups" component={Syrups} />
+            <Route path="/teas" component={Teas} />
+            <Route path="/toppings" component={Toppings} />
+
             <Route path="/about" component={About} />            
             <Route path='/orders' component={Orders} />
             <Route path='/order/:id' component={Order} />
@@ -74,6 +86,13 @@ class Routes extends Component {
             <Route path="/about" component={About} />
             <Route path="/products" exact component={Products} />
             <Route path="/products/:id" component={Product} />
+
+            <Route path="/merchandise" component={Merchandise} />
+            <Route path="/milkpowder" component={MilkPowders} />
+            <Route path="/syrups" component={Syrups} />
+            <Route path="/teas" component={Teas} />
+            <Route path="/toppings" component={Toppings} />
+
             <Route path="/cart" component={Cart} />
             <Route path="/about" component={About} />
           </Switch>

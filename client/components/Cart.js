@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { fetchCart, deleteFromCart } from "../store/cart";
 
 class Cart extends Component {
@@ -18,44 +18,43 @@ class Cart extends Component {
     const { cart } = this.props;
     return (
       <div className="cart-container">
-        <h2>Cart:</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th></th>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Cost</th>
-            </tr>
-            {cart.lineitems?.map((line) => {
-              return (
-                <tr key={line.id} className="cart-table">
-                  <td><img src={line.product?.imageUrl} /></td>
-                  <td>{line.product?.name}</td>
-                  <td>{line.quantity}</td>
-                  <td>{line.cost}</td>
-                  <td>
-                    <button
-                      className="delete"
-                      type="delete"
-                      onClick={() =>
-                        this.props.deleteLineitem(line.id, line.quantity)
-                      }
-                    >
-                      Remove
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+         <table>
+           <tbody>
+             <tr>
+               <th>Cart</th>
+               <th>Product</th>
+               <th>Quantity</th>
+               <th>Cost</th>
+             </tr>
+             {cart.lineitems?.map((line) => {
+               return (
+                 <tr key={line.id} className="cart-table">
+                   <td><img src={line.product?.imageUrl} /></td>
+                   <td>{line.product?.name}</td>
+                   <td>{line.quantity}</td>
+                   <td>{line.cost}</td>
+                   <td>
+                     <button
+                       className="delete"
+                       type="delete"
+                       onClick={() =>
+                         this.props.deleteLineitem(line.id, line.quantity)
+                       }
+                     >
+                       Remove
+                     </button>
+                   </td>
+                 </tr>
+               );
+             })}
+           </tbody>
+         </table>
 
-        <div className="cartcheckout">
-          <h2>Cart Total</h2>
-          <ul>
-            <li>Quantity:</li>
-            <li>Total:</li>
+         <div className="cartcheckout">
+           <h2>Cart Total</h2>
+           <ul>
+             <li>Quantity:</li>
+             <li>Total:</li>
           </ul>
           <button>
             <Link to="/checkout">Checkout</Link>

@@ -17,10 +17,9 @@ nav {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-decoration: none;
 }
-nav a {
+nav a, nav li {
   color: #4d4d4d;
   display: inline-block;
-  margin: 1em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -39,6 +38,51 @@ nav a {
   align-items: center;
   max-width: 1200px;
   margin: auto;
+}
+
+/** Navbar Dropdown **/
+.nav-top-level {
+  list-style: none;
+}
+
+.nav-top-level li {
+  padding: 1em;
+}
+/** navbar container **/
+.nav-dropdown {
+  display: inline-block;
+  transition-duration: 1s;
+  position: absolute;
+  margin: 0 0 0 .25rem;
+}
+
+/** navbar dropdown hidden by default **/
+.nav-dropdown li {
+  display: none;
+  list-style: none;
+  transition: all 1s ease;
+  top: 0rem;
+  left: 1rem;
+  padding: 0;
+  border: lightgray solid 1px;
+  background-color: hsl(0, 0%, 100%, .75);
+}
+
+/** navbar links **/
+.nav-dropdown a {
+  display: block;
+  padding: 10px 16px;
+}
+
+/** navbar can change color of dropdown links **/
+.nav-dropdown a:hover {
+  color: #4b9eba;
+  background-color: white;
+}
+
+/** navbar show dropdown menu on hover **/
+.nav-top-level >:hover li {
+  display: block;
 }
 
 /*** Content ***/
@@ -81,7 +125,7 @@ label {
 
 .content {
   width: 1200px;
-  margin: 60px auto;
+  margin: 1rem auto;
   text-align: center;
 }
 
@@ -102,7 +146,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   text-decoration: none;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
   max-width: 1200px;
   margin: auto;
@@ -158,12 +202,11 @@ label {
 
 .teainfo {
   display: flex;
-  padding: 1rem;
 }
 
 .teainfo > img {
-  height: 400px;
-  width: auto;
+  width: 225px;
+  height: auto;
   padding: 1rem;
 }
 
@@ -180,6 +223,10 @@ label {
   justify-content: center;
 }
 
+.order-page {
+  margin: 1rem;
+}
+
 .orderdiv {
   list-style: none;
   display: flex;
@@ -191,7 +238,7 @@ label {
 
 .orderdiv > img {
   height: auto;
-  width: 120px;
+  width: 70px;
 }
 
 .orderproducts {
@@ -244,28 +291,37 @@ label {
 
 /*** Cart ***/
 .cart-container {
-  margin: 1rem;
   display: flex;
   flex-direction: row;
-  gap: 15rem;
+  margin: .5rem;
 }
 
+th:nth-child(1) {
+  font-size: 30px;
+}
 table {
-  width: 150%;
   text-align: center;
   border-collapse: collapse;
 }
 
+th, td {
+  width: 130px; 
+}
+
 td {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid white;
 }
 
 .cart-table img {
-  height: 100px;
+  height: 85px;
   width: auto;
 }
 
 .cartcheckout {
+  margin: 0 0 0 5rem;
+}
+
+.cartcheckout li {
   list-style: none;
 }
 
@@ -347,6 +403,39 @@ td {
 }
 
 .addtocart:hover {
+  box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
+}
+
+/***Delete Buttons***/
+.delete {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #87ceeb ;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  font-weight: 10;
+  justify-content: center;
+  line-height: 1;
+  margin: 1rem;
+  outline: none;
+  padding: .5rem .6rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.delete:hover {
   box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
 }
 
