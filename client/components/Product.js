@@ -22,8 +22,7 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             >
               Add To Cart
             </button>
-          <div> <Route component={UpdateProduct}/> </div>
-          </div>
+          <div> <Route component={UpdateProduct}/> 
           <Link to='/products'>
           { user.isAdmin ? (
             <div className='admindelete'>
@@ -32,6 +31,16 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             </div>
           ) : null }
           </Link>
+          </div>
+          </div>
+          {/* <Link to='/products'>
+          { user.isAdmin ? (
+            <div className='admindelete'>
+            <h5 className='admin'> Admin Only: </h5>
+            <button className='admindeleteb' onClick={() => deleteProduct(product.id)}>Remove Product</button>
+            </div>
+          ) : null }
+          </Link> */}
         </div>
       }
      

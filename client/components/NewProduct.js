@@ -59,7 +59,7 @@ export class NewProduct extends Component {
                        placeholder='Product Price'
                        onChange={handleChange}
                      />
-                     <input 
+                     <textarea
                        name='description'
                        type='text'
                        value={description}
