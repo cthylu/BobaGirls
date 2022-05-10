@@ -46,11 +46,12 @@ export class UpdateProduct extends React.Component {
        return (
        <div> 
          { user.isAdmin ? (
-            <div> 
+            <div className='newproduct'> 
               <div> ADMIN ONLY </div>  
-              <form onSubmit={handleSubmit}
+              <form 
+              onSubmit={handleSubmit}
               >
-              <div>
+              <div className='updateproduct' >
                 <input
                   name='name'
                   type='text'
@@ -65,7 +66,7 @@ export class UpdateProduct extends React.Component {
                   placeholder='Product Price'
                   onChange={handleChange}
                 />
-                <input
+                <textarea
                   name='description'
                   type='text'
                   value={description || ''}
@@ -100,8 +101,9 @@ export class UpdateProduct extends React.Component {
                  placeholder='Product Quantity'
                  onChange={handleChange}
                  />
+                 <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
                 </div>  
-                <button onClick={handleSubmit}> Update Product</button> 
+                {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
              </form> 
             </div> 
          ) : null }  
