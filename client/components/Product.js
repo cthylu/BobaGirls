@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addToCart, deleteProduct } from "../store";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+import UpdateProduct from "./UpdateProduct";
 
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
@@ -21,7 +22,7 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             >
               Add To Cart
             </button>
-          
+          <div> <Route component={UpdateProduct}/> </div>
           </div>
           <Link to='/products'>
           { user.isAdmin ? (

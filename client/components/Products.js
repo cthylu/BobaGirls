@@ -20,10 +20,10 @@ class Products extends Component {
     const { addProductToCart } = this;
     return (
       <div className="content">
-        <h1>Boba Girls Products</h1>
+        <h1 className="product1">All Products</h1>
         {
           <div>
-            <h2>Teas:</h2>
+            <h2 className="producttea">Loose Tea Leaves</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "tea")
@@ -45,7 +45,7 @@ class Products extends Component {
                 })}
             </ul>
 
-            <h2>Syrups:</h2>
+            <h2 className="productsyr">Syrups</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "syrup")
@@ -67,7 +67,7 @@ class Products extends Component {
                 })}
             </ul>
 
-            <h2>Toppings:</h2>
+            <h2 className="producttop">Toppings</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "topping")
@@ -90,8 +90,8 @@ class Products extends Component {
                   );
                 })}
             </ul>
-
-            <h2>Milk Powders:</h2>
+            
+            <h2 className="milk">Milk Powder</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "milk")
@@ -114,7 +114,7 @@ class Products extends Component {
                 })}
             </ul>
 
-            <h2>Merchandise:</h2>
+            <h2 className="merch">BobaGirls Merch & Accessories</h2>
             <ul className="teaproducts">
               {products
                 .filter((product) => product.key === "merchandise")

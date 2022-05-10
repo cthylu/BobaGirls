@@ -337,7 +337,7 @@ td {
 }
 
 /**Admin Buttons**/
-.admindeleteb {
+.admindeleteb, .addproduct {
   background: #FF4742;
   border: 1px solid #FF4742;
   border-radius: 6px;
@@ -362,6 +362,8 @@ td {
   vertical-align: middle;
 }
 
+.addproduct:hover,
+.addproduct:active,
 .admindeleteb:hover,
 .admindeleteb:active {
   background-color: initial;
@@ -369,6 +371,7 @@ td {
   color: #FF4742;
 }
 
+.addproduct:active,
 .admindeleteb:active {
   opacity: .5;
 }
@@ -402,6 +405,7 @@ td {
   touch-action: manipulation;
 }
 
+.loginb:hover,
 .addtocart:hover {
   box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
 }
@@ -567,6 +571,7 @@ input[type=number] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  width: 250px;
 }
 
 .label1 {
@@ -599,4 +604,87 @@ input[type=number] {
 .productname1:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.newproduct {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 30px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border: 3px solid white ;
+  padding: 30px;
+  margin: 30px;
+
+}
+
+.addproduct {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 30px;
+  justify-content: space-evenly;
+  align-items: flex-start; 
+}
+
+.product1 {
+  color: white;
+  font-weight: 200;
+  font-style: oblique;
+  font-size: 60px;
+}
+
+.producttea {
+  color:#B1907F;
+  font-weight: 320;
+  font-size: 40px; 
+  text-align: left;
+  margin-left: 20px;
+  transition: all .2s ease-in-out
+}
+
+.milk:hover
+.merch:hover,
+.producttop:hover,
+.productsyr:hover,
+.producttea:hover {
+  transform: scale(0.8)
+}
+
+.productsyr {
+  color: #82AC85;
+  font-weight: 320;
+  font-size: 40px; 
+  text-align: left;
+  margin-left: 20px;
+  transition: all .2s ease-in-out
+}
+
+.producttop {
+  color: #78a2cc;
+  font-weight: 320;
+  font-size: 40px; 
+  text-align: left;
+  margin-left: 20px;
+  transition: all .2s ease-in-out
+}
+
+.merch {
+  color: #d291bc;
+  font-weight: 320;
+  font-size: 40px; 
+  text-align: left;
+  margin-left: 20px;
+  transition: all .2s ease-in-out
+}
+
+.milk {
+  color: #F4E6BA;
+  font-weight: 320;
+  font-size: 40px; 
+  text-align: left;
+  margin-left: 20px;
+  transition: all .2s ease-in-out
 }

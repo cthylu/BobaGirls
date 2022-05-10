@@ -38,11 +38,11 @@ export class NewProduct extends Component {
           <div>
             { user.isAdmin ? (
                <div>
-                  <form 
+                  <form className='newproduct'
                   onSubmit={handleSubmit}
                   >
                   <div> 
-                     Create New Product 
+                     ADMIN ONLY:
                  </div>
                      <input 
                        name='name'
@@ -52,6 +52,7 @@ export class NewProduct extends Component {
                        onChange={handleChange}
                      />
                      <input
+                       className='newprice'
                        name='price'
                        type='number'
                        value={price}
@@ -79,8 +80,8 @@ export class NewProduct extends Component {
                        placeholder='Product Category'
                        onChange={handleChange}
                        />
+                        <button className='addproduct' onClick={handleSubmit}> Save New Product </button>
                   </form>
-                  <button onClick={handleSubmit}> Submit </button>
               </div>
             ) : null }  
           </div>
