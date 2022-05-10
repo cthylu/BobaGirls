@@ -26,35 +26,27 @@ const User = db.define("user", {
   },
   firstName: {
     type: Sequelize.STRING(50),
-    defaultValue: 'N/A',
   },
   lastName: {
     type: Sequelize.STRING(50),
-    defaultValue: 'N/A',
   },
   email: {
     type: Sequelize.TEXT,
-    defaultValue: 'N/A',
   },
   creditCard: {
     type: Sequelize.STRING,
-    defaultValue: 'N/A',
   },
   address: {
     type: Sequelize.STRING(50),
-    defaultValue: 'N/A',
   },
   city: {
     type: Sequelize.STRING(50),
-    defaultValue: 'N/A',
   },
   state: { 
     type:Sequelize.STRING(20),
-    defaultValue: 'N/A',
   },
   zipCode:{ 
     type: Sequelize.STRING,
-    defaultValue: 'N/A',
   },
 });
 
