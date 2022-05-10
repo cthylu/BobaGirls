@@ -3,13 +3,14 @@ import {connect} from 'react-redux'
 import { updateProduct } from '../store'
 
 export class UpdateProduct extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
+        const {product} = this.props
     this.state = {
-        name: '',
-        imageUrl: '',
+        name: product ? product.name : '',
+        imageUrl: product ? product.imageURl : '',
         price: 0,
-        description: '',
+        description: product ? product.description : '',
         key: 'toppings',
         quantity: 0
       }
@@ -35,7 +36,7 @@ export class UpdateProduct extends React.Component {
     }
     handleSubmit(evt) {
         evt.preventDefault()
-        this.props.updateProduct(this.props.product.id, this.state)
+        this.props.updateProduct(this.props.product.id, {...this.state})
         this.props.history.push(`/products/${this.props.product.id}`)
     }
     render() {
@@ -46,6 +47,7 @@ export class UpdateProduct extends React.Component {
        <div> 
          { user.isAdmin ? (
             <div> 
+              <div> ADMIN ONLY </div>  
               <form onSubmit={handleSubmit}
               >
               <div>
@@ -66,6 +68,13 @@ export class UpdateProduct extends React.Component {
                 <input
                   name='description'
                   type='text'
+                  value={description || ''}
+                  placeholder='Product Description'
+                  onChange={handleChange}
+                />
+                <input 
+                  name='imageUrl'
+                  type='text'
                   value={imageUrl || ''}
                   placeholder='Product ImageUrl'
                   onChange={handleChange}
@@ -77,18 +86,20 @@ export class UpdateProduct extends React.Component {
                   placeholder='Product Category'
                   onChange={handleChange}
                 />
+              <button onClick={handleSubmit}> Update Product</button>
               </div>    
              </form> 
             </div> 
-         ) : null}  
+         ) : null }  
        </div>
        )
     }
 }
 
-const mapState = state => {
+const mapState = (state, otherProps) => {
+const id = otherProps.match.params.id
   return {
-      product: state.product,
+      product: state.products.find(product => product.id === id * 1 ),
       user: state.auth
   }
 }
