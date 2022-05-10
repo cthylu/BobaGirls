@@ -12,12 +12,12 @@ export const fetchUsers = () => {
   return async (dispatch) => {
     const response = await axios.get("/api/users");
     dispatch({ type: SET_USERS, users: response.data });
-  };
+  };F
 };
 
-export const updateUser= (user, history) => {
+export const updateUser = (user, history) => {
   return async (dispatch) => {
-    const information = (await axios.put("/api/profile", user)).data;
+    const information = (await axios.put("/api/users/:id", user)).data;
     dispatch(_updateUser(information));
     history.push(`/profile`);
   };
@@ -28,8 +28,8 @@ const users = (state = [], action) => {
     return action.users;
   }
   if (action.type === UPDATE_USER) {
-    return state.map((user) =>
-      user.id === action.user.id ? action.user : user
+    console.log('state',state);
+    return state.map((user) => user.id === action.user.id ? action.user : user
     );
   }
   return state;
