@@ -11,7 +11,7 @@ export class UpdateProduct extends React.Component {
         imageUrl: product ? product.imageUrl : '',
         price: product ? product. price : 0,
         description: product ? product.description : '',
-        key: 'toppings',
+        key: product ? product.key : '',
         quantity: product ? product.quantity : 0
       }
       this.handleChange = this.handleChange.bind(this)
@@ -79,13 +79,20 @@ export class UpdateProduct extends React.Component {
                   placeholder='Product ImageUrl'
                   onChange={handleChange}
                 />
-                <input
+                <select
                   name='key'
-                  type='text'
                   value={key || ''}
                   placeholder='Product Category'
                   onChange={handleChange}
-                />
+                >
+                <option value=''> Select a Category</option>
+                <option value='tea'>Tea</option>
+                <option value='topping'>Topping</option>
+                <option value='merchandise'>Merchandise</option>
+                <option value='milk'>Milk Powder</option>
+                <option value='syrup'>Syrup</option>
+                
+                </select>
                 <input 
                  name='quantity'
                  type='number'
