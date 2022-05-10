@@ -1,19 +1,13 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, Route } from "react-router-dom";
-import { fetchOrders } from "../store";
-import { addToCart, fetchCart } from "../store/cart";
+import { Link } from "react-router-dom";
+import { addToCart } from "../store";
 
 
 class Products extends Component {
   constructor() {
     super();
     this.addProductToCart = this.addProductToCart.bind(this);
-  }
-
-  async componentDidMount() {
-    this.props.loadCart();
-    this.props.loadOrders();
   }
 
   addProductToCart(product) {
@@ -72,6 +66,7 @@ class Products extends Component {
                   );
                 })}
             </ul>
+
             <h2 className="producttop">Toppings</h2>
             <ul className="teaproducts">
               {products
@@ -95,12 +90,11 @@ class Products extends Component {
                   );
                 })}
             </ul>
-
-            <h2 className="merch">BobaGirls Merch & Accessories</h2>
-
+            
+            <h2 className="milk">Milk Powder</h2>
             <ul className="teaproducts">
               {products
-                .filter((product) => product.key === "merchandise")
+                .filter((product) => product.key === "milk")
                 .map((product) => {
                   return (
                     <li className="teadiv" key={product.id}>
@@ -120,10 +114,10 @@ class Products extends Component {
                 })}
             </ul>
 
-            <h2 className="milk">Milk Powder</h2>
+            <h2 className="merch">BobaGirls Merch & Accessories</h2>
             <ul className="teaproducts">
               {products
-                .filter((product) => product.key === "milk")
+                .filter((product) => product.key === "merchandise")
                 .map((product) => {
                   return (
                     <li className="teadiv" key={product.id}>
@@ -168,8 +162,6 @@ const mapState = ({ products, auth }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    loadCart: () => dispatch(fetchCart()),
-    loadOrders: () => dispatch(fetchOrders()),
     addToCart: (product, quantity) =>
       dispatch(addToCart(product, quantity, history)),
   };
