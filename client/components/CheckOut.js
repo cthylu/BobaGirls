@@ -5,16 +5,17 @@ import { createShipping } from "../store/checkout";
 import { Link } from "react-router-dom";
 
 class CheckOut extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      address: "",
-      city: "",
-      state: "",
-      zipCode: "",
+      firstName: this.props.user ? this.props.user.firstName : "",
+      lastName: this.props.user ? this.props.user.lastName : "",
+      email: this.props.user ? this.props.user.email : "",
+      creditCard: this.props.user ? this.props.user.creditCard : "",
+      address: this.props.user ? this.props.user.address : "",
+      city: this.props.user ? this.props.user.city : "",
+      state: this.props.user ? this.props.user.state : "",
+      zipCode: this.props.user ? this.props.user.zipCode : "",
     };
     this.checkout = this.checkout.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,6 +33,7 @@ class CheckOut extends React.Component {
         firstName: "",
         lastName: "",
         email: "",
+        creditCard: "",
         address: "",
         city: "",
         state: "",
@@ -40,16 +42,15 @@ class CheckOut extends React.Component {
     );
   }
   render() {
-    const { firstName, lastName, email, address, city, state, zipCode } = this.state;
-    const { cart } = this.props;
+    const { firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
+    const { cart, user } = this.props;
      const { checkout, handleSubmit } = this;
     return (
       <div>
-        {cart.length !== 0 ? cart.lineitems?.map((item) => {
-          return (
-            <div key={item.id}>
-              {/* {console.log('item here', item)}
-              {console.log('cart here', cart)} */}
+        {cart.length !== 0 ? (
+            <div>
+              {/* {console.log('lineitem here', item)} */}
+              {/* {console.log('cart here', cart)} */}
               {cart.isCart === true && cart.lineitems.length > 0 ? (
                 <div>
                    {/* {console.log('inside in here')} */}
@@ -89,6 +90,15 @@ class CheckOut extends React.Component {
                       onChange={checkout}
                       value={email}
                       placeholder="E-mail"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="creditCard"> Credit Card*: </label>
+                    <input
+                      name="creditCard"
+                      onChange={checkout}
+                      value={creditCard}
+                      placeholder="Credit Card Number"
                       required
                     />
                     <br />
@@ -139,8 +149,7 @@ class CheckOut extends React.Component {
                 </div>
               )}
             </div>
-          );
-        }) : (
+          ) : (
           <div>
               {/* {console.log('no out here')} */}
           No items in your <Link to={"/cart"}> Cart </Link>! 
@@ -152,12 +161,17 @@ class CheckOut extends React.Component {
   }
 }
 
-const mapState = (state) => state;
+const mapState = ({cart, users}, {match}) => {
+  const user = users.find(user => user.id === match.params.id*1);
+  return {
+    user,
+    cart,
+  }
+};
 
 const mapDispatch = (dispatch, { history }) => ({
   fetchCart: (userId) => dispatch(fetchCart(userId)),
-  createShipping: (information) =>
-    dispatch(createShipping(information, history)),
+  createShipping: (information) => dispatch(createShipping(information, history)),
 });
 
 export default connect(mapState, mapDispatch)(CheckOut);
