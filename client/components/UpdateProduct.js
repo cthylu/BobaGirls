@@ -8,11 +8,11 @@ export class UpdateProduct extends React.Component {
         const {product} = this.props
     this.state = {
         name: product ? product.name : '',
-        imageUrl: product ? product.imageURl : '',
-        price: 0,
+        imageUrl: product ? product.imageUrl : '',
+        price: product ? product. price : 0,
         description: product ? product.description : '',
         key: 'toppings',
-        quantity: 0
+        quantity: product ? product.quantity : 0
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
@@ -40,7 +40,7 @@ export class UpdateProduct extends React.Component {
         this.props.history.push(`/products/${this.props.product.id}`)
     }
     render() {
-       const { name, price, description, imageUrl, key } = this.state
+       const { name, price, description, imageUrl, key, quantity } = this.state
        const {handleSubmit, handleChange} = this
        const { user } = this.props
        return (
@@ -86,8 +86,15 @@ export class UpdateProduct extends React.Component {
                   placeholder='Product Category'
                   onChange={handleChange}
                 />
-              <button onClick={handleSubmit}> Update Product</button>
-              </div>    
+                <input 
+                 name='quantity'
+                 type='number'
+                 value={quantity || ''}
+                 placeholder='Product Quantity'
+                 onChange={handleChange}
+                 />
+                </div>  
+                <button onClick={handleSubmit}> Update Product</button> 
              </form> 
             </div> 
          ) : null }  
