@@ -19,12 +19,8 @@ class Kits extends Component {
     const { addProductToCart } = this;
     return (
       <div className="content">
-        <h1>Boba Girls Bubble Tea Kits</h1>
-        <br/>
-        <div className='kitdiv'>
-            <p className='kit-title'>BUBBLE TEA DIY KIT</p>
-            <p>(Each cup serves 400ml)</p>
-        </div>
+        <h1 className='product1'>Bubble Tea DIY Kits</h1>
+            <p className='kitdiv'>(Each cup serves 400mL)</p>
         {
         <div>
             <ul className="teaproducts">
@@ -51,7 +47,8 @@ class Kits extends Component {
           </div>
           }
           <div>
-          <ul>THINGS TO INDICATE UPON CHECKOUT:
+          <ul>
+              <li className='kitdiv'>MAKE SURE TO INDICATE UPON CHECKOUT:</li>
               <li>Choice of tea leaves (Oolong / Green / Jasmine / Rose)</li> 
               <li>Choice of fruit syrup (Peach / Lychee / Passionfruit) (if applicable)</li> 
               <li>If choices are not indicated, a standard choice would be given.</li> 

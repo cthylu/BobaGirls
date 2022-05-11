@@ -80,6 +80,7 @@ class Routes extends Component {
             <Route path="/products" exact render={ 
               ({match, history}) => <Products match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products/:id" component={Product} />
+            <Route path='/kits' component={Kits} />
 
             <Route path="/about" component={About} />            
             <Route path='/orders' component={Orders} />
@@ -104,6 +105,7 @@ class Routes extends Component {
             <Route exact path="/products/merchandise" component={Merchandise} />
             <Route path="/products" exact component={Products} />
             <Route path="/products/:id" component={Product} />
+            <Route path='/kits' component={Kits} />
 
             <Route path="/cart" component={Cart} />
             <Route path="/about" component={About} />

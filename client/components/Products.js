@@ -41,7 +41,7 @@ class Products extends Component {
               ) : null }
             </Link>
         { /*
-          <div>
+          <div> 
             <h2 className="producttea">Loose Tea Leaves</h2>
             <ul className="teaproducts">
               {products
