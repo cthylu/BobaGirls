@@ -55,7 +55,7 @@ export const deleteFromCart = (lineitemId, quantity) => {
   };
 };
 
-export const addToCart = (product, quantity, history) => {
+export const addToCart = (product, quantity) => {
   return async (dispatch) => {
     try {
       const token = window.localStorage.getItem("token");

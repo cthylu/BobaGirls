@@ -24,12 +24,32 @@ router.get("/:id", token, async (req, res, next) => {
   }
 });
 
-
-
 router.post("/", token, async (req, res, next) => {
   try {
     res.send(
-      await req.user.User(
+      await res.send.User(
+        {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          creditCard: req.body.creditCard,
+          address: req.body.address,
+          state: req.body.state,
+          city: req.body.city,
+          zipCode: req.body.zipCode,
+        }.status(204)
+      )
+    );
+  } catch (e) {
+    next(e);
+  }
+});
+
+router.put("/", token, async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.params.id);
+    res.send(
+      await user.update(
         {
           firstName: req.body.firstName,
           lastName: req.body.lastName,

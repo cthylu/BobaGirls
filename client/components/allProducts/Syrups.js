@@ -43,7 +43,8 @@ const mapState = ({ products }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
+    addToCart: (product, quantity) =>
+      dispatch(addToCart(product, quantity, history)),
   };
 };
 
