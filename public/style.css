@@ -210,51 +210,35 @@ label {
 }
 
 /*** Orders ***/
-
-.orderproducts img {
-  height: 150px;
-  width: auto;
-}
-
-.signup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.order-page {
-  margin: 1rem;
-}
-
-.orderdiv {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  margin: 1rem;
-  align-items: center;
-  gap: 2rem;
-}
-
-.orderdiv > img {
-  height: auto;
-  width: 70px;
-}
-
-.orderproducts {
-  display: flex;
-  flex-direction: row;
-  margin: 1rem;
-  align-items: center;
-  gap: 2rem;
-}
-
 .ordersinfo, .ordersinfo table {
   text-align: center;
   border-collapse: collapse;
   margin: 1rem auto auto auto;
 }
 
-.ordersinfo 
+.content-order {
+  text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.content-order img {
+  height: 50px;
+  width: auto;
+}
+
+.content-order td, .content-order tr {
+  border-bottom: 1px solid white;
+  font-weight: 300;
+  padding: 0;
+}
+
+/** Users **/
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .welcome {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -328,7 +312,7 @@ td, tr {
   padding: .5rem 0 .5rem 0;
 }
 
-.cart-table img {
+.cart-table img, .order-table img {
   height: 85px;
   width: auto;
 }

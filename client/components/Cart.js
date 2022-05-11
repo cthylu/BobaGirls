@@ -9,7 +9,7 @@ class Cart extends Component {
     this.cartTotal = 0;
     this.getCartTotal = this.getCartTotal.bind(this);
   }
-  async componentDidMount() {
+  componentDidMount() {
     this.props.fetchCart();
   }
 
