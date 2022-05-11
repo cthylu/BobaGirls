@@ -23,9 +23,12 @@ class Cart extends Component {
 
   render() {
     const { cart } = this.props;
+    console.log(cart.lineitems.length)
     return (
       <div className="content cart">
-        <h2>Cart:</h2>
+        { cart.lineitems.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        <div>
+        <h1 className='cart1'>Cart:</h1>
         <table>
           <tbody>
             <tr>
@@ -70,6 +73,8 @@ class Cart extends Component {
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
+        </div>
+        }
       </div>
     );
   }

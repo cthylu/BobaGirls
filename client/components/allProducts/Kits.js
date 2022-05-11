@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../store";
+import { addToCart } from '/client/store';
 
 class Kits extends Component {
   constructor() {
@@ -10,12 +10,13 @@ class Kits extends Component {
   }
 
   addProductToCart(product) {
+    console.log("Add product to cart")
     const quantity = 1;
     this.props.addToCart(product, quantity);
   }
 
   render() {
-    const { products, user } = this.props;
+    const { products } = this.props;
     const { addProductToCart } = this;
     return (
       <div className="content">
@@ -35,10 +36,10 @@ class Kits extends Component {
                       <div className="teaprice">${product.price}</div>
 
                       <button
-                        className="addtocart"
-                        onClick={() => addProductToCart(product)}
+                          className="addtocart"
+                          onClick={() => addProductToCart(product)}
                       >
-                        Add To Cart
+                          Add To Cart
                       </button>
                     </li>
                   );
@@ -47,10 +48,10 @@ class Kits extends Component {
           </div>
           }
           <div>
-          <ul>
-              <li className='kitdiv'>MAKE SURE TO INDICATE UPON CHECKOUT:</li>
-              <li>Choice of tea leaves (Oolong / Green / Jasmine / Rose)</li> 
-              <li>Choice of fruit syrup (Peach / Lychee / Passionfruit) (if applicable)</li> 
+          <ul className="kits">
+              <li className='kitsdiv'>MAKE SURE TO INDICATE UPON CHECKOUT:</li>
+              <li >Choice of tea leaves</li> 
+              <li>Choice of fruit syrup (if applicable)</li> 
               <li>If choices are not indicated, a standard choice would be given.</li> 
             </ul>
           </div>
@@ -67,8 +68,10 @@ const mapState = ({ products }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
+    addToCart: (product, quantity) =>
+      dispatch(addToCart(product, quantity, history)),
   };
 };
+
 
 export default connect(mapState, mapDispatch)(Kits);

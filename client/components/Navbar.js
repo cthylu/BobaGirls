@@ -15,12 +15,12 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>
+                  <li><Link to='/products/kits'>DIY Kit</Link></li>
                   <li><Link to='/products/teas'> Teas </Link></li>
                   <li><Link to='/products/toppings'> Toppings </Link></li>
                   <li><Link to='/products/syrups'> Syrups </Link></li>
                   <li><Link to='/products/milkpowder'> Milk Powder</Link></li>
                   <li><Link to='/products/merchandise'> Merchandise </Link></li>
-                  <li><Link to='/kits'>DIY Kit</Link></li>
                 </ul>
               </li>
             </ul>
@@ -47,12 +47,12 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>
+                  <li><Link to='/products/kits'>DIY Kit</Link></li>
                   <li><Link to='/products/teas'> Teas </Link></li>
                   <li><Link to='/products/syrups'> Syrups </Link></li>
                   <li><Link to='/products/toppings'> Toppings </Link></li>
                   <li><Link to='/products/milkpowder'> Milk Powder</Link></li>
                   <li><Link to='/products/merchandise'> Merchandise </Link></li>
-                  <li><Link to='/kits'>DIY Kit</Link></li>
                 </ul>
               </li>
               <li><Link to='/about'>About</Link></li>
@@ -77,7 +77,6 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
  */
 const mapState = (state) => {
   const cart = state.cart
-  console.log(cart.lineitems?.length || 0, 'length')
   return {
     isLoggedIn: !!state.auth.id,
     products: state.products,

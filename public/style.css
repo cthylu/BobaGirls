@@ -289,16 +289,28 @@ label {
 }
 
 /*** Cart ***/
+.cart1 {
+  color: black;
+  font-weight: 200;
+  font-style: oblique;
+  font-size: 40px;
+  padding: 0 0 1rem 0;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
 
 .cart table {
   text-align: center;
   border-collapse: collapse;
   margin: auto;
 }
+
 th, td {
   text-align: left;
-  width: 130px; 
+  width: 150px;
+  text-align: center;
 }
+
 td {
   border-bottom: 1px solid white;
 }
@@ -642,7 +654,6 @@ input[type=number] {
   border: 3px solid white ;
   padding: 30px;
   margin: 30px;
-
 }
 
 .addproduct {
@@ -659,6 +670,13 @@ input[type=number] {
   font-weight: 200;
   font-style: oblique;
   font-size: 60px;
+}
+
+.product2 {
+  color: black;
+  font-weight: 200;
+  font-style: oblique;
+  font-size: 40px;
 }
 
 .producttea {
@@ -731,7 +749,36 @@ textarea {
 }
 
 /* Kits */
-.kitdiv {
+.kits {
+  list-style: none;
+}
+
+.kitsdiv {
   letter-spacing: .15rem;
   font-size: larger;
+}
+
+.kitform {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  border: 3px solid white ;
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+}
+
+.kitform p {
+  font-size: large;
+  color: black;
+}
+
+.kitoption {
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
 }

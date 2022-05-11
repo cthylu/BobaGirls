@@ -21,7 +21,7 @@ import Syrups from './components/allProducts/Syrups';
 import Teas from './components/allProducts/Teas';
 import Toppings from './components/allProducts/Toppings';
 import NewProduct from './components/NewProduct';
-import Kits from './components/Kits';
+import Kits from './components/allProducts/Kits';
 
 // store
 import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders, addToCart } from './store'
@@ -84,12 +84,12 @@ class Routes extends Component {
               ({match, history}) => <Toppings match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products/merchandise" cexact render={ 
               ({match, history}) => <Merchandise match={match} history={history} addProductToCart={this.addProductToCart} /> } />
+            <Route path='/products/kits' component={Kits} exact render={ 
+              ({match, history}) => <Kits match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products" exact render={ 
               ({match, history}) => <Products match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products/:id" exact render={ 
               ({match, history}) => <Product match={match} history={history} addProductToCart={this.addProductToCart} /> } />
-            <Route path='/kits' component={Kits} exact render={ 
-              ({match, history}) => <Kits match={match} history={history} addProductToCart={this.addProductToCart} /> } />
 
             <Route path="/about" component={About} />            
             <Route path='/orders' component={Orders} />
@@ -118,12 +118,12 @@ class Routes extends Component {
               ({match, history}) => <Toppings match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products/merchandise" cexact render={ 
               ({match, history}) => <Merchandise match={match} history={history} addProductToCart={this.addProductToCart} /> } />
+            <Route path='/products/kits' component={Kits} exact render={ 
+              ({match, history}) => <Kits match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products" exact render={ 
               ({match, history}) => <Products match={match} history={history} addProductToCart={this.addProductToCart} /> } />
             <Route path="/products/:id" exact render={ 
               ({match, history}) => <Product match={match} history={history} addProductToCart={this.addProductToCart} /> } />
-            <Route path='/kits' component={Kits} exact render={ 
-              ({match, history}) => <Kits match={match} history={history} addProductToCart={this.addProductToCart} /> } />
 
             <Route path="/cart" component={Cart} />
             <Route path="/about" component={About} />
