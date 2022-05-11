@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { fetchCart, deleteFromCart } from "../store/cart";
 
 class Cart extends Component {
+  constructor() {
+    super();
+    this.cartTotal = 0;
+    this.getCartTotal = this.getCartTotal.bind(this);
+  }
   async componentDidMount() {
     this.props.fetchCart();
   }
@@ -14,10 +19,12 @@ class Cart extends Component {
     }
   }
 
+  getCartTotal() {}
+
   render() {
     const { cart } = this.props;
     return (
-      <div className="cart-container">
+      <div className="content cart">
         <h2>Cart:</h2>
         <table>
           <tbody>
@@ -30,7 +37,9 @@ class Cart extends Component {
             {cart.lineitems?.map((line) => {
               return (
                 <tr key={line.id} className="cart-table">
-                  <td><img src={line.product?.imageUrl} /></td>
+                  <td>
+                    <img src={line.product?.imageUrl} />
+                  </td>
                   <td>{line.product?.name}</td>
                   <td>{line.quantity}</td>
                   <td>{line.cost}</td>

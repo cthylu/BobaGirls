@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const Order = ({ order }) => {
   return (
-    <div>
+    <div className='order-page'>
       <h2>Order Information:</h2>
       {
         order.map((item) => {

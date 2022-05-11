@@ -3,6 +3,7 @@ import axios from "axios";
 const SET_PRODUCTS = "SET_PRODUCTS";
 const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 const ADD_PRODUCT = 'ADD_PRODUCT';
+const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 
 
 // Action creator
@@ -22,6 +23,13 @@ const _addProduct = (product) => {
     type: ADD_PRODUCT,
     product
   }
+}
+
+const _updateProduct = (product) => {
+   return {
+     type: UPDATE_PRODUCT,
+     product
+   }
 }
 
 
@@ -72,6 +80,23 @@ export const addNewProduct = product => {
   }
 }
 
+export const updateProduct = (productId, product) => {
+  return async (dispatch) => {
+    try {
+      const token = window.localStorage.getItem("token");
+      if(token) {
+        const { data } = await axios.put(`/api/products/${productId}`, product, {
+          headers: {
+            authorization: token,
+          },
+        });
+        dispatch(_updateProduct(data))
+      }
+    } catch (ex) {
+      console.log(ex)
+    }
+  }
+}
 
 const products = (state = [], action) => {
   if (action.type === SET_PRODUCTS) {
@@ -82,6 +107,9 @@ const products = (state = [], action) => {
   }
   if (action.type === ADD_PRODUCT) {
     return [...state, action.product]
+  }
+  if (action.type === UPDATE_PRODUCT) {
+    return state = state.map(product => product.id === action.product.id ? action.product: product)
   }
   return state;
 };

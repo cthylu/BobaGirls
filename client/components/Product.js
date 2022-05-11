@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart, deleteFromCart, deleteProduct } from "../store";
+import { addToCart, deleteProduct } from "../store";
+import { Link, Route } from "react-router-dom";
+import UpdateProduct from "./UpdateProduct";
 
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
@@ -11,6 +13,7 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
           <div>
             <h2>{product.name}</h2>
             <p>{product.description}</p>
+            <p>${product.price}</p>
             <h5>Quantity: {product.quantity} in stock</h5>
 
             <button
@@ -19,15 +22,28 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             >
               Add To Cart
             </button>
-          </div>
+          <div> <Route component={UpdateProduct}/> 
+          <Link to='/products'>
           { user.isAdmin ? (
             <div className='admindelete'>
             <h5 className='admin'> Admin Only: </h5>
-            <button onClick={() => deleteProduct(product.id)}>Remove Product</button>
+            <button className='admindeleteb' onClick={() => deleteProduct(product.id)}>Remove Product</button>
             </div>
           ) : null }
+          </Link>
+          </div>
+          </div>
+          {/* <Link to='/products'>
+          { user.isAdmin ? (
+            <div className='admindelete'>
+            <h5 className='admin'> Admin Only: </h5>
+            <button className='admindeleteb' onClick={() => deleteProduct(product.id)}>Remove Product</button>
+            </div>
+          ) : null }
+          </Link> */}
         </div>
       }
+     
     </div>
   );
 };

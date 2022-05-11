@@ -9,7 +9,9 @@ export class NewProduct extends Component {
           name: '',
           price: '',
           description: '',
-          imageUrl: ''
+          imageUrl: 'https://www.honestfoodtalks.com/wp-content/uploads/2021/09/Boba-tea-recipe-using-fresh-tapioca-pearls-1024x1024.jpeg',
+          key: '',
+          quantity: 0
       }
      this.initialState = this.state
      this.handleChange = this.handleChange.bind(this)
@@ -28,18 +30,19 @@ export class NewProduct extends Component {
     }
 
    render() {
-       const { name, price, description, imageUrl } = this.state
+       const { name, price, description, imageUrl, key, quantity } = this.state
        const {handleSubmit, handleChange} = this
        const { user } = this.props
+       console.log(user, 'user')
        return (
           <div>
             { user.isAdmin ? (
                <div>
-                  <form 
+                  <form className='newproduct'
                   onSubmit={handleSubmit}
                   >
                   <div> 
-                     Create New Product 
+                     ADMIN ONLY:
                  </div>
                      <input 
                        name='name'
@@ -49,13 +52,14 @@ export class NewProduct extends Component {
                        onChange={handleChange}
                      />
                      <input
+                       className='newprice'
                        name='price'
                        type='number'
                        value={price}
                        placeholder='Product Price'
                        onChange={handleChange}
                      />
-                     <input 
+                     <textarea
                        name='description'
                        type='text'
                        value={description}
@@ -69,6 +73,29 @@ export class NewProduct extends Component {
                        placeholder='Product ImageUrl'
                        onChange={handleChange}
                       />
+                      <input
+                       name='quantity'
+                       type='number'
+                       value={quantity}
+                       placeholder='Product Quantity'
+                       onChange={handleChange}
+                       />
+
+                       <select
+                        name='key'
+                        value={key || ''}
+                        placeholder='Product Category'
+                        onChange={handleChange}
+                       >
+                        <option value=''> Select a Category</option>
+                        <option value='tea'>Tea</option>
+                        <option value='topping'>Topping</option>
+                        <option value='merchandise'>Merchandise</option>
+                        <option value='milk'>Milk Powder</option>
+                        <option value='syrup'>Syrup</option>
+                
+                        </select>
+                        <button className='addproduct' onClick={handleSubmit}> Save New Product </button>
                   </form>
               </div>
             ) : null }  
