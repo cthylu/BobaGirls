@@ -87,7 +87,6 @@ class CheckOut extends React.Component {
                   <div> You have {cart.lineitems.length} items in your <Link to={"/cart"}> Cart </Link> </div>
                   <div> Your total is $</div>
                   <div> To continue checking out, fill out the below. </div>
-                  <br />
                   <div> Shipping Information </div>
                   <label htmlFor="firstName"> First Name*: </label>
                   <input
