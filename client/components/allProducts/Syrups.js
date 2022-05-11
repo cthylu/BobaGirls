@@ -6,7 +6,7 @@ import { addToCart } from "/client/store";
 const Syrups = ({ products, addProductToCart }) => {
   return (
     <div className="content">
-      <h1>Boba Girls Syrups</h1>
+      <h1 className="product1">Syrups</h1>
       {
         <div>
             <ul className="teaproducts">

@@ -290,9 +290,6 @@ label {
 
 /*** Cart ***/
 
-th:nth-child(1) {
-  /* font-size: 30px; */
-}
 .cart table {
   text-align: center;
   border-collapse: collapse;
