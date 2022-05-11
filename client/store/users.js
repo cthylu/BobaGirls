@@ -1,4 +1,5 @@
 import axios from "axios";
+import { me } from "./auth";
 
 const SET_USERS = "SET_USERS";
 const UPDATE_USER = "UPDATE_USER";
@@ -17,8 +18,14 @@ export const fetchUsers = () => {
 
 export const updateUser = (user, history) => {
   return async (dispatch) => {
-    const information = (await axios.put("/api/users/:id", user)).data;
+    const token = window.localStorage.getItem("token");
+    const information = (await axios.put("/api/users", user, {
+      headers: {
+        authorization: token,
+      },
+    })).data;
     dispatch(_updateUser(information));
+    dispatch(me());
     history.push(`/profile`);
   };
 };
