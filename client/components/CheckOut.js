@@ -39,6 +39,7 @@ class CheckOut extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.updateUser({ ...this.props.user, ...this.state });
+    alert ("Order Successfully Placed!");
     // this.setState(
     //   (this.state = {
     //     firstName: "",
@@ -52,6 +53,15 @@ class CheckOut extends React.Component {
     //   })
     // )
     // ;
+  // }
+  // alertSuccess() {
+  //   if (document.forms.checkout.name.value === ""){
+  //     alert("Please fill out all fields!");
+  //     return false;
+  //   } else {
+  //   alert ("Order Successfully Placed!")
+  //   return true;
+  // };
   }
   render() {
     const { firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
@@ -75,6 +85,7 @@ class CheckOut extends React.Component {
                   <div> Shipping Information </div>
                   <form
                     id="checkout"
+                    name="checkout"
                     className="checkout"
                     onSubmit={onSubmit}
                   >

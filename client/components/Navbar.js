@@ -45,12 +45,20 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
               <li><Link to="/home"> Home </Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
+<<<<<<< HEAD
                   <li><Link to='/teas'> Teas </Link></li>
                   <li><Link to='/toppings'> Toppings </Link></li>
                   <li><Link to='/syrups'> Syrups </Link></li>
                   <li><Link to='/milkpowder'> Milk Powder</Link></li>
                   <li><Link to='/merchandise'> Merchandise </Link></li>
                   <li><Link to='/kits'>DIY Kits</Link></li>
+=======
+                  <li><Link to='/products/teas'> Teas </Link></li>
+                  <li><Link to='/products/toppings'> Toppings </Link></li>
+                  <li><Link to='/products/syrups'> Syrups </Link></li>
+                  <li><Link to='/products/milkpowder'> Milk Powder</Link></li>
+                  <li><Link to='/products/merchandise'> Merchandise </Link></li>
+>>>>>>> d4f9b7046516c49826febd854294cb32025c8772
                   <li><Link to='/products'> All Products </Link></li>
                 </ul>
               </li>
