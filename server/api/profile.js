@@ -29,6 +29,7 @@ router.post("/", token, async (req, res, next) => {
     res.send(
       await res.send.User(
         {
+          username: req.body.username,
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           email: req.body.email,
@@ -51,6 +52,7 @@ router.put("/", token, async (req, res, next) => {
     res.send(
       await user.update(
         {
+          username: req.body.username,
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           email: req.body.email,

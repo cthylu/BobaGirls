@@ -47,6 +47,7 @@ router.put("/" ,token, async (req, res, next) => {
     console.log(req.body);
     res.send(
       await user.update({
+        username: req.body.username,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
