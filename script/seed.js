@@ -75,13 +75,13 @@ async function seed() {
 
     //Toppings:
 
-    Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
+    Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/5vhhFXA.png', 
       description: `Tapioca pearls are edible translucent spheres produced from tapioca, a starch extracted from the cassava root. Tapioca pearls make the unique ingredient of a bubble tea or boba tea drinks. They are about the size of pearls or small marbles, with the soft and chewy consistency of gummy candies. The pearls are opaque when raw and turned translucent after cooking. They need to be soaked for a considerable length of time before use in different food preparations. 
       <br/>
       1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
       2) Wait until tapioca floats to water surface. Cover pot. Cook in medium heat for 2-3 minutes. Turn off head and simmer for another 2-3 minutes (adjust time to soften tapioca to personal tastes). 
       3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` }),
-    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, key: 'topping', imageUrl: 'https://image.made-in-china.com/202f0j00NItYwGjFEPqc/China-Popping-Boba-Production-Line.jpg', 
+    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/T3lOeEV.png', 
       description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
       <br/>
       Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
@@ -102,22 +102,15 @@ async function seed() {
     price: 4.00, 
     quantity: 200, 
     key: 'topping', 
-    imageUrl: 'https://www.babyment.com/food/red-bean.jpg',
+    imageUrl: 'https://i.imgur.com/KXXGLNJ.png',
     description: 'Red bean soaked and mixed with sugar is a popular topping in bubble tea.  It is not only delicious but healthy and provides nutrients and health benefits. Red bean is rich in potassium which can help to regulate blood pressure and is therefore beneficial to the heart. Red bean is also rich in antioxidants which can protect organs from attack by free radicals.  Red bean contains vitamins A, B6 and minerals like magnesium and iron. '}),
     Product.create({ 
-    name: 'Black Jelly' , 
+    name: 'Grass Jelly' , 
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 
-    imageUrl: 'https://chatime.com/wp-content/uploads/2019/04/toppings-grass-jelly.png',
+    imageUrl: 'https://i.imgur.com/oZNBm8d.png',
     description: 'Grass jelly, also known as leaf jelly or herb jelly, is a jelly-like dessert eaten in East and Southeast Asia. It is created by using the Platostoma palustre plant (a member of the mint family) and has a mild, slightly bitter taste. It is served chilled, with other toppings such as fruit, or in bubble tea or other drinks. It has a soft silky texture, easy to mix and delicious to eat.  Mix it with some sugar if you like things extra sweetened!'}),
-    Product.create({ 
-    name: 'Aloe Vera' , 
-    price: 4.00, 
-    quantity: 200 , 
-    key: 'topping', 
-    imageUrl: 'https://www.bubbletea.com.au/site/images/source/aloe_vera_1.jpg',
-    description: 'A delicious and fun to chewy topping for those who love jelly! Aloe Vera small chunks syrup. Suitable for desserts. An easy and fun addition to your drink. Simply scoop and serve in your delicious boba and enjoy.  Refrigerate After Opening, Use within 1 week. Vegeterian.'}),
 
       // merch
     Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, key: 'merchandise', imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
