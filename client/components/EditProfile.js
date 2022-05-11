@@ -70,13 +70,15 @@ class EditProfile extends React.Component {
     const { onChange, onSubmit } = this;
     return (
       <div>
-                  <div> Edit Information! </div>
+                  
                   <form
+                  
                     id="checkout"
                     name="checkout"
                     className="checkout"
                     onSubmit={onSubmit}
                   >
+                      <div> Edit User Information! </div>
                     <label htmlFor="username"> Username: </label>
                     <input
                       name="username"
