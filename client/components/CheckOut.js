@@ -53,6 +53,9 @@ class CheckOut extends React.Component {
     // )
     // ;
   }
+  alertSuccess() {
+    alert ("Order Successfully Placed!");
+  }
   render() {
     const { firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
     const { cart } = this.props;
@@ -151,7 +154,7 @@ class CheckOut extends React.Component {
                       required
                     />
                     <br />
-                    <button type="submit"> Complete Purchase </button>
+                    <button type="submit" onClick={this.alertSuccess}> Complete Purchase </button>
                   </form>
                 </div>
               ) : (
