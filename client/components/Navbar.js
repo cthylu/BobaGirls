@@ -76,13 +76,15 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
  * CONTAINER
  */
 const mapState = (state) => {
+  const cart = state.cart
+  console.log(cart.lineitems?.length || 0, 'length')
   return {
     isLoggedIn: !!state.auth.id,
     products: state.products,
-    cart: state.cart.lineitems,
-    lineitems: state.cart.lineitems.reduce((acc, line) => {
+    cart,
+    lineitems: cart.lineitems ? cart.lineitems.reduce((acc, line) => {
         return acc += line.quantity;
-    }, 0)
+    }, 0) : cart.lineitems?.length || 0
   };
 };
 
