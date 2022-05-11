@@ -30,6 +30,20 @@ export const updateUser = (user, history) => {
   };
 };
 
+export const updateOrder = (user, history) => {
+  return async (dispatch) => {
+    const token = window.localStorage.getItem("token");
+    const information = (await axios.put("/api/users", user, {
+      headers: {
+        authorization: token,
+      },
+    })).data;
+    dispatch(_updateUser(information));
+    dispatch(me());
+    history.push(`/orders`);
+  };
+};
+
 const users = (state = [], action) => {
   if (action.type === SET_USERS) {
     return action.users;

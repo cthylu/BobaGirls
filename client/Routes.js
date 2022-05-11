@@ -13,6 +13,7 @@ import Orders from './components/Orders';
 import Order from './components/Order';
 import CheckOut from './components/CheckOut';
 import Profile from './components/Profile';
+import EditProfile from './components/EditProfile';
 //products
 import Merchandise from './components/allProducts/Merchandise';
 import MilkPowders from './components/allProducts/MilkPowders';
@@ -86,6 +87,7 @@ class Routes extends Component {
             <Route path='/order/:id' component={Order} />
             <Route path='/checkout' component={CheckOut} />
             <Route path='/profile' component={Profile} />
+            <Route path='/editprofile' component={EditProfile} />
             <Route path='/newproducts' component={NewProduct} />
             <Redirect to="/home" />
           </Switch>
