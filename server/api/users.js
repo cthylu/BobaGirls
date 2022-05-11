@@ -4,6 +4,15 @@ const {
 } = require("../db");
 module.exports = router;
 
+const token = async (req, res, next) => {
+  try {
+    req.user = await User.findByToken(req.headers.authorization);
+    next();
+  } catch (ex) {
+    next(ex);
+  }
+};
+
 router.get("/", async (req, res, next) => {
   try {
     const users = await User.findAll({
@@ -15,5 +24,40 @@ router.get("/", async (req, res, next) => {
     res.json(users);
   } catch (err) {
     next(err);
+  }
+});
+
+// router.get("/:id", async (req, res, next) => {
+//   try {
+//     const users = await User.findAll({
+//       // explicitly select only the id and username fields - even though
+//       // users' passwords are encrypted, it won't help if we just
+//       // send everything to anyone who asks!
+//       attributes: ["id", "username","firstName", "lastName", "email", "creditCard", "address", 'state', "city", "zipCode"],
+//     });
+//     res.json(users);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
+router.put("/" ,token, async (req, res, next) => {
+  try {
+    const user = req.user;
+    console.log(req.body);
+    res.send(
+      await user.update({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        creditCard: req.body.creditCard,
+        address: req.body.address,
+        state: req.body.state,
+        city: req.body.city,
+        zipCode: req.body.zipCode,
+      })
+    );
+  } catch (e) {
+    next(e);
   }
 });
