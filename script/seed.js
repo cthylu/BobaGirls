@@ -85,17 +85,17 @@ async function seed() {
       description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
       <br/>
       Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
-    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://tealiciouscafe.com/wp-content/uploads/2018/10/lychee-gelatin.jpg', 
+    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/u14YD9Y.png', 
       description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
     
     Product.create({ 
-    name: 'Mini Mochi' , 
+    name: 'Rainbow Mini Mochi' , 
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 
-    imageUrl: 'https://nuts.com/images/rackcdn/ed910ae2d60f0d25bcb8-80550f96b5feb12604f4f720bfefb46d.ssl.cf1.rackcdn.com/5728_Mochi+Rice+Cake-ntd7h-Sk-large.jpg',
+    imageUrl: 'https://i.imgur.com/8V1dR8u.png',
     description: 'Mini Mochi is one of the most popular flavors you can think of to top off your favorite dessert. Imagine a spoonful of matcha green tea snow ice or frozen yogurt, sided with these little rice cake balls, and a bit of red bean. Delicious!'}),
     Product.create({ 
     name: 'Red Bean', 
@@ -237,45 +237,83 @@ async function seed() {
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    // Product.create({ name: '', price: 6.00, quantity: 50, imageUrl: '', 
-    //   description: `` }),
     
     //milk powders
-      Product.create({ 
+    Product.create({ 
       name: 'Whole Milk Powder',
       price: 6.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 
       description: 'Whole milk in its most unadulterated form — and in addition to the fat found in milk, the main component (about 87 percent) is water. You\'ll also find vitamins, minerals, sugars like lactose and proteins like caseins and whey proteins. Perfect for the daily dairy lovers who want it as it\'s made' }),
-      Product.create({ 
+    Product.create({ 
       name: 'Skim Milk 2% Powder' , 
       price: 6.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://m.media-amazon.com/images/I/61ISN+q8VIS._SY445_.jpg', 
       description: 'Skim Milk is made when all the milkfat is removed from whole milk. It tends to contain around very little fat. Perfect for when you want less milk fat in your boba, but still want the nutrients and consistency from real dairy.'}),
-      Product.create({ 
+    Product.create({ 
       name: 'Almond Milk Powder' , 
       price: 8.00, 
       quantity: 200 , 
       key: 'milk', 
       imageUrl: 'http://www.nutricentreng.com/wp-content/uploads/2016/05/Almond-Milk-Powder.jpg',
       description: 'Almond milk is a plant milk with a creamy texture and nutty flavor manufactured from almonds, although some types or brands are flavored in imitation of cow\'s milk. It does not contain cholesterol or lactose and is low in saturated fat. Perfect for those who cannot have genuine dairy products.'}),
-      Product.create({ 
+    Product.create({ 
       name: 'Oat Milk Powder' , 
       price: 9.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://cdn.shopify.com/s/files/1/0493/0558/3773/products/OatMilkPowderBagFront.jpg?v=1622850159', 
       description: 'Oat milk is a plant milk derived from whole oat grains by extracting the plant material with water. Oat milk has a creamy texture and mild oatmeal-like flavor, and is manufactured in various flavors, such as sweetened, unsweetened, vanilla, and chocolate. Flavors can also be made at home such as chocolate, with cocoa powder, it makes the perfect chocolate oat milk.  Perfect for those with dairy and almond allegies'}),
-      Product.create({ 
+    Product.create({ 
       name: 'Soy Milk Powder' , 
       price: 9.00, 
       quantity: 200 , 
       key: 'milk', 
       imageUrl: 'https://i5.walmartimages.com/asr/a05fee3f-4211-475f-8319-7f71a2cc522f_1.197f902fc8a7883551b5d430265a0978.jpeg',
       description: 'Soymilk, is a plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates. It is a stable emulsion of oil, water, and protein. Its original form is an intermediate product of the manufacture of tofu. Perfect for those with dairy and almond allergies that enjoy tofu and something with nutrients. '}),
+
+    Product.create({ name: '2 Cups Milk Tea Kit', price: 15.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2020/10/Untitled_Artwork-3-1-300x300.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 1 type of tea leaves
+      Tapioca Pearls (uncooked)
+      Creamer of Choice
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 2 cups of Milk Tea` }),
+    Product.create({ name: '2 Cups Fruit Tea Kit', price: 13.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/05/Cartoon-BBT-KIT-2-pax-fruit-07-768x775.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 1 type of tea leaves
+      Choose 1 type of fruit syrup (Peach / Lychee / Passionfruit)
+      Tapioca Pearls (uncooked)
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 2 cups of Fruit Tea` }),
+    Product.create({ name: '4 Cups Milk Tea Kit', price: 23.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/01/Cartoon-BBT-KIT-4-Pax-02-1-300x300.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 2 types of tea leaves
+      Tapioca Pearls (uncooked)
+      Creamer of Choice
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 4 cups of Milk Tea` }),
+    Product.create({ name: '4 Cups Mix Tea Kit', price: 26.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/01/Cartoon-BBT-KIT-Mix-04-300x300.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 2 types of tea leaves
+      Choose 2 types of fruit syrup (Peach / Lychee / Passionfruit)
+      Tapioca Pearls (uncooked)
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 2 cups of Milk Tea and 2 cups of Fruit Tea` }),
+      // Product.create({ name: '', price: 6.00, quantity: 50, key: '', imageUrl: '', 
+      // description: `` }),
+      
   ])
 
   console.log(`seeded ${products.length} products`)

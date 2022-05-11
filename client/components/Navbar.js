@@ -19,6 +19,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
                   <li><Link to='/syrups'> Syrups </Link></li>
                   <li><Link to='/milkpowder'> Milk Powder</Link></li>
                   <li><Link to='/merchandise'> Merchandise </Link></li>
+                  <li><Link to='/kits'>DIY Kits</Link></li>
                   <li><Link to='/products'> All Products </Link></li>
                 </ul>
               </li>
@@ -50,6 +51,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
                   <li><Link to='/syrups'> Syrups </Link></li>
                   <li><Link to='/milkpowder'> Milk Powder</Link></li>
                   <li><Link to='/merchandise'> Merchandise </Link></li>
+                  <li><Link to='/kits'>DIY Kits</Link></li>
                   <li><Link to='/products'> All Products </Link></li>
                 </ul>
               </li>
@@ -58,9 +60,11 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
           </div>
           <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>
           <div>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-            <Link to="/cart">  Cart</Link>
+            <ul className='nav-top-level'>
+              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/signup">Sign Up</Link></li>
+              <li><Link to="/cart">  Cart</Link></li>
+            </ul>
           </div>
         </div>
       )}
