@@ -292,11 +292,20 @@ label {
 .cart1 {
   color: black;
   font-weight: 200;
-  font-style: oblique;
-  font-size: 40px;
+  font-size: 35px;
   padding: 0 0 1rem 0;
-  letter-spacing: 3px;
-  font-weight: bold;
+  font-weight: 420;
+}
+
+.cart2 {
+  color: black;
+  font-weight: 200;
+  font-size: 35px;
+}
+
+.cart3 {
+  color: black;
+  font-style: oblique;
 }
 
 .cart table {
@@ -311,8 +320,16 @@ th, td {
   text-align: center;
 }
 
+th {
+  font-weight: 600;
+  font-style: oblique;
+  font-size: large;
+}
+
 td {
   border-bottom: 1px solid white;
+  font-weight: 300;
+
 }
 
 .cart-table img {
@@ -321,7 +338,8 @@ td {
 }
 
 .cartcheckout {
-  margin: 0 0 0 5rem;
+  margin: 2rem;
+  right: 0;
 }
 
 .cartcheckout li {

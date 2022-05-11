@@ -23,19 +23,19 @@ class Cart extends Component {
 
   render() {
     const { cart } = this.props;
-    console.log(cart.lineitems.length)
     return (
       <div className="content cart">
         { cart.lineitems.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
         <div>
-        <h1 className='cart1'>Cart:</h1>
+        <h1 className='cart1'>Shopping Cart</h1>
         <table>
           <tbody>
             <tr>
               <th></th>
               <th>Product</th>
-              <th>Quantity</th>
+              <th>Qty</th>
               <th>Cost</th>
+              <th>Total Cost</th>
             </tr>
             {cart.lineitems?.map((line) => {
               return (
@@ -45,7 +45,8 @@ class Cart extends Component {
                   </td>
                   <td>{line.product?.name}</td>
                   <td>{line.quantity}</td>
-                  <td>{line.cost}</td>
+                  <td>${line.cost}</td>
+                  <td>${line.cost * line.quantity}</td>
                   <td>
                     <button
                       className="delete"
@@ -63,16 +64,29 @@ class Cart extends Component {
           </tbody>
         </table>
 
-        <div className="cartcheckout">
-          <h2>Cart Total</h2>
-          <ul>
-            <li>Quantity:</li>
-            <li>Total:</li>
+        {/* <div className="cartcheckout">
+        <h2 className='cart2'>Checkout</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Subtotal</th>
+              {cart.lineitems?.map((line) => {
+                return (
+                  <tr key={ line.id }>
+                    <td>{line.}</td>
+                  </tr>
+                )
+              })}
+            </tr>
+          </tbody>
+        </table> */}
+          <ul className='cart3'>
+            <li>Subtotal: </li>
+            <li>Sales Tax</li>
           </ul>
-          <button>
+          <button className='addtocart'>
             <Link to="/checkout">Checkout</Link>
           </button>
-        </div>
         </div>
         }
       </div>
