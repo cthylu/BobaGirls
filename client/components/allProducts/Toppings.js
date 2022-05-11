@@ -3,12 +3,10 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "/client/store";
 
-const Toppings = (props) => {
-  const { products, addProductToCart } = props;
-  console.log("props", props)
+const Toppings = ({ products, addProductToCart }) => {
   return (
     <div className="content">
-      <h1>Boba Girls Toppings</h1>
+      <h1 className="product1">Toppings</h1>
       {
       <div>
           <ul className="teaproducts">
