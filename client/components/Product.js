@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addToCart, deleteProduct } from "../store";
 import { Link, Route } from "react-router-dom";
 import UpdateProduct from "./UpdateProduct";
+import Kit from './Kit';
 
 const Product = ({ product, user, deleteProduct, addProductToCart }) => {
   return (
@@ -15,6 +16,10 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
             <p>{product.description}</p>
             <p>${product.price}</p>
             <h5>Quantity: {product.quantity} in stock</h5>
+
+            <div>
+              { product.key === 'kit' ? <Route component={Kit} /> : null } 
+            </div>
 
             <button
               className="addtocart"

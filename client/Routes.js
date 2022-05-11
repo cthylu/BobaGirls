@@ -20,6 +20,7 @@ import Syrups from './components/allProducts/Syrups';
 import Teas from './components/allProducts/Teas';
 import Toppings from './components/allProducts/Toppings';
 import NewProduct from './components/NewProduct';
+import Kits from './components/Kits';
 
 // store
 import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders, addToCart } from './store'
@@ -103,7 +104,6 @@ class Routes extends Component {
             <Route exact path="/products/merchandise" component={Merchandise} />
             <Route path="/products" exact component={Products} />
             <Route path="/products/:id" component={Product} />
-            
 
             <Route path="/cart" component={Cart} />
             <Route path="/about" component={About} />

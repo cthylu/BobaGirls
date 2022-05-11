@@ -204,8 +204,8 @@ label {
 }
 
 .teainfo > img {
-  width: 225px;
-  height: auto;
+  width: auto;
+  height: 400px;
   padding: 1rem;
 }
 
@@ -514,7 +514,6 @@ td {
 }
 
 
-
 .signup1 {
   border: 3px solid white;
   color: white;
@@ -530,6 +529,7 @@ td {
   align-items: center;
   font-size: 50px;
   font-weight: 100;
+  
 
 }
 
@@ -696,6 +696,11 @@ textarea {
   border: 3px solid white;
   padding: 10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  resize: none;
-  
+  resize: none; 
+}
+
+/* Kits */
+.kitdiv {
+  letter-spacing: .15rem;
+  font-size: larger;
 }
