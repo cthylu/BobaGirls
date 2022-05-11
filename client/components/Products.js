@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { addToCart } from "../store";
-
+import MilkPowders from "./allProducts/MilkPowders";
+import Teas from "./allProducts/Teas";
+import Toppings from "./allProducts/Toppings";
+import Syrups from "./allProducts/Syrups";
+import Merchandise from "./allProducts/Merchandise";
 
 class Products extends Component {
   constructor() {
@@ -11,17 +15,23 @@ class Products extends Component {
   }
 
   addProductToCart(product) {
+    console.log("Add product to cart")
     const quantity = 1;
     this.props.addToCart(product, quantity);
   }
 
   render() {
     const { products, user } = this.props;
-    const { addProductToCart } = this;
+    //const { addProductToCart } = this;
     return (
       <div className="content">
         <h1 className="product1">All Products</h1>
-        {
+        {<Teas products={products} addProductToCart={this.addProductToCart} />}
+        {<Syrups products={products} addProductToCart={this.addProductToCart} />}
+        {<Toppings products={products} addProductToCart={this.addProductToCart} />}
+        {<MilkPowders products={products} addProductToCart={this.addProductToCart} />}
+        {<Merchandise products={products} addProductToCart={this.addProductToCart} />}
+        { /*
           <div>
             <h2 className="producttea">Loose Tea Leaves</h2>
             <ul className="teaproducts">
@@ -146,7 +156,7 @@ class Products extends Component {
               ) : null }
             </Link>
           </div>
-          }
+          */}
       </div>
     );
   }
@@ -161,6 +171,7 @@ const mapState = ({ products, auth }) => {
 };
 
 const mapDispatch = (dispatch, { history }) => {
+  console.log("Dispatch")
   return {
     addToCart: (product, quantity) =>
       dispatch(addToCart(product, quantity, history)),
