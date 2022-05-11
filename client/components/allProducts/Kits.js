@@ -50,7 +50,7 @@ class Kits extends Component {
           <div>
           <ul className="kits">
               <li className='kitsdiv'>MAKE SURE TO INDICATE UPON CHECKOUT:</li>
-              <li >Choice of tea leaves</li> 
+              <li>Choice of tea leaves</li> 
               <li>Choice of fruit syrup (if applicable)</li> 
               <li>If choices are not indicated, a standard choice would be given.</li> 
             </ul>

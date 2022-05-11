@@ -21,7 +21,7 @@ class Orders extends Component {
     console.log("orders", orders);
     return (
       <div className="ordersinfo">
-        <h2>
+        <h2 className='product2'> 
           Orders for {auth.username.slice(0, 1).toUpperCase()}
           {auth.username.slice(1)}:
         </h2>

@@ -32,7 +32,7 @@ class Product extends Component {
               <h5>Quantity: {product.quantity} in stock</h5>
 
               <div>
-                { product.key === 'kit' ? <Route component={Kit} /> : null } 
+                { product.key === 'kit' ? <Route component={Kit} product={product} addProductToCart={this.addProductToCart} /> : null } 
               </div>
 
               {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { addToCart } from '/client/store'
 
 export class Kit extends Component {
     constructor(props) {
@@ -10,6 +11,11 @@ export class Kit extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.addProductToCart = this.addProductToCart.bind(this);
+    }
+    addProductToCart(product) {
+        const quantity = 1;
+        this.props.addToCart(product, quantity);
     }
     handleSubmit(ev) {
         ev.preventDefault()
@@ -22,8 +28,8 @@ export class Kit extends Component {
     }
     render() {
         const { teaName, syrupName } = this.state;
-        const { teas, syrups } = this.props
-        const { handleChange, handleSubmit } = this;
+        const { teas, syrups, product } = this.props
+        const { handleChange, handleSubmit, addProductToCart } = this;
         return (
             <div>
                 <form className='kitform' onSubmit={ handleSubmit }>
@@ -55,7 +61,7 @@ export class Kit extends Component {
                         }
                     </select>
 
-                    <button className='addtocart'>Add to Cart</button>
+                    <button className='addtocart' onClick={() => addProductToCart(product)} disabled={ !syrupName || !teaName}>Add to Cart</button>
                 </form>
                 <pre>
                     { JSON.stringify(this.state, null, 2)}
@@ -65,33 +71,24 @@ export class Kit extends Component {
     }
 }
 
-{/* <select value={teas.id ? teas.id : ''} name='teasId' onChange={ handleChange }>
-    <option value={teas.id ? teas.id : ''} name='teasId'>Choose Your Tea</option>
-        {
-            teas.map(tea => {
-                return (
-                    <option value={tea.id} key={tea.id}>
-                        {tea.name}
-                    </option>
-                )
-            })
-        }
-</select> */}
-
-const mapState = ( state ) => {
+const mapState = ( state, otherProps ) => {
     const teas = state.products.filter((product) => product.key === 'tea')
     const syrups = state.products.filter((product) => product.key === 'syrup')
+    const product = state.products.find(
+        (product) => product.id === otherProps.match.params.id * 1
+      ) || {};
     return {
         teas,
-        syrups
+        syrups,
+        product
     }
 }
 
-// const mapDispatch = dispatch => {
-//     return {
-//         addToCart: (product, quantity) =>
-//             dispatch(addToCart(product, quantity, history)),
-//     }  
-// }
+const mapDispatch = dispatch => {
+    return {
+        addToCart: (product, quantity) =>
+            dispatch(addToCart(product, quantity, history)),
+    }  
+}
 
-export default connect(mapState)(Kit)
+export default connect(mapState, mapDispatch)(Kit)

@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+//change to dropdown orders pagE!!
+
 const Order = ({ order }) => {
   return (
     <div className='order-page'>

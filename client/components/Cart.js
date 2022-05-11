@@ -64,27 +64,27 @@ class Cart extends Component {
           </tbody>
         </table>
 
-        {/* <div className="cartcheckout">
-        <h2 className='cart2'>Checkout</h2>
-        <table>
+        <table className='cartcheckout'>
           <tbody>
             <tr>
-              <th>Subtotal</th>
-              {cart.lineitems?.map((line) => {
-                return (
-                  <tr key={ line.id }>
-                    <td>{line.}</td>
-                  </tr>
-                )
-              })}
+              <td>Subtotal</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Sales Tax</td>
+              <td>$2.00</td>
+            </tr>
+            <tr>
+              <td>Estimated Total</td>
+              <td></td>
             </tr>
           </tbody>
-        </table> */}
-          <ul className='cart3'>
-            <li>Subtotal: </li>
-            <li>Sales Tax</li>
-          </ul>
-          <button className='addtocart'>
+        </table>
+        <button className='addtocart'>
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
