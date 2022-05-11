@@ -1,72 +1,87 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchCart } from "../store/cart";
-import { createShipping } from "../store/checkout";
 import { Link } from "react-router-dom";
+import { updateUser } from "../store";
 
 class CheckOut extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      address: "",
-      city: "",
-      state: "",
-      zipCode: "",
+      firstName: this.props.user ? this.props.user.firstName : "",
+      lastName: this.props.user ? this.props.user.lastName : "",
+      email: this.props.user ? this.props.user.email : "",
+      creditCard: this.props.user ? this.props.user.creditCard : "",
+      address: this.props.user ? this.props.user.address : "",
+      city: this.props.user ? this.props.user.city : "",
+      state: this.props.user ? this.props.user.state : "",
+      zipCode: this.props.user ? this.props.user.zipCode : "",
     };
-    this.checkout = this.checkout.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
-  componentDidMount() {
-    this.props.fetchCart();
+  componentDidUpdate(prevProps){
+    if(!prevProps.user && this.props.user){
+      this.setState({
+        firstName: this.props.user.firstName ,
+        lastName: this.props.user.lastName ,
+        email: this.props.user.email ,
+        creditCard: this.props.user.creditCard ,
+        address: this.props.user.address ,
+        city: this.props.user.city ,
+        state: this.props.user.state ,
+        zipCode: this.props.user.zipCode ,
+      });
+    }
   }
-  checkout(e) {
+  onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-  handleSubmit(e) {
-    this.props.createShipping({ ...this.state });
-    this.setState(
-      (this.state = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        address: "",
-        city: "",
-        state: "",
-        zipCode: "",
-      })
-    );
+  onSubmit(e) {
+    e.preventDefault();
+    this.props.updateUser({ ...this.props.user, ...this.state });
+    // this.setState(
+    //   (this.state = {
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     creditCard: "",
+    //     address: "",
+    //     city: "",
+    //     state: "",
+    //     zipCode: "",
+    //   })
+    // )
+    // ;
   }
   render() {
-    const { firstName, lastName, email, address, city, state, zipCode } = this.state;
+    const { firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
     const { cart } = this.props;
-    const { checkout, handleSubmit } = this;
+     const { onChange, onSubmit } = this;
     return (
       <div>
-        {cart.length !== 0 ? cart.lineitem?.map((item) => {
-          return (
-            <div key={item.id}>
-              {console.log(item)}
-              {console.log(cart)}
-              {item.isCart === true && item.lineitems.length > 0 ? (
+        {cart.length !== 0 ? (
+            <div>
+              {/* {console.log('user here', users)}
+              {console.log('user here', cart)}
+              {console.log('user here', username)} */}
+              {cart.isCart === true && cart.lineitems.length > 0 ? (
                 <div>
-                  You have {item.lineitems.length} items in your
+                   {/* {console.log('inside in here')} */}
+                  You have {cart.lineitems.length} items in your
                   <Link to={"/cart"}> Cart </Link>
                   <div> Your total is $</div>
                   <div> To continue checking out, fill out the below. </div>
                   <br/>
-                  <div> SHIPPING INFORMATION </div>
+                  <div> Shipping Information </div>
                   <form
                     id="checkout"
                     className="checkout"
-                    onSubmit={handleSubmit}
+                    onSubmit={onSubmit}
                   >
                     <label htmlFor="firstName"> First Name*: </label>
                     <input
                       name="firstName"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={firstName}
                       placeholder="First Name"
                       required
@@ -75,7 +90,7 @@ class CheckOut extends React.Component {
                     <label htmlFor="lastName"> Last Name*: </label>
                     <input
                       name="lastName"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={lastName}
                       placeholder="Last Name"
                       required
@@ -85,16 +100,25 @@ class CheckOut extends React.Component {
                     <input
                       type="email"
                       name="email"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={email}
                       placeholder="E-mail"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="creditCard"> Credit Card*: </label>
+                    <input
+                      name="creditCard"
+                      onChange={onChange}
+                      value={creditCard}
+                      placeholder="Credit Card Number"
                       required
                     />
                     <br />
                     <label htmlFor="address"> Address*: </label>
                     <input
                       name="address"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={address}
                       placeholder="Address"
                       required
@@ -103,7 +127,7 @@ class CheckOut extends React.Component {
                     <label htmlFor="city"> City*: </label>
                     <input
                       name="city"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={city}
                       placeholder="City"
                       required
@@ -112,7 +136,7 @@ class CheckOut extends React.Component {
                     <label htmlFor="state"> State*: </label>
                     <input
                       name="state"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={state}
                       placeholder="State"
                       required
@@ -121,7 +145,7 @@ class CheckOut extends React.Component {
                     <label htmlFor="zipCode"> Zip-code*: </label>
                     <input
                       name="zipCode"
-                      onChange={checkout}
+                      onChange={onChange}
                       value={zipCode}
                       placeholder="Zip-code"
                       required
@@ -132,14 +156,15 @@ class CheckOut extends React.Component {
                 </div>
               ) : (
                 <div>
+                  {/* {console.log('in here')} */}
                   No items in your <Link to={"/cart"}> Cart </Link>! 
                   Try some of our <Link to={"/products"}> Products! </Link>
                 </div>
               )}
             </div>
-          );
-        }): (
+          ) : (
           <div>
+              {/* {console.log('no out here')} */}
           No items in your <Link to={"/cart"}> Cart </Link>! 
           Try some of our <Link to={"/products"}> Products! </Link>
         </div>
@@ -149,12 +174,16 @@ class CheckOut extends React.Component {
   }
 }
 
-const mapState = (state) => state;
+const mapState = ({cart, auth}) => {
+  const user = auth
+  return {
+    user,
+    cart
+  }
+};
 
-const mapDispatch = (dispatch, { history }) => ({
-  fetchCart: (userId) => dispatch(fetchCart(userId)),
-  createShipping: (information) =>
-    dispatch(createShipping(information, history)),
+const mapDispatch = (dispatch, {history}) => ({
+  updateUser: (user) => dispatch(updateUser(user, history)),
 });
 
 export default connect(mapState, mapDispatch)(CheckOut);

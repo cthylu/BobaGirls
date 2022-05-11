@@ -87,9 +87,16 @@ nav a, nav li {
 
 /*** Content ***/
 main {
-  max-width: 1200px;
   margin: auto;
   margin: 1rem 0;
+}
+.content {
+  width: 1200px;
+  margin: 1rem auto;
+  text-align: center;
+}
+.content h2 {
+  padding: 1rem 0 1rem 0;
 }
 .hero {
   background: url("/images/hero-bubble-tea.jpg");
@@ -121,16 +128,6 @@ label {
 
 .addtocart {
   margin: 2px;
-}
-
-.content {
-  width: 1200px;
-  margin: 1rem auto;
-  text-align: center;
-}
-
-.content h2 {
-  padding: 1rem 0 1rem 0;
 }
 
 .hero .content {
@@ -180,6 +177,13 @@ label {
   flex-wrap: wrap;
   text-align: center;
 }
+.tea-image {
+  width: 200px;
+}
+
+.teadiv > img {
+  width: auto;
+}
 
 .shopname {
   text-align: center;
@@ -193,11 +197,6 @@ label {
   text-align: center;
   font-weight: 600;
   
-}
-
-.teadiv > img {
-  height: 200px;
-  width: auto;
 }
 
 .teainfo {
@@ -290,24 +289,19 @@ label {
 }
 
 /*** Cart ***/
-.cart-container {
-  display: flex;
-  flex-direction: row;
-  margin: .5rem;
-}
 
 th:nth-child(1) {
-  font-size: 30px;
+  /* font-size: 30px; */
 }
-table {
+.cart table {
   text-align: center;
   border-collapse: collapse;
+  margin: auto;
 }
-
 th, td {
+  text-align: left;
   width: 130px; 
 }
-
 td {
   border-bottom: 1px solid white;
 }

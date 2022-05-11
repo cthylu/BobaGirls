@@ -15,7 +15,7 @@ const Teas = ({ products, addProductToCart }) => {
             .map((product) => {
               return (
                 <li className="teadiv" key={product.id}>
-                  <img src={product.imageUrl} />
+                  <div className="tea-image"><img src={product.imageUrl} /></div>
                   <Link to={`/products/${product.id}`}>{product.name}</Link>
                   <div className="teaprice">${product.price}</div>
 
@@ -44,7 +44,8 @@ const mapState = ({ products }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
+    addToCart: (product, quantity) =>
+      dispatch(addToCart(product, quantity, history)),
   };
 };
 

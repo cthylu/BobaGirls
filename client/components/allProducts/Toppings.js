@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "/client/store";
 
-const Toppings = ({ products, addProductToCart }) => {
+const Toppings = (props) => {
+  const { products, addProductToCart } = props;
+  console.log("props", props)
   return (
     <div className="content">
       <h1>Boba Girls Toppings</h1>
@@ -43,7 +45,8 @@ const mapState = ({ products }) => {
 
 const mapDispatch = (dispatch, { history }) => {
   return {
-    addProductToCart: (product) => dispatch(addToCart(product, history)),
+    addToCart: (product, quantity) =>
+      dispatch(addToCart(product, quantity, history)),
   };
 };
 
