@@ -34,8 +34,8 @@ export const Home = (props) => {
       <div className="hero">
         <div className="content">
           <div>
-            <h1>TRY OUR TEAS TODAY</h1>
-            <p>You know you want to!</p>
+            <h1>TRY OUR PREMIUM TEA PRODUCTS TODAY</h1>
+            <p>'Best bubble tea I've ever had!' - Everyone</p>
           </div>
         </div>
       </div>
