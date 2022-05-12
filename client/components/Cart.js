@@ -9,7 +9,7 @@ class Cart extends Component {
     this.cartTotal = 0;
     this.getCartTotal = this.getCartTotal.bind(this);
   }
-  async componentDidMount() {
+  componentDidMount() {
     this.props.fetchCart();
   }
 
@@ -25,14 +25,17 @@ class Cart extends Component {
     const { cart } = this.props;
     return (
       <div className="content cart">
-        <h2>Cart:</h2>
+        { cart.lineitems.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        <div>
+        <h1 className='cart1'>Shopping Cart</h1>
         <table>
           <tbody>
             <tr>
               <th></th>
               <th>Product</th>
-              <th>Quantity</th>
+              <th>Qty</th>
               <th>Cost</th>
+              <th>Total Cost</th>
             </tr>
             {cart.lineitems?.map((line) => {
               return (
@@ -42,7 +45,8 @@ class Cart extends Component {
                   </td>
                   <td>{line.product?.name}</td>
                   <td>{line.quantity}</td>
-                  <td>{line.cost}</td>
+                  <td>${line.cost}</td>
+                  <td>${line.cost * line.quantity}</td>
                   <td>
                     <button
                       className="delete"
@@ -60,16 +64,31 @@ class Cart extends Component {
           </tbody>
         </table>
 
-        <div className="cartcheckout">
-          <h2>Cart Total</h2>
-          <ul>
-            <li>Quantity:</li>
-            <li>Total:</li>
-          </ul>
-          <button>
+        <table className='cartcheckout'>
+          <tbody>
+            <tr>
+              <td>Subtotal</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Sales Tax</td>
+              <td>$2.00</td>
+            </tr>
+            <tr>
+              <td>Estimated Total</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <button className='addtocart'>
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
+        }
       </div>
     );
   }

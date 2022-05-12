@@ -120,7 +120,7 @@ main {
   font-weight: 100;
 }
 
-form div {
+.signup1 form div, .checkout form div, .newproduct {
   margin: 1em;
   display: inline-block;
 }
@@ -158,7 +158,6 @@ label {
 } */
 
 .teaproducts img, .profilepic {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -182,6 +181,7 @@ label {
 }
 .tea-image {
   width: 200px;
+  align-items: center;
 }
 
 .teadiv > img {
@@ -213,55 +213,34 @@ label {
 }
 
 /*** Orders ***/
+.ordersinfo, .ordersinfo table {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 1rem auto auto auto;
+}
 
-.orderproducts img {
-  height: 150px;
+.content-order {
+  text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.content-order img {
+  height: 50px;
   width: auto;
 }
 
+.content-order td, .content-order tr {
+  border-bottom: 1px solid white;
+  font-weight: 300;
+  padding: 0;
+}
+
+/** Users **/
 .signup {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.order-page {
-  margin: 1rem;
-}
-
-.orderdiv {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  margin: 1rem;
-  align-items: center;
-  gap: 2rem;
-}
-
-.orderdiv > img {
-  height: auto;
-  width: 70px;
-}
-
-.orderproducts {
-  display: flex;
-  flex-direction: row;
-  margin: 1rem;
-  align-items: center;
-  gap: 2rem;
-}
-
-.orderinfoname {
-  list-style: none;
-}
-
-.orderinfo {
-  list-style: none;
-}
-
-.ordersinfo {
-  padding: 1rem;
-  list-style: none;
 }
 
 .welcome {
@@ -292,35 +271,60 @@ label {
 }
 
 /*** Cart ***/
+.cart1 {
+  color: black;
+  font-weight: 200;
+  font-size: 35px;
+  padding: 0 0 1rem 0;
+  font-weight: 420;
+}
+
+.cart2 {
+  color: black;
+  font-weight: 200;
+  font-size: 35px;
+}
+
+.cart3 {
+  color: black;
+  font-style: oblique;
+}
 
 .cart table {
   text-align: center;
   border-collapse: collapse;
   margin: auto;
 }
+
 th, td {
   text-align: left;
-  width: 130px; 
-}
-td {
-  border-bottom: 1px solid white;
+  width: 150px;
+  text-align: center;
 }
 
-.cart-table img {
+th {
+  font-weight: 600;
+  font-style: oblique;
+  font-size: large;
+  padding: 0 0 5px 0;
+}
+
+td, tr {
+  border-bottom: 1px solid white;
+  font-weight: 300;
+  padding: .5rem 0 .5rem 0;
+}
+
+.cart-table img, .order-table img {
   height: 85px;
   width: auto;
 }
 
-.cartcheckout {
-  margin: 0 0 0 5rem;
-}
-
-.cartcheckout li {
-  list-style: none;
+.cartcheckout tbody{
+  padding: 1rem 1rem 0 1rem;
 }
 
 /*** Check Out ***/
-
 .checkout {
   display: flex;
   flex-direction: column;
@@ -547,8 +551,6 @@ input {
   font-size: 20px;
 }
 
-
-
 .signup1 {
   border: 3px solid white;
   color: white;
@@ -645,7 +647,6 @@ input[type=number] {
   border: 3px solid white ;
   padding: 30px;
   margin: 30px;
-
 }
 
 .addproduct {
@@ -662,6 +663,13 @@ input[type=number] {
   font-weight: 200;
   font-style: oblique;
   font-size: 60px;
+}
+
+.product2 {
+  color: black;
+  font-weight: 200;
+  font-style: oblique;
+  font-size: 40px;
 }
 
 .producttea {
@@ -733,14 +741,50 @@ textarea {
   resize: none;
 }
 
+=/* Kits */
+.kits {
+  list-style: none;
+  margin: 0;
+}
+
+.kitsdiv {
+  letter-spacing: .15rem;
+  font-size: larger;
+}
+
+.kitform {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+  border: 3px solid white ;
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+}
+
+.kitform p {
+  font-size: large;
+  color: black;
+  margin: 5px;
+  text-align: center;
+}
+
+.kitoption {
+  display: flex;
+  font-size: 13px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* text-align: center; */
+  padding: 4px;
+  margin: 2px;
+}
+
 .welcome {
   font-weight: 100;
   color: white;
   font-size: 50px;
 }
-
-
-
 .shopnow {
   appearance: none;
   background-color: #FFFFFF;
@@ -804,7 +848,6 @@ textarea {
   position: relative;
 }
 
-<<<<<<< HEAD
 .producttitle {
   font-size: 50px;
   font-weight: 100;
@@ -839,5 +882,5 @@ textarea {
   font-size: 20px;
 
 }
-=======
->>>>>>> ba244fcdb1c563eb665c34127177d2d7ec02f57e
+
+
