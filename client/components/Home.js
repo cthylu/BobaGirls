@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import auth from "../store/auth";
 import users from "../store/users";
+import { Link } from "react-router-dom";
 
 /**
  * COMPONENT
@@ -34,8 +35,12 @@ export const Home = (props) => {
       <div className="hero">
         <div className="content">
           <div>
-            <h1>TRY OUR TEAS TODAY</h1>
-            <p>You know you want to!</p>
+            <p>'Best bubble tea I've ever had!' - Everyone</p>
+            <Link to='/products'>
+            <h1><button className="shopnow">
+              SHOP NOW
+              </button></h1>
+              </Link>
           </div>
         </div>
       </div>

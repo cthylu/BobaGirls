@@ -6,7 +6,7 @@ import { addToCart } from "/client/store";
 const MilkPowders = ({ products, addProductToCart }) => {
   return (
     <div className="content">
-      <h1 className="product1">Milk Powders</h1>
+       <h2 className="milk">Milk Powder</h2>
       {
       <div>
           <ul className="teaproducts">
@@ -17,7 +17,7 @@ const MilkPowders = ({ products, addProductToCart }) => {
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
 
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <Link className='productname1' to={`/products/${product.id}`}>{product.name}</Link>
                     <div className="teaprice">${product.price}</div>
 
                     <button
