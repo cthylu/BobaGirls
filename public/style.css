@@ -433,7 +433,7 @@ td, tr {
 }
 
 .loginb:hover,
-.addtocart:hover
+.addtocart:hover,
 .checkout:hover {
   box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
 }
@@ -847,3 +847,40 @@ textarea {
   z-index: 1;
   position: relative;
 }
+
+.producttitle {
+  font-size: 50px;
+  font-weight: 100;
+  color: white;
+  padding: 2rem;
+}
+
+.productdes {
+  font-weight: 100;
+  color: white;
+  width: 700px;
+  padding: 2rem;
+}
+
+.productinfo1 {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.productpr {
+  font-weight: 600;
+  font-size: 50px;
+  color: white;
+  padding-left: 2rem;
+}
+
+.prodquantity {
+  font-weight: 500;
+  color: white;
+  padding-left: 2rem;
+  font-size: 20px;
+
+}
+
+

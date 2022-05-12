@@ -5,6 +5,7 @@ import { Link, Route } from "react-router-dom";
 import UpdateProduct from "./UpdateProduct";
 import Kit from '/client/components/allProducts/Kit.js'
 
+
 class Product extends Component {
   constructor() {
     super();
@@ -26,11 +27,12 @@ class Product extends Component {
           <div className="teainfo">
             <img src={product.imageUrl} />
             <div>
-              <h2 className='product2'>{product.name}</h2>
-              <p>{product.description}</p>
-              <p>${product.price}</p>
-              <h5>Quantity: {product.quantity} in stock</h5>
-
+              <h2 className="producttitle">{product.name}</h2>
+              <div className="productinfo1">
+              <p className="productdes">{product.description}</p>
+              <p className="productpr">${product.price}</p>
+              <h5 className="prodquantity">Quantity: {product.quantity} in stock</h5>
+              </div>
               <div>
                 { product.key === 'kit' ? <Route component={Kit} product={product} addProductToCart={this.addProductToCart} /> : null } 
               </div>
