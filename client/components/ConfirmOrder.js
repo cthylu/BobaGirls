@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createOrder } from "../store";
 import { Link } from "react-router-dom";
 
-const Confirmation = ({ cart, createOrder, deleteLineitem }) => {
+const Confirmation = ({ cart, createOrder }) => {
   return (
     <div>
       <div> Information Received. </div>
@@ -14,7 +14,7 @@ const Confirmation = ({ cart, createOrder, deleteLineitem }) => {
       <div> Your total is $</div>
       <div>Please Submit your Order.</div>
       <div>
-        <button onClick={createOrder}> Submit </button>
+        <button onClick={createOrder}> <Link to='/home'>Submit </Link> </button>
       </div>
     </div>
   );
@@ -28,8 +28,7 @@ const mapState = ({ cart }) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    deleteLineitem: (lineId, lineQuantity) => dispatch(deleteFromCart(lineId, lineQuantity)),
-    createOrder: () => {dispatch(createOrder());
+    createOrder: (time, orderNumber) => {dispatch(createOrder(time, orderNumber));
     },
   };
 };

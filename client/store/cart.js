@@ -83,7 +83,7 @@ export const addToCart = (product, quantity) => {
   };
 };
 
-export const createOrder = (  history) => {
+export const createOrder = () => {
   return async (dispatch) => {
     const token = window.localStorage.getItem("token");
     try {
@@ -91,14 +91,14 @@ export const createOrder = (  history) => {
         time: new Date(),
         orderNumber: Math.random()
       }
-      const order = (await axios.post( "/api/orders", { newOrder }, {
+      const order = ((await axios.post( "/api/orders", { }, {
             headers: {
               authorization: token,
             },
           }
         )
-      ).data;
-      dispatch(_checkOutOrder());
+      ).data)
+      dispatch(_checkOutOrder(order, newOrder));
     } catch (e) {
       next(e);
     }
@@ -123,9 +123,9 @@ const cart = (state = { lineitems: [] }, action) => {
       lineitems: [...state.lineitems, action.lineitem],
     };
   }
-  // if (action.type === CHECK_OUT_ORDER){
-  //   return {...state, lineitems: [...state.lineitems, action.lineitems]}
-  // }
+  if (action.type === CHECK_OUT_ORDER){
+    return {...state, }
+  }
   return state;
 };
 
