@@ -8,6 +8,7 @@ export class Kit extends Component {
         this.state = {
             teaName: '',
             syrupName: '',
+            milkName: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,39 +28,79 @@ export class Kit extends Component {
         })
     }
     render() {
-        const { teaName, syrupName } = this.state;
-        const { teas, syrups, product } = this.props
+        const { teaName, syrupName, milkName } = this.state;
+        const { teas, syrups, product, milks } = this.props
         const { handleChange, handleSubmit, addProductToCart } = this;
         return (
             <div>
                 <form className='kitform' onSubmit={ handleSubmit }>
-                    <p>Select Tea</p>
-                    <select className='kitoption' value={ teaName } name='teaName' onChange={ handleChange }>
-                        <option value=''>Tea Options</option>
-                        {
-                            teas.map(tea => {
-                                return (
-                                    <option key={tea.id}>
-                                        {tea.name}
-                                    </option>
-                                )
-                            })
-                        }
-                    </select>
+                    <div>
+                        <p>Select Tea</p>
+                        <select className='kitoption' value={ teaName } name='teaName' onChange={ handleChange }>
+                                <option value=''>Tea Options</option>
+                                {
+                                    teas.map(tea => {
+                                        return (
+                                            <option key={tea.id}>
+                                                {tea.name}
+                                            </option>
+                                        )
+                                    })
+                                }
+                        </select>
+                    </div>
 
-                    <p>Select Syrup</p>
-                    <select className='kitoption' value={ syrupName } name='syrupName' onChange={ handleChange }>
-                        <option value=''>Syrup Options</option>
-                        {
-                            syrups.map(syrup => {
-                                return (
-                                    <option key={syrup.id}>
-                                        {syrup.name}
-                                    </option>
-                                )
-                            })
-                        }
-                    </select>
+                    <div>
+                        <p>Select Syrup</p>
+                        <select className='kitoption' value={ syrupName } name='syrupName' onChange={ handleChange }>
+                                <option value=''>Syrup Options</option>
+                                {
+                                    syrups.map(syrup => {
+                                        return (
+                                            <option key={syrup.id}>
+                                                {syrup.name}
+                                            </option>
+                                        )
+                                    })
+                                }
+                        </select>
+                    </div>
+                    
+                    {(product.name === '2 Cups Milk Tea Kit') &&
+                        <div>
+                            <p>Select Milk Powder</p>
+                            <select className='kitoption' value={ milkName } name='milkName' onChange={ handleChange }>
+                                <option value=''>Milk Powder Options</option>
+                                {
+                                    milks.map(milk => {
+                                        return (
+                                            <option key={milk.id}>
+                                                {milk.name}
+                                            </option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
+                    }
+
+                    {(product.name === '4 Cups Milk Tea Kit') &&
+                        <div>
+                            <p>Select Milk Powder</p>
+                            <select className='kitoption' value={ milkName } name='milkName' onChange={ handleChange }>
+                                <option value=''>Milk Powder Options</option>
+                                {
+                                    milks.map(milk => {
+                                        return (
+                                            <option key={milk.id}>
+                                                {milk.name}
+                                            </option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
+                    }
 
                     <button className='addtocart' onClick={() => addProductToCart(product)} disabled={ !syrupName || !teaName}>Add to Cart</button>
                 </form>
@@ -77,10 +118,12 @@ const mapState = ( state, otherProps ) => {
     const product = state.products.find(
         (product) => product.id === otherProps.match.params.id * 1
       ) || {};
+    const milks = state.products.filter((product) => product.key === 'milk')
     return {
         teas,
         syrups,
-        product
+        product,
+        milks,
     }
 }
 

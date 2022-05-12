@@ -117,7 +117,7 @@ main {
   margin-top: 1em;
 }
 
-form div {
+.signup1 form div, .checkout form div, .newproduct {
   margin: 1em;
   display: inline-block;
 }
@@ -155,7 +155,6 @@ label {
 } */
 
 .teaproducts img, .profilepic {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -179,6 +178,7 @@ label {
 }
 .tea-image {
   width: 200px;
+  align-items: center;
 }
 
 .teadiv > img {
@@ -743,6 +743,7 @@ textarea {
 /* Kits */
 .kits {
   list-style: none;
+  margin: 0;
 }
 
 .kitsdiv {
@@ -765,13 +766,14 @@ textarea {
 .kitform p {
   font-size: large;
   color: black;
-  margin: 1rem 0 .2rem 0;
+  margin: 5px;
+  text-align: center;
 }
 
 .kitoption {
   font-size: 15px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
-  margin: px;
   padding: 5px;
 }
+
