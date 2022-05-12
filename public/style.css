@@ -731,7 +731,6 @@ textarea {
   padding: 10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   resize: none;
-  
 }
 
 .welcome {
@@ -805,6 +804,7 @@ textarea {
   position: relative;
 }
 
+<<<<<<< HEAD
 .producttitle {
   font-size: 50px;
   font-weight: 100;
@@ -839,3 +839,5 @@ textarea {
   font-size: 20px;
 
 }
+=======
+>>>>>>> ba244fcdb1c563eb665c34127177d2d7ec02f57e
