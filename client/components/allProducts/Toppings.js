@@ -8,7 +8,7 @@ const Toppings = (props) => {
   console.log("props", props)
   return (
     <div className="content">
-      <h1>Boba Girls Toppings</h1>
+      <h2 className="producttop">Toppings</h2>
       {
       <div>
           <ul className="teaproducts">
@@ -18,7 +18,7 @@ const Toppings = (props) => {
                 return (
                   <li className="teadiv" key={product.id}>
                     <img src={product.imageUrl} />
-                    <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                     <div className="teaprice">${product.price}</div>
 
                     <button

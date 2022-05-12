@@ -204,8 +204,8 @@ label {
 }
 
 .teainfo > img {
-  width: auto;
-  height: 400px;
+  width: 225px;
+  height: auto;
   padding: 1rem;
 }
 
@@ -514,6 +514,7 @@ td {
 }
 
 
+
 .signup1 {
   border: 3px solid white;
   color: white;
@@ -529,7 +530,6 @@ td {
   align-items: center;
   font-size: 50px;
   font-weight: 100;
-  
 
 }
 
@@ -639,12 +639,12 @@ input[type=number] {
   transition: all .2s ease-in-out
 }
 
-.milk:hover
+.milk:hover,
 .merch:hover,
 .producttop:hover,
 .productsyr:hover,
 .producttea:hover {
-  transform: scale(0.8)
+  transform: scale(1.2)
 }
 
 .productsyr {
@@ -696,11 +696,6 @@ textarea {
   border: 3px solid white;
   padding: 10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  resize: none; 
-}
-
-/* Kits */
-.kitdiv {
-  letter-spacing: .15rem;
-  font-size: larger;
+  resize: none;
+  
 }
