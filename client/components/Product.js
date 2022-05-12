@@ -12,11 +12,12 @@ const Product = ({ product, user, deleteProduct, addProductToCart }) => {
         <div className="teainfo">
           <img src={product.imageUrl} />
           <div>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
-            <h5>Quantity: {product.quantity} in stock</h5>
-
+            <h2 className="producttitle">{product.name}</h2>
+            <div className="productinfo1">
+            <div className="productpr">${product.price}</div>
+            <p className="productdes">{product.description}</p>
+            <h5 className="prodquantity">Quantity: {product.quantity} in stock</h5>
+            </div>
             <div>
               { product.key === 'kit' ? <Route component={Kit} /> : null } 
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import auth from "../store/auth";
 import users from "../store/users";
 
@@ -11,6 +12,7 @@ export const Profile = (props) => {
   return (
     <div>
       <div className="profile">
+        <div className="editprofile"> <Link to='/editprofile'> Edit Profile </Link> </div>
         <div className="profile2"> Profile Picture: <img className='profilepic' src={auth.profilePicture} /> </div>
         <div className="profile2"> Username: {auth.username} </div>
         <div className="profile2"> First Name: {auth.firstName} </div>

@@ -31,6 +31,15 @@ class Products extends Component {
         {<Toppings products={products} addProductToCart={this.addProductToCart} />}
         {<MilkPowders products={products} addProductToCart={this.addProductToCart} />}
         {<Merchandise products={products} addProductToCart={this.addProductToCart} />}
+
+        <Link to='/newproducts'>
+              { user.isAdmin ? (
+              <div className='admindelete'>
+              <h5 className='admin'> Admin Only: </h5>
+              <button className='admindeleteb'>Add New Product</button>
+              </div>
+              ) : null }
+            </Link>
         { /*
           <div>
             <h2 className="producttea">Loose Tea Leaves</h2>

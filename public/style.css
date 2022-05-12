@@ -293,9 +293,6 @@ label {
 
 /*** Cart ***/
 
-th:nth-child(1) {
-  /* font-size: 30px; */
-}
 .cart table {
   text-align: center;
   border-collapse: collapse;
@@ -374,7 +371,7 @@ td {
 }
 
 /***Add to Cart Buttons***/
-.addtocart, .loginb {
+.addtocart, .loginb, .checkout {
   align-items: center;
   background-color: #fff;
   border-radius: 12px;
@@ -402,12 +399,46 @@ td {
   touch-action: manipulation;
 }
 
+.checkout {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #87ceeb ;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  font-weight: 10;
+  justify-content: center;
+  line-height: 1;
+  margin: 1rem;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20rem;
+}
+
 .loginb:hover,
-.addtocart:hover {
+.addtocart:hover,
+.checkout:hover {
   box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
 }
 
 /***Delete Buttons***/
+input {
+  width: 80%;
+}
+
 .delete {
   align-items: center;
   background-color: #fff;
@@ -772,4 +803,39 @@ textarea {
 .shopnow span {
   z-index: 1;
   position: relative;
+}
+
+.producttitle {
+  font-size: 50px;
+  font-weight: 100;
+  color: white;
+  padding: 2rem;
+}
+
+.productdes {
+  font-weight: 100;
+  color: white;
+  width: 700px;
+  padding: 2rem;
+}
+
+.productinfo1 {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.productpr {
+  font-weight: 600;
+  font-size: 50px;
+  color: white;
+  padding-left: 2rem;
+}
+
+.prodquantity {
+  font-weight: 500;
+  color: white;
+  padding-left: 2rem;
+  font-size: 20px;
+
 }
