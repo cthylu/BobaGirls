@@ -28,7 +28,7 @@ const mapState = ({ cart }) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    createOrder: (time, orderNumber) => {dispatch(createOrder(time, orderNumber));
+    createOrder: () => {dispatch(createOrder());
     },
   };
 };

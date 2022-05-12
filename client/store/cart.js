@@ -98,9 +98,9 @@ export const createOrder = () => {
           }
         )
       ).data)
-      dispatch(_checkOutOrder(order, newOrder));
+      dispatch(_fetchCart(order));
     } catch (e) {
-      next(e);
+      next(e);ß
     }
   };
 };
@@ -123,9 +123,9 @@ const cart = (state = { lineitems: [] }, action) => {
       lineitems: [...state.lineitems, action.lineitem],
     };
   }
-  if (action.type === CHECK_OUT_ORDER){
-    return {...state, }
-  }
+  // if (action.type === CHECK_OUT_ORDER){
+  //   return state = { lineitems: []}
+  // }
   return state;
 };
 
