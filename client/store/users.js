@@ -40,7 +40,7 @@ export const updateOrder = (user, history) => {
     })).data;
     dispatch(_updateUser(information));
     dispatch(me());
-    history.push(`/orders`);
+    // history.push(`/orders`);
   };
 };
 

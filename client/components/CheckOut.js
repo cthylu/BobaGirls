@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { updateOrder } from "../store";
+import { updateOrder, createOrder } from "../store";
 
 class CheckOut extends React.Component {
   constructor(props) {
@@ -15,6 +15,8 @@ class CheckOut extends React.Component {
       city: this.props.user ? this.props.user.city : "",
       state: this.props.user ? this.props.user.state : "",
       zipCode: this.props.user ? this.props.user.zipCode : "",
+      time: "",
+      orderNumber: "",
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -39,45 +41,20 @@ class CheckOut extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.updateOrder({ ...this.props.user, ...this.state });
-    alert("Order Successfully Placed!");
-    // this.setState(
-    //   (this.state = {
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     creditCard: "",
-    //     address: "",
-    //     city: "",
-    //     state: "",
-    //     zipCode: "",
-    //   })
-    // )
-    // ;
-    // }
-    // alertSuccess() {
-    //   if (document.forms.checkout.name.value === ""){
-    //     alert("Please fill out all fields!");
-    //     return false;
-    //   } else {
-    //   alert ("Order Successfully Placed!")
-    //   return true;
-    // };
+    // alert("Order Successfully Placed!");
   }
   render() {
     const { firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
     const { cart } = this.props;
-    const { onChange, onSubmit } = this;
+    const { onChange, onSubmit, createOrder } = this;
     return (
       <div>
         {cart.length !== 0 ? (
           <div>
-            {/* {console.log('user here', users)}
-              {console.log('user here', cart)}
-              {console.log('user here', username)} */}
+              {console.log('cart', cart)}
             {cart.isCart === true && cart.lineitems.length > 0 ? (
               <div>
                 {/* {console.log('inside in here')} */}
-
                 <form
                   id="checkout"
                   name="checkout"
@@ -161,7 +138,7 @@ class CheckOut extends React.Component {
                     required
                   />
                   <br />
-                  <button type="submit"> Complete Purchase </button>
+                  <button type="submit"><Link to='/confirmation'>Comfirm Shipping Information</Link>  </button>
                 </form>
               </div>
             ) : (
@@ -194,6 +171,7 @@ const mapState = ({ cart, auth }) => {
 
 const mapDispatch = (dispatch, { history }) => ({
   updateOrder: (user) => dispatch(updateOrder(user, history)),
+  createOrder: () => dispatch(createOrder())
 });
 
 export default connect(mapState, mapDispatch)(CheckOut);

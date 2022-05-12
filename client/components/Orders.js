@@ -35,7 +35,7 @@ class Orders extends Component {
               // STANNIE:: i hope the user's cart isnt being displayed here- because i think in our setup, carts and orders are the same database model
               return (
                 <tr key={order.id}>
-                  <td>{order.createdAt.slice(0,10)}</td>
+                  <td>{order.time} </td>
                   <td>
                     <Link to={`/order/${order.id}`}>
                       Order #{order.id}

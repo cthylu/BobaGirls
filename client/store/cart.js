@@ -4,6 +4,7 @@ import history from "history";
 const FETCH_CART = "FETCH_CART";
 const DELETE_FROM_CART = "DELETE_FROM_CART";
 const ADD_TO_CART = "ADD_TO_CART";
+const CHECK_OUT_ORDER = 'CHECK_OUT_ORDER';
 
 const _fetchCart = (cart) => ({
   type: FETCH_CART,
@@ -15,9 +16,14 @@ const _deleteFromCart = (lineitem) => ({
   lineitem,
 });
 
-const _addToCart = lineitem => ({
+const _addToCart = (lineitem) => ({
   type: ADD_TO_CART,
-  lineitem
+  lineitem,
+});
+
+const _checkOutOrder = (products) => ({
+  type: CHECK_OUT_ORDER,
+  products
 })
 
 export const fetchCart = () => {
@@ -64,11 +70,11 @@ export const addToCart = (product, quantity) => {
         const lineitem = {
           quantity,
           cost: product.price,
-          productId: product.id
-        }
-        const { data } = await axios.post('/api/cart', lineitem, 
-          { headers: { authorization: token } }
-        );
+          productId: product.id,
+        };
+        const { data } = await axios.post("/api/cart", lineitem, {
+          headers: { authorization: token },
+        });
         dispatch(_addToCart(data));
       }
     } catch (ex) {
@@ -77,22 +83,49 @@ export const addToCart = (product, quantity) => {
   };
 };
 
-const cart = (state = {lineitems: []}, action) => {
+export const createOrder = (  history) => {
+  return async (dispatch) => {
+    const token = window.localStorage.getItem("token");
+    try {
+      const newOrder = {
+        time: new Date(),
+        orderNumber: Math.random()
+      }
+      const order = (await axios.post( "/api/orders", { newOrder }, {
+            headers: {
+              authorization: token,
+            },
+          }
+        )
+      ).data;
+      dispatch(_checkOutOrder());
+    } catch (e) {
+      next(e);
+    }
+  };
+};
+
+const cart = (state = { lineitems: [] }, action) => {
   if (action.type === FETCH_CART) {
     return action.cart;
   }
   if (action.type === DELETE_FROM_CART) {
     return {
       ...state,
-      lineitems: state.lineitems.filter(lineitem => lineitem.id !== action.lineitem.id)
+      lineitems: state.lineitems.filter(
+        (lineitem) => lineitem.id !== action.lineitem.id
+      ),
     };
   }
   if (action.type === ADD_TO_CART) {
     return {
       ...state,
-      lineitems: [...state.lineitems, action.lineitem]
+      lineitems: [...state.lineitems, action.lineitem],
     };
   }
+  // if (action.type === CHECK_OUT_ORDER){
+  //   return {...state, lineitems: [...state.lineitems, action.lineitems]}
+  // }
   return state;
 };
 

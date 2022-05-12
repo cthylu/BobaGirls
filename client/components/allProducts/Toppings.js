@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "/client/store";
 
-const Toppings = ({ products, addProductToCart }) => {
+const Toppings = ({ products, addToCart }) => {
   return (
     <div className="content">
       <h1 className="product1">Toppings</h1>
       {
-      <div>
+        <div>
           <ul className="teaproducts">
             {products
               .filter((product) => product.key === "topping")
@@ -21,7 +21,7 @@ const Toppings = ({ products, addProductToCart }) => {
 
                     <button
                       className="addtocart"
-                      onClick={() => addProductToCart(product)}
+                      onClick={() => addToCart(product)}
                     >
                       Add To Cart
                     </button>
@@ -33,7 +33,7 @@ const Toppings = ({ products, addProductToCart }) => {
       }
     </div>
   );
-}
+};
 
 const mapState = ({ products }) => {
   return {
