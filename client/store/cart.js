@@ -1,10 +1,11 @@
 import axios from "axios";
 import history from "history";
+import users from "./users";
 
 const FETCH_CART = "FETCH_CART";
 const DELETE_FROM_CART = "DELETE_FROM_CART";
 const ADD_TO_CART = "ADD_TO_CART";
-const CHECK_OUT_ORDER = 'CHECK_OUT_ORDER';
+const CHECK_OUT_ORDER = "CHECK_OUT_ORDER";
 
 const _fetchCart = (cart) => ({
   type: FETCH_CART,
@@ -21,10 +22,10 @@ const _addToCart = (lineitem) => ({
   lineitem,
 });
 
-const _checkOutOrder = (products) => ({
+const _checkOutOrder = (order) => ({
   type: CHECK_OUT_ORDER,
-  products
-})
+  order,
+});
 
 export const fetchCart = () => {
   return async (dispatch) => {
@@ -83,24 +84,32 @@ export const addToCart = (product, quantity) => {
   };
 };
 
-export const createOrder = () => {
+export const createOrder = (id, history) => {
   return async (dispatch) => {
-    const token = window.localStorage.getItem("token");
     try {
+      const token = window.localStorage.getItem("token");
+      const Month = new Date().getMonth() + 1;
+      const Day = new Date().getDate();
+      const Year = new Date().getFullYear();
       const newOrder = {
-        time: new Date(),
-        orderNumber: Math.random()
-      }
-      const order = ((await axios.post( "/api/orders", { }, {
-            headers: {
-              authorization: token,
-            },
-          }
-        )
-      ).data)
-      dispatch(_fetchCart(order));
+        time: `${Month}/${Day}/${Year}`,
+        // orderNumber: Math.round(Math.random() * 1000),
+        isCart: false,
+      };
+      console.log(newOrder);
+      console.log(token);
+      const { data } = (
+        await axios.put(`/api/orders/${id}`, newOrder, {
+          headers: {
+            authorization: token,
+          },
+        })
+      )
+      console.log(data)
+      dispatch(_checkOutOrder(data));
+      history.push("/orders");
     } catch (e) {
-      next(e);ß
+      console.log({ e });
     }
   };
 };
@@ -123,9 +132,11 @@ const cart = (state = { lineitems: [] }, action) => {
       lineitems: [...state.lineitems, action.lineitem],
     };
   }
-  // if (action.type === CHECK_OUT_ORDER){
-  //   return state = { lineitems: []}
-  // }
+  if (action.type === CHECK_OUT_ORDER) {
+    // return
+    // return {...state, cart: state.cart.filter((items) => items.id !== action.items.id) }
+    return {lineitems: []};
+  }
   return state;
 };
 

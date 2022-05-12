@@ -138,7 +138,8 @@ class CheckOut extends React.Component {
                     required
                   />
                   <br />
-                  <button type="submit"><Link to='/confirmation'>Comfirm Shipping Information</Link>  </button>
+                  {/* <button type="submit"><Link to='/confirmation'>Comfirm Shipping Information</Link>  </button> */}
+                  <button type="submit">Comfirm Shipping Information </button>
                 </form>
               </div>
             ) : (

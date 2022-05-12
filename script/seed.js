@@ -289,10 +289,10 @@ async function seed() {
     
     //murphy
     Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/2/2022' }),
-    Order.create({ totalCost: 3, userId: users[1].id, isCart: true, time: '4/15/2022' }),
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: false, time: '4/15/2022' }),
     Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/25/2022' }),
     Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/2/2022' }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/13/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/9/2022' }),
 
     //ice
     Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '4/2/2022' }),

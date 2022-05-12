@@ -40,9 +40,16 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-router.post("/", isLoggedIn, async (req, res, next) => {
+
+router.put("/:id", isLoggedIn, async (req, res, next) => {
   try {
-    res.json(await req.user.createOrder(req.body.time, req.body.orderNumber));
+    // const order = await Order.create({userId: req.user.id, time: req.body.time, isCart: false})
+    const order = await Order.findByPk(req.params.id);
+    order.isCart = false;
+    order.time = req.body.time;
+    await order.save();
+    console.log(order)
+    res.json(order);
   } catch (e) {
     next(e);
   }
