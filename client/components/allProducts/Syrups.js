@@ -3,14 +3,10 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "/client/store";
 
-const Syrups = ({ products, addToCart }) => {
+const Syrups = ({ products, addProductToCart }) => {
   return (
     <div className="content">
-<<<<<<< HEAD
-      <h2 className="productsyr">Boba Girls Syrups</h2>
-=======
      <h2 className="productsyr">Boba Girls Syrups</h2>
->>>>>>> ba244fcdb1c563eb665c34127177d2d7ec02f57e
       {
         <div>
             <ul className="teaproducts">
@@ -25,7 +21,7 @@ const Syrups = ({ products, addToCart }) => {
 
                       <button
                       className="addtocart"
-                      onClick={() => addToCart(product)}
+                      onClick={() => addProductToCart(product)}
                       >
                       Add To Cart
                       </button>

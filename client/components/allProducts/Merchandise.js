@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "/client/store";
 
-const Merchandise = ({ products, addToCart }) => {
+const Merchandise = ({ products, addProductToCart }) => {
   return (
     <div className="content">
      <h2 className="merch">BobaGirls Merch & Accessories</h2>
@@ -22,7 +22,7 @@ const Merchandise = ({ products, addToCart }) => {
 
                     <button
                         className="addtocart"
-                        onClick={() => addToCart(product)}
+                        onClick={() => addProductToCart(product)}
                     >
                         Add To Cart
                     </button>
