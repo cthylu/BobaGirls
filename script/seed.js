@@ -492,7 +492,7 @@ async function seed() {
       Brown Sugar Syrup
       Bubble Tea Straws, Instructions & Recipe` ,
       preparation: `
-      Able to brew 2 cups of Milk Tea` 
+      Able to brew 2 cups of Milk Tea (400 ml per cup)` 
     }),
 
     Product.create({ 
@@ -508,7 +508,7 @@ async function seed() {
       Brown Sugar Syrup
       Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
-      Able to brew 2 cups of Fruit Tea`
+      Able to brew 2 cups of Fruit Tea (400 ml per cup)`
      }),
     
     Product.create({ 
@@ -524,7 +524,7 @@ async function seed() {
       Brown Sugar Syrup
       Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
-      Able to brew 4 cups of Milk Tea`
+      Able to brew 4 cups of Milk Tea (400 ml per cup)`
     }),
 
     Product.create({ 
@@ -540,7 +540,7 @@ async function seed() {
       Brown Sugar Syrup
       Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
-      Able to brew 2 cups of Milk Tea and 2 cups of Fruit Tea` 
+      Able to brew 2 cups of Milk Tea and 2 cups of Fruit Tea (400 ml per cup)` 
     }),
       // Product.create({ name: '', price: 6.00, quantity: 50, key: '', imageUrl: '', 
       // description: `` }),

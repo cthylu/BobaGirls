@@ -47,7 +47,7 @@ class Product extends Component {
                     Add To Cart
                   </button>
               }
-              <p> Additional: {product.preparation} </p>
+              <p className="prep"> Additional Information:  {product.preparation} </p>
 
             <div> <Route component={UpdateProduct}/> 
             <Link to='/products'>
