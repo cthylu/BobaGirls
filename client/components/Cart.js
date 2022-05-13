@@ -22,6 +22,7 @@ class Cart extends Component {
   getCartTotal() {}
 
   render() {
+    let totalSum = 0;
     const { cart } = this.props;
     return (
       <div className="content cart">
@@ -67,7 +68,13 @@ class Cart extends Component {
         <table className='cartcheckout'>
           <tbody>
             <tr>
-              <td>Subtotal</td>
+              <td>Subtotal: </td>
+              <td>
+              {cart.lineitems?.map((line) => {
+              return (  
+              <td>{line.cost * line.quantity}</td>
+              )})}
+              </td>
               <td></td>
             </tr>
             <tr>
