@@ -81,7 +81,7 @@ const mapState = (state) => {
     isLoggedIn: !!state.auth.id,
     products: state.products,
     cart,
-    lineitems: cart.lineitems ? cart.lineitems.reduce((acc, line) => {
+    lineitems: cart.lineitems ? cart.lineitems?.reduce((acc, line) => {
         return acc += line.quantity;
     }, 0) : cart.lineitems?.length || 0
 

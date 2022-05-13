@@ -7,6 +7,7 @@ const Syrups = ({ products, addProductToCart }) => {
   return (
     <div className="content">
      <h2 className="productsyr">Boba Girls Syrups</h2>
+
       {
         <div>
             <ul className="teaproducts">

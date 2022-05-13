@@ -32,6 +32,7 @@ class Product extends Component {
               <p className="productdes">{product.description}</p>
               <p className="productpr">${product.price}</p>
               <h5 className="prodquantity">Quantity: {product.quantity} in stock</h5>
+              
               </div>
               <div>
                 { product.key === 'kit' ? <Route component={Kit} product={product} addProductToCart={this.addProductToCart} /> : null } 
@@ -46,6 +47,7 @@ class Product extends Component {
                     Add To Cart
                   </button>
               }
+              <p> Additional: {product.preparation} </p>
 
             <div> <Route component={UpdateProduct}/> 
             <Link to='/products'>

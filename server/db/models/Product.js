@@ -19,6 +19,9 @@ const Product = db.define("product", {
   description: {
     type: Sequelize.TEXT,
   },
+  preparation: {
+    type: Sequelize.TEXT,
+  },
   quantity: {
     type: Sequelize.INTEGER,
   },
