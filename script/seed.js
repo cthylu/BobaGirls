@@ -123,7 +123,6 @@ async function seed() {
       preparation: `
       1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
       2) Wait until tapioca floats to water surface. Cover pot. Cook in medium heat for 2-3 minutes. Turn off head and simmer for another 2-3 minutes (adjust time to soften tapioca to personal tastes). 
-<<<<<<< HEAD
       3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` 
     }),
 
@@ -149,20 +148,6 @@ async function seed() {
 
    Product.create({ 
     name: 'Rainbow Mini Mochi', 
-=======
-      3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` }),
-    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/7eXsscr.png', 
-      description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
-      <br/>
-      Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
-
-    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/mrBfQ9k.png', 
-      description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
-      <br/>
-      Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
-    Product.create({ 
-    name: 'Mini Mochi' , 
->>>>>>> main
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 

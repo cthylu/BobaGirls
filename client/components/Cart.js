@@ -8,6 +8,8 @@ class Cart extends Component {
     super();
     this.cartTotal = 0;
     this.getCartTotal = this.getCartTotal.bind(this);
+    this.getSalesTax = this.getSalesTax.bind(this);
+
   }
   componentDidMount() {
     this.props.fetchCart();
@@ -21,17 +23,22 @@ class Cart extends Component {
 
   getCartTotal() {
     const lineitems = this.props.cart.lineitems
-    const cartTotal = lineitems ?
+    const cartTotal = lineitems &&
       lineitems.reduce((acc, item) => {
-        return acc += (item.quantity *= item.product?.price)
+        acc += (item.quantity * item.product?.price)
+        return acc
       }, 0)
-    : 0;
-    console.log(cartTotal, 'total')
+    return (cartTotal*1);
+  }
+
+  getSalesTax() {
+    const tax = Math.round((this.getCartTotal() * 0.0875)*100)/100
+    return (tax*1)
   }
 
   render() {
     const { cart } = this.props;
-    const { getCartTotal } = this;
+    const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
         { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
@@ -55,7 +62,7 @@ class Cart extends Component {
                   <td>{line.product?.name}</td>
                   <td>{line.quantity}</td>
                   <td>${line.product?.price}</td>
-                  <td>${line.product?.price * line.quantity}</td>
+                  <td>${(line.product?.price * line.quantity).toFixed(2)}</td>
                   <td>
                     <button
                       className="delete"
@@ -77,7 +84,7 @@ class Cart extends Component {
           <tbody>
             <tr>
               <td>Subtotal</td>
-              <td>{getCartTotal()}</td>
+              <td>${getCartTotal().toFixed(2)}</td>
             </tr>
             <tr>
               <td>Shipping</td>
@@ -85,11 +92,11 @@ class Cart extends Component {
             </tr>
             <tr>
               <td>Sales Tax</td>
-              <td>$2.00</td>
+              <td>${getSalesTax().toFixed(2)}</td>
             </tr>
             <tr>
               <td>Estimated Total</td>
-              <td></td>
+              <td>${(getSalesTax() + getCartTotal()).toFixed(2)}</td>
             </tr>
           </tbody>
         </table>

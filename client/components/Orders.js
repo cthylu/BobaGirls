@@ -29,7 +29,7 @@ class Orders extends Component {
                           {order.id}0
                         </Link>
                       </td>
-                      <td>{order.lineitems.length}</td>
+                      <td>{order.lineitems?.length}</td>
                     </tr>
                   )
                 })}
