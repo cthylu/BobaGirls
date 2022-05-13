@@ -52,10 +52,11 @@ export const deleteProduct = (productId, lineitem, history) => {
             authorization: token,
           },
         })
-        dispatch(_removeProduct(productId));
       }
+      dispatch(_removeProduct(productId));
+      // history.push('/home')
     } catch (ex) {
-      console.log(ex);
+      console.log({ex});
     }
   };
 };
