@@ -12,8 +12,8 @@ export const Profile = (props) => {
   return (
     <div>
       <div className="profile">
-        <div className="editprofile"> <Link to='/editprofile'> Edit Profile </Link> </div>
-        <div className="profile2"> Profile Picture: <img className='profilepic' src={auth.profilePicture} /> </div>
+        
+        <div className="profile2"> <img className='profilepic' src={auth.profilePicture} /> </div>
         <div className="profile2"> Username: {auth.username} </div>
         <div className="profile2"> First Name: {auth.firstName} </div>
         <div className="profile2"> Last Name: {auth.lastName} </div>
@@ -23,6 +23,7 @@ export const Profile = (props) => {
         <div className="profile2"> City: {auth.city} </div>
         <div className="profile2"> State: {auth.state} </div>
         <div className="profile2"> Zip Code: {auth.zipCode} </div>
+        <button className="editbutton"><div> <Link className="editprofile" to='/editprofile'> Edit Profile </Link> </div></button>
       </div>
     </div>
   );

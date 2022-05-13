@@ -80,6 +80,7 @@ class EditProfile extends React.Component {
                     onSubmit={onSubmit}
                   >
                       <div> Edit User Information! </div>
+                    <br />
                     <label htmlFor="profilePicture"> Profile Photo: </label>
                     <input
                       name="profilePicture"
@@ -87,6 +88,7 @@ class EditProfile extends React.Component {
                       value={profilePicture}
                       placeholder="Profile Photo"
                     />
+                    <br />
                     <label htmlFor="username"> Username: </label>
                     <input
                       name="username"
@@ -161,7 +163,7 @@ class EditProfile extends React.Component {
 
                     />
                     <br />
-                    <button type="submit"> Update Information! </button>
+                    <button className="editbutton" type="submit"> Update Information </button>
                   </form>
                 </div>
     )

@@ -101,7 +101,7 @@ class Cart extends Component {
           </tbody>
         </table>
         <button className='addtocart'>
-            <Link to="/checkout">Checkout</Link>
+            <Link className="editprofile" to="/checkout">Checkout</Link>
           </button>
         </div>
         }

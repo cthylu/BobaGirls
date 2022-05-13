@@ -375,7 +375,7 @@ td, tr {
 }
 
 /***Add to Cart Buttons***/
-.addtocart, .loginb, .checkout {
+.addtocart, .loginb, .checkout, .editbutton {
   align-items: center;
   background-color: #fff;
   border-radius: 12px;
@@ -432,6 +432,7 @@ td, tr {
   width: 20rem;
 }
 
+.editbutton:hover,
 .loginb:hover,
 .addtocart:hover,
 .checkout:hover {
@@ -889,4 +890,9 @@ textarea {
   color: white;
   width: 700px;
   padding: 2rem;
+}
+
+.editprofile {
+  text-decoration: none;
+  color: #88aed0;
 }

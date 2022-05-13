@@ -15,7 +15,7 @@ async function seed() {
   const users = await Promise.all([
     User.create({ 
       profilePicture: 'https://media-be.chewy.com/wp-content/uploads/2021/06/02102132/Pomeranian_Featured-Image-1024x615.jpg',
-      username: 'Cody',  
+      username: 'cody',  
       password: '123', 
       isAdmin: true, 
       firstName: 'Cody', 
