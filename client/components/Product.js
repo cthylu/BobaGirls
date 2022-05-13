@@ -19,8 +19,8 @@ class Product extends Component {
   }
 
   render() {
-    const { product, user } = this.props;
-    const { addProductToCart, deleteProduct } = this;
+    const { product, user, deleteProduct } = this.props;
+    const { addProductToCart } = this;
     return (
       <div>
         { 

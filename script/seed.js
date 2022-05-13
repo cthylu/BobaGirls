@@ -409,7 +409,7 @@ async function seed() {
       price: 6.00, 
       quantity: 200 , 
       key: 'milk',
-      imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 
+      imageUrl: 'https://i.imgur.com/p1fzQCS.png', 
       description: 'Whole milk in its most unadulterated form — and in addition to the fat found in milk, the main component (about 87 percent) is water. You\'ll also find vitamins, minerals, sugars like lactose and proteins like caseins and whey proteins. Perfect for the daily dairy lovers who want it as it\'s made',
       preparation: `
       Net Weight: 5lb (2.27kg)
@@ -421,7 +421,7 @@ async function seed() {
       price: 6.00, 
       quantity: 200 , 
       key: 'milk',
-      imageUrl: 'https://m.media-amazon.com/images/I/61ISN+q8VIS._SY445_.jpg', 
+      imageUrl: 'https://i.imgur.com/ijYJCSo.png', 
       description: 'Skim Milk is made when all the milkfat is removed from whole milk. It tends to contain around very little fat. Perfect for when you want less milk fat in your boba, but still want the nutrients and consistency from real dairy.',
       preparation: `
       Net Weight: 5lb (2.27kg)
@@ -433,7 +433,7 @@ async function seed() {
       price: 8.00, 
       quantity: 200 , 
       key: 'milk', 
-      imageUrl: 'http://www.nutricentreng.com/wp-content/uploads/2016/05/Almond-Milk-Powder.jpg',
+      imageUrl: 'https://i.imgur.com/Coikm4T.png',
       description: 'Almond milk is a plant milk with a creamy texture and nutty flavor manufactured from almonds, although some types or brands are flavored in imitation of cow\'s milk. It does not contain cholesterol or lactose and is low in saturated fat. Perfect for those who cannot have genuine dairy products.',
       preparation: `
       Net Weight: 5lb (2.27kg)
@@ -445,7 +445,7 @@ async function seed() {
       price: 9.00, 
       quantity: 200 , 
       key: 'milk',
-      imageUrl: 'https://cdn.shopify.com/s/files/1/0493/0558/3773/products/OatMilkPowderBagFront.jpg?v=1622850159', 
+      imageUrl: 'https://i.imgur.com/vDaDHQq.png', 
       description: 'Oat milk is a plant milk derived from whole oat grains by extracting the plant material with water. Oat milk has a creamy texture and mild oatmeal-like flavor, and is manufactured in various flavors, such as sweetened, unsweetened, vanilla, and chocolate. Flavors can also be made at home such as chocolate, with cocoa powder, it makes the perfect chocolate oat milk.  Perfect for those with dairy and almond allegies',
       preparation: `
       Net Weight: 5lb (2.27kg)
@@ -457,7 +457,7 @@ async function seed() {
       price: 9.00, 
       quantity: 200 , 
       key: 'milk', 
-      imageUrl: 'https://i5.walmartimages.com/asr/a05fee3f-4211-475f-8319-7f71a2cc522f_1.197f902fc8a7883551b5d430265a0978.jpeg',
+      imageUrl: 'https://i.imgur.com/onHr3RM.png',
       description: 'Soymilk, is a plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates. It is a stable emulsion of oil, water, and protein. Its original form is an intermediate product of the manufacture of tofu. Perfect for those with dairy and almond allergies that enjoy tofu and something with nutrients.', 
       preparation: `
       Net Weight: 5lb (2.27kg)
