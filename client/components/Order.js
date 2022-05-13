@@ -3,38 +3,44 @@ import { connect } from "react-redux";
 
 const Order = ({ order }) => {
   return (
-    <div className='order-page'>
-      <h2>Order Information:</h2>
-      {
-        order.map((item) => {
-          return (
-            <div key={item.id}>
-              {
-                item.lineitems.map((line) => {
-                  return (
-                    <div className='orderdiv' key={ line.id }>
-                      <img src={line.product.imageUrl} />
-                      <ul className='orderinfoname'>
-                        <li>Name:</li>
-                        <li>Quantity:</li>
-                        <li>Cost:</li>
-                      </ul>
-                      <ul className='orderinfo'>
-                        <li>{line.product?.name}</li>
-                        <li>{line.quantity}</li>
-                        <li>${line.product.price}</li>
-                      </ul>
-                      <div>
-                      </div>
-                    </div>
-                  );
-                })
-              }
-            </div>
+    <div className='ordersinfo'>
+      <h2 className='product2'>Order Information:</h2>
+        {order.map((item) => {
+            return (
+              <table className='content-order' key={item.id}>
+                <tbody>
+                  <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>QTY</th>
+                    <th>Cost</th>
+                    <th>Total Cost</th>
+                  </tr>
+                  {
+                    item.lineitems.map((line => {
+                      return (
+                        <tr key={line.id}>
+                          <td><img src={line.product.imageUrl} /></td>
+                          <td>{line.product?.name}</td>
+                          <td>{line.quantity}</td>
+                          <td>{line.product.price}</td>
+                          <td>${line.product.price * line.quantity}</td>
+                        </tr>
+                      )
+                  }))
+                }
+              </tbody>
+            </table>
           );
-        })
-      }
-      <h3>Total Cost:</h3>
+      })}
+      <table className='cartcheckout'>
+        <tbody>
+          <tr>
+            <td>Total</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

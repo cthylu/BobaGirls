@@ -6,7 +6,11 @@ import { addToCart } from "/client/store";
 const Syrups = ({ products, addToCart }) => {
   return (
     <div className="content">
-      <h1 className="product1">Syrups</h1>
+<<<<<<< HEAD
+      <h2 className="productsyr">Boba Girls Syrups</h2>
+=======
+     <h2 className="productsyr">Boba Girls Syrups</h2>
+>>>>>>> ba244fcdb1c563eb665c34127177d2d7ec02f57e
       {
         <div>
             <ul className="teaproducts">
@@ -16,7 +20,7 @@ const Syrups = ({ products, addToCart }) => {
                   return (
                   <li className="teadiv" key={product.id}>
                       <img src={product.imageUrl} />
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button

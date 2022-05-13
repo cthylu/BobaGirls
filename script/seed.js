@@ -75,49 +75,42 @@ async function seed() {
 
     //Toppings:
 
-    Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://damnspicy.com/wp-content/uploads/2020/08/homemade-tapioca-pearls-5-480x270.jpg', 
+    Product.create({ name: 'Tapioca Pearls', price: 3.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/SHp7tL2.png', 
       description: `Tapioca pearls are edible translucent spheres produced from tapioca, a starch extracted from the cassava root. Tapioca pearls make the unique ingredient of a bubble tea or boba tea drinks. They are about the size of pearls or small marbles, with the soft and chewy consistency of gummy candies. The pearls are opaque when raw and turned translucent after cooking. They need to be soaked for a considerable length of time before use in different food preparations. 
       <br/>
       1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
       2) Wait until tapioca floats to water surface. Cover pot. Cook in medium heat for 2-3 minutes. Turn off head and simmer for another 2-3 minutes (adjust time to soften tapioca to personal tastes). 
       3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` }),
-    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, key: 'topping', imageUrl: 'https://image.made-in-china.com/202f0j00NItYwGjFEPqc/China-Popping-Boba-Production-Line.jpg', 
+    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/7eXsscr.png', 
       description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
       <br/>
       Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
-    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://tealiciouscafe.com/wp-content/uploads/2018/10/lychee-gelatin.jpg', 
+
+    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/mrBfQ9k.png', 
       description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
-    
     Product.create({ 
     name: 'Mini Mochi' , 
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 
-    imageUrl: 'https://nuts.com/images/rackcdn/ed910ae2d60f0d25bcb8-80550f96b5feb12604f4f720bfefb46d.ssl.cf1.rackcdn.com/5728_Mochi+Rice+Cake-ntd7h-Sk-large.jpg',
+    imageUrl: 'https://i.imgur.com/PPra5UG.png',
     description: 'Mini Mochi is one of the most popular flavors you can think of to top off your favorite dessert. Imagine a spoonful of matcha green tea snow ice or frozen yogurt, sided with these little rice cake balls, and a bit of red bean. Delicious!'}),
     Product.create({ 
-    name: 'Red Bean', 
+    name: 'Red Bean Paste', 
     price: 4.00, 
     quantity: 200, 
     key: 'topping', 
-    imageUrl: 'https://www.babyment.com/food/red-bean.jpg',
+    imageUrl: 'https://i.imgur.com/UMw4OGN.png',
     description: 'Red bean soaked and mixed with sugar is a popular topping in bubble tea.  It is not only delicious but healthy and provides nutrients and health benefits. Red bean is rich in potassium which can help to regulate blood pressure and is therefore beneficial to the heart. Red bean is also rich in antioxidants which can protect organs from attack by free radicals.  Red bean contains vitamins A, B6 and minerals like magnesium and iron. '}),
     Product.create({ 
-    name: 'Black Jelly' , 
+    name: 'Black Grass Jelly' , 
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 
-    imageUrl: 'https://chatime.com/wp-content/uploads/2019/04/toppings-grass-jelly.png',
+    imageUrl: 'https://i.imgur.com/DbVZdG2.png',
     description: 'Grass jelly, also known as leaf jelly or herb jelly, is a jelly-like dessert eaten in East and Southeast Asia. It is created by using the Platostoma palustre plant (a member of the mint family) and has a mild, slightly bitter taste. It is served chilled, with other toppings such as fruit, or in bubble tea or other drinks. It has a soft silky texture, easy to mix and delicious to eat.  Mix it with some sugar if you like things extra sweetened!'}),
-    Product.create({ 
-    name: 'Aloe Vera' , 
-    price: 4.00, 
-    quantity: 200 , 
-    key: 'topping', 
-    imageUrl: 'https://www.bubbletea.com.au/site/images/source/aloe_vera_1.jpg',
-    description: 'A delicious and fun to chewy topping for those who love jelly! Aloe Vera small chunks syrup. Suitable for desserts. An easy and fun addition to your drink. Simply scoop and serve in your delicious boba and enjoy.  Refrigerate After Opening, Use within 1 week. Vegeterian.'}),
 
       // merch
     Product.create({ name: 'Boba Girls Metal Straws (3 Pack, 10mm)', price: 15.00, quantity: 57, key: 'merchandise', imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
@@ -177,62 +170,62 @@ async function seed() {
     }),
     
     //Syrups:
-    Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Sd3KrLt.png', 
+    Product.create({ name: 'Black Sugar Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/8VLoGnr.png', 
       description: `One of the most popular sweeteners used in bubble tea, our Bossen Black Sugar syrup (aka Brown Sugar) is a dark, thick, crystalline form of sugar that has a delicious caramel flavor and aroma. Best for making classic milk teas, also wonderfully enhances smoothies, fruit juices, yogurt, and shaved ice desserts. Historically, more than just a distinctive sweetener, Black Sugar is also used by traditional Chinese medical practitioners who recommend it to provide an energy boost and enhance blood circulation, among other things.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Dragon Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/pZruon5.png', 
+    Product.create({ name: 'Dragon Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/rCFVer5.png', 
       description: `Dragon fruit is native to Central American and is now consumed all around the world. It is also known as "Pitaya" and comes in various forms and colors. Boba Girls' Fruit syrup has a beautiful signature magenta color and it will add a refreshing taste to any summertime tea. 
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Lychee Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/kBCpW2z.png', 
+    Product.create({ name: 'Lychee Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/I9oVRTQ.png', 
       description: `Boba Girls' Lychee syrup is a classic Asian fruit with a nice subtle sweetness. This adds a great flavor to your drink without losing the taste of the tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Peach Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/glUbQll.png', 
+    Product.create({ name: 'Peach Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/2zTJCtD.png', 
       description: `Peach syrup is a classic flavor, adding great taste to any drink of your choice. Best paired with black tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Honeydew Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Yiu4DwV.png', 
+    Product.create({ name: 'Honeydew Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/3SHw77P.png', 
       description: `Honeydew syrup accentuates the real honeydew fruit flavor and is rich in melony sweetness. Use it to make a perfect summer pick-me-up refresher. A melon bubble iced tea, boba smoothie, or ice-blended fruit juice will alight on the tongue like sunshine.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Strawberry Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/0cOLxKG.png', 
+    Product.create({ name: 'Strawberry Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/O4ewIE2.png', 
       description: `Everyone loves strawberries!  Its combination of sweet and tart is divine and addictive. Boba Girls' syrup is extracted from natural strawberries with little seeds and pieces of pulp inside, the syrup has a robust fruity aroma and authentic taste for juicy strawberry.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Mango Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/nmQRJmz.png', 
+    Product.create({ name: 'Mango Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/W54T8cE.png', 
       description: `Whatever season it is, in our heart we long for that summer beach vacation sometimes. Let our mango syrup recreate tropical refreshers for you. 
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Passion Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Owplh23.png', 
+    Product.create({ name: 'Passion Fruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/RBqkpzv.png', 
       description: `Boba Girls' passion fruit syrup is rich in flavor and contains an authentic passion fruit aroma. Infuse it with your favorite drinks like iced tea, slush, smoothie, or top it on frosty desserts like ice cream, shaved ice, and frozen yogurt.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Grapefruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/ufjyBET.png', 
+    Product.create({ name: 'Grapefruit Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/Vj43PCV.png', 
       description: `Boba Girls' grapefruit syrup is a classic. It is balanced perfectly with a nice mix of sweet and bitterness flavors. Paired best with cold drinks, served with black tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Wintermelon Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/UoozmSi.png', 
+    Product.create({ name: 'Wintermelon Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/UefXqUF.png', 
       description: `Wintermelon is a large fruit that belongs to the honeydew family. It adds a nice sweetness into your drink! Good either in a cold or hot drink, served with black or green tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
     * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Green Apple Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/jqSaG45.png', 
+    Product.create({ name: 'Green Apple Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/xYHQRCB.png', 
       description: `Green apple is classic twist on your drink. Delicious, tart, and sweet flavors to add into your tea! Best when cold mixed with green tea.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
-    Product.create({ name: 'Kiwi Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/QuncyZD.png', 
+    Product.create({ name: 'Kiwi Syrup', price: 5.50, quantity: 50, key: 'syrup', imageUrl: 'https://i.imgur.com/hdASDnL.png', 
       description: `Boba Girls' pride ourselves in providing traditional flavors as well as hard-to-find tropical flavors. We recommend adding 8 oz. of kiwi syrup to every one gallon of plain frozen yogurt.
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
@@ -276,6 +269,46 @@ async function seed() {
       key: 'milk', 
       imageUrl: 'https://i5.walmartimages.com/asr/a05fee3f-4211-475f-8319-7f71a2cc522f_1.197f902fc8a7883551b5d430265a0978.jpeg',
       description: 'Soymilk, is a plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates. It is a stable emulsion of oil, water, and protein. Its original form is an intermediate product of the manufacture of tofu. Perfect for those with dairy and almond allergies that enjoy tofu and something with nutrients. '}),
+
+    Product.create({ name: '2 Cups Milk Tea Kit', price: 15.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2020/10/Untitled_Artwork-3-1-300x300.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 1 type of tea leaves
+      Tapioca Pearls (uncooked)
+      Milk Powder of Choice
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 2 cups of Milk Tea` }),
+    Product.create({ name: '2 Cups Fruit Tea Kit', price: 13.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/05/Cartoon-BBT-KIT-2-pax-fruit-07-768x775.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 1 type of tea leaves
+      Choose 1 type of fruit syrup
+      Tapioca Pearls (uncooked)
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 2 cups of Fruit Tea` }),
+    Product.create({ name: '4 Cups Milk Tea Kit', price: 23.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/01/Cartoon-BBT-KIT-4-Pax-02-1-300x300.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 2 types of tea leaves
+      Tapioca Pearls (uncooked)
+      Milk Powder of Choice
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 4 cups of Milk Tea` }),
+    Product.create({ name: '4 Cups Mix Tea Kit', price: 26.00, quantity: 50, key: 'kit', imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/01/Cartoon-BBT-KIT-Mix-04-300x300.png', 
+      description: `PACKAGE INCLUDES:
+      <br/>
+      Choose 2 types of tea leaves
+      Choose 2 types of fruit syrup
+      Tapioca Pearls (uncooked)
+      Brown Sugar Syrup
+      Bubble Tea Straws, Instructions & Recipe
+      Able to brew 2 cups of Milk Tea and 2 cups of Fruit Tea` }),
+      // Product.create({ name: '', price: 6.00, quantity: 50, key: '', imageUrl: '', 
+      // description: `` }),
+      
   ])
 
   console.log(`seeded ${products.length} products`)
