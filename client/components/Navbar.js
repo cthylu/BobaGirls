@@ -84,6 +84,7 @@ const mapState = (state) => {
     lineitems: cart.lineitems ? cart.lineitems.reduce((acc, line) => {
         return acc += line.quantity;
     }, 0) : cart.lineitems?.length || 0
+
   };
 };
 

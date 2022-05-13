@@ -404,7 +404,7 @@ async function seed() {
       }),
     
     //milk powders
-    Product.create({ 
+      Product.create({ 
       name: 'Whole Milk Powder',
       price: 6.00, 
       quantity: 200 , 
@@ -463,6 +463,7 @@ async function seed() {
       Net Weight: 5lb (2.27kg)
       `
     }),
+
 
     Product.create({ 
       name: '2 Cups Milk Tea Kit', 
@@ -538,31 +539,31 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     // cody
-    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
-    Order.create({ totalCost: 6, userId: users[0].id, isCart: false }),
+    Order.create({ totalCost: 2, userId: users[0].id, isCart: true, time: '4/13/2022'}),
+    Order.create({ totalCost: 6, userId: users[0].id, isCart: false, time: '4/17/2022' }),
     
     //murphy
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 3, userId: users[1].id, isCart: true }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: false, time: '4/15/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/25/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/9/2022' }),
 
     //ice
-    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '5/1/2022' }),
 
     //yingying
-    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false, time: '5/1/2022' }),
 
     //cathy
-    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false, time: '5/1/2022' }),
     
     //kim
-    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false, time: '5/1/2022' }),
   ])
 
   console.log(`seeded ${orders.length} orders`)

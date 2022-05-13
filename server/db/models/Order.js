@@ -6,6 +6,12 @@ const Order = db.define("order", {
     type: Sequelize.BOOLEAN,
     defaultValue: true
   },
+  time: {
+    type: Sequelize.TEXT,
+  },
+  orderNumber: {
+    type: Sequelize.INTEGER,
+  },
 });
 
 module.exports = Order;
