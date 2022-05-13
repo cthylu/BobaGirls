@@ -7,6 +7,7 @@ class EditProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      profilePicture: this.props.user ? this.props.user.profilePicture : "",
       username: this.props.user ? this.props.user.username : "",
       firstName: this.props.user ? this.props.user.firstName : "",
       lastName: this.props.user ? this.props.user.lastName : "",
@@ -23,6 +24,7 @@ class EditProfile extends React.Component {
   componentDidUpdate(prevProps){
     if(!prevProps.user && this.props.user){
       this.setState({
+        profilePicture: this.props.user.profilePicture,
         username: this.props.user.username ,
         firstName: this.props.user.firstName ,
         lastName: this.props.user.lastName ,
@@ -66,19 +68,25 @@ class EditProfile extends React.Component {
   // };
   }
   render() {
-    const { username, firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
+    const { username, firstName, lastName, email, creditCard, address, city, state, zipCode, profilePicture } = this.state;
     const { onChange, onSubmit } = this;
     return (
       <div>
                   
                   <form
-                  
                     id="checkout"
                     name="checkout"
                     className="checkout"
                     onSubmit={onSubmit}
                   >
                       <div> Edit User Information! </div>
+                    <label htmlFor="profilePicture"> Profile Photo: </label>
+                    <input
+                      name="profilePicture"
+                      onChange={onChange}
+                      value={profilePicture}
+                      placeholder="Profile Photo"
+                    />
                     <label htmlFor="username"> Username: </label>
                     <input
                       name="username"

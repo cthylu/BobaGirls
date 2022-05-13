@@ -53,7 +53,6 @@ export const deleteProduct = (productId, lineitem, history) => {
           },
         })
         dispatch(_removeProduct(productId));
-        history.push('/products')
       }
     } catch (ex) {
       console.log(ex);

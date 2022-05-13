@@ -15,11 +15,11 @@ async function seed() {
   const users = await Promise.all([
     User.create({ 
       profilePicture: 'https://media-be.chewy.com/wp-content/uploads/2021/06/02102132/Pomeranian_Featured-Image-1024x615.jpg',
-      username: 'cody',  
+      username: 'Cody',  
       password: '123', 
       isAdmin: true, 
-      firstName: 'cody', 
-      lastName: 'moldy',
+      firstName: 'Cody', 
+      lastName: 'Moldy',
       email: 'moldycody@outlook.com',
       creditCard: 939393939393,
       address: '92 Molding Lane',
@@ -27,8 +27,23 @@ async function seed() {
       state: 'NY',
       zipCode: 11221,
     }),
+
+    User.create({ 
+      profilePicture: 'https://media-be.chewy.com/wp-content/uploads/2021/06/02102132/Pomeranian_Featured-Image-1024x615.jpg',
+      username: 'ice',  
+      password: '123', 
+      isAdmin: true, 
+      firstName: 'Ice', 
+      lastName: 'Tam',
+      email: 'icetam@gmail.com',
+      creditCard: 939393939393,
+      address: '123 Acorn St',
+      city: 'New York',
+      state: 'NY',
+      zipCode: 11221,
+    }),
+
     User.create({ username: 'murphy', password: '123' }),
-    User.create({ username: 'ice', password: '123' }),
     User.create({ username: 'yingying', password: '123' }),
     User.create({ username: 'cathy', password: '123' }),
     User.create({ username: 'kim', password: '123' })
