@@ -116,7 +116,8 @@ export const createOrder = (id, history) => {
 
 const cart = (state = { lineitems: [] }, action) => {
   if (action.type === FETCH_CART) {
-    return action.cart;
+    // console.log('actioncart', action.cart);
+    return action.cart || state;
   }
   if (action.type === DELETE_FROM_CART) {
     return {
