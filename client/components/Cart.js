@@ -42,7 +42,8 @@ class Cart extends Component {
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
-        { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        { cart.lineitems?.length === 0 ? <div> <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2>              <h2> Visit our <Link to="/products"> Shop </Link></h2> </div>
+ : 
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>

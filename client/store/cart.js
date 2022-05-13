@@ -77,6 +77,8 @@ export const addToCart = (product, quantity) => {
           headers: { authorization: token },
         });
         dispatch(_addToCart(data));
+      } else {
+        alert('Please Sign Up or Log In!')
       }
     } catch (ex) {
       console.log(ex);
