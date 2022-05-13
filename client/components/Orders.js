@@ -23,7 +23,7 @@ class Orders extends Component {
                 {orders.map((order) => {
                   return (
                     <tr key= {order.id }>
-                      <td> {order.createdAt.slice(0, 10)}</td>
+                      <td> {order.time}</td>
                       <td>
                         <Link to={`/order/${order.id}`}>
                           {order.id}0
