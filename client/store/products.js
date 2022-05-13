@@ -52,7 +52,7 @@ export const deleteProduct = (productId, lineitem, history) => {
             authorization: token,
           },
         })
-        dispatch(_removeProduct(productId, history));
+        dispatch(_removeProduct(productId));
         history.push('/products')
       }
     } catch (ex) {
