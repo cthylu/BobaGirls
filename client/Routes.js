@@ -14,6 +14,7 @@ import Order from './components/Order';
 import CheckOut from './components/CheckOut';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
+import Confirmation from './components/ConfirmOrder';
 //products
 import Merchandise from './components/allProducts/Merchandise';
 import MilkPowders from './components/allProducts/MilkPowders';
@@ -98,6 +99,7 @@ class Routes extends Component {
             <Route path='/profile' component={Profile} />
             <Route path='/editprofile' component={EditProfile} />
             <Route path='/newproducts' component={NewProduct} />
+            <Route path='/confirmation' component={Confirmation} />
             <Redirect to="/home" />
           </Switch>
         ) : (

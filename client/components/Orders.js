@@ -41,6 +41,7 @@ class Orders extends Component {
 }
 
 const mapState = ({ orders, auth }) => {
+  console.log('notOrder',orders);
   return {
     orders,
     auth,

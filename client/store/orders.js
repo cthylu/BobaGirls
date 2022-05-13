@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const FETCH_ORDERS = 'FETCH_ORDERS'
+const FETCH_ORDERS = 'FETCH_ORDERS';
+const CHECK_OUT_ORDER = 'CHECK_OUT_ORDER'
 
 const _fetchOrders = orders => ({
   type: FETCH_ORDERS,
@@ -28,6 +29,9 @@ export const fetchOrders = () => {
 const orders = (state = [], action) => {
   if (action.type === FETCH_ORDERS) {
     return action.orders
+  }
+  if (action.type === CHECK_OUT_ORDER ) {
+    return [...state, action.order]
   }
   return state
 }

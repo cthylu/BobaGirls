@@ -123,6 +123,7 @@ async function seed() {
       preparation: `
       1) Boil 10 cups of water for every 1 cup of tapioca pearls in a large pot. Add tapioca slowly into boiling pot and stir lightly. 
       2) Wait until tapioca floats to water surface. Cover pot. Cook in medium heat for 2-3 minutes. Turn off head and simmer for another 2-3 minutes (adjust time to soften tapioca to personal tastes). 
+<<<<<<< HEAD
       3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` 
     }),
 
@@ -148,6 +149,20 @@ async function seed() {
 
    Product.create({ 
     name: 'Rainbow Mini Mochi', 
+=======
+      3) Scoop out tapioca and let it rest in cold water for 20 seconds. Scoop out tapioca into dry bowl and mix in sugar or honey.` }),
+    Product.create({ name: 'Strawberry Popping Boba', price: 6.50, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/7eXsscr.png', 
+      description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
+      <br/>
+      Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
+
+    Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/mrBfQ9k.png', 
+      description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
+      <br/>
+      Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
+    Product.create({ 
+    name: 'Mini Mochi' , 
+>>>>>>> main
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 
@@ -404,7 +419,7 @@ async function seed() {
       }),
     
     //milk powders
-    Product.create({ 
+      Product.create({ 
       name: 'Whole Milk Powder',
       price: 6.00, 
       quantity: 200 , 
@@ -538,31 +553,31 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     // cody
-    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
-    Order.create({ totalCost: 6, userId: users[0].id, isCart: false }),
+    Order.create({ totalCost: 2, userId: users[0].id, isCart: true, time: '4/13/2022'}),
+    Order.create({ totalCost: 6, userId: users[0].id, isCart: false, time: '4/17/2022' }),
     
     //murphy
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 3, userId: users[1].id, isCart: true }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: false, time: '4/15/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/25/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/9/2022' }),
 
     //ice
-    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '5/1/2022' }),
 
     //yingying
-    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false, time: '5/1/2022' }),
 
     //cathy
-    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false, time: '5/1/2022' }),
     
     //kim
-    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false, time: '5/1/2022' }),
   ])
 
   console.log(`seeded ${orders.length} orders`)

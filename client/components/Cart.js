@@ -19,10 +19,19 @@ class Cart extends Component {
     }
   }
 
-  getCartTotal() {}
+  getCartTotal() {
+    const lineitems = this.props.cart.lineitems
+    const cartTotal = lineitems ?
+      lineitems.reduce((acc, item) => {
+        return acc += (item.quantity *= item.product?.price)
+      }, 0)
+    : 0;
+    console.log(cartTotal, 'total')
+  }
 
   render() {
     const { cart } = this.props;
+    const { getCartTotal } = this;
     return (
       <div className="content cart">
         { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
@@ -45,8 +54,8 @@ class Cart extends Component {
                   </td>
                   <td>{line.product?.name}</td>
                   <td>{line.quantity}</td>
-                  <td>${line.cost}</td>
-                  <td>${line.cost * line.quantity}</td>
+                  <td>${line.product?.price}</td>
+                  <td>${line.product?.price * line.quantity}</td>
                   <td>
                     <button
                       className="delete"
@@ -68,7 +77,7 @@ class Cart extends Component {
           <tbody>
             <tr>
               <td>Subtotal</td>
-              <td></td>
+              <td>{getCartTotal()}</td>
             </tr>
             <tr>
               <td>Shipping</td>
