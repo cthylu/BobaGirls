@@ -23,6 +23,7 @@ class Cart extends Component {
 
   getCartTotal() {
     const lineitems = this.props.cart.lineitems
+    console.log(lineitems, 'cartotla')
     const cartTotal = lineitems &&
       lineitems.reduce((acc, item) => {
         acc += (item.quantity * item.product?.price)
@@ -110,7 +111,11 @@ class Cart extends Component {
   }
 }
 
-const mapState = (state) => state;
+const mapState = (state) => {
+  return {
+    cart: state.cart
+  }
+};
 
 const mapDispatch = (dispatch) => ({
   fetchCart: () => dispatch(fetchCart()),

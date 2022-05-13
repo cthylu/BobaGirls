@@ -26,7 +26,7 @@ class Orders extends Component {
                       <td> {order.time}</td>
                       <td>
                         <Link to={`/order/${order.id}`}>
-                          {order.id}0
+                          000{order.id}
                         </Link>
                       </td>
                       <td>{order.lineitems?.length}</td>
