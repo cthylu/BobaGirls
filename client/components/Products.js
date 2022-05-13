@@ -7,6 +7,7 @@ import Teas from "./allProducts/Teas";
 import Toppings from "./allProducts/Toppings";
 import Syrups from "./allProducts/Syrups";
 import Merchandise from "./allProducts/Merchandise";
+import Kits from "./allProducts/Kits"
 
 class Products extends Component {
   constructor() {
@@ -31,6 +32,7 @@ class Products extends Component {
         {<Toppings products={products} addProductToCart={this.addProductToCart} />}
         {<MilkPowders products={products} addProductToCart={this.addProductToCart} />}
         {<Merchandise products={products} addProductToCart={this.addProductToCart} />}
+        {<Kits products={products} addProductToCart={this.addProductToCart} />}
 
         <Link to='/newproducts'>
               { user.isAdmin ? (
