@@ -745,6 +745,7 @@ textarea {
 .kits {
   list-style: none;
   margin: 0;
+  color: white;
 }
 
 .kitsdiv {
@@ -883,4 +884,9 @@ textarea {
 
 }
 
-
+.prep {
+  font-weight: 100;
+  color: white;
+  width: 700px;
+  padding: 2rem;
+}

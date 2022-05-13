@@ -12,7 +12,8 @@ export class UpdateProduct extends React.Component {
         price: product ? product. price : 0,
         description: product ? product.description : '',
         key: product ? product.key : '',
-        quantity: product ? product.quantity : 0
+        quantity: product ? product.quantity : 0,
+        preparation: product ? product.preparation : ''
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,7 +26,8 @@ export class UpdateProduct extends React.Component {
               price: this.props.product.price,
               description: this.props.product.description,
               key: this.props.product.key,
-              quantity: this.props.product.quantity
+              quantity: this.props.product.quantity,
+              preparation: this.props.product.preparation,
           })
         }
     }
@@ -40,7 +42,7 @@ export class UpdateProduct extends React.Component {
         this.props.history.push(`/products/${this.props.product.id}`)
     }
     render() {
-       const { name, price, description, imageUrl, key, quantity } = this.state
+       const { name, price, description, imageUrl, key, quantity, preparation } = this.state
        const {handleSubmit, handleChange} = this
        const { user } = this.props
        return (
@@ -101,6 +103,15 @@ export class UpdateProduct extends React.Component {
                  placeholder='Product Quantity'
                  onChange={handleChange}
                  />
+
+                <textarea
+                  name='preparation'
+                  type='text'
+                  value={preparation || ''}
+                  placeholder='Additional Information'
+                  onChange={handleChange}
+                />   
+                
                  <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
                 </div>  
                 {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
