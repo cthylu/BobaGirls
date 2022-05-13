@@ -6,11 +6,7 @@ import { addToCart } from "/client/store";
 const Syrups = ({ products, addProductToCart }) => {
   return (
     <div className="content">
-<<<<<<< HEAD
-      <h2 className="productsyr">Boba Girls Syrups</h2>
-=======
      <h2 className="productsyr">Boba Girls Syrups</h2>
->>>>>>> ba244fcdb1c563eb665c34127177d2d7ec02f57e
       {
         <div>
             <ul className="teaproducts">
