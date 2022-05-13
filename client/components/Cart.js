@@ -34,7 +34,7 @@ class Cart extends Component {
     const { getCartTotal } = this;
     return (
       <div className="content cart">
-        { cart.lineitems.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>
