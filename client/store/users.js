@@ -40,7 +40,7 @@ export const updateOrder = (user, history) => {
     })).data;
     dispatch(_updateUser(information));
     dispatch(me());
-    history.push(`/orders`);
+    history.push(`/confirmation`);
   };
 };
 
@@ -49,7 +49,7 @@ const users = (state = [], action) => {
     return action.users;
   }
   if (action.type === UPDATE_USER) {
-    console.log('state',state);
+    // console.log('state',state);
     return state.map((user) => user.id === action.user.id ? action.user : user
     );
   }

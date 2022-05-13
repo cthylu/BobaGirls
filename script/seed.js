@@ -85,12 +85,13 @@ async function seed() {
       description: `Strawberry popping pearls, also known as popping boba, are liquid-filled balls with the essence and goodness of strawberry with a juicy burst of flavor. A little smaller in size than the regular tapioca boba, popping pearls leave your taste buds satisfied with a gush of fruit flavor. The vibrant dark red color of the boba jelly balls makes your recipe look delicious. Our popping pearls will also help your food look creative and trendy that keep them coming back for more.
       <br/>
       Popping pearls are a simple and easy addition because there are no preparing or cooking required. Serve these popping boba straight from the jar!` }),
+
     Product.create({ name: 'Lychee Jelly', price: 7.00, quantity: 50, key: 'topping', imageUrl: 'https://i.imgur.com/mrBfQ9k.png', 
       description: `Lychee jelly is a jiggly jelly dessert made from the tropical lychee fruit. Lychee jelly is sweet and slightly tart, with the floral, tropical flavor notes of the lychee fruit. The texture is solid yet soft, jiggly, and bouncy. It's often thicker than jellies made with gelatin.
       <br/>
       Lychee jelly is a simple and easy addition because there is no preparing or cooking required. Serve the lychee jelly straight from the jar!` }),
     Product.create({ 
-    name: 'Rainbow Mini Mochi' , 
+    name: 'Mini Mochi' , 
     price: 4.00, 
     quantity: 200 , 
     key: 'topping', 
@@ -229,37 +230,39 @@ async function seed() {
       <br/>
       * Recommended Serving: 8 oz. syrup to every one gallon of plain frozen yogurt.
       * Net Weight: 750 mL (25.4 fl oz) per bottle.` }),
+    // Product.create({ name: '', price: 6.00, quantity: 50, imageUrl: '', 
+    //   description: `` }),
     
     //milk powders
-    Product.create({ 
+      Product.create({ 
       name: 'Whole Milk Powder',
       price: 6.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://m.media-amazon.com/images/I/81M7DvAD7eL._SL1500_.jpg', 
       description: 'Whole milk in its most unadulterated form — and in addition to the fat found in milk, the main component (about 87 percent) is water. You\'ll also find vitamins, minerals, sugars like lactose and proteins like caseins and whey proteins. Perfect for the daily dairy lovers who want it as it\'s made' }),
-    Product.create({ 
+      Product.create({ 
       name: 'Skim Milk 2% Powder' , 
       price: 6.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://m.media-amazon.com/images/I/61ISN+q8VIS._SY445_.jpg', 
       description: 'Skim Milk is made when all the milkfat is removed from whole milk. It tends to contain around very little fat. Perfect for when you want less milk fat in your boba, but still want the nutrients and consistency from real dairy.'}),
-    Product.create({ 
+      Product.create({ 
       name: 'Almond Milk Powder' , 
       price: 8.00, 
       quantity: 200 , 
       key: 'milk', 
       imageUrl: 'http://www.nutricentreng.com/wp-content/uploads/2016/05/Almond-Milk-Powder.jpg',
       description: 'Almond milk is a plant milk with a creamy texture and nutty flavor manufactured from almonds, although some types or brands are flavored in imitation of cow\'s milk. It does not contain cholesterol or lactose and is low in saturated fat. Perfect for those who cannot have genuine dairy products.'}),
-    Product.create({ 
+      Product.create({ 
       name: 'Oat Milk Powder' , 
       price: 9.00, 
       quantity: 200 , 
       key: 'milk',
       imageUrl: 'https://cdn.shopify.com/s/files/1/0493/0558/3773/products/OatMilkPowderBagFront.jpg?v=1622850159', 
       description: 'Oat milk is a plant milk derived from whole oat grains by extracting the plant material with water. Oat milk has a creamy texture and mild oatmeal-like flavor, and is manufactured in various flavors, such as sweetened, unsweetened, vanilla, and chocolate. Flavors can also be made at home such as chocolate, with cocoa powder, it makes the perfect chocolate oat milk.  Perfect for those with dairy and almond allegies'}),
-    Product.create({ 
+      Product.create({ 
       name: 'Soy Milk Powder' , 
       price: 9.00, 
       quantity: 200 , 
@@ -314,31 +317,31 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     // cody
-    Order.create({ totalCost: 2, userId: users[0].id, isCart: true }),
-    Order.create({ totalCost: 6, userId: users[0].id, isCart: false }),
+    Order.create({ totalCost: 2, userId: users[0].id, isCart: true, time: '4/13/2022'}),
+    Order.create({ totalCost: 6, userId: users[0].id, isCart: false, time: '4/17/2022' }),
     
     //murphy
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 3, userId: users[1].id, isCart: true }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[1].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 3, userId: users[1].id, isCart: false, time: '4/15/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '4/25/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[1].id, isCart: false, time: '5/9/2022' }),
 
     //ice
-    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[2].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[2].id, isCart: false, time: '5/1/2022' }),
 
     //yingying
-    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[3].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[3].id, isCart: false, time: '5/1/2022' }),
 
     //cathy
-    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[4].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[4].id, isCart: false, time: '5/1/2022' }),
     
     //kim
-    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
-    Order.create({ totalCost: 5, userId: users[5].id, isCart: false }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false, time: '4/2/2022' }),
+    Order.create({ totalCost: 5, userId: users[5].id, isCart: false, time: '5/1/2022' }),
   ])
 
   console.log(`seeded ${orders.length} orders`)
