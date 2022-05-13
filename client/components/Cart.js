@@ -37,11 +37,13 @@ class Cart extends Component {
   }
 
   render() {
-    const { cart } = this.props;
+    const { cart, user } = this.props;
+    console.log(cart, 'cart', user, 'user')
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
         { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        //  { user :
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>
@@ -105,12 +107,18 @@ class Cart extends Component {
           </button>
         </div>
         }
+        {/* } */}
       </div>
     );
   }
 }
 
-const mapState = (state) => state;
+const mapState = ( state ) => {
+  return {
+    cart: state.cart,
+    user: state.auth
+  }
+}
 
 const mapDispatch = (dispatch) => ({
   fetchCart: () => dispatch(fetchCart()),
