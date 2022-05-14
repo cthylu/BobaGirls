@@ -376,7 +376,7 @@ td, tr {
 
 /***Add to Cart Buttons***/
 .addtocart, .loginb, .checkout {
-  align-items: center;
+  /* align-items: center; */
   background-color: #fff;
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
@@ -401,6 +401,9 @@ td, tr {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  flex-wrap: wrap;
+  align-items: space-around;
+  flex-direction: column;
 }
 
 .checkout {
@@ -835,6 +838,7 @@ textarea {
 
 .shopnow:hover:before {
   animation: opacityFallbackIn 0s step-start forwards;
+  opacity: 50%;
   clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
   border-radius: 20px;
 }
@@ -890,3 +894,4 @@ textarea {
   width: 700px;
   padding: 2rem;
 }
+

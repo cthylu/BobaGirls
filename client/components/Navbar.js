@@ -11,7 +11,8 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
           {/* The navbar will show these links after you log in */}
           <div className='nav-first'>
             <ul className='nav-top-level'>
-              <li><Link to="/home"> Home </Link></li>
+              <li><Link to="/home">Home</Link></li>  
+                          <li><Link to='/profile'>Profile</Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>
@@ -28,7 +29,6 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
           <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>        
           <div>
             <ul className='nav-top-level'>
-              <li><Link to='/profile'> Profile </Link></li>
               <li><Link to='/orders'>Orders</Link></li>
               <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : 0})</Link></li>
               <li><a href="#" onClick={handleClick}>
@@ -43,7 +43,8 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
           {/* The navbar will show these links before you log in */}
           <div className='nav-first'>
             <ul className='nav-top-level'>
-              <li><Link to="/home"> Home </Link></li>
+              <li><Link to="/home">Home</Link></li>
+              <li><Link to='/about'>About</Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>
@@ -55,7 +56,6 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
                   <li><Link to='/products/merchandise'> Merchandise </Link></li>
                 </ul>
               </li>
-              <li><Link to='/about'>About</Link></li>
             </ul>
           </div>
           <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>

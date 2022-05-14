@@ -11,7 +11,8 @@ export class NewProduct extends Component {
           description: '',
           imageUrl: 'https://www.honestfoodtalks.com/wp-content/uploads/2021/09/Boba-tea-recipe-using-fresh-tapioca-pearls-1024x1024.jpeg',
           key: '',
-          quantity: 0
+          quantity: 0,
+          preparation: ''
       }
      this.initialState = this.state
      this.handleChange = this.handleChange.bind(this)
@@ -30,7 +31,7 @@ export class NewProduct extends Component {
     }
 
    render() {
-       const { name, price, description, imageUrl, key, quantity } = this.state
+       const { name, price, description, imageUrl, key, quantity, preparation } = this.state
        const {handleSubmit, handleChange} = this
        const { user } = this.props
        console.log(user, 'user')
@@ -81,12 +82,21 @@ export class NewProduct extends Component {
                        onChange={handleChange}
                        />
 
+                       <textarea
+                       name='preparation'
+                       type='text'
+                       value={preparation}
+                       placeholder='Additional Product Info'
+                       onChange={handleChange}
+                      />        
+
                        <select
                         name='key'
                         value={key || ''}
                         placeholder='Product Category'
                         onChange={handleChange}
                        >
+                     
                         <option value=''> Select a Category</option>
                         <option value='tea'>Tea</option>
                         <option value='topping'>Topping</option>

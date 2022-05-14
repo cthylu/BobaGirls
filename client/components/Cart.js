@@ -42,12 +42,17 @@ class Cart extends Component {
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
+<<<<<<< HEAD
         {
           user.id === undefined &&
           <h2 className='product2'>CLICK <Link to='/signup'>HERE</Link> TO CREATE AN ACCOUNT</h2>
         }
         { user.id === cart.userId &&
         cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+=======
+        { cart.lineitems?.length === 0 ? <div> <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2>              <h2> Visit our <Link to="/products"> Shop </Link></h2> </div>
+ : 
+>>>>>>> 1b75a72693fedfd423a2582918c7d8aef1d5b54b
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>
