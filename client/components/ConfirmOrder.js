@@ -37,17 +37,18 @@ const Confirmation = ({ cart, createOrder }) => {
     return ProductTotalItems.toFixed(0);
   }
   return (
-    <div className="checkout">
-      <div> Shipping Information Received. </div>
-      <div>
-        You have {getCartTotalItems()} item(s) in your
-        <Link to={"/cart"}> Cart </Link>
+    <div className="content checkout-confirm">
+      <div className="checkout-details">
+        <h2>Checkout Confirmation</h2>
+        <div> Shipping Information Received. </div>
+        <div>
+          You have {getCartTotalItems()} items in your
+          <Link to={"/cart"}> Cart </Link>
+        </div>
+        <div> Your total is ${getCartTotal()}</div>
+        <div>Please Confirm your Order.</div>
       </div>
-      {/* {console.log(user.id)} */}
-      <div> Your total is ${getCartTotal()}</div>
-      <div>Please Confirm Your Order.</div>
       <div>
-        {/* <button onClick={() => createOrder(items)}> */}
         <button className='addtocart-btn' id='submit' onClick={() => createOrder(cart.id, success())}>
           Confirm
         </button>

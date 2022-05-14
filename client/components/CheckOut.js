@@ -62,7 +62,7 @@ class CheckOut extends React.Component {
     const { cart, } = this.props;
     const { onChange, onSubmit, getCartTotal } = this;
     return (
-      <div>
+      <div className="content checkout-form">
         {cart.length !== 0 ? (
           <div>
             {console.log("cart", cart)}
@@ -72,7 +72,6 @@ class CheckOut extends React.Component {
                 <form
                   id="checkout"
                   name="checkout"
-                  className="checkout"
                   onSubmit={onSubmit}
                 >
                   {/* <div>
@@ -84,82 +83,83 @@ class CheckOut extends React.Component {
                     <div> To continue checking out, fill out the below. </div>
                   </div> */}
 
-                  <div> Shipping Information </div><br/>
-                  <label htmlFor="firstName"> First Name*: </label>
-                  <input
-                    name="firstName"
-                    onChange={onChange}
-                    value={firstName}
-                    placeholder="First Name"
-                    required
-                  />
-                  <br />
-                  <label htmlFor="lastName"> Last Name*: </label>
-                  <input
-                    name="lastName"
-                    onChange={onChange}
-                    value={lastName}
-                    placeholder="Last Name"
-                    required
-                  />
-                  <br />
-                  <label htmlFor="email"> Email*: </label>
-                  <input
-                    type="email"
-                    name="email"
-                    onChange={onChange}
-                    value={email}
-                    placeholder="E-mail"
-                    required
-                  />
-                  <br />
+                  <h2>Shipping Information</h2>
+                  <div className="formfields">
+                    <label htmlFor="firstName"> First Name*: </label>
+                    <input
+                      name="firstName"
+                      onChange={onChange}
+                      value={firstName}
+                      placeholder="First Name"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="lastName"> Last Name*: </label>
+                    <input
+                      name="lastName"
+                      onChange={onChange}
+                      value={lastName}
+                      placeholder="Last Name"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="email"> Email*: </label>
+                    <input
+                      type="email"
+                      name="email"
+                      onChange={onChange}
+                      value={email}
+                      placeholder="E-mail"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="address"> Address*: </label>
+                    <input
+                      name="address"
+                      onChange={onChange}
+                      value={address}
+                      placeholder="Address"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="city"> City*: </label>
+                    <input
+                      name="city"
+                      onChange={onChange}
+                      value={city}
+                      placeholder="City"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="state"> State*: </label>
+                    <input
+                      name="state"
+                      onChange={onChange}
+                      value={state}
+                      placeholder="State"
+                      required
+                    />
+                    <br />
+                    <label htmlFor="zipCode"> Zip-code*: </label>
+                    <input
+                      name="zipCode"
+                      onChange={onChange}
+                      value={zipCode}
+                      placeholder="Zip-code"
+                      required
+                    />
+                  </div>
+                  <h2>Payment Information</h2>
                   <label htmlFor="creditCard"> Credit Card*: </label>
-                  <input
-                    name="creditCard"
-                    onChange={onChange}
-                    value={creditCard}
-                    placeholder="Credit Card Number"
-                    required
-                  />
-                  <br />
-                  <label htmlFor="address"> Address*: </label>
-                  <input
-                    name="address"
-                    onChange={onChange}
-                    value={address}
-                    placeholder="Address"
-                    required
-                  />
-                  <br />
-                  <label htmlFor="city"> City*: </label>
-                  <input
-                    name="city"
-                    onChange={onChange}
-                    value={city}
-                    placeholder="City"
-                    required
-                  />
-                  <br />
-                  <label htmlFor="state"> State*: </label>
-                  <input
-                    name="state"
-                    onChange={onChange}
-                    value={state}
-                    placeholder="State"
-                    required
-                  />
-                  <br />
-                  <label htmlFor="zipCode"> Zip-code*: </label>
-                  <input
-                    name="zipCode"
-                    onChange={onChange}
-                    value={zipCode}
-                    placeholder="Zip-code"
-                    required
-                  />
-                  <br />
-                  {/* <button type="submit"><Link to='/confirmation'>Comfirm Shipping Information</Link>  </button> */}
-                  <button type="submit" className='addtocart-btn'>Confirm  </button>
+                    <input
+                      name="creditCard"
+                      onChange={onChange}
+                      value={creditCard}
+                      placeholder="Credit Card Number"
+                      required
+                    />
+                  {/* <button type="submit"><Link to='/confirmation'>Confirm Shipping Information</Link>  </button> */}
+                  <button type="submit" className='addtocart-btn'>Next</button>
                 </form>
               </div>
             ) : (

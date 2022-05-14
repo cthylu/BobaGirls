@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="column-right">
-          <h2>Boba Girls</h2>
+          <h2>BobaGirl</h2>
           <p>A premium tea and bubble tea shop founded by:
             <ul>
               <li>Ying Ying Feng</li>

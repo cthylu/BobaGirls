@@ -37,6 +37,7 @@ nav, .content, .footer-content {
 /*** Navbar ***/
 .navbar {
   position: sticky;
+  z-index: 99;
 }
 nav {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -133,19 +134,29 @@ nav a, nav li {
 .content h2 {
   padding: 1rem 0 1rem 0;
 }
+
+/*** Homepage ***/
+
 .hero {
-  background: url("/images/Untitled_Artwork 3.png");
+  background: url("/images/Bubble-teas-hero-bg.jpg");
   background-size: cover;
   height: 80vh;
-  margin-bottom: 60px;
-  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 950px;
+  margin: auto;
 }
 .hero h1 {
   color: #ffffff;
   font-size: 2.5em;
-  text-shadow: 1px 1px 2px black;
-  font-weight: 100;
-  margin-top: 30rem;
+  font-weight: normal;
+  margin-bottom: 1em;
 }
 .hero p {
   color: white;
@@ -154,7 +165,125 @@ nav a, nav li {
   margin-top: 1em;
   font-weight: 100;
 }
+.homepage .content {
+  margin: 3em auto;
+  line-height: 1.5;
+}
+.quote {
+  text-align: center;
+}
+.quote h2 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.quote p {
+  font-size: 1.25em;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.quote q {
+  color: #88aed0;
+  font-size: 1.5em;
+}
+.product-boxes .column {
+  width: 50%;
+}
+.product-boxes .column-left {
+  background: url("/images/premium-tea-storage.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.product-boxes .column-right {
+  background: url("/images/make-bubble-tea.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.product-boxes h2 {
+  color: #ffffff;
+  text-align: center;
+}
+.bg-layer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 120px;
+  transition: 0.4s;
+}
+.bg-layer:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
+.welcome {
+  font-weight: 100;
+  color: white;
+  font-size: 50px;
+}
+.shopnow {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #88aed0 ;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border-radius: 20px;
+}
+.shopnow:hover {
+  color: #ffffff;
+}
+
+.shopnow:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #add8e6  ;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+  border-radius: 20px;
+}
+
+.shopnow:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  opacity: 50%;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+  border-radius: 20px;
+}
+
+.shopnow:after {
+  background-color: #add8e6 ;
+  border-radius: 20px;
+}
+
+.shopnow span {
+  z-index: 1;
+  position: relative;
+}
 .signup1 form div, .checkout form div {
   margin: 1em;
   display: inline-block;
@@ -242,7 +371,6 @@ label {
 }
 .ordersinfo table {
   text-align: center;
-  border-collapse: collapse;
   margin: 1rem auto auto auto;
 }
 .content-order {
@@ -354,16 +482,6 @@ td, tr {
   padding: 1rem 1rem 0 1rem;
 }
 
-/*** Check Out ***/
-.checkout {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  position: absolute;
-  right: 40%;
-  width: 250px;
-}
-
 /**Admin Buttons**/
 .admindeleteb, .addproduct {
   background: #FF4742;
@@ -405,7 +523,8 @@ td, tr {
 }
 
 /***Add to Cart Buttons***/
-.addtocart-btn, .loginb, .checkout {
+
+.addtocart-btn, .loginb {
   align-items: center;
   background-color: #78a2cc;
   border-radius: 12px;
@@ -435,23 +554,23 @@ td, tr {
   align-items: space-around;
   flex-direction: column;
 }
-
+.product-content .addtocart-btn {
+  margin: 1rem 0;
+}
 .checkout {
   align-items: center;
-  background-color: #fff;
+  background-color: #87ceeb;
   border-radius: 12px;
-  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
   box-sizing: border-box;
-  color: #87ceeb ;
+  color: #ffffff ;
   cursor: pointer;
-  display: inline-flex;
-  flex: 1 1 auto;
+  display: block;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   font-weight: 10;
   justify-content: center;
   line-height: 1;
-  margin: 1rem;
+  margin: 2em auto;
   outline: none;
   padding: 1rem 1.2rem;
   text-align: center;
@@ -468,21 +587,47 @@ td, tr {
 .loginb:hover,
 .addToCart:hover,
 .checkout:hover {
-  box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
+  box-shadow: #87ceeb 0 0 0 3px, transparent 0 0 0 0;
 }
 
-/***Delete Buttons***/
-input {
-  width: 80%;
+.checkoutform h2 {
+  margin: 2em 0;
 }
+form {
+  width: 400px;
+  margin: auto;
+}
+input,
+select,
+textarea {
+	color: #606060;
+	font-family: 'Segoe UI', 'Open Sans', Tahoma, sans-serif;
+	font-size: .875em;
+	border: 1px solid #90c2dc;
+	border-radius: 0;
+	box-sizing: border-box;
+	padding: 4px 8px;
+	width: 100%
+}
+label, input {
+  margin: 4px auto;
+}
+
+.checkout-confirm {
+  border: 1px solid #cccccc;
+}
+.checkout-details {
+  width: 300px;
+  margin: 0 auto 2em;
+}
+/***Delete Buttons***/
 
 .delete {
   align-items: center;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  border-radius: 4px;
   box-sizing: border-box;
-  color: #87ceeb ;
+  color: #78a2cc ;
   cursor: pointer;
   display: inline-flex;
   flex: 1 1 auto;
@@ -529,17 +674,37 @@ input {
   font-size: 20px;
 }
 
-.boba, .profile {
+/*** Profile ***/
+.profile .column {
+  width: 50%;
+}
+.profile img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.boba {
   background: #ffffff;
   padding: 2rem;
   color: #606060 ;
   margin: 1rem;
 } 
-
+.profile .column-right {
+  margin-top: 1.5em;
+}
 .profile2 {
-  padding: .3rem;
+  padding: 1em;
   color: #606060 ;
-  margin: 1rem;
+}
+.editprofile-btn {
+  background-color: #88aed0;
+  width: 150px;
+  padding: 1em 2em;
+  margin: 1em;
+  transition: 0.4s;
+}
+.profile a {
+  color: #ffffff;
 }
 
 .bobatitle {
@@ -671,6 +836,7 @@ input[type=number] {
   justify-content: flex-start;
   align-items: center;
   padding: 12px;
+  margin-top: 2em;
 }
 .addproduct {
   display: flex;
@@ -790,77 +956,6 @@ textarea {
   margin: 2px;
 }
 
-.welcome {
-  font-weight: 100;
-  color: white;
-  font-size: 50px;
-}
-.shopnow {
-  appearance: none;
-  background-color: #FFFFFF;
-  border-width: 0;
-  box-sizing: border-box;
-  color: #add8e6 ;
-  cursor: pointer;
-  display: inline-block;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1em;
-  margin: 0;
-  opacity: 1;
-  outline: 0;
-  padding: 1.5em 2.2em;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-rendering: geometricprecision;
-  text-transform: uppercase;
-  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
-  border-radius: 20px;
-}
-.shopnow:hover {
-  color: #ffffff;
-}
-
-.shopnow:before {
-  animation: opacityFallbackOut .5s step-end forwards;
-  backface-visibility: hidden;
-  background-color: #add8e6  ;
-  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: translateZ(0);
-  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
-  width: 100%;
-  border-radius: 20px;
-}
-
-.shopnow:hover:before {
-  animation: opacityFallbackIn 0s step-start forwards;
-  opacity: 50%;
-  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
-  border-radius: 20px;
-}
-
-.shopnow:after {
-  background-color: #add8e6 ;
-  border-radius: 20px;
-}
-
-.shopnow span {
-  z-index: 1;
-  position: relative;
-}
 
 /*** Single Product ***/
 
