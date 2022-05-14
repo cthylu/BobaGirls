@@ -11,19 +11,18 @@ class Cart extends Component {
     this.getSalesTax = this.getSalesTax.bind(this);
 
   }
-  componentDidMount() {
-    this.props.fetchCart();
-  }
+  // componentDidMount() {
+  //   this.props.fetchCart();
+  // }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.products !== prevProps.products) {
-      this.props.fetchCart();
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.products !== prevProps.products) {
+  //     this.props.fetchCart();
+  //   }
+  // }
 
   getCartTotal() {
     const lineitems = this.props.cart.lineitems
-    console.log(lineitems, 'cartotla')
     const cartTotal = lineitems &&
       lineitems.reduce((acc, item) => {
         acc += (item.quantity * item.product?.price)
@@ -38,11 +37,17 @@ class Cart extends Component {
   }
 
   render() {
-    const { cart } = this.props;
+    const { cart, user } = this.props;
+    console.log(user, 'user', cart, 'cart')
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
-        { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        {
+          user.id === undefined &&
+          <h2 className='product2'>CLICK <Link to='/signup'>HERE</Link> TO CREATE AN ACCOUNT</h2>
+        }
+        { user.id === cart.userId &&
+        cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>
@@ -105,6 +110,8 @@ class Cart extends Component {
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
+        
+        
         }
       </div>
     );
@@ -113,12 +120,13 @@ class Cart extends Component {
 
 const mapState = (state) => {
   return {
-    cart: state.cart
+    cart: state.cart,
+    user: state.auth
   }
 };
 
 const mapDispatch = (dispatch) => ({
-  fetchCart: () => dispatch(fetchCart()),
+  // fetchCart: () => dispatch(fetchCart()),
   deleteLineitem: (lineId, lineQuantity) =>
     dispatch(deleteFromCart(lineId, lineQuantity)),
 });

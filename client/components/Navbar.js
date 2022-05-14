@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
 
-const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
+const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) => (
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
@@ -30,7 +30,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
             <ul className='nav-top-level'>
               <li><Link to='/profile'> Profile </Link></li>
               <li><Link to='/orders'>Orders</Link></li>
-              <li><Link to="/cart">Cart ({lineitems})</Link></li>
+              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : 0})</Link></li>
               <li><a href="#" onClick={handleClick}>
                 Logout
               </a>
@@ -63,7 +63,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
             <ul className='nav-top-level'>
               <li><Link to="/login">Login</Link></li>
               <li><Link to="/signup">Sign Up</Link></li>
-              <li><Link to="/cart">Cart ({lineitems})</Link></li>
+              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : 0})</Link></li>
             </ul>
           </div>
         </div>
@@ -77,13 +77,17 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart }) => (
  */
 const mapState = (state) => {
   const cart = state.cart
+  console.log(state.cart, 'CARTTTT')
   return {
     isLoggedIn: !!state.auth.id,
     products: state.products,
-    cart,
-    lineitems: cart.lineitems ? cart.lineitems?.reduce((acc, line) => {
+    user: state.auth,
+    cart: state.cart,
+    lineitems: cart.lineitems ? 
+      cart.lineitems?.reduce((acc, line) => {
         return acc += line.quantity;
-    }, 0) : cart.lineitems?.length || 0
+    }, 0) 
+    : 0
 
   };
 };
