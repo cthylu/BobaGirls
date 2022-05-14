@@ -16,6 +16,7 @@ class Products extends Component {
   }
 
   addProductToCart(product) {
+    console.log("Add product to cart")
     const quantity = 1;
     this.props.addToCart(product, quantity);
   }

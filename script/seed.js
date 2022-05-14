@@ -193,45 +193,71 @@ async function seed() {
 
       // merch
     Product.create({ 
-      name: 'Boba Girls Metal Straws (3 Pack, 10mm)', 
-      price: 15.00, quantity: 57, key: 'merchandise', 
-      imageUrl: 'https://m.media-amazon.com/images/I/41sbdOYwGnL._AC_.jpg', 
-      description: `This Stainless Steel Straws Set is a reusable straw solution to replace disposable plastic straws. These steel straws are made from high quality 18/8 stainless steel with a safe, food grade, removable silicone flex tip. No more plastic - just your favorite drinks on the go.`,
+      name: 'Boba Girls Metal Straws (4 Pack, 215mm)', 
+      price: 10.00, quantity: 57, key: 'merchandise', 
+      imageUrl: 'https://i.imgur.com/pN5jH7H.png', 
+      description: `4 premium straight 8.5 inch (215 mm) stainless steel drinking straws with unbleached carry pouch and reusable cleaning brush. These anti-rust, scratch-proof straws are perfect for hot or cold beverages. Ditch the plastic! More than 500,000 straws are thrown away every day. Now you can be part of the solution with a reusable, washable straw that you can take anywhere. Precision crafted from food-grade stainless steel, these straws are perfect for using on the go or at home. Dip into your morning smoothie or tuck into a handy travel pouch for your day at the office. A washable, reusable bristle brush makes cleanup a breeze. Each set includes 4 straight silver drinking straws, one reusable cleaning brush, and one unbleached cloth travel bag for carrying on the go or storing at home. One set will last a lifetime, replacing thousands of plastic drinking straws!`,
       preparation: `
       BPA Free
       Food-grade silicone and stainless steel construction
       Dishwasher safe
-      Silicone straw tip for safe, comfortable sipping
       <br/>
-      Parts: 3 2-piece 10mm straw (1 extender)
+      Parts: 4 piece 255mm straw (1 extender)
       Weight: .55 ounces (15.6 g)
       Size: 8.9" H x .39" W (226.1 mm H x 10 mm W)`
     }),
 
     Product.create({ 
-      name: 'Boba Girls 24oz Reusable Tumbler', 
+      name: 'Boba Girls Glass Boba Straws (2 Pack, 14mm)', 
+      price: 10.00, quantity: 57, key: 'merchandise', 
+      imageUrl: 'https://i.imgur.com/06NcLme.png', 
+      description: `4-piece set includes two 9-in 14mm etra wide boba straws, one 9-inch cleaning brush and a carrying case. Perfect for drinking bubble tea with toppings, or use the straws for smoothies! This is the ideal size with a nice glass straw.`,
+      preparation: `
+      Food grade borosilicate glass, BPA FREE, Lead Free, Eco-friendly. DISHWASHER SAFE
+      <br/>
+      Parts: 4 piece 255mm straw (1 extender)
+      Weight: .55 ounces (15.6 g)
+      Size: 8.9" H x .39" W (226.1 mm H x 10 mm W)`
+    }),
+
+    Product.create({ 
+      name: 'Boba Girls 24oz Reusable Boba Cup with Lid', 
       price: 25.00, 
       quantity: 300, 
       key: 'merchandise', 
-      imageUrl: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRUWMP9Xavmlk3UQnVZcDQIwj4hcko5NKzHOTju0xfB8KWCGc8SqPUFgca8WqGw299k0QYZsLI&usqp=CAE', 
-      description: `A reusable tumbler cup equipped with a plastic boba straw so you can slurp 24oz of boba goodness. Designed from durable plastic with a double-wall design for a clean look, this 24-ounce plastic tumbler with straw is as stylish as it is useful. The lidded design helps prevent leaks and spills, while the included straw lets you take easy and refreshing sips of your favorite beverage. Whether used to sip your favorite cold beverage or looking for a standout gift, this tumbler makes the perfect pick.`,
+      imageUrl: 'https://i.imgur.com/kw6LTHd.png', 
+      description: `A reusable tumbler cup equipped with a plastic boba straw so you can slurp 24oz of boba goodness. Designed from durable plastic with a double-wall design for a clean look. Featuring a leak-proof lid with a silicone grommet, this reusable boba cup is the perfect vessel for sipping or snapping your aesthetically-pleasing bubble tea, green juices or infused waters! Shake up your drink and toppings with the lid closed and sip sustainably with your perfect reusable boba cup and straw pair`,
       preparation: `
       Size: 24 oz. 
       Material: 100% BPA free, plastic
-      Note: Not dishwasher or microwave safe. Not to be used for hot drinks.`
+      Note: Plastic-Free, Dishwasher Safe, Food-Safe, Silicone Take-Back Program.
+      Care: To clean, unscrew the reusable bubble tea cup with lid and hand wash the glass jar. The silicone grommet on the lid can be pulled out for cleaning. Please be extra careful when cleaning the drinking hole once the silicone grommet has been removed! Allow parts to fully air dry between uses. Once dry, place the silicone grommet back on the lid and screw the lid back onto the glass.`
     }),
 
     Product.create({ 
       name: 'Boba Girls 24oz Mason Jar', 
-      price: 15.00, 
+      price: 23.50, 
       quantity: 300, 
       key: 'merchandise', 
-      imageUrl: 'https://m.media-amazon.com/images/S/aplus-media/sc/8c460412-d464-47fb-a392-613699fd4d2b.__CR0,0,970,600_PT0_SX970_V1___.jpg', 
+      imageUrl: 'https://i.imgur.com/Em5Jovv.png', 
       description: `A reusable mason jar equipped with a metal boba straw so you can slurp 24oz of boba goodness. Designed from durable plastic with a double-wall design for a clean look, this 24-ounce plastic tumbler with straw is as stylish as it is useful. The lidded design helps prevent leaks and spills, while the included straw lets you take easy and refreshing sips of your favorite beverage. Whether used to sip your favorite cold beverage or looking for a standout gift, this tumbler makes the perfect pick.`,
       preparation: `
       Size: 24 oz. 
       Material: 100% BPA free, plastic
       Note: Not dishwasher or microwave safe. Not to be used for hot drinks.` 
+    }),
+
+    Product.create({ 
+      name: 'Boba Girls 16oz Glass Tumbler with Straw', 
+      price: 15.00, 
+      quantity: 300, 
+      key: 'merchandise', 
+      imageUrl: 'https://i.imgur.com/Em5Jovv.png', 
+      description: `Whether you're reading, writing or busy with other activities, you'll stay hydrated when you keep this 16-Ounce Glass Tumbler with Straw and Silicone Sleeve from Boba Girls close by. This glass tumbler features a solid-color design with a transparent top and wood-tone lid for an elegant construction that suits your daily style. The included straw helps you drink conveniently while the silicone sleeve helps provide a secure fit. Use this lidded tumbler at home, at the office or anywhere on the go to sip your favorite cold beverages with ease. Comes with lid and straw for added convenience!`,
+      preparation: `
+      Size: 16 oz. 
+      Material: 100% BPA free, plastic
+      Note: Dishwasher-Safe Top Rack Only` 
     }),
 
     Product.create({
@@ -265,12 +291,12 @@ async function seed() {
     }),
 
     Product.create({
-      name:'Boba Tea AirTag Keyring Case',
+      name:'Boba Tea AirPods Pro Case',
       price: 10.00,
       quantity: 200,
       key: 'merchandise',
-      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/ProductImage2.jpg?v=1623127033',
-      description: 'This cute Boba tea AirTag Keyring Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
+      imageUrl: 'https://i.imgur.com/3KlZL40.png',
+      description: 'This cute Boba tea AirPods Pro Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
     }),
 
     Product.create({
@@ -283,7 +309,7 @@ async function seed() {
     }),
     
     Product.create({
-      name:'BobaGirls iPhone 13 Case ',
+      name:'BobaGirls iPhone 13 Case',
       price: 10.00,
       quantity: 20,
       key: 'merchandise',
@@ -521,7 +547,7 @@ async function seed() {
       price: 15.00, 
       quantity: 50, 
       key: 'kit', 
-      imageUrl: 'https://thehangoversg.com/wp-content/uploads/2020/10/Untitled_Artwork-3-1-300x300.png', 
+      imageUrl: 'https://i.imgur.com/ekqddxm.png', 
       description: `PACKAGE INCLUDES:
       Choose 1 type of tea leaves
       Tapioca Pearls (uncooked)
@@ -537,7 +563,7 @@ async function seed() {
       price: 13.00, 
       quantity: 50, 
       key: 'kit', 
-      imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/05/Cartoon-BBT-KIT-2-pax-fruit-07-768x775.png', 
+      imageUrl: 'https://i.imgur.com/eqrxZ7R.png', 
       description: `PACKAGE INCLUDES:
       Choose 1 type of tea leaves
       Choose 1 type of fruit syrup
@@ -553,7 +579,7 @@ async function seed() {
       price: 23.00, 
       quantity: 50, 
       key: 'kit', 
-      imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/01/Cartoon-BBT-KIT-4-Pax-02-1-300x300.png', 
+      imageUrl: 'https://i.imgur.com/mAc0XDU.png', 
       description: `PACKAGE INCLUDES:
       Choose 2 types of tea leaves
       Tapioca Pearls (uncooked)
@@ -569,7 +595,7 @@ async function seed() {
       price: 26.00, 
       quantity: 50, 
       key: 'kit', 
-      imageUrl: 'https://thehangoversg.com/wp-content/uploads/2021/01/Cartoon-BBT-KIT-Mix-04-300x300.png', 
+      imageUrl: 'https://i.imgur.com/ACnnLiD.png', 
       description: `PACKAGE INCLUDES:
       Choose 2 types of tea leaves
       Choose 2 types of fruit syrup
@@ -590,7 +616,7 @@ async function seed() {
   // Creating Orders
   const orders = await Promise.all([
     // cody
-    Order.create({ totalCost: 2, userId: users[0].id, isCart: true, time: '4/13/2022'}),
+    Order.create({ totalCost: 2, userId: users[0].id, isCart: false, time: '4/13/2022'}),
     Order.create({ totalCost: 6, userId: users[0].id, isCart: false, time: '4/17/2022' }),
     
     //murphy

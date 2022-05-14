@@ -30,7 +30,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
           <div>
             <ul className='nav-top-level'>
               <li><Link to='/orders'>Orders</Link></li>
-              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : 0})</Link></li>
+              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : '0'})</Link></li>
               <li><a href="#" onClick={handleClick}>
                 Logout
               </a>
@@ -63,7 +63,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
             <ul className='nav-top-level'>
               <li><Link to="/login">Login</Link></li>
               <li><Link to="/signup">Sign Up</Link></li>
-              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : 0})</Link></li>
+              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : '0'})</Link></li>
             </ul>
           </div>
         </div>
