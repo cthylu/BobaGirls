@@ -59,6 +59,7 @@ class Cart extends Component {
               return (
                 <tr key={line.id} className="cart-table">
                   <td>
+                    {console.log(cart)}
                     <img src={line.product?.imageUrl} />
                   </td>
                   <td>{line.product?.name}</td>

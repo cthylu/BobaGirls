@@ -56,7 +56,7 @@ router.post("/", isLoggedIn, async (req, res, next) => {
     console.log("Existing line", existingLineItem);
     if (existingLineItem) {
       await LineItem.update({
-        quantity: existingLineItem.quantity + req.body.quantity,
+        quantity: req.body.quantity,
         cost: Number(existingLineItem.cost) + Number(req.body.quantity * req.body.cost)
       },
       {

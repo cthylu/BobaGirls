@@ -23,7 +23,7 @@ const Confirmation = ({ cart, createOrder }) => {
         return acc;
       }, 0);
     const tax = Math.round(ProductTotal * 0.0875 * 100) / 100;
-    return (ProductTotal * tax * 1).toFixed(2);
+    return (ProductTotal + tax * 1).toFixed(2);
   }
 
   function getCartTotalItems() {

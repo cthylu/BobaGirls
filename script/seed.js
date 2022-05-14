@@ -606,7 +606,7 @@ async function seed() {
     LineItem.create({ quantity: 2, cost: 3, productId: products[1].id, orderId: orders[0].id }), 
     LineItem.create({ quantity: 2, cost: 3, productId: products[2].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[3].id, orderId: orders[0].id }),
-    LineItem.create({ quantity: 2, cost: 3, productId: products[13].id, orderId: orders[0].id }),
+    LineItem.create({ quantity: 2, cost: 3, productId: products[10].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[15].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[16].id, orderId: orders[0].id }),
     LineItem.create({ quantity: 2, cost: 3, productId: products[17].id, orderId: orders[0].id }),
