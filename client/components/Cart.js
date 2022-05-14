@@ -23,7 +23,6 @@ class Cart extends Component {
 
   getCartTotal() {
     const lineitems = this.props.cart.lineitems
-    console.log(lineitems, 'cartotla')
     const cartTotal = lineitems &&
       lineitems.reduce((acc, item) => {
         acc += (item.quantity * item.product?.price)
@@ -38,12 +37,17 @@ class Cart extends Component {
   }
 
   render() {
-    const { cart } = this.props;
+    const { cart, user } = this.props;
+    console.log(user, 'user', cart, 'cart')
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
-        { cart.lineitems?.length === 0 ? <div> <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2>              <h2> Visit our <Link to="/products"> Shop </Link></h2> </div>
- : 
+        {
+          user.id === undefined &&
+          <h2 className='product2'>CLICK <Link to='/signup'>HERE</Link> TO CREATE AN ACCOUNT</h2>
+        }
+        { user.id === cart.userId &&
+        cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>
@@ -106,7 +110,9 @@ class Cart extends Component {
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
+        
         }
+        
       </div>
     );
   }
@@ -114,7 +120,8 @@ class Cart extends Component {
 
 const mapState = (state) => {
   return {
-    cart: state.cart
+    cart: state.cart,
+    user: state.auth
   }
 };
 

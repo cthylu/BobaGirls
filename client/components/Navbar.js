@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
 
-const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }) => (
+const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) => (
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
@@ -31,6 +31,8 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
           </div>       
           <div className='nav-flex-item'>
             <ul className='nav-top-level'>
+              <li><Link to='/orders'>Orders</Link></li>
+              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : '0'})</Link></li>
               <li><img src="/images/icon-profile.svg" />
                   <ul className='nav-dropdown'>
                     <li>Hi, {username}</li>
@@ -38,7 +40,7 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
                     <li><Link to='/orders'>My Orders</Link></li>
                   </ul>
               </li>
-              <li><Link to="/cart"><img src="/images/icon-cart.svg" /> ({lineitems})</Link></li>
+
               <li><a href="#" onClick={handleClick}>
                 Logout
               </a>
@@ -73,6 +75,7 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
             <ul className='nav-top-level'>
               <li><Link to="/login">Login</Link></li>
               <li><Link to="/signup">Sign Up</Link></li>
+              <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : '0'})</Link></li>
             </ul>
           </div>
         </div>
@@ -86,14 +89,18 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
  */
 const mapState = (state) => {
   const cart = state.cart
+  console.log(state.cart, 'CARTTTT')
   return {
     username: state.auth.username,
     isLoggedIn: !!state.auth.id,
     products: state.products,
-    cart,
-    lineitems: cart.lineitems ? cart.lineitems.reduce((acc, line) => {
+    user: state.auth,
+    cart: state.cart,
+    lineitems: cart.lineitems ? 
+      cart.lineitems?.reduce((acc, line) => {
         return acc += line.quantity;
-    }, 0) : cart.lineitems?.length || 0
+    }, 0) 
+    : 0
 
   };
 };

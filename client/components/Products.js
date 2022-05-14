@@ -56,7 +56,6 @@ const mapState = ({ products, auth }) => {
 };
 
 const mapDispatch = (dispatch, { history }) => {
-  console.log("Dispatch");
   return {
     addToCart: (product, quantity) =>
       dispatch(addToCart(product, quantity, history)),
