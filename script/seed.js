@@ -297,7 +297,7 @@ async function seed() {
       quantity: 20,
       key: 'merchandise',
       imageUrl: 'https://imgur.com/dNavMU2.jpg',
-      description: 'The best phone case for all the boba lovers! Fits an iPhone 13 and is shock absorbant',
+      description: 'The cutest Dad Hat for all the boba lovers!',
     }),
    
     Product.create({
