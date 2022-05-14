@@ -56,6 +56,7 @@ export class UpdateProduct extends React.Component {
               onSubmit={handleSubmit}
               >
               <div className='updateproduct' >
+                <label> Product Name: </label>
                 <input
                   name="name"
                   type="text"
@@ -71,7 +72,7 @@ export class UpdateProduct extends React.Component {
                   placeholder="Product Price"
                   onChange={handleChange}
                 />
-                <label>Product Description:</label>
+                <label className="productdes">Product Description:</label>
                 <textarea
                   name="description"
                   type="text"
@@ -87,7 +88,8 @@ export class UpdateProduct extends React.Component {
                   placeholder="Product ImageUrl"
                   onChange={handleChange}
                 />
-                <label>Product Category:</label>
+                <label className="productcat">Product Category:</label>
+
                 <select
                   name="key"
                   value={key || ""}
@@ -101,6 +103,9 @@ export class UpdateProduct extends React.Component {
                   <option value="milk">Milk Powder</option>
                   <option value="syrup">Syrup</option>
                 </select>
+
+                <br />
+                <label className="productq">Product Quantity:</label>
                 <input
                   name="quantity"
                   type="number"
@@ -108,7 +113,8 @@ export class UpdateProduct extends React.Component {
                   placeholder="Product Quantity"
                   onChange={handleChange}
                 />
-
+              <br />
+                <label className="productinfo">Additional Product Information:</label>
                 <textarea
                   name='preparation'
                   type='text'
@@ -117,13 +123,13 @@ export class UpdateProduct extends React.Component {
                   onChange={handleChange}
                 />   
 
-                <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
+               <div className="buttondiv"> <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> </div>
               </div>
               {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
             </form>
             <Link to="/products">
               <div className="admindelete">
-                <h5 className="admin"> Admin Only: </h5>
+                <h5 className="admin"></h5>
                 <button
                   className="admindeleteb"
                   onClick={() => deleteProduct(product.id)}
