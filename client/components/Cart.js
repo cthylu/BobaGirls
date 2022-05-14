@@ -126,12 +126,8 @@ class Cart extends Component {
 const mapState = (state) => {
   return {
     cart: state.cart,
-<<<<<<< HEAD
-  };
-=======
     user: state.auth
   }
->>>>>>> main
 };
 
 const mapDispatch = (dispatch) => ({
