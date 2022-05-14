@@ -7,182 +7,56 @@ import Teas from "./allProducts/Teas";
 import Toppings from "./allProducts/Toppings";
 import Syrups from "./allProducts/Syrups";
 import Merchandise from "./allProducts/Merchandise";
-import Kits from "./allProducts/Kits"
+import Kits from "./allProducts/Kits";
 
 class Products extends Component {
-  // constructor() {
-  //   super();
-  //   this.addProductToCart = this.addProductToCart.bind(this);
-  // }
+  constructor() {
+    super();
+    this.addProductToCart = this.addProductToCart.bind(this);
+  }
 
-  // addProductToCart(product) {
-  //   console.log("Add product to cart")
-  //   const quantity = 1;
-  //   this.props.addToCart(product, quantity);
-  // }
+  addProductToCart(product) {
+    console.log("Add product to cart");
+    const quantity = 1;
+    this.props.addToCart(product, quantity);
+  }
 
   render() {
     const { products, user } = this.props;
-    //const { addProductToCart } = this;
+    const { addProductToCart } = this;
     return (
       <div className="content">
         <h1 className="product1">All Products</h1>
-        {<Teas products={products} addProductToCart={this.addProductToCart} />}
-        {<Syrups products={products} addProductToCart={this.addProductToCart} />}
-        {<Toppings products={products} addProductToCart={this.addProductToCart} />}
-        {<MilkPowders products={products} addProductToCart={this.addProductToCart} />}
-        {<Merchandise products={products} addProductToCart={this.addProductToCart} />}
-        {<Kits products={products} addProductToCart={this.addProductToCart} />}
+        {<Teas products={products} addProductToCart={addProductToCart} />}
+        {<Syrups products={products} addProductToCart={addProductToCart} />}
+        {<Toppings products={products} addProductToCart={addProductToCart} />}
+        {<MilkPowders products={products} addProductToCart={addProductToCart} />}
+        {<Merchandise products={products} addProductToCart={addProductToCart} />}
+        {<Kits products={products} addProductToCart={addProductToCart} />}
 
-        <Link to='/newproducts'>
-              { user.isAdmin ? (
-              <div className='admindelete'>
-              <h5 className='admin'> Admin Only: </h5>
-              <button className='admindeleteb'>Add New Product</button>
-              </div>
-              ) : null }
-            </Link>
-        { /*
-          <div>
-            <h2 className="producttea">Loose Tea Leaves</h2>
-            <ul className="items-list">
-              {products
-                .filter((product) => product.key === "tea")
-                .map((product) => {
-                  return (
-                    <li className="item-container" key={product.id}>
-                      <img src={product.imageUrl} />
-                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
-                      <div className="teaprice">${product.price}</div>
-
-                      <button
-                        className="addtocart"
-                        onClick={() => addProductToCart(product)}
-                      >
-                        Add To Cart
-                      </button>
-                    </li>
-                  );
-                })}
-            </ul>
-
-            <h2 className="productsyr">Syrups</h2>
-            <ul className="items-list">
-              {products
-                .filter((product) => product.key === "syrup")
-                .map((product) => {
-                  return (
-                    <li className="item-container" key={product.id}>
-                      <img src={product.imageUrl} />
-                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
-                      <div className="teaprice">${product.price}</div>
-
-                      <button
-                        className="addtocart"
-                        onClick={() => addProductToCart(product)}
-                      >
-                        Add To Cart
-                      </button>
-                    </li>
-                  );
-                })}
-            </ul>
-
-            <h2 className="producttop">Toppings</h2>
-            <ul className="items-list">
-              {products
-                .filter((product) => product.key === "topping")
-                .map((product) => {
-                  return (
-                    <li className="item-container" key={product.id}>
-                      <img src={product.imageUrl} />
-                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
-                      <div className="teaprice">${product.price}</div>
-
-                      <button
-                        className="addtocart"
-                        onClick={() => {
-                          addProductToCart(product);
-                        }}
-                      >
-                        Add To Cart
-                      </button>
-                    </li>
-                  );
-                })}
-            </ul>
-            
-            <h2 className="milk">Milk Powder</h2>
-            <ul className="items-list">
-              {products
-                .filter((product) => product.key === "milk")
-                .map((product) => {
-                  return (
-                    <li className="item-container" key={product.id}>
-                      <img src={product.imageUrl} />
-
-                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
-                      <div className="teaprice">${product.price}</div>
-
-                      <button
-                        className="addtocart"
-                        onClick={() => addProductToCart(product)}
-                      >
-                        Add To Cart
-                      </button>
-                    </li>
-                  );
-                })}
-            </ul>
-
-            <h2 className="merch">BobaGirls Merch & Accessories</h2>
-            <ul className="items-list">
-              {products
-                .filter((product) => product.key === "merchandise")
-                .map((product) => {
-                  return (
-                    <li className="item-container" key={product.id}>
-                      <img src={product.imageUrl} />
-
-                      <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
-                      <div className="teaprice">${product.price}</div>
-
-                      <button
-                        className="addtocart"
-                        onClick={() => addProductToCart(product)}
-                      >
-                        Add To Cart
-                      </button>
-                    </li>
-                  );
-                })}
-            </ul>
-            
-            <Link to='/newproducts'>
-              { user.isAdmin ? (
-              <div className='admindelete'>
-              <h5 className='admin'> Admin Only: </h5>
-              <button className='admindeleteb'>Add New Product</button>
-              </div>
-              ) : null }
-            </Link>
-          </div>
-          */}
+        <Link to="/newproducts">
+          {user.isAdmin ? (
+            <div className="admindelete">
+              <h5 className="admin"> Admin Only: </h5>
+              <button className="admindeleteb">Add New Product</button>
+            </div>
+          ) : null}
+        </Link>
       </div>
     );
   }
 }
 
 const mapState = ({ products, auth }) => {
-  const user = auth
+  const user = auth;
   return {
     products,
-    user
+    user,
   };
 };
 
 const mapDispatch = (dispatch, { history }) => {
-  console.log("Dispatch")
+  console.log("Dispatch");
   return {
     addToCart: (product, quantity) =>
       dispatch(addToCart(product, quantity, history)),
