@@ -49,7 +49,7 @@ class Product extends Component {
                 </div>
                 <div className="row">{product.key !== "kit" && (
                   <button
-                    className="addtocart"
+                    className="addtocart-btn"
                     onClick={() => addProductToCart(product)}
                   >
                     Add To Cart

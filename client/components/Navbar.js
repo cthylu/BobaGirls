@@ -12,7 +12,7 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
           <div className='nav-flex-item'>
             <ul className='nav-top-level'>
               <li><Link to="/home">Home</Link></li>  
-                          <li><Link to='/profile'>Profile</Link></li>
+              <li><Link to='/about'>About</Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>

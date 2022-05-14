@@ -48,7 +48,7 @@ const Confirmation = ({ cart, createOrder }) => {
       <div>Please Confirm your Order.</div>
       <div>
         {/* <button onClick={() => createOrder(items)}> */}
-        <button className='addtocart' id='submit' onClick={() => createOrder(cart.id, success())}>
+        <button className='addtocart-btn' id='submit' onClick={() => createOrder(cart.id, success())}>
           Confirm
         </button>
       </div>

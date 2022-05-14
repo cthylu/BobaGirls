@@ -198,7 +198,7 @@ export class Kit extends Component {
                         </div>
                     }
 
-                    <button className='addtocart' onClick={() => addProductToCart(product)} disabled={ !syrupName || !teaName}>Add to Cart</button>
+                    <button className='addtocart-btn' onClick={() => addProductToCart(product)} disabled={ !syrupName || !teaName}>Add to Cart</button>
                 </form>
                 {/* <pre>
                     { JSON.stringify(this.state, null, 2)}
