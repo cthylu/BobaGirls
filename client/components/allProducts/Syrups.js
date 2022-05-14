@@ -10,13 +10,13 @@ const Syrups = ({ products, addProductToCart }) => {
 
       {
         <div>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
               .filter((product) => product.key === "syrup")
               .map((product) => {
                   return (
-                  <li className="teadiv" key={product.id}>
-                      <img src={product.imageUrl} />
+                  <li className="item-container" key={product.id}>
+                      <div className="item-image"><img src={product.imageUrl} /></div>
                       <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 

@@ -1,11 +1,13 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import { updateProduct } from '../store'
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { deleteProduct } from "../store";
+import { updateProduct } from "../store";
 
 export class UpdateProduct extends React.Component {
-    constructor(props) {
-        super(props)
-        const {product} = this.props
+  constructor(props) {
+    super(props);
+    const { product } = this.props;
     this.state = {
         name: product ? product.name : '',
         imageUrl: product ? product.imageUrl : '',
@@ -55,54 +57,57 @@ export class UpdateProduct extends React.Component {
               >
               <div className='updateproduct' >
                 <input
-                  name='name'
-                  type='text'
-                  value={name || ''}
-                  placeholder='Product Name'
+                  name="name"
+                  type="text"
+                  value={name || ""}
+                  placeholder="Product Name"
                   onChange={handleChange}
-                />  
+                />
+                <label>Product Price:</label>
                 <input
-                  name='price'
-                  type='number'
-                  value={price || ''}
-                  placeholder='Product Price'
+                  name="price"
+                  type="number"
+                  value={price || ""}
+                  placeholder="Product Price"
                   onChange={handleChange}
                 />
+                <label>Product Description:</label>
                 <textarea
-                  name='description'
-                  type='text'
-                  value={description || ''}
-                  placeholder='Product Description'
+                  name="description"
+                  type="text"
+                  value={description || ""}
+                  placeholder="Product Description"
                   onChange={handleChange}
                 />
-                <input 
-                  name='imageUrl'
-                  type='text'
-                  value={imageUrl || ''}
-                  placeholder='Product ImageUrl'
+                <label>Image:</label>
+                <input
+                  name="imageUrl"
+                  type="text"
+                  value={imageUrl || ""}
+                  placeholder="Product ImageUrl"
                   onChange={handleChange}
                 />
+                <label>Product Category:</label>
                 <select
-                  name='key'
-                  value={key || ''}
-                  placeholder='Product Category'
+                  name="key"
+                  value={key || ""}
+                  placeholder="Product Category"
                   onChange={handleChange}
                 >
-                <option value=''> Select a Category</option>
-                <option value='tea'>Tea</option>
-                <option value='topping'>Topping</option>
-                <option value='merchandise'>Merchandise</option>
-                <option value='milk'>Milk Powder</option>
-                <option value='syrup'>Syrup</option>
-                
+                  <option value=""> Select a Category</option>
+                  <option value="tea">Tea</option>
+                  <option value="topping">Topping</option>
+                  <option value="merchandise">Merchandise</option>
+                  <option value="milk">Milk Powder</option>
+                  <option value="syrup">Syrup</option>
                 </select>
-                <input 
-                 name='quantity'
-                 type='number'
-                 value={quantity || ''}
-                 placeholder='Product Quantity'
-                 onChange={handleChange}
-                 />
+                <input
+                  name="quantity"
+                  type="number"
+                  value={quantity || ""}
+                  placeholder="Product Quantity"
+                  onChange={handleChange}
+                />
 
                 <textarea
                   name='preparation'
@@ -111,30 +116,43 @@ export class UpdateProduct extends React.Component {
                   placeholder='Additional Information'
                   onChange={handleChange}
                 />   
-                
-                 <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
-                </div>  
-                {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
-             </form> 
-            </div> 
-         ) : null }  
-       </div>
-       )
-    }
-}
 
-const mapState = (state, otherProps) => {
-const id = otherProps.match.params.id
-  return {
-      product: state.products.find(product => product.id === id * 1 ),
-      user: state.auth
+                <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
+              </div>
+              {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
+            </form>
+            <Link to="/products">
+              <div className="admindelete">
+                <h5 className="admin"> Admin Only: </h5>
+                <button
+                  className="admindeleteb"
+                  onClick={() => deleteProduct(product.id)}
+                >
+                  Remove Product
+                </button>
+              </div>
+            </Link>
+          </div>
+        ) : null}
+      </div>
+    );
   }
 }
 
-const mapDispatch = dispatch => {
-    return {
-        updateProduct: (productId, product) => dispatch(updateProduct(productId, product))
-    }
-}
+const mapState = (state, otherProps) => {
+  const id = otherProps.match.params.id;
+  return {
+    product: state.products.find((product) => product.id === id * 1),
+    user: state.auth,
+  };
+};
 
-export default connect(mapState, mapDispatch)(UpdateProduct)
+const mapDispatch = (dispatch) => {
+  return {
+    deleteProduct: (productId) => dispatch(deleteProduct(productId, history)),
+    updateProduct: (productId, product) =>
+      dispatch(updateProduct(productId, product)),
+  };
+};
+
+export default connect(mapState, mapDispatch)(UpdateProduct);
