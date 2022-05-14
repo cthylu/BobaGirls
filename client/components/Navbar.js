@@ -39,9 +39,10 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user, user
                   </ul>
               </li>
               <li><Link to="/cart"><img src="/images/icon-cart.svg" />({user.id === cart.userId ? lineitems : '0'})</Link></li>
-              <li><a href="#" onClick={handleClick}>
-                Logout
-              </a>
+              <li>
+                <a href="#" onClick={handleClick}>
+                  Logout
+                </a>
               </li>
             </ul>
           </div>
