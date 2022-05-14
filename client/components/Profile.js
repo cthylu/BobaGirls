@@ -25,6 +25,9 @@ export const Profile = (props) => {
         <div className="profile2"> City: {auth.city} </div>
         <div className="profile2"> State: {auth.state} </div>
         <div className="profile2"> Zip Code: {auth.zipCode} </div>
+        <div className="profile2"> {auth.isAdmin ? (
+         <div> <i class="fa-solid fa-user-gear"></i> Admin </div>
+        ): null } </div>
       </div>
     </div>
   );

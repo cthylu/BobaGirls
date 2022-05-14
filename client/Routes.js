@@ -23,6 +23,7 @@ import Teas from './components/allProducts/Teas';
 import Toppings from './components/allProducts/Toppings';
 import NewProduct from './components/NewProduct';
 import Kits from './components/allProducts/Kits';
+import Users from './components/Users';
 
 // store
 import { me, fetchCart, fetchProducts, fetchUsers, fetchOrders, addToCart } from './store'
@@ -37,7 +38,6 @@ class Routes extends Component {
   }
   
   addProductToCart(product) {
-    console.log("Add product to cart")
     const quantity = 1;
     this.props.addToCart(product, quantity);
   }
@@ -45,12 +45,13 @@ class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData();
     this.props.loadProducts();
-    this.props.loadCart();
     this.props.loadOrders();
   }
   componentDidUpdate(){
     // STANNIE:: switch to socketio, its easier
     this.props.loadUsers();
+    this.props.loadCart();
+
     const url = window.location.origin;
     console.log(url);
     window.socket = new WebSocket(url.replace('http', 'ws'));
@@ -100,6 +101,7 @@ class Routes extends Component {
             <Route path='/editprofile' component={EditProfile} />
             <Route path='/newproducts' component={NewProduct} />
             <Route path='/confirmation' component={Confirmation} />
+            <Route path='/users' component={Users} />
             <Redirect to="/home" />
           </Switch>
         ) : (

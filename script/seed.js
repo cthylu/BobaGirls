@@ -14,8 +14,8 @@ async function seed() {
   // Creating Users
   const users = await Promise.all([
     User.create({ 
-      profilePicture: 'https://media-be.chewy.com/wp-content/uploads/2021/06/02102132/Pomeranian_Featured-Image-1024x615.jpg',
-      username: 'Cody',  
+      profilePicture: 'https://img.freepik.com/free-vector/man-cartoon-character-profile-clipart-drawing_51194-284.jpg?w=996',
+      username: 'BobaCody',  
       password: '123', 
       isAdmin: true, 
       firstName: 'Cody', 
@@ -29,8 +29,8 @@ async function seed() {
     }),
 
     User.create({ 
-      profilePicture: 'https://media-be.chewy.com/wp-content/uploads/2021/06/02102132/Pomeranian_Featured-Image-1024x615.jpg',
-      username: 'ice',  
+      profilePicture: 'https://img.freepik.com/free-vector/cartoon-girl-student-character-drawing-illustration-clipart-kawaii_51194-275.jpg?w=996',
+      username: 'BobaIce',  
       password: '123', 
       isAdmin: true, 
       firstName: 'Ice', 
@@ -43,10 +43,61 @@ async function seed() {
       zipCode: 11221,
     }),
 
-    User.create({ username: 'murphy', password: '123' }),
-    User.create({ username: 'yingying', password: '123' }),
-    User.create({ username: 'cathy', password: '123' }),
-    User.create({ username: 'kim', password: '123' })
+    User.create({ 
+      username: 'murphy', 
+      firstName: 'Murphy',
+      lastName: 'Smith',
+      email: 'murphlovesboba@gmail.com',
+      password: '123' 
+    }),
+
+    User.create({ 
+      profilePicture: 'https://i.pinimg.com/736x/5a/63/8a/5a638a0298e9f8a38ae90862c8a6dc91.jpg',
+      username: 'yingying',
+      email: 'yingyingbobagirl@gmail.com',
+      password: '123',
+    }),
+
+    User.create({ 
+      username: 'cathy', 
+      firstName: 'Cathy ',
+      lastName: 'Lu',
+      email: 'cathyturtle@gmail.com',
+      password: '123',
+    }),
+
+    User.create({ 
+      username: 'kim',
+      firstName: 'Kimberly',
+      lastName: 'Wu',
+      email: 'kimloveslychee@gmail.com', 
+      password: '123' }),
+
+    User.create({ 
+      username: 'lucy',
+      firstName: 'Lucy',
+      lastName: 'Doe',
+      email: 'lucydoe1@hotmail.com', 
+      password: '123',
+      isAdmin: true 
+    }),
+
+    User.create({ 
+      username: 'bennyboba',
+      firstName: 'Benny',
+      lastName: 'Jacobs',
+      email: 'Benny155@hotmail.com', 
+      password: '123',
+    }),
+
+    User.create({ 
+      username: 'jennyj',
+      firstName: 'Jenny',
+      lastName: 'Jones',
+      email: 'Jennyj155@hotmail.com', 
+      password: '123',
+    }),
+
   ])
 
   console.log(`seeded ${users.length} users`)
@@ -201,7 +252,6 @@ async function seed() {
       BPA Free
       Food-grade silicone and stainless steel construction
       Dishwasher safe
-      <br/>
       Parts: 4 piece 255mm straw (1 extender)
       Weight: .55 ounces (15.6 g)
       Size: 8.9" H x .39" W (226.1 mm H x 10 mm W)`
@@ -214,7 +264,6 @@ async function seed() {
       description: `4-piece set includes two 9-in 14mm etra wide boba straws, one 9-inch cleaning brush and a carrying case. Perfect for drinking bubble tea with toppings, or use the straws for smoothies! This is the ideal size with a nice glass straw.`,
       preparation: `
       Food grade borosilicate glass, BPA FREE, Lead Free, Eco-friendly. DISHWASHER SAFE
-      <br/>
       Parts: 4 piece 255mm straw (1 extender)
       Weight: .55 ounces (15.6 g)
       Size: 8.9" H x .39" W (226.1 mm H x 10 mm W)`
@@ -248,12 +297,12 @@ async function seed() {
     }),
 
     Product.create({ 
-      name: 'Boba Girls 16oz Glass Tumbler with Straw', 
+      name: 'Boba Girls 16oz Glass Tumbler with Straw and Bamboo Lid', 
       price: 15.00, 
       quantity: 300, 
       key: 'merchandise', 
-      imageUrl: 'https://i.imgur.com/Em5Jovv.png', 
-      description: `Whether you're reading, writing or busy with other activities, you'll stay hydrated when you keep this 16-Ounce Glass Tumbler with Straw and Silicone Sleeve from Boba Girls close by. This glass tumbler features a solid-color design with a transparent top and wood-tone lid for an elegant construction that suits your daily style. The included straw helps you drink conveniently while the silicone sleeve helps provide a secure fit. Use this lidded tumbler at home, at the office or anywhere on the go to sip your favorite cold beverages with ease. Comes with lid and straw for added convenience!`,
+      imageUrl: 'https://i.imgur.com/YBKO5hO.png', 
+      description: `Whether you're reading, writing or busy with other activities, you'll stay hydrated when you keep this 16-Ounce Glass Tumbler with Straw and Bamboo Lid from Boba Girls close by. This glass tumbler features a solid-color design with a transparent top and wood-tone lid for an elegant construction that suits your daily style. The included straw helps you drink conveniently while the silicone sleeve helps provide a secure fit. Use this lidded tumbler at home, at the office or anywhere on the go to sip your favorite cold beverages with ease. Comes with lid and straw for added convenience!`,
       preparation: `
       Size: 16 oz. 
       Material: 100% BPA free, plastic
@@ -267,7 +316,7 @@ async function seed() {
       key: 'merchandise',
       imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-mini-backpack-bubble-tea-boba-tea-14709426618404_800x.jpg?v=1600345348',
       description: 'Calling Boba tea (Bubble tea) lovers from around the world, this cute Mini Backpack will be your new best companion for travelling or for everyday life. It\’s compact yet spacious, perfect for fitting all your essentials whilst going about your everyday life.Don’t let the cuteness fool you, it’s as cute as it is functional. Designed to be configured three different ways—as a backpack, crossbody or a shoulder bag—this Boba Mini Backpack will have you ready for anything.', 
-      preparations: `1 main compartment, 1 interior pocket, 1 back zipper pocket, 2 small side pockets. Materials: Premium Faux leather. Dimensions: 19.5 x 11.5 x 24 cm (7.6 x 4.5 x 9.4 in)`,
+      preparation: `1 main compartment, 1 interior pocket, 1 back zipper pocket, 2 small side pockets. Materials: Premium Faux leather. Dimensions: 19.5 x 11.5 x 24 cm (7.6 x 4.5 x 9.4 in)`,
     }),
 
     Product.create({
@@ -297,6 +346,7 @@ async function seed() {
       key: 'merchandise',
       imageUrl: 'https://i.imgur.com/3KlZL40.png',
       description: 'This cute Boba tea AirPods Pro Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
+      preparation: 'Compatible with AirPod Pros'
     }),
 
     Product.create({
@@ -306,6 +356,7 @@ async function seed() {
       key: 'merchandise',
       imageUrl: 'https://imgur.com/Z3WMmMB.jpg',
       description: 'This cute pillow is the perfect room decor for the boba tea lovers! It goes great in a dorm, living room, bedroom, etc!',
+      preparation: '10L x 12W | 100% cotton'
     }),
     
     Product.create({
@@ -314,7 +365,8 @@ async function seed() {
       quantity: 20,
       key: 'merchandise',
       imageUrl: 'https://imgur.com/6W3izgj.jpg',
-      description: 'The best phone case for all the boba lovers! Fits an iPhone 13 and is shock absorbant',
+      description: 'The best phone case for all the boba lovers!', 
+      preparation: 'Fits an iPhone 13 and is shock absorbant'
     }),
 
     Product.create({
@@ -324,6 +376,7 @@ async function seed() {
       key: 'merchandise',
       imageUrl: 'https://imgur.com/dNavMU2.jpg',
       description: 'The cutest Dad Hat for all the boba lovers!',
+      preparation: 'One Size Fits All'
     }),
    
     Product.create({
@@ -333,6 +386,7 @@ async function seed() {
       key: 'merchandise',
       imageUrl: 'https://imgur.com/36rbuWZ.jpg',
       description: 'Keep yourself safe from the germs with a BobaGirls face mask! 100% cotton',
+      preparation: 'One Size Fits All'
     }),
 
 
@@ -548,12 +602,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/ekqddxm.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 1 type of tea leaves
-      Tapioca Pearls (uncooked)
-      Milk Powder of Choice
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe` ,
+      description: `
+      Choose 1 type of tea leaf. Comes with Tapioca Pearls (uncooked), Milk Powder of Choice, Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe` ,
       preparation: `
       Able to brew 2 cups of Milk Tea (400 ml per cup)` 
     }),
@@ -564,12 +614,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/eqrxZ7R.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 1 type of tea leaves
-      Choose 1 type of fruit syrup
-      Tapioca Pearls (uncooked)
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe`,
+      description: `
+      Choose 1 type of tea leaf, and choose 1 type of fruit syrup. Comes with Tapioca Pearls (uncooked), Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
       Able to brew 2 cups of Fruit Tea (400 ml per cup)`
      }),
@@ -580,12 +626,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/mAc0XDU.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 2 types of tea leaves
-      Tapioca Pearls (uncooked)
-      Milk Powder of Choice
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe`,
+      description: `
+      Choose 2 types of tea leaves. Comes with Tapioca Pearls (uncooked), Milk Powder of Choice, Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
       Able to brew 4 cups of Milk Tea (400 ml per cup)`
     }),
@@ -596,12 +638,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/ACnnLiD.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 2 types of tea leaves
-      Choose 2 types of fruit syrup
-      Tapioca Pearls (uncooked)
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe`,
+      description: `
+      Choose 2 types of tea leaves, and choose 2 types of fruit syrup. Comes with Tapioca Pearls (uncooked), Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
       Able to brew 2 cups of Milk Tea and 2 cups of Fruit Tea (400 ml per cup)` 
     }),

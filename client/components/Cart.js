@@ -37,7 +37,6 @@ class Cart extends Component {
 
   render() {
     const { cart, user } = this.props;
-    console.log(user, 'user', cart, 'cart')
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">

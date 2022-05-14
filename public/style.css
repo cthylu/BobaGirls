@@ -1033,3 +1033,43 @@ textarea {
     width: 90%;
   }
 }
+
+.usercard {
+  align-content: center;
+  border: 3px #5579c6 solid;
+  border-radius: 20px;
+  width: calc(100% * (1/4) - 10px - 1px);
+  height: 150px;
+  padding: 2rem;
+  margin: 1rem;
+  font-weight: 200;
+}
+
+.allusers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.usercontent {
+  margin: 4rem;
+}
+
+.alluser {
+   color: grey;
+   padding: 1rem;
+}
+
+.editicon {
+  text-decoration: none;
+  color: black;
+  border: 4px solid black;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.admino {
+  color: #5579c6;
+}
