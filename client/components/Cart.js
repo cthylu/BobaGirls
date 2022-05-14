@@ -23,6 +23,7 @@ class Cart extends Component {
 
   getCartTotal() {
     const lineitems = this.props.cart.lineitems
+    console.log(lineitems, 'cartotla')
     const cartTotal = lineitems &&
       lineitems.reduce((acc, item) => {
         acc += (item.quantity * item.product?.price)
@@ -41,7 +42,8 @@ class Cart extends Component {
     const { getCartTotal, getSalesTax } = this;
     return (
       <div className="content cart">
-        { cart.lineitems?.length === 0 ? <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2> : 
+        { cart.lineitems?.length === 0 ? <div> <h2 className='product2'>YOUR SHOPPING BAG IS EMPTY</h2>              <h2> Visit our <Link to="/products"> Shop </Link></h2> </div>
+ : 
         <div>
         <h1 className='cart1'>Shopping Cart</h1>
         <table>
@@ -110,7 +112,11 @@ class Cart extends Component {
   }
 }
 
-const mapState = (state) => state;
+const mapState = (state) => {
+  return {
+    cart: state.cart
+  }
+};
 
 const mapDispatch = (dispatch) => ({
   fetchCart: () => dispatch(fetchCart()),

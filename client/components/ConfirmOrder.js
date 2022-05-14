@@ -10,19 +10,47 @@ const Year = new Date().getFullYear();
 // const success = alert("Order Successfully Placed");
 
 const Confirmation = ({ cart, createOrder }) => {
+  const success = () => {
+    alert("Your order has been placed. Thank you!");
+  };
+
+  function getCartTotal() {
+    const lineitems = cart.lineitems;
+    const ProductTotal =
+      lineitems &&
+      lineitems.reduce((acc, item) => {
+        acc += item.quantity * item.product?.price;
+        return acc;
+      }, 0);
+    const tax = Math.round(ProductTotal * 0.0875 * 100) / 100;
+    return (ProductTotal * tax * 1).toFixed(2);
+  }
+
+  function getCartTotalItems() {
+    const lineitems = cart.lineitems;
+    const ProductTotalItems =
+      lineitems &&
+      lineitems.reduce((acc, item) => {
+        acc += item.quantity;
+        return acc;
+      }, 0);
+    return ProductTotalItems.toFixed(0);
+  }
   return (
-    <div>
-      <div> Information Received. </div>
+    <div className="checkout">
+      <div> Shipping Information Received. </div>
       <div>
-        You have {cart.lineitems?.length} items in your
+        You have {getCartTotalItems()} items in your
         <Link to={"/cart"}> Cart </Link>
       </div>
       {/* {console.log(user.id)} */}
-      <div> Your total is $</div>
-      <div>Please Submit your Order.</div>
+      <div> Your total is ${getCartTotal()}</div>
+      <div>Please Confirm your Order.</div>
       <div>
         {/* <button onClick={() => createOrder(items)}> */}
-        <button onClick={() => createOrder(cart.id)}> Submit</button>
+        <button className='addtocart' id='submit' onClick={() => createOrder(cart.id, success())}>
+          Confirm
+        </button>
       </div>
     </div>
   );

@@ -11,7 +11,8 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
           {/* The navbar will show these links after you log in */}
           <div className='nav-flex-item'>
             <ul className='nav-top-level'>
-              <li><Link to="/home"> Home </Link></li>
+              <li><Link to="/home">Home</Link></li>  
+                          <li><Link to='/profile'>Profile</Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>
@@ -50,7 +51,8 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
           {/* The navbar will show these links before you log in */}
           <div className='nav-flex-item left'>
             <ul className='nav-top-level'>
-              <li><Link to="/home"> Home </Link></li>
+              <li><Link to="/home">Home</Link></li>
+              <li><Link to='/about'>About</Link></li>
               <li>Shop
                 <ul className='nav-dropdown'>
                   <li><Link to='/products'> All Products </Link></li>
@@ -62,7 +64,6 @@ const Navbar = ({ username, handleClick, isLoggedIn, products, lineitems, cart }
                   <li><Link to='/products/merchandise'> Merchandise </Link></li>
                 </ul>
               </li>
-              <li><Link to='/about'>About</Link></li>
             </ul>
           </div>
           <div className='nav-flex-item'>
@@ -90,7 +91,7 @@ const mapState = (state) => {
     isLoggedIn: !!state.auth.id,
     products: state.products,
     cart,
-    lineitems: cart.lineitems ? cart.lineitems?.reduce((acc, line) => {
+    lineitems: cart.lineitems ? cart.lineitems.reduce((acc, line) => {
         return acc += line.quantity;
     }, 0) : cart.lineitems?.length || 0
 

@@ -20,6 +20,7 @@ class CheckOut extends React.Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.getCartTotal = this.getCartTotal.bind(this);
   }
   componentDidUpdate(prevProps) {
     if (!prevProps.user && this.props.user) {
@@ -43,15 +44,28 @@ class CheckOut extends React.Component {
     this.props.updateOrder({ ...this.props.user, ...this.state });
     // alert("Order Successfully Placed!");
   }
+  getCartTotal() {
+
+  }
   render() {
-    const { firstName, lastName, email, creditCard, address, city, state, zipCode } = this.state;
-    const { cart } = this.props;
-    const { onChange, onSubmit, createOrder } = this;
+    const {
+      firstName,
+      lastName,
+      email,
+      creditCard,
+      address,
+      city,
+      state,
+      zipCode,
+      
+    } = this.state;
+    const { cart, } = this.props;
+    const { onChange, onSubmit, getCartTotal } = this;
     return (
       <div>
         {cart.length !== 0 ? (
           <div>
-              {console.log('cart', cart)}
+            {console.log("cart", cart)}
             {cart.isCart === true && cart.lineitems.length > 0 ? (
               <div>
                 {/* {console.log('inside in here')} */}
@@ -61,10 +75,16 @@ class CheckOut extends React.Component {
                   className="checkout"
                   onSubmit={onSubmit}
                 >
-                  <div> You have {cart.lineitems.length} items in your <Link to={"/cart"}> Cart </Link> </div>
-                  <div> Your total is $</div>
-                  <div> To continue checking out, fill out the below. </div>
-                  <div> Shipping Information </div>
+                  {/* <div>
+                    <div>
+                      You have {cart.lineitems.length} items in your
+                      <Link to={"/cart"}> Cart </Link>
+                    </div>
+                    <div> Your total is ${getCartTotal()}</div>
+                    <div> To continue checking out, fill out the below. </div>
+                  </div> */}
+
+                  <div> Shipping Information </div><br/>
                   <label htmlFor="firstName"> First Name*: </label>
                   <input
                     name="firstName"
@@ -139,11 +159,11 @@ class CheckOut extends React.Component {
                   />
                   <br />
                   {/* <button type="submit"><Link to='/confirmation'>Comfirm Shipping Information</Link>  </button> */}
-                  <button type="submit">Comfirm Shipping Information </button>
+                  <button type="submit" className='addtocart'>Comfirm  </button>
                 </form>
               </div>
             ) : (
-              <div>
+              <div className="checkout">
                 {/* {console.log('in here')} */}
                 No items in your <Link to={"/cart"}> Cart </Link>! Try some of
                 our <Link to={"/products"}> Products! </Link>
@@ -151,10 +171,14 @@ class CheckOut extends React.Component {
             )}
           </div>
         ) : (
-          <div>
+          <div className="checkout">
             {/* {console.log('no out here')} */}
-            No items in your <Link to={"/cart"}> Cart </Link>! Try some of our{" "}
-            <Link to={"/products"}> Products! </Link>
+            <div>
+              No items in your <Link to={"/cart"}> Cart </Link>! Try some of our
+            </div>
+            <div>
+              <Link to={"/products"}> Products! </Link>
+            </div>
           </div>
         )}
       </div>
@@ -172,7 +196,7 @@ const mapState = ({ cart, auth }) => {
 
 const mapDispatch = (dispatch, { history }) => ({
   updateOrder: (user) => dispatch(updateOrder(user, history)),
-  createOrder: () => dispatch(createOrder())
+  createOrder: () => dispatch(createOrder()),
 });
 
 export default connect(mapState, mapDispatch)(CheckOut);

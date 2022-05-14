@@ -9,50 +9,53 @@ export class UpdateProduct extends React.Component {
     super(props);
     const { product } = this.props;
     this.state = {
-      name: product ? product.name : "",
-      imageUrl: product ? product.imageUrl : "",
-      price: product ? product.price : 0,
-      description: product ? product.description : "",
-      key: product ? product.key : "",
-      quantity: product ? product.quantity : 0,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  componentDidUpdate(prevProps) {
-    if (this.props.product !== prevProps.product) {
-      this.setState({
-        name: this.props.product.name,
-        imageUrl: this.props.product.imageUrl,
-        price: this.props.product.price,
-        description: this.props.product.description,
-        key: this.props.product.key,
-        quantity: this.props.product.quantity,
-      });
+        name: product ? product.name : '',
+        imageUrl: product ? product.imageUrl : '',
+        price: product ? product. price : 0,
+        description: product ? product.description : '',
+        key: product ? product.key : '',
+        quantity: product ? product.quantity : 0,
+        preparation: product ? product.preparation : ''
+      }
+      this.handleChange = this.handleChange.bind(this)
+      this.handleSubmit = this.handleSubmit.bind(this)
     }
-  }
-  handleChange(evt) {
-    this.setState({
-      [evt.target.name]: evt.target.value,
-    });
-  }
-  handleSubmit(evt) {
-    evt.preventDefault();
-    this.props.updateProduct(this.props.product.id, { ...this.state });
-    this.props.history.push(`/products/${this.props.product.id}`);
-  }
-  render() {
-    const { name, price, description, imageUrl, key, quantity } = this.state;
-    const { handleSubmit, handleChange } = this;
-    const { user, product, deleteProduct } = this.props;
-    return (
-      <div>
-        {user.isAdmin ? (
-          <div className="newproduct">
-            <div> ADMIN ONLY </div>
-            <form onSubmit={handleSubmit}>
-              <div className="updateproduct">
-                <label>Product Name:</label>
+    componentDidUpdate(prevProps) {
+      if(this.props.product !== prevProps.product) {
+          this.setState({
+              name: this.props.product.name,
+              imageUrl: this.props.product.imageUrl,
+              price: this.props.product.price,
+              description: this.props.product.description,
+              key: this.props.product.key,
+              quantity: this.props.product.quantity,
+              preparation: this.props.product.preparation,
+          })
+        }
+    }
+    handleChange(evt) {
+        this.setState({
+            [evt.target.name]: evt.target.value
+        })
+    }
+    handleSubmit(evt) {
+        evt.preventDefault()
+        this.props.updateProduct(this.props.product.id, {...this.state})
+        this.props.history.push(`/products/${this.props.product.id}`)
+    }
+    render() {
+       const { name, price, description, imageUrl, key, quantity, preparation } = this.state
+       const {handleSubmit, handleChange} = this
+       const { user } = this.props
+       return (
+       <div> 
+         { user.isAdmin ? (
+            <div className='newproduct'> 
+              <div> ADMIN ONLY </div>  
+              <form 
+              onSubmit={handleSubmit}
+              >
+              <div className='updateproduct' >
                 <input
                   name="name"
                   type="text"
@@ -105,10 +108,16 @@ export class UpdateProduct extends React.Component {
                   placeholder="Product Quantity"
                   onChange={handleChange}
                 />
-                <button className="admindeleteb" onClick={handleSubmit}>
-                  {" "}
-                  Update Product
-                </button>
+
+                <textarea
+                  name='preparation'
+                  type='text'
+                  value={preparation || ''}
+                  placeholder='Additional Information'
+                  onChange={handleChange}
+                />   
+
+                <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
               </div>
               {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
             </form>

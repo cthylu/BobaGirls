@@ -62,14 +62,15 @@ router.delete("/:id", token, async (req, res, next) => {
 
 router.post("/", token, async (req ,res, next) => {
   try {
-    const { name, price, description, imageUrl, quantity, key} = req.body
+    const { name, price, description, imageUrl, quantity, key, preparation} = req.body
     const product = await Product.create({
        name,
        imageUrl,
        description,
        price,
        quantity,
-       key
+       key,
+       preparation
     })
     return res.json(product)
   } catch (e) {
@@ -79,7 +80,7 @@ router.post("/", token, async (req ,res, next) => {
 
 router.put('/:id', token, async (req, res, next) => {
   try {
-    const { name, price, description, imageUrl, quantity, key } = req.body
+    const { name, price, description, imageUrl, quantity, key, preparation } = req.body
     const product = await Product.findByPk(req.params.id)
     const updatedProduct = await product.update({
        name,
@@ -87,7 +88,8 @@ router.put('/:id', token, async (req, res, next) => {
        price,
        description,
        quantity,
-       key
+       key,
+       preparation
     })
     return res.json(updatedProduct)
   } catch (e) {

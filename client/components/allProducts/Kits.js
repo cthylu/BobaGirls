@@ -20,8 +20,8 @@ class Kits extends Component {
     const { addProductToCart } = this;
     return (
       <div className="content">
-        <h1 className='product1'>Bubble Tea DIY Kits</h1>
-            <p className='kitdiv'>(Each cup serves 400mL)</p>
+        <h1 className='producttea'>Bubble Tea DIY Kits</h1>
+            {/* <p className='kitdiv'>(Each cup serves 400mL)</p> */}
         {
         <div>
             <ul className="items-list">
@@ -32,7 +32,7 @@ class Kits extends Component {
                     <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
 
-                      <Link to={`/products/${product.id}`}>{product.name}</Link>
+                      <Link className='productname1' to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
 
                       <button
