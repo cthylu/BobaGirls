@@ -46,7 +46,7 @@ export class UpdateProduct extends React.Component {
     render() {
        const { name, price, description, imageUrl, key, quantity, preparation } = this.state
        const {handleSubmit, handleChange} = this
-       const { user } = this.props
+       const { user, product, deleteProduct } = this.props
        return (
        <div> 
          { user.isAdmin ? (
