@@ -248,12 +248,12 @@ async function seed() {
     }),
 
     Product.create({ 
-      name: 'Boba Girls 16oz Glass Tumbler with Straw', 
+      name: 'Boba Girls 16oz Glass Tumbler with Straw and Bamboo Lid', 
       price: 15.00, 
       quantity: 300, 
       key: 'merchandise', 
-      imageUrl: 'https://i.imgur.com/Em5Jovv.png', 
-      description: `Whether you're reading, writing or busy with other activities, you'll stay hydrated when you keep this 16-Ounce Glass Tumbler with Straw and Silicone Sleeve from Boba Girls close by. This glass tumbler features a solid-color design with a transparent top and wood-tone lid for an elegant construction that suits your daily style. The included straw helps you drink conveniently while the silicone sleeve helps provide a secure fit. Use this lidded tumbler at home, at the office or anywhere on the go to sip your favorite cold beverages with ease. Comes with lid and straw for added convenience!`,
+      imageUrl: 'https://i.imgur.com/YBKO5hO.png', 
+      description: `Whether you're reading, writing or busy with other activities, you'll stay hydrated when you keep this 16-Ounce Glass Tumbler with Straw and Bamboo Lid from Boba Girls close by. This glass tumbler features a solid-color design with a transparent top and wood-tone lid for an elegant construction that suits your daily style. The included straw helps you drink conveniently while the silicone sleeve helps provide a secure fit. Use this lidded tumbler at home, at the office or anywhere on the go to sip your favorite cold beverages with ease. Comes with lid and straw for added convenience!`,
       preparation: `
       Size: 16 oz. 
       Material: 100% BPA free, plastic
