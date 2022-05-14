@@ -10,10 +10,12 @@ import users from "../store/users";
 export const Profile = (props) => {
   const { username, users, auth, ping } = props;
   return (
-    <div className="content">
-      <div className="profile">
-        <div className="editprofile"> <Link to='/editprofile'> Edit Profile </Link> </div>
-        <div className="profile2"> Profile Picture: <img className='profilepic' src={auth.profilePicture} /> </div>
+    <div className="content profile flex-container">
+      <div className="column column-left">
+        <div className="profile2"> Profile Picture: <br/><img className='profilepic' src={auth.profilePicture} /> </div>
+      </div>
+      <div className="column column-right">
+        <Link to='/editprofile'><div className="editprofile-btn">Edit Profile</div></Link>
         <div className="profile2"> Username: {auth.username} </div>
         <div className="profile2"> First Name: {auth.firstName} </div>
         <div className="profile2"> Last Name: {auth.lastName} </div>

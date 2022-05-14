@@ -50,7 +50,7 @@ class Cart extends Component {
         ) : (
           <div>
             <h1 className="cart1">Shopping Cart</h1>
-            <div className="flex-container">
+            <div>
               <table className="cart-table">
                 <tbody>
                   <tr>
@@ -88,33 +88,32 @@ class Cart extends Component {
                   })}
                 </tbody>
               </table>
-              <table className="cartcheckout">
-                <tbody>
-                  <tr>
-                    <td>Subtotal</td>
-                    <td>${getCartTotal().toFixed(2)}</td>
-                  </tr>
-                  <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                  </tr>
-                  <tr>
-                    <td>Sales Tax</td>
-                    <td>${getSalesTax().toFixed(2)}</td>
-                  </tr>
-                  <tr>
-                    <td>Estimated Total</td>
-                    <td>${(getSalesTax() + getCartTotal()).toFixed(2)}</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button className="addtocart-btn">
-                        <Link to="/checkout">Checkout</Link>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div>
+                <table className="cartcheckout">
+                  <tbody>
+                    <tr>
+                      <td>Subtotal</td>
+                      <td>${getCartTotal().toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                      <td>Shipping</td>
+                      <td>Free</td>
+                    </tr>
+                    <tr>
+                      <td>Sales Tax</td>
+                      <td>${getSalesTax().toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                      <td>Estimated Total</td>
+                      <td>${(getSalesTax() + getCartTotal()).toFixed(2)}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button className="checkout">
+                  <Link to="/checkout">Checkout</Link>
+                </button>
+              </div>
+              
             </div>
           </div>
         )}
