@@ -7,37 +7,50 @@ import { Link } from "react-router-dom";
  * COMPONENT
  */
 const AuthForm = (props) => {
-  const { name, displayName, handleSubmit, error, intro} = props;
+  const { name, displayName, handleSubmit, error, intro } = props;
 
   return (
-    <div className='signup1'>
-      <form onSubmit={handleSubmit} name={name}>  
-        <div>     
-          <h3 className='signup'> {intro} </h3>
-          <br/>
-          <label htmlFor="username">
-            <small className="label1">USERNAME</small>
-          </label>
-          <input name="username" type="text" required placeholder="username"/>
-        </div>
-        <br />
-        <div>
-          <label htmlFor="password">
-            <small className="label1">PASSWORD</small>
-          </label>
-          <input name="password" type="password" required placeholder="password" />
-        </div>
-        <br />
-        <Link to='/signup' >
-        <div>Create Account</div>
-        </Link>
-        <br />
-        <div>
-          <button className='loginb' type="submit">{displayName}</button>
-        </div>
-        <br/>
-        {error && error.response && <div > {error.response.data} </div>}
-      </form>
+    <div className="content">
+      <div className="login-container">
+        <form onSubmit={handleSubmit} name={name}>
+          <div className="row">
+            <h1>{intro}</h1>
+          </div>
+
+          <div className="row">
+            <label htmlFor="username">Username</label>
+            <input name="username" type="text" required placeholder="username" />
+          </div>
+
+          <div className="row">
+            <label htmlFor="password">Password</label>
+            <input
+              name="password"
+              type="password"
+              required
+              placeholder="password"
+            />
+          </div>
+
+          <div className="row">
+            <div>
+              <span>
+                Don't have an account?
+              </span>
+            </div>
+            <Link to="/signup">
+              <div>Create Account</div>
+            </Link>
+          </div>
+          
+          <div className="row">
+            <button className="loginb" type="submit">
+              {displayName}
+            </button>
+          </div>
+          {error && error.response && <div> {error.response.data} </div>}
+        </form>
+      </div>
     </div>
   );
 };
@@ -53,7 +66,7 @@ const mapLogin = (state) => {
   return {
     name: "login",
     displayName: "Login",
-    intro: 'Login',
+    intro: "Login",
     error: state.auth.error,
   };
 };
@@ -62,7 +75,7 @@ const mapSignup = (state) => {
   return {
     name: "signup",
     displayName: "Sign Up",
-    intro: 'Sign Up',
+    intro: "Sign Up",
     error: state.auth.error,
   };
 };

@@ -9,7 +9,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
       {isLoggedIn ? (
         <div className="nav-flex">
           {/* The navbar will show these links after you log in */}
-          <div className='nav-first'>
+          <div className='nav-flex-item'>
             <ul className='nav-top-level'>
               <li><Link to="/home">Home</Link></li>  
                           <li><Link to='/profile'>Profile</Link></li>
@@ -26,11 +26,21 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
               </li>
             </ul>
           </div>
-          <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>        
-          <div>
+          <div className='nav-flex-item'>
+            <Link to="/home"> <img className="logo" src="/images/logo-boba-girl.svg"/> </Link> 
+          </div>       
+          <div className='nav-flex-item'>
             <ul className='nav-top-level'>
               <li><Link to='/orders'>Orders</Link></li>
               <li><Link to="/cart">Cart ({user.id === cart.userId ? lineitems : '0'})</Link></li>
+              <li><img src="/images/icon-profile.svg" />
+                  <ul className='nav-dropdown'>
+                    <li>Hi, {username}</li>
+                    <li><Link to='/profile'>My Profile</Link></li>
+                    <li><Link to='/orders'>My Orders</Link></li>
+                  </ul>
+              </li>
+
               <li><a href="#" onClick={handleClick}>
                 Logout
               </a>
@@ -41,7 +51,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
       ) : (
         <div className="nav-flex">
           {/* The navbar will show these links before you log in */}
-          <div className='nav-first'>
+          <div className='nav-flex-item left'>
             <ul className='nav-top-level'>
               <li><Link to="/home">Home</Link></li>
               <li><Link to='/about'>About</Link></li>
@@ -58,8 +68,10 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) =>
               </li>
             </ul>
           </div>
-          <Link to="/home"> <img src="/images/logo-boba-girl.svg"/> </Link>
-          <div>
+          <div className='nav-flex-item'>
+            <Link to="/home"> <img className="logo" src="/images/logo-boba-girl.svg"/> </Link>
+          </div>
+          <div className='nav-flex-item right'>
             <ul className='nav-top-level'>
               <li><Link to="/login">Login</Link></li>
               <li><Link to="/signup">Sign Up</Link></li>
@@ -79,6 +91,7 @@ const mapState = (state) => {
   const cart = state.cart
   console.log(state.cart, 'CARTTTT')
   return {
+    username: state.auth.username,
     isLoggedIn: !!state.auth.id,
     products: state.products,
     user: state.auth,

@@ -9,13 +9,13 @@ const Teas = ({ products, addProductToCart }) => {
       <h2 className="producttea">Loose Tea Leaves</h2>
       {
       <div>
-        <ul className="teaproducts">
+        <ul className="items-list">
           {products
             .filter((product) => product.key === "tea")
             .map((product) => {
               return (
-                <li className="teadiv" key={product.id}>
-                  <div className="tea-image"><img src={product.imageUrl} /></div>
+                <li className="item-container" key={product.id}>
+                  <Link className="productname1" to={`/products/${product.id}`}><div className="item-image"><img src={product.imageUrl} /></div></Link>
                   <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                   <div className="teaprice">${product.price}</div>
 

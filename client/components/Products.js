@@ -7,7 +7,7 @@ import Teas from "./allProducts/Teas";
 import Toppings from "./allProducts/Toppings";
 import Syrups from "./allProducts/Syrups";
 import Merchandise from "./allProducts/Merchandise";
-import Kits from "./allProducts/Kits"
+import Kits from "./allProducts/Kits";
 
 class Products extends Component {
   constructor() {
@@ -16,43 +16,42 @@ class Products extends Component {
   }
 
   addProductToCart(product) {
-    console.log("Add product to cart")
+    console.log("Add product to cart");
     const quantity = 1;
     this.props.addToCart(product, quantity);
   }
 
   render() {
     const { products, user } = this.props;
-    //const { addProductToCart } = this;
+    const { addProductToCart } = this;
     return (
       <div className="content">
         <h1 className="product1">All Products</h1>
-        {<Teas products={products} addProductToCart={this.addProductToCart} />}
-        {<Syrups products={products} addProductToCart={this.addProductToCart} />}
-        {<Toppings products={products} addProductToCart={this.addProductToCart} />}
-        {<MilkPowders products={products} addProductToCart={this.addProductToCart} />}
-        {<Merchandise products={products} addProductToCart={this.addProductToCart} />}
-        {<Kits products={products} addProductToCart={this.addProductToCart} />}
+        {<Teas products={products} addProductToCart={addProductToCart} />}
+        {<Syrups products={products} addProductToCart={addProductToCart} />}
+        {<Toppings products={products} addProductToCart={addProductToCart} />}
+        {<MilkPowders products={products} addProductToCart={addProductToCart} />}
+        {<Merchandise products={products} addProductToCart={addProductToCart} />}
+        {<Kits products={products} addProductToCart={addProductToCart} />}
 
-        <Link to='/newproducts'>
-          { user.isAdmin ? (
-            <div className='admindelete'>
-            <h5 className='admin'> Admin Only: </h5>
-            <button className='admindeleteb'>Add New Product</button>
+        <Link to="/newproducts">
+          {user.isAdmin ? (
+            <div className="admindelete">
+              <h5 className="admin"> Admin Only: </h5>
+              <button className="admindeleteb">Add New Product</button>
             </div>
-          ) : null }
+          ) : null}
         </Link>
-
       </div>
     );
   }
 }
 
 const mapState = ({ products, auth }) => {
-  const user = auth
+  const user = auth;
   return {
     products,
-    user
+    user,
   };
 };
 

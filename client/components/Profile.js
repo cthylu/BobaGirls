@@ -10,7 +10,7 @@ import users from "../store/users";
 export const Profile = (props) => {
   const { username, users, auth, ping } = props;
   return (
-    <div>
+    <div className="content">
       <div className="profile">
         <div className="editprofile"> <Link to='/editprofile'> Edit Profile </Link> </div>
         <div className="profile2"> Profile Picture: <img className='profilepic' src={auth.profilePicture} /> </div>
