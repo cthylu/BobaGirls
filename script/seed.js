@@ -52,10 +52,10 @@ async function seed() {
     }),
 
     User.create({ 
-      username: 'yingying', 
-      firstName: 'Ying Ying Feng',
+      profilePicture: 'https://i.pinimg.com/736x/5a/63/8a/5a638a0298e9f8a38ae90862c8a6dc91.jpg',
+      username: 'yingying',
       email: 'yingyingbobagirl@gmail.com',
-      password: '123' 
+      password: '123',
     }),
 
     User.create({ 
@@ -602,12 +602,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/ekqddxm.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 1 type of tea leaves
-      Tapioca Pearls (uncooked)
-      Milk Powder of Choice
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe` ,
+      description: `
+      Choose 1 type of tea leaf. Comes with Tapioca Pearls (uncooked), Milk Powder of Choice, Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe` ,
       preparation: `
       Able to brew 2 cups of Milk Tea (400 ml per cup)` 
     }),
@@ -618,12 +614,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/eqrxZ7R.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 1 type of tea leaves
-      Choose 1 type of fruit syrup
-      Tapioca Pearls (uncooked)
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe`,
+      description: `
+      Choose 1 type of tea leaf, and choose 1 type of fruit syrup. Comes with Tapioca Pearls (uncooked), Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
       Able to brew 2 cups of Fruit Tea (400 ml per cup)`
      }),
@@ -634,12 +626,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/mAc0XDU.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 2 types of tea leaves
-      Tapioca Pearls (uncooked)
-      Milk Powder of Choice
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe`,
+      description: `
+      Choose 2 types of tea leaves. Comes with Tapioca Pearls (uncooked), Milk Powder of Choice, Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
       Able to brew 4 cups of Milk Tea (400 ml per cup)`
     }),
@@ -650,12 +638,8 @@ async function seed() {
       quantity: 50, 
       key: 'kit', 
       imageUrl: 'https://i.imgur.com/ACnnLiD.png', 
-      description: `PACKAGE INCLUDES:
-      Choose 2 types of tea leaves
-      Choose 2 types of fruit syrup
-      Tapioca Pearls (uncooked)
-      Brown Sugar Syrup
-      Bubble Tea Straws, Instructions & Recipe`,
+      description: `
+      Choose 2 types of tea leaves, and choose 2 types of fruit syrup. Comes with Tapioca Pearls (uncooked), Brown Sugar Syrup, Bubble Tea Straws, Instructions & Recipe`,
       preparation: `
       Able to brew 2 cups of Milk Tea and 2 cups of Fruit Tea (400 ml per cup)` 
     }),
