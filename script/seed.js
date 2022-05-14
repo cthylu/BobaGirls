@@ -245,12 +245,12 @@ async function seed() {
     }),
 
     Product.create({
-      name:'Boba is Life Tote',
+      name:'Boba Girls Tote',
       price: 25.00,
       quantity: 200,
       key: 'merchandise',
-      imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/boba-is-life-tote-bag-bubble-tea-boba-tea-14729087746084_800x.jpg?v=1594046122',
-      description: 'Introducing our limited edition Boba is Life Tote bag, designed to be the cutest representation of how much Love & Happiness Boba tea brings into our lives and everyone around us. The Boba is Life Tote bag is the cutest way to showcase your love for Boba and is the perfect company for your everyday life.', 
+      imageUrl: 'https://imgur.com/aDTDrlq.jpg',
+      description: 'Introducing our limited edition BobaGirls Tote bag, designed to be the cutest representation of how much Love & Happiness Boba tea brings into our lives and everyone around us. The Boba is Life Tote bag is the cutest way to showcase your love for Boba and is the perfect company for your everyday life.', 
       preparation: `Bag dimensions: 38.1cm x 38.1cm (15 x 15 in). Handle dimensions: Handle Length 30 cm (11.8 in), width 2.5cm (1 in). 100% Polyester`,
     }),
 
@@ -272,7 +272,44 @@ async function seed() {
       imageUrl: 'https://cdn.shopify.com/s/files/1/0101/6617/3732/products/ProductImage2.jpg?v=1623127033',
       description: 'This cute Boba tea AirTag Keyring Case is the perfect sidekick to your new AirTag. It will stay firmly attached to your bag, backpack or your keys while following you on all of your daily adventures and travel. It\’s adorable yet thoughtful design features raised edges that helps keep your Airtag safely inside without being scratched or damaged. The open design keeps the elegant AirTag design and your personalized engravings exposed.',
     }),
+
+    Product.create({
+      name:'BobaGirls Pillow',
+      price: 15.00,
+      quantity: 20,
+      key: 'merchandise',
+      imageUrl: 'https://imgur.com/Z3WMmMB.jpg',
+      description: 'This cute pillow is the perfect room decor for the boba tea lovers! It goes great in a dorm, living room, bedroom, etc!',
+    }),
     
+    Product.create({
+      name:'BobaGirls iPhone 13 Case ',
+      price: 10.00,
+      quantity: 20,
+      key: 'merchandise',
+      imageUrl: 'https://imgur.com/6W3izgj.jpg',
+      description: 'The best phone case for all the boba lovers! Fits an iPhone 13 and is shock absorbant',
+    }),
+
+    Product.create({
+      name:'BobaGirls Dad Hat',
+      price: 14.00,
+      quantity: 20,
+      key: 'merchandise',
+      imageUrl: 'https://imgur.com/dNavMU2.jpg',
+      description: 'The cutest Dad Hat for all the boba lovers!',
+    }),
+   
+    Product.create({
+      name:'BobaGirls Face Mask ',
+      price: 10.00,
+      quantity: 20,
+      key: 'merchandise',
+      imageUrl: 'https://imgur.com/36rbuWZ.jpg',
+      description: 'Keep yourself safe from the germs with a BobaGirls face mask! 100% cotton',
+    }),
+
+
     //Syrups:
     Product.create({ 
       name: 'Black Sugar Syrup', 
