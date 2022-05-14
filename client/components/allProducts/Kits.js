@@ -24,12 +24,12 @@ class Kits extends Component {
             <p className='kitdiv'>(Each cup serves 400mL)</p>
         {
         <div>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
                 .filter((product) => product.key === "kit")
                 .map((product) => {
                   return (
-                    <li className="teadiv" key={product.id}>
+                    <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
 
                       <Link to={`/products/${product.id}`}>{product.name}</Link>

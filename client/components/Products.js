@@ -9,16 +9,16 @@ import Syrups from "./allProducts/Syrups";
 import Merchandise from "./allProducts/Merchandise";
 
 class Products extends Component {
-  constructor() {
-    super();
-    this.addProductToCart = this.addProductToCart.bind(this);
-  }
+  // constructor() {
+  //   super();
+  //   this.addProductToCart = this.addProductToCart.bind(this);
+  // }
 
-  addProductToCart(product) {
-    console.log("Add product to cart")
-    const quantity = 1;
-    this.props.addToCart(product, quantity);
-  }
+  // addProductToCart(product) {
+  //   console.log("Add product to cart")
+  //   const quantity = 1;
+  //   this.props.addToCart(product, quantity);
+  // }
 
   render() {
     const { products, user } = this.props;
@@ -31,7 +31,6 @@ class Products extends Component {
         {<Toppings products={products} addProductToCart={this.addProductToCart} />}
         {<MilkPowders products={products} addProductToCart={this.addProductToCart} />}
         {<Merchandise products={products} addProductToCart={this.addProductToCart} />}
-
         <Link to='/newproducts'>
               { user.isAdmin ? (
               <div className='admindelete'>
@@ -41,14 +40,14 @@ class Products extends Component {
               ) : null }
             </Link>
         { /*
-          <div> 
+          <div>
             <h2 className="producttea">Loose Tea Leaves</h2>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
                 .filter((product) => product.key === "tea")
                 .map((product) => {
                   return (
-                    <li className="teadiv" key={product.id}>
+                    <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
                       <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
@@ -65,12 +64,12 @@ class Products extends Component {
             </ul>
 
             <h2 className="productsyr">Syrups</h2>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
                 .filter((product) => product.key === "syrup")
                 .map((product) => {
                   return (
-                    <li className="teadiv" key={product.id}>
+                    <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
                       <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
@@ -87,12 +86,12 @@ class Products extends Component {
             </ul>
 
             <h2 className="producttop">Toppings</h2>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
                 .filter((product) => product.key === "topping")
                 .map((product) => {
                   return (
-                    <li className="teadiv" key={product.id}>
+                    <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
                       <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
                       <div className="teaprice">${product.price}</div>
@@ -111,12 +110,12 @@ class Products extends Component {
             </ul>
             
             <h2 className="milk">Milk Powder</h2>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
                 .filter((product) => product.key === "milk")
                 .map((product) => {
                   return (
-                    <li className="teadiv" key={product.id}>
+                    <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
 
                       <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>
@@ -134,12 +133,12 @@ class Products extends Component {
             </ul>
 
             <h2 className="merch">BobaGirls Merch & Accessories</h2>
-            <ul className="teaproducts">
+            <ul className="items-list">
               {products
                 .filter((product) => product.key === "merchandise")
                 .map((product) => {
                   return (
-                    <li className="teadiv" key={product.id}>
+                    <li className="item-container" key={product.id}>
                       <img src={product.imageUrl} />
 
                       <Link className="productname1" to={`/products/${product.id}`}>{product.name}</Link>

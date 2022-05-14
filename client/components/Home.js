@@ -19,9 +19,6 @@ export const Home = (props) => {
   
   return (
     <div>
-      <div className="content">
-        <h3 className='welcome'>Welcome {username}!</h3>
-      </div>
       {/* <ul>
       {console.log(users)}
         {users.map((user) => {

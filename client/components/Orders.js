@@ -5,7 +5,7 @@ import { fetchOrders } from "../store";
 
 class Orders extends Component {
   componentDidMount() {
-     this.props.fetchOrders(this.props.auth.id);
+    this.props.fetchOrders(this.props.auth.id);
   }
 
   render() {
@@ -41,7 +41,6 @@ class Orders extends Component {
 }
 
 const mapState = ({ orders, auth }) => {
-  console.log('notOrder',orders);
   return {
     orders,
     auth,
