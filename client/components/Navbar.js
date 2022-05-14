@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
 
-const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user }) => (
+const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user, username }) => (
   <div className="navbar">
     <nav>
       {isLoggedIn ? (
