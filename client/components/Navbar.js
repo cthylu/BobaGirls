@@ -38,7 +38,7 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user, user
                     <li><Link to='/orders'>My Orders</Link></li>
                   </ul>
               </li>
-              <li><Link to="/cart"><img src="/images/icon-cart.svg" />({user.id === cart.userId ? lineitems : '0'})</Link></li>
+              <li><Link to="/cart"><img src="/images/icon-cart.svg" />({ lineitems })</Link></li>
               <li>
                 <a href="#" onClick={handleClick}>
                   Logout
@@ -87,19 +87,18 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user, user
  */
 const mapState = (state) => {
   const cart = state.cart
-  console.log(state.cart, 'CARTTTT')
+  const currentUser = state.auth
   return {
     username: state.auth.username,
     isLoggedIn: !!state.auth.id,
     products: state.products,
     user: state.auth,
     cart: state.cart,
-    lineitems: cart.lineitems ? 
-      cart.lineitems?.reduce((acc, line) => {
-        return acc += line.quantity;
-    }, 0) 
-    : 0
-
+    lineitems: (currentUser.id === cart.userId && cart.lineitems) ?
+    cart.lineitems?.reduce((acc, line) => {
+      return acc += line.quantity;
+  }, 0) 
+  : cart.lineitems?.length || '0',
   };
 };
 

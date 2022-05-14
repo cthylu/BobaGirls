@@ -37,7 +37,6 @@ class Routes extends Component {
   }
   
   addProductToCart(product) {
-    console.log("Add product to cart")
     const quantity = 1;
     this.props.addToCart(product, quantity);
   }
@@ -45,12 +44,13 @@ class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData();
     this.props.loadProducts();
-    this.props.loadCart();
     this.props.loadOrders();
   }
   componentDidUpdate(){
     // STANNIE:: switch to socketio, its easier
     this.props.loadUsers();
+    this.props.loadCart();
+
     const url = window.location.origin;
     console.log(url);
     window.socket = new WebSocket(url.replace('http', 'ws'));
