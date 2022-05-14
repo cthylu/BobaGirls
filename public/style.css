@@ -296,6 +296,12 @@ label {
 }
 
 /*** Cart ***/
+.cart .flex-container {
+  align-items: center;
+}
+.cartcheckout {
+  border: 1px solid #cccccc;
+}
 .cart1 {
   color: black;
   font-weight: 200;
@@ -317,7 +323,6 @@ label {
 
 .cart table {
   text-align: center;
-  border-collapse: collapse;
   margin: auto;
 }
 
@@ -400,7 +405,7 @@ td, tr {
 }
 
 /***Add to Cart Buttons***/
-.addtocart, .loginb, .checkout {
+.addtocart-btn, .loginb, .checkout {
   align-items: center;
   background-color: #78a2cc;
   border-radius: 12px;
@@ -408,14 +413,14 @@ td, tr {
   box-sizing: border-box;
   color: #ffffff ;
   cursor: pointer;
-  display: inline-flex;
+  display: block;
   flex: 1 1 auto;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   font-weight: 10;
   justify-content: center;
   line-height: 1;
-  margin: 1rem;
+  margin: 1rem auto;
   outline: none;
   padding: 1rem 1.2rem;
   text-align: center;
@@ -461,7 +466,7 @@ td, tr {
 }
 
 .loginb:hover,
-.addtocart:hover,
+.addToCart:hover,
 .checkout:hover {
   box-shadow: #78a2cc 0 0 0 3px, transparent 0 0 0 0;
 }
@@ -889,7 +894,7 @@ textarea {
   font-weight: 500;
   font-size: 20px;
 }
-.product-content .addtocart {
+.product-content .addToCart {
   margin: 0;
 }
 

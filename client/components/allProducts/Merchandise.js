@@ -21,7 +21,7 @@ const Merchandise = ({ products, addProductToCart }) => {
                     <div className="teaprice">${product.price}</div>
 
                     <button
-                        className="addtocart"
+                        className="addtocart-btn"
                         onClick={() => addProductToCart(product)}
                     >
                         Add To Cart
