@@ -506,6 +506,7 @@ td, tr {
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
+  margin: 1rem;
 }
 
 .addproduct:hover,
@@ -1072,4 +1073,30 @@ textarea {
 
 .admino {
   color: #5579c6;
+}
+
+textarea {
+  border-color: lightgray;
+  border-style: solid 1px;
+  border-radius: 20px;
+}
+
+.productdes {
+  padding-bottom: 1rem;
+}
+
+.productcat {
+  padding-bottom: 0.5rem;
+}
+
+.productq {
+  padding-top: 0.5rem;
+}
+
+.productinfo {
+  padding: 0.5rem;
+}
+
+.buttondiv {
+  text-align: center;
 }
