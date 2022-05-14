@@ -36,6 +36,9 @@ const Navbar = ({ handleClick, isLoggedIn, products, lineitems, cart, user, user
                     <li>Hi, {username}</li>
                     <li><Link to='/profile'>My Profile</Link></li>
                     <li><Link to='/orders'>My Orders</Link></li>
+                    <li>{ user.isAdmin ? (
+                       <Link to='/users'>All Users</Link>
+                    ): null } </li>
                   </ul>
               </li>
               <li><Link to="/cart"><img src="/images/icon-cart.svg" />({user.id === cart.userId ? lineitems : '0'})</Link></li>

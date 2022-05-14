@@ -10,7 +10,7 @@ const SALT_ROUNDS = 5;
 const User = db.define("user", {
   profilePicture: {
     type: Sequelize.TEXT,
-    defaultValue: "https://www.organicauthority.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU5MzI5NzQ1OTk2MDMxNTg0/shutterstock_239013112.jpg",
+    defaultValue: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
   },
   username: {
     type: Sequelize.STRING,
