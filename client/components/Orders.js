@@ -17,7 +17,7 @@ class Orders extends Component {
             <h2 className='product2'>No Order History</h2> 
             <h2><Link to="/products">Start Shopping </Link></h2>
           </div>
-         :
+        :
         <div>
           <h2 className='product2'>Order History</h2>
             <table className='panel'>

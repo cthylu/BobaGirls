@@ -23,7 +23,7 @@ const Confirmation = ({ cart, createOrder }) => {
         return acc;
       }, 0);
     const tax = Math.round(ProductTotal * 0.0875 * 100) / 100;
-    return (ProductTotal * tax * 1).toFixed(2);
+    return (ProductTotal + tax * 1).toFixed(2);
   }
 
   function getCartTotalItems() {
@@ -40,12 +40,12 @@ const Confirmation = ({ cart, createOrder }) => {
     <div className="checkout">
       <div> Shipping Information Received. </div>
       <div>
-        You have {getCartTotalItems()} items in your
+        You have {getCartTotalItems()} item(s) in your
         <Link to={"/cart"}> Cart </Link>
       </div>
       {/* {console.log(user.id)} */}
       <div> Your total is ${getCartTotal()}</div>
-      <div>Please Confirm your Order.</div>
+      <div>Please Confirm Your Order.</div>
       <div>
         {/* <button onClick={() => createOrder(items)}> */}
         <button className='addtocart-btn' id='submit' onClick={() => createOrder(cart.id, success())}>
