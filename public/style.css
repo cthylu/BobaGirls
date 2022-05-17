@@ -410,12 +410,11 @@ label {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 1rem;
   align-items: center;
   border: 2px solid white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 100;
-  margin: 1rem;
+  margin-top: 24px;
 }
 
 .admin {
@@ -429,6 +428,13 @@ label {
 }
 .cartcheckout {
   border: 1px solid #cccccc;
+}
+.checkout-error {
+  background-color: #87ceeb;
+  padding: 1em 2em;
+}
+.checkout-error h3 {
+  text-align: center;
 }
 .cart1 {
   color: black;
@@ -913,6 +919,11 @@ textarea {
   text-align: left;
   margin-left: 20px;
   transition: all .2s ease-in-out
+}
+
+.update-btn {
+  text-align: center;
+  margin-top: 24px;
 }
 
 

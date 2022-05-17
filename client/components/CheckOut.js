@@ -163,10 +163,10 @@ class CheckOut extends React.Component {
                 </form>
               </div>
             ) : (
-              <div className="checkout">
+              <div className="checkout-error">
                 {/* {console.log('in here')} */}
-                No items in your <Link to={"/cart"}> Cart </Link>! Try some of
-                our <Link to={"/products"}> Products! </Link>
+                <h3>No items in your <Link to={"/cart"}> Cart </Link>! Try some of
+                our <Link to={"/products"}> Products! </Link></h3>
               </div>
             )}
           </div>
