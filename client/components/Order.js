@@ -55,7 +55,7 @@ class Order extends Component {
                             <td>{line.product?.name}</td>
                             <td>{line.quantity}</td>
                             <td>{line.product.price}</td>
-                            <td>${line.product.price * line.quantity}</td>
+                            <td>${(line.product.price * line.quantity).toFixed(2)}</td>
                           </tr>
                         )
                     }))

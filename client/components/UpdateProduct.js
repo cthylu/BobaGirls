@@ -117,13 +117,12 @@ export class UpdateProduct extends React.Component {
                   onChange={handleChange}
                 />   
 
-                <button className='admindeleteb' onClick={handleSubmit}> Update Product</button> 
+                <div className="update-btn"><button className='admindeleteb' onClick={handleSubmit}> Update Product</button></div> 
               </div>
               {/* <button className='admindeleteb' onClick={handleSubmit}> Update Product</button>  */}
             </form>
             <Link to="/products">
               <div className="admindelete">
-                <h5 className="admin"> Admin Only: </h5>
                 <button
                   className="admindeleteb"
                   onClick={() => deleteProduct(product.id)}
